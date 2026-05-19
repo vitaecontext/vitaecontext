@@ -61,6 +61,7 @@ Each runtime module is self-contained through:
 Working today:
 
 - direct install for `codex`
+- Codex installs mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` for compatibility
 - direct install for `claude-code`
 - direct extension install for `gemini-cli`
 - repository-root Gemini CLI extension layout for gallery discovery and direct GitHub installs

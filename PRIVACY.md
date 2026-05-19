@@ -39,7 +39,7 @@ Depending on the command and provider, AgentKit SEO may write files to local des
 
 - an export directory selected by the user
 - `~/.claude/skills/` for Claude Code installs
-- `~/.codex/skills/` or `CODEX_HOME/skills` for Codex installs
+- `~/.agents/skills/` plus `~/.codex/skills/` or `CODEX_HOME/skills` for Codex installs
 - `~/.gemini/extensions/agentkit-seo/` for Gemini CLI installs
 - `~/.config/opencode/skills/` for OpenCode installs
 - a context-file template path selected with `agentkit-seo template context --output`

@@ -20,9 +20,10 @@ For the published package, the default command is:
 npx agentkit-seo install --provider codex
 ```
 
-This installs the shared skills into `CODEX_HOME/skills` when `CODEX_HOME` is set, otherwise into:
+This installs the shared skills into:
 
-- `~/.codex/skills/`
+- `~/.agents/skills/`
+- `CODEX_HOME/skills` when `CODEX_HOME` is set, otherwise `~/.codex/skills/`
 
 From a local checkout, use:
 
@@ -39,6 +40,7 @@ node .skills/export/scripts/agentkit-seo.mjs install \
   --project-root .
 ```
 
+- `.agents/skills/`
 - `.codex/skills/`
 
 Use `export` only when you want a preview bundle or a packaging artifact.

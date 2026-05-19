@@ -73,7 +73,7 @@ Use this table to decide what to edit for common tasks.
 | --- | --- | --- | --- |
 | Shared bundle | `.skills/agent-skill/` | `.skills/export/export-config.json` | Portable folders with `SKILL.md` |
 | Claude Code | `.skills/agent-skill/` | `.skills/providers/claude-code/install.md` | Skills under `~/.claude/skills/` |
-| Codex | `.skills/agent-skill/` | `.skills/providers/codex/install.md` | Skills under `CODEX_HOME/skills` or `~/.codex/skills/` |
+| Codex | `.skills/agent-skill/` | `.skills/providers/codex/install.md` | Skills under `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` |
 | Gemini CLI | `.skills/agent-skill/` | `.skills/providers/gemini-cli/` | Extension under `~/.gemini/extensions/agentkit-seo/` |
 | OpenCode | `.skills/agent-skill/` | `.skills/providers/opencode/` | Skills plus flat command wrappers |
 

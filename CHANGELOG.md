@@ -4,6 +4,12 @@ All notable changes to AgentKit SEO are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
+## Unreleased
+
+### Changed
+
+- Codex installs now mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` (or `CODEX_HOME/skills`) for compatibility.
+
 ## 1.5.0 - 2026-05-19
 
 ### Changed

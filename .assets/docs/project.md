@@ -105,7 +105,7 @@ The foundational decisions below are now part of the project contract:
 
 2. **The Scope of the current release:** All seven shared skill bundles now exist. `cv-ats`, `github`, and `linkedin` remain the strongest launch modules, while the other modules are already part of the public package and website.
 
-3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This keeps installed bundles portable and predictable.
+3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `~/.agents/skills` plus `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This keeps installed bundles portable and predictable.
 
 4. **The Personal Context File schema:** The schema is defined in `agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional user-confirmed storage: in-chat draft, local workspace file, user-chosen path, or portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
 

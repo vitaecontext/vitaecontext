@@ -66,6 +66,8 @@ Current supported direct install targets are:
 - `gemini-cli`
 - `opencode`
 
+Codex installs mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` (or `CODEX_HOME/skills`) to cover current and legacy discovery paths.
+
 Gemini CLI installs as an extension at `~/.gemini/extensions/agentkit-seo`. The extension includes `gemini-extension.json`, a `GEMINI.md` context file, shared skill folders under `skills/`, and namespaced command wrappers under `commands/agentkit-seo/`. Gemini exposes those wrappers as commands such as `/agentkit-seo:linkedin`. A `--project-root` install can still preview the same generated extension layout inside a repository, but the active Gemini extension discovery path is the user extension directory.
 
 OpenCode installs include both shared skill folders and thin flat command wrappers. The wrappers live in `.skills/providers/opencode/commands/` and map commands such as `/agentkit-seo-linkedin` to the corresponding shared skill.

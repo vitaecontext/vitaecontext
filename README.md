@@ -149,7 +149,7 @@ Supported install targets:
 | ------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Shared bundle | Portable `SKILL.md` folders                        | Manual reuse or packaging                                                                                |
 | Claude Code   | `~/.claude/skills/`                                | Skill selection depends on Claude Code's skill loading; explicit skill naming is safest                  |
-| Codex         | `CODEX_HOME/skills` or `~/.codex/skills/`          | Use installed skills by name when available; behavior depends on Codex skill support and workspace setup |
+| Codex         | `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` | Use installed skills by name when available; behavior depends on Codex skill support and workspace setup |
 | Gemini CLI    | `~/.gemini/extensions/agentkit-seo/`               | Namespaced commands such as `/agentkit-seo:linkedin`                                                     |
 | OpenCode      | `~/.config/opencode/skills/` plus command wrappers | Native skill loading plus flat commands such as `/agentkit-seo-linkedin`                                 |
 

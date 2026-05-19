@@ -132,6 +132,23 @@ function trimTrailingSlash(filePath) {
   return normalizeRelativePath(filePath).replace(/\/+$/, "");
 }
 
+function uniquePaths(paths) {
+  const seen = new Set();
+  const unique = [];
+  for (const entry of paths) {
+    if (!entry) {
+      continue;
+    }
+    const resolved = path.resolve(entry);
+    if (seen.has(resolved)) {
+      continue;
+    }
+    seen.add(resolved);
+    unique.push(resolved);
+  }
+  return unique;
+}
+
 function readJsonFile(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -234,10 +251,11 @@ function getProviderRuntimeHints(provider, providerSpec) {
       commands: ["codex"],
       configRoots: [
         process.env.CODEX_HOME ? path.resolve(process.env.CODEX_HOME) : null,
-        path.join(os.homedir(), ".codex")
+        path.join(os.homedir(), ".codex"),
+        path.join(os.homedir(), ".agents", "skills")
       ].filter(Boolean),
       installHint:
-        "Install Codex first or set CODEX_HOME/--target-dir if this machine uses a non-default skills location."
+        "Install Codex first or set CODEX_HOME/--target-dir if this machine uses a non-default skills location. AgentKit SEO also writes ~/.agents/skills for Codex compatibility."
     },
     "gemini-cli": {
       displayName: "Gemini CLI",
@@ -475,7 +493,8 @@ function writeInstallManifest(
   installedSkills,
   installedCommands,
   skillTargetRoot,
-  commandTargetRoot
+  commandTargetRoot,
+  skillTargetRoots = null
 ) {
   const providerSpec = config.providers[provider];
   const manifest = {
@@ -486,6 +505,7 @@ function writeInstallManifest(
     commands: installedCommands,
     layout: providerSpec.layout,
     skill_target: skillTargetRoot,
+    skill_targets: skillTargetRoots ?? [skillTargetRoot],
     command_target: commandTargetRoot
   };
   const manifestPath = path.join(targetRoot, "agentkit-seo-install.json");
@@ -515,6 +535,14 @@ function exportProvider(repoRoot, outputRoot, provider, config, force) {
     targetRoot,
     providerSpec.skillExcludes
   );
+  const additionalTargets = providerSpec.additionalTargets ?? [];
+  const additionalRoots = uniquePaths(
+    additionalTargets.map((target) => path.join(bundleRoot, target))
+  ).filter((target) => path.resolve(target) !== path.resolve(targetRoot));
+  for (const additionalRoot of additionalRoots) {
+    fs.mkdirSync(additionalRoot, { recursive: true });
+    copySkillFolders(repoRoot, config.skills, additionalRoot, providerSpec.skillExcludes);
+  }
   if (providerSpec.commandTarget && providerSpec.commands) {
     const commandRoot = path.join(bundleRoot, providerSpec.commandTarget);
     copyCommandFiles(repoRoot, providerSpec.commands, commandRoot, force);
@@ -574,6 +602,22 @@ function resolveCommandInstallRoot(flags, providerSpec) {
   return null;
 }
 
+function resolveAdditionalSkillInstallRoots(flags, providerSpec) {
+  if (flags["target-dir"]) {
+    return [];
+  }
+
+  if (flags["project-root"]) {
+    return (providerSpec.additionalTargets ?? []).map((target) =>
+      path.resolve(flags["project-root"], target)
+    );
+  }
+
+  return (providerSpec.additionalGlobalTargets ?? []).map((target) =>
+    path.resolve(expandUserPath(target))
+  );
+}
+
 function installProvider(repoRoot, provider, config, flags) {
   const providerSpec = config.providers[provider];
   const targetRoot = resolveInstallRoot(flags, providerSpec, provider);
@@ -581,6 +625,8 @@ function installProvider(repoRoot, provider, config, flags) {
     providerSpec.layout === "gemini-extension"
       ? path.join(targetRoot, providerSpec.skillTarget ?? "skills")
       : targetRoot;
+  const additionalSkillTargets = resolveAdditionalSkillInstallRoots(flags, providerSpec);
+  const skillTargetRoots = uniquePaths([skillTargetRoot, ...additionalSkillTargets]);
   const commandTargetRoot =
     providerSpec.layout === "gemini-extension"
       ? path.join(targetRoot, providerSpec.commandTarget)
@@ -596,13 +642,18 @@ function installProvider(repoRoot, provider, config, flags) {
     if (providerSpec.files) {
       copyProviderFiles(repoRoot, providerSpec.files, targetRoot, Boolean(flags.force), config.package);
     }
-    installedSkills = installSkillFolders(
-      repoRoot,
-      config.skills,
-      skillTargetRoot,
-      Boolean(flags.force),
-      providerSpec.skillExcludes
-    );
+    for (const [index, skillTarget] of skillTargetRoots.entries()) {
+      const result = installSkillFolders(
+        repoRoot,
+        config.skills,
+        skillTarget,
+        Boolean(flags.force),
+        providerSpec.skillExcludes
+      );
+      if (index === 0) {
+        installedSkills = result;
+      }
+    }
     installedCommands = commandTargetRoot
       ? copyCommandFiles(repoRoot, providerSpec.commands, commandTargetRoot, Boolean(flags.force))
       : [];
@@ -613,7 +664,8 @@ function installProvider(repoRoot, provider, config, flags) {
       installedSkills,
       installedCommands,
       skillTargetRoot,
-      commandTargetRoot
+      commandTargetRoot,
+      skillTargetRoots
     );
   } catch (error) {
     throw formatFilesystemInstallError(error, provider, targetRoot, commandTargetRoot);
@@ -621,6 +673,9 @@ function installProvider(repoRoot, provider, config, flags) {
 
   console.log(`Installed ${installedSkills.length} skill folder(s) for ${provider}`);
   console.log(`- target: ${skillTargetRoot}`);
+  if (skillTargetRoots.length > 1) {
+    console.log(`- additional skill targets: ${skillTargetRoots.slice(1).join(", ")}`);
+  }
   if (installedCommands.length > 0) {
     console.log(`Installed ${installedCommands.length} command file(s) for ${provider}`);
     console.log(`- commands target: ${commandTargetRoot}`);

@@ -54,7 +54,13 @@
       "layout": "skill-folders",
       "target": ".codex/skills",
       "homeEnv": "CODEX_HOME",
-      "globalTarget": "~/.codex/skills"
+      "globalTarget": "~/.codex/skills",
+      "additionalTargets": [
+        ".agents/skills"
+      ],
+      "additionalGlobalTargets": [
+        "~/.agents/skills"
+      ]
     },
     "gemini-cli": {
       "layout": "gemini-extension",
