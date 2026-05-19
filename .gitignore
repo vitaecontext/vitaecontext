@@ -1,6 +1,7 @@
 # Local agent/runtime files
 /.codex
 /.codex/
+/.agents/
 
 # Environment and secrets
 .env

@@ -15,11 +15,11 @@ The npm package is live at:
 
 - `https://www.npmjs.com/package/agentkit-seo`
 
-Current published version:
+Current release candidate:
 
-- `agentkit-seo@1.5.0`
+- `agentkit-seo@1.5.1`
 
-GitHub releases currently published:
+GitHub releases currently published or pending:
 
 - `v0.1.0`
 - `v0.1.1`
@@ -27,6 +27,7 @@ GitHub releases currently published:
 - `v0.1.3`
 - `v0.1.4`
 - `v1.5.0`
+- `v1.5.1` pending release
 
 ### Core architecture
 

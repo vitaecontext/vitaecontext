@@ -6,8 +6,13 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.5.1 - 2026-05-19
+
 ### Changed
 
+- Refactored the CLI entry script into smaller export-layer modules while preserving command flags and user-facing output.
+- Included the repository-root Gemini CLI extension layout in the npm package so packed-package diagnostics match the published package contents.
+- Ignored local `.agents/` runtime output to avoid accidentally committing generated agent install files.
 - Codex installs now mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` (or `CODEX_HOME/skills`) for compatibility.
 
 ## 1.5.0 - 2026-05-19

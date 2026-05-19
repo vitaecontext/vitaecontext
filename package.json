@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.",
   "type": "module",
   "bin": {
@@ -26,6 +26,10 @@
     ".assets/docs/project.md",
     ".assets/docs/architecture-map.md",
     ".assets/docs/STYLEGUIDE.md",
+    "gemini-extension.json",
+    "GEMINI.md",
+    "commands",
+    "skills",
     "CHANGELOG.md",
     "PRIVACY.md",
     "README.md"
