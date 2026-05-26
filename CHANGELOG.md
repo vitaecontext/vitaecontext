@@ -8,6 +8,12 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 No unreleased changes yet.
 
+## 1.5.3 - 2026-05-26
+
+### Fixed
+
+- Added Antigravity CLI's root `plugin.json` to generated `--provider antigravity` installs and exports so the plugin folder matches Antigravity's discovery layout.
+
 ## 1.5.2 - 2026-05-22
 
 ### Added

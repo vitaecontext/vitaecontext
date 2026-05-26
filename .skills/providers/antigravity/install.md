@@ -9,6 +9,7 @@ Install AgentKit SEO as an Antigravity CLI plugin:
 
 The plugin uses the Gemini extension-compatible structure that Antigravity imports from Gemini CLI extensions:
 
+- `plugin.json`
 - `gemini-extension.json`
 - `GEMINI.md`
 - shared skills copied into `skills/<skill-name>/`

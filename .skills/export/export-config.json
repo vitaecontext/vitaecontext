@@ -118,6 +118,9 @@
       "commandTarget": "commands/agentkit-seo",
       "files": [
         {
+          "source": ".skills/providers/antigravity/extension/plugin.json"
+        },
+        {
           "source": ".skills/providers/antigravity/extension/gemini-extension.json",
           "syncPackageVersion": true
         },

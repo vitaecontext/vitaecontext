@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
 
-## As of 2026-05-22
+## As of 2026-05-26
 
 ### Public surfaces
 
@@ -17,7 +17,7 @@ The npm package is live at:
 
 Current package version:
 
-- `agentkit-seo@1.5.2`
+- `agentkit-seo@1.5.3`
 
 GitHub releases currently published or pending:
 
@@ -29,6 +29,7 @@ GitHub releases currently published or pending:
 - `v1.5.0`
 - `v1.5.1`
 - `v1.5.2`
+- `v1.5.3`
 
 ### Core architecture
 
@@ -68,7 +69,7 @@ Working today:
 - direct install for `claude-code`
 - direct extension install for `gemini-cli`
 - repository-root Gemini CLI extension layout for gallery discovery and direct GitHub installs
-- direct plugin install for `antigravity`
+- direct plugin install for `antigravity`, including Antigravity's root `plugin.json`
 - direct install for `opencode`
 - shared bundle export
 - provider-shaped export bundles

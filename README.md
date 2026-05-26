@@ -257,6 +257,8 @@ agy plugin import gemini
 
 AgentKit SEO installs the same Gemini-compatible layout to `~/.gemini/antigravity-cli/plugins/agentkit-seo/`. The exact imported command syntax in `agy` is still TBD, so use native skill/plugin discovery first and verify slash-command names inside Antigravity before relying on them.
 
+The installed plugin root includes `plugin.json`, `gemini-extension.json`, `GEMINI.md`, `commands/agentkit-seo/`, and `skills/`.
+
 **OpenCode**
 
 Use native skill loading or the flat command wrappers:
