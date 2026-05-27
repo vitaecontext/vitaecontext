@@ -115,3 +115,7 @@ Today that means:
 Human-readable playbooks, templates, examples, and source notes belong under `hub/`. Do not place editorial module folders at the repository root.
 
 Generate provider-facing manifests only when we intentionally publish a provider-specific release artifact.
+
+---
+
+See also: [repository architecture map](../.assets/docs/architecture-map.md), [maintainer guide](../MAINTAINING.md), and [root runtime wiki](./agent-skill/agentkit-seo/wiki/agentkit-seo.md).

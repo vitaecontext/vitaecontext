@@ -76,3 +76,5 @@ Return:
 5. context-file gaps that affect public claims
 
 For audits, use concise labels such as `Verified`, `From source`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Mark unsupported responsibilities, metrics, seniority, clients, testimonials, or outcomes as gaps rather than turning them into metadata, schema, or copy. When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.
+
+Human playbook: [hub/web-portfolio/README.md](../../../hub/web-portfolio/README.md).

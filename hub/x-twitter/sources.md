@@ -51,3 +51,5 @@ The `xai-org/x-algorithm` repository was discovered during review. Do not use it
 No clean official source was found for exact live ranking weights, universal external-link penalties, shadowban diagnosis, posting-frequency thresholds, or Grok-era production ranking details. Treat those claims as `disputed` unless the user supplies current account evidence or official source material.
 
 ---
+
+See also: [X (Twitter) optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md).

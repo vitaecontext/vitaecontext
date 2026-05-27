@@ -74,4 +74,6 @@ When an AI agent is tasked with optimizing a user's GitHub presence:
 
 ---
 
+Runtime skill: [.skills/agent-skill/agentkit-seo-github/SKILL.md](../../.skills/agent-skill/agentkit-seo-github/SKILL.md). Source notes: [sources.md](./sources.md).
+
 *Next step: Understand the search engine in [GitHub code search and Blackbird](./algorithm-blackbird.md).*

@@ -162,6 +162,11 @@ The repository separates human documentation from runtime agent artifacts:
 - `.skills/providers/` contains provider-specific adapter notes and wrappers.
 - `commands/`, `skills/`, `GEMINI.md`, and `gemini-extension.json` provide the Gemini-compatible root distribution layout.
 
+Maintainer entrypoints:
+
+- [MAINTAINING.md](./MAINTAINING.md) covers source refresh, wiki maintenance, and validation.
+- [AGENTS.md](./AGENTS.md) defines repository instructions for coding agents.
+
 ## Install
 
 Install one provider at a time:

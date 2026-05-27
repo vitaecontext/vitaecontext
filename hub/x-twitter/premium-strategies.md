@@ -49,3 +49,5 @@ Premium users may be able to bypass the standard 280-character post limit. Verif
 **What it looks like:** A Premium user replying "Great post!" on dozens of viral posts to exploit prioritized ranking. **Why it fails:** Repetitive low-effort replies can hurt credibility and typically generate weak profile conversion, even when initial visibility is higher. **What to do instead:** Write a 2-3 sentence reply that adds a new perspective, provides a counter-argument, or shares a relevant data point.
 
 ---
+
+*Next step: Ground ranking assumptions in [Algorithm Phoenix](./algorithm-phoenix.md).*

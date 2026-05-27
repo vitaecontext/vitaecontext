@@ -79,3 +79,5 @@ Return only requested-relevant sections. For full CV audits or broad tailoring p
 5. missing facts or evidence needed before stronger claims
 
 For audits, use concise labels such as `Verified`, `From context`, `From job description`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Include a `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews; omit it for narrow bullet or section rewrites unless more input is needed.
+
+Human playbook: [hub/cv-ats/README.md](../../../hub/cv-ats/README.md).

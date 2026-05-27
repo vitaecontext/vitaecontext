@@ -41,3 +41,5 @@ The previous source list included arXiv 360Brew research, LinkedIn creator comme
 No clean official source was found for exact field limits across every profile section, fixed Feed weights, posting-time formulas, semantic scores, full 360Brew rollout, applicant outcomes, or recruiter-search ranking guarantees. Treat those claims as `likely`, `inferred`, or `disputed` depending on inspected evidence.
 
 ---
+
+See also: [LinkedIn profile optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md).

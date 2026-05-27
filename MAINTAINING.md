@@ -2,6 +2,13 @@
 
 This file is for maintainers, contributors, and pull request authors who touch knowledge, sources, skills, wiki entries, or generated LLM-facing files.
 
+## Maintainer docs
+
+- [.assets/docs/architecture-map.md](./.assets/docs/architecture-map.md) maps repository layers, ownership, and validation paths.
+- [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) defines Markdown, skill, wiki, provider-note, template, and example conventions.
+- [.assets/docs/current-status.md](./.assets/docs/current-status.md) records what is live, automated, and still open.
+- [.assets/docs/project.md](./.assets/docs/project.md) keeps the project architecture narrative and operating model.
+
 ## What to update when platform behavior changes
 
 Always update from source evidence outward:
@@ -19,12 +26,12 @@ Use this module map:
 
 | Surface | Source file | Human docs | Runtime wiki | Runtime skill |
 |---|---|---|---|---|
-| Agent context optimization | `hub/agent-context-optimization/sources.md` | `hub/agent-context-optimization/README.md`, module playbooks, templates | `.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md` |
-| CV and ATS | `hub/cv-ats/sources.md` | `hub/cv-ats/README.md`, module playbooks, templates | `.skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md` |
-| GitHub | `hub/github/sources.md` | `hub/github/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-github/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-github/SKILL.md` |
-| LinkedIn | `hub/linkedin/sources.md` | `hub/linkedin/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-linkedin/SKILL.md` |
-| Web portfolio | `hub/web-portfolio/sources.md` | `hub/web-portfolio/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md` |
-| X/Twitter | `hub/x-twitter/sources.md` | `hub/x-twitter/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md` |
+| Agent context optimization | [hub/agent-context-optimization/sources.md](./hub/agent-context-optimization/sources.md) | `hub/agent-context-optimization/README.md`, module playbooks, templates | [.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/knowledge.md](./.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/knowledge.md) | `.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md` |
+| CV and ATS | [hub/cv-ats/sources.md](./hub/cv-ats/sources.md) | `hub/cv-ats/README.md`, module playbooks, templates | [.skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md](./.skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md) | `.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md` |
+| GitHub | [hub/github/sources.md](./hub/github/sources.md) | `hub/github/README.md`, module playbooks | [.skills/agent-skill/agentkit-seo-github/wiki/knowledge.md](./.skills/agent-skill/agentkit-seo-github/wiki/knowledge.md) | `.skills/agent-skill/agentkit-seo-github/SKILL.md` |
+| LinkedIn | [hub/linkedin/sources.md](./hub/linkedin/sources.md) | `hub/linkedin/README.md`, module playbooks | [.skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md](./.skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md) | `.skills/agent-skill/agentkit-seo-linkedin/SKILL.md` |
+| Web portfolio | [hub/web-portfolio/sources.md](./hub/web-portfolio/sources.md) | `hub/web-portfolio/README.md`, module playbooks | [.skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md](./.skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md) | `.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md` |
+| X/Twitter | [hub/x-twitter/sources.md](./hub/x-twitter/sources.md) | `hub/x-twitter/README.md`, module playbooks | [.skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md](./.skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md) | `.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md` |
 
 After runtime wiki changes, mirror generated provider files through the export CLI. Do not hand-edit generated mirrors.
 
@@ -104,7 +111,7 @@ Before opening a PR that touches knowledge, skills, wiki entries, or sources:
 
 - Read `.assets/docs/architecture-map.md` — covers how hub/, .skills/, provider adapters, and generated mirrors relate to each other.
 - Read `.assets/docs/STYLEGUIDE.md` — covers tone, formatting, and claim-labeling conventions for all knowledge and skill files.
-- Read `.skills/architecture.md` — covers the runtime skill folder structure and export conventions.
+- Read [.skills/architecture.md](./.skills/architecture.md) — covers the runtime skill folder structure and export conventions.
 - Update `hub/<module>/sources.md` before changing claims in hub playbooks or runtime wiki files.
 - Keep official sources separate from inference and disputed public narratives.
 - Add or update wiki metadata, confidence labels, `last_reviewed`, and `review_by`.

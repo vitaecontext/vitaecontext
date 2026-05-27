@@ -89,3 +89,5 @@ When producing an X/Twitter audit or content plan:
 - Do not add cadence or engagement strategy unless requested or necessary for the user's stated goal.
 - Size recommendations to the user's posting capacity and credible niche.
 - Include a one-line `Depth note` when the audit did not inspect enough post history, replies, analytics, or Premium state.
+
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/x-twitter/sources.md](../../../../hub/x-twitter/sources.md).

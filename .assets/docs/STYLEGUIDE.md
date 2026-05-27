@@ -395,3 +395,7 @@ Before opening a pull request or committing a file:
 5. Set `status: review` on new files. Only move to `stable` after the second contributor has approved.
 
 If you are unsure whether a rule applies to your file, default to following it. Consistency matters more than edge-case flexibility.
+
+---
+
+See also: [architecture-map.md](./architecture-map.md), [current-status.md](./current-status.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).

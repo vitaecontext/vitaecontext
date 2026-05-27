@@ -72,3 +72,5 @@ Screenshot 2026-04-24
 **What it looks like:** Publishing 4 separate posts within a 10-minute window to "flood the feed." **Why it can fail:** Historical architecture material and current filtering guidance support the general idea that feeds avoid repetitive or low-quality sessions, but no public threshold defines burst suppression. **What to do instead:** Space out individual posts, or combine related thoughts into a single formatted thread when the topic needs depth.
 
 ---
+
+*Next step: Build the reply loop in [Engagement and growth](./engagement-and-growth.md).*

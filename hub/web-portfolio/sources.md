@@ -71,3 +71,5 @@ The previous source list included a third-party JSON-LD implementation walkthrou
 No clean official source was found for guaranteed AI citation, guaranteed LLM ingestion, guaranteed `llms.txt` support by major search or AI providers, or ranking benefits from `llms.txt`. Treat those claims as `disputed`.
 
 ---
+
+See also: [Web portfolio SEO and indexing](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md).

@@ -74,3 +74,5 @@ Return only requested-relevant sections. For audits, return:
 5. requests for the smallest missing inputs needed to finish the next pass
 
 For audits, use concise labels such as `Verified`, `From context`, `Official guidance`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Include a `Depth note` only for broad audits, incomplete inputs, or intentionally deferred profile/activity review.
+
+Human playbook: [hub/linkedin/README.md](../../../hub/linkedin/README.md).

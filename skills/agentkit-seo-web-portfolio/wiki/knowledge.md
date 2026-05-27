@@ -96,3 +96,5 @@ When producing a web-portfolio audit or implementation plan:
 - Prefer canonical-page improvements before generated AI-facing mirrors.
 - Keep `llms.txt` recommendations short, curated, and synchronized with public pages.
 - Name the smallest next inspection when the current audit is bounded.
+
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/web-portfolio/sources.md](../../../../hub/web-portfolio/sources.md).

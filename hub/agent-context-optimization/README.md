@@ -65,3 +65,7 @@ When an AI agent is asked to work with a personal context file:
 2. Load [agent-workflow.md](./agent-workflow.md) when the task is about prompting or module routing.
 3. Load [file-maintenance.md](./file-maintenance.md) when new content must be integrated into an existing file.
 4. Treat the personal context file itself as the factual source of truth, not the surrounding explanatory docs.
+
+---
+
+Runtime skill: [.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md). Source notes: [sources.md](./sources.md).

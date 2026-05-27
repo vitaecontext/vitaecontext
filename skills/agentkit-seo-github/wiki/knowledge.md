@@ -83,3 +83,5 @@ When producing a GitHub audit or implementation plan:
 - Label `.gitattributes` recommendations as verified only after inspecting file roles.
 - Prefer concrete README, About text, topic, pin, or file changes over generic branding advice.
 - Include a one-line `Depth note` when the audit did not inspect every relevant repository or file.
+
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/github/sources.md](../../../../hub/github/sources.md).

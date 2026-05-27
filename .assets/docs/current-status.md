@@ -252,3 +252,7 @@ Important gaps still open:
 - installed skills expose local package metadata, but do not yet compare against npm latest
 - demo assets and before/after public examples are still missing
 - the maintainer writing loop for refreshing wiki entries from live sources is planned but not yet shipped
+
+---
+
+See also: [architecture-map.md](./architecture-map.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).

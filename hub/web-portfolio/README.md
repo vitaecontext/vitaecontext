@@ -74,4 +74,6 @@ When an AI agent is tasked with optimizing a user's personal website:
 
 ---
 
+Runtime skill: [.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md](../../.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md). Source notes: [sources.md](./sources.md).
+
 *Next step: Start with [Indexability and submission](./indexability-and-submission.md).*

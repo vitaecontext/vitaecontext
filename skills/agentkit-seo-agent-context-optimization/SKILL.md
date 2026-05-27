@@ -85,3 +85,5 @@ Return:
 6. the next platform skill to use, if any
 
 For audits or validation passes, use concise labels such as `Verified`, `From context`, `From source`, `Inference`, and `Needs evidence` when a claim could otherwise be ambiguous. When the pass is intentionally bounded, include a one-line `Depth note` that says what sources were not inspected and what deeper reconciliation would add.
+
+Human playbook: [hub/agent-context-optimization/README.md](../../../hub/agent-context-optimization/README.md).

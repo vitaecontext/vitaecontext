@@ -66,3 +66,5 @@ Agents must route to the specific file needed for the task at hand. Do not load 
 **Rule:** Output must prioritize profile clarity, native value, credible proof, and conversation quality over generic social media fluff.
 
 ---
+
+Runtime skill: [.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md](../../.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md). Source notes: [sources.md](./sources.md).

@@ -70,3 +70,5 @@ SEO Expert | Growth Hacker | Digital Marketing | Coffee Addict | Views are my ow
 **What it looks like:** A bio that only says "Links below" and points to a link hub. **Why it fails:** It wastes the limited bio space that search surfaces and profile visitors use to understand the account. **What to do instead:** Define the user's niche and expertise before adding the CTA for the link.
 
 ---
+
+*Next step: Shape native posts in [Posting strategy](./posting-strategy.md).*

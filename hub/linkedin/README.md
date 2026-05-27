@@ -84,3 +84,5 @@ When an AI agent is tasked with optimizing a user's LinkedIn profile:
 4. Prefer official LinkedIn guidance over third-party folklore, and label any inferred algorithm behavior as inference rather than fact.
 
 ---
+
+Runtime skill: [.skills/agent-skill/agentkit-seo-linkedin/SKILL.md](../../.skills/agent-skill/agentkit-seo-linkedin/SKILL.md). Source notes: [sources.md](./sources.md).

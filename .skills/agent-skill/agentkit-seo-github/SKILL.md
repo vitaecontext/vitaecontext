@@ -78,3 +78,5 @@ Return:
 
 For audits, make the output feel like a grounded review rather than a generic marketing report. Use concise labels such as `Verified`, `From context`, and `Inference` when a claim could otherwise be ambiguous.
 When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.
+
+Human playbook: [hub/github/README.md](../../../hub/github/README.md).

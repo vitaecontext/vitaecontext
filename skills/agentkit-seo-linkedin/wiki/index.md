@@ -50,3 +50,5 @@ When a wiki file referenced here is missing:
 - Avoid making stronger claims than the loaded reference supports.
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
+
+Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).

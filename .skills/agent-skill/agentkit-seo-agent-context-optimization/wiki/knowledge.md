@@ -85,3 +85,5 @@ When producing a context-file audit, creation plan, or maintenance edit:
 - Update `VERIFIED FACTS` when adding hard factual anchors.
 - Hand off to exactly one platform skill after context cleanup unless the user asks for a multi-surface pass.
 - Include a one-line `Depth note` when sources, sections, or cross-platform checks were intentionally bounded.
+
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/agent-context-optimization/sources.md](../../../../hub/agent-context-optimization/sources.md).

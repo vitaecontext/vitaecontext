@@ -73,3 +73,5 @@ Return only requested-relevant sections. Do not add cadence or engagement strate
 5. missing inputs needed for a stronger second pass
 
 For audits, use concise labels such as `Verified`, `Official feature`, `Historical/open-source inference`, `Empirical tactic`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. When the audit is intentionally bounded, include a one-line `Depth note` that says what profile/post scope was inspected, what was not inspected, and what deeper inspection would add.
+
+Human playbook: [hub/x-twitter/README.md](../../../hub/x-twitter/README.md).

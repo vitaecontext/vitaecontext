@@ -100,3 +100,13 @@ Use these labels when source status could affect a recommendation:
 - `Needs evidence`: A claim that should not be reused publicly until the user supplies support or it is verified in source material.
 
 Do not turn `Inference`, `Inaccessible`, or `Needs evidence` claims into confident public copy.
+
+## 9. See also
+
+- [Agent context optimization wiki index](../../agentkit-seo-agent-context-optimization/wiki/index.md)
+- [CV ATS wiki index](../../agentkit-seo-cv-ats/wiki/index.md)
+- [GitHub wiki index](../../agentkit-seo-github/wiki/index.md)
+- [LinkedIn wiki index](../../agentkit-seo-linkedin/wiki/index.md)
+- [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
+- [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
+- [llms.txt](../../../../llms.txt)

@@ -29,6 +29,7 @@ Content is organized by platform or output type. Each platform directory contain
 - `hub/web-portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
 - `hub/cv-ats/` — Keyword optimization, formatting rules, and templates for ATS-safe CV workflows
 - `hub/x-twitter/` — Bio, pinned post strategy, content positioning
+- `hub/agent-context-optimization/` — Personal source-of-truth context files, templates, examples, and agent workflow
 
 More platform directories will be added as the project grows. The structure is designed to be extended without breaking existing conventions.
 
@@ -168,3 +169,7 @@ The current release model is:
 - *"When marketplace distribution starts, do we keep every provider artifact generated from the same shared source tree, or does one provider need a dedicated release artifact?"*
 
 - *"How far do we want to push public showcase assets before they become maintenance overhead instead of launch support?"*
+
+---
+
+See also: [architecture-map.md](./architecture-map.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [current-status.md](./current-status.md), and [MAINTAINING.md](../../MAINTAINING.md).

@@ -105,3 +105,5 @@ Bad example:
 **What it looks like:** "10 tools you need. Like and bookmark this!" **Why it fails:** It optimizes for shallow engagement instead of useful discussion. Historical ranking material also treated deeper conversation signals as more meaningful than likes alone. **What to do instead:** End the thread with a specific, open-ended question to invite substantive replies, then continue the discussion in follow-up responses.
 
 ---
+
+Source notes: [sources.md](./sources.md).

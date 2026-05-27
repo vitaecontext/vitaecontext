@@ -7,7 +7,7 @@ description: Maintainer-only skill for refreshing AgentKit SEO wiki knowledge fr
 
 ## Overview
 
-Use this maintainer-only skill to keep AgentKit SEO `wiki/knowledge.md` files and `hub/<module>/sources.md` files aligned with official sources.
+Use this maintainer-only skill to keep AgentKit SEO `wiki/knowledge.md`, `hub/<module>/sources.md`, human-facing hub playbooks, and runtime skill guidance aligned with official sources.
 
 This skill is for repository maintainers working from a local clone. It is never exported to user installs. End users receive static, pre-authored wiki entries through the package install flow.
 
@@ -70,21 +70,23 @@ Never propose a change without source justification. If no official source suppo
 On confirmation only, this skill may touch:
 
 - `.skills/agent-skill/agentkit-seo-<module>/wiki/knowledge.md`
+- `.skills/agent-skill/agentkit-seo-<module>/wiki/index.md` when source changes require a different conditional load map
+- `.skills/agent-skill/agentkit-seo-<module>/SKILL.md` when source changes require different routing, load, or high-level operating rules
+- `.skills/agent-skill/agentkit-seo-<module>/references/*.md`
 - `hub/<module>/sources.md`
+- `hub/<module>/*.md`
 - `llms-full.txt`
 
 This skill must never touch:
 
-- `SKILL.md` files
-- `references/` files
-- `hub/` playbooks or README files
-- `wiki/index.md` files
 - `llms.txt`
 - `README.md`
 - Provider mirrors under `skills/` or `commands/`
 - Files outside the confirmed list above
 
-If a source change implies that any forbidden file should change, do not edit that file. Flag it in a follow-up section with the exact file, affected section when known, reason, and source URL. This applies to hub playbooks, runtime references, module `SKILL.md` routing or loading behavior, `wiki/index.md` load maps, README content, CHANGELOG entries, and provider mirrors.
+Every downstream edit must be source-backed and module-scoped. Do not change hub playbooks, runtime references, module `SKILL.md`, or `wiki/index.md` only because the wording could be cleaner. Change them only when official evidence invalidates, narrows, expands, or clarifies the methodology that agents or humans should apply.
+
+If a source change implies that a forbidden file should change, do not edit that file. Flag it in a follow-up section with the exact file, affected section when known, reason, and source URL. This applies to project-level README content, CHANGELOG entries, provider mirrors, provider wrappers, install behavior, and files outside the target module.
 
 ## Mode 1: Single module refresh
 
@@ -106,11 +108,17 @@ Workflow:
    - Existing claims whose confidence should change based on current source text.
    - Claims the source no longer supports, flagged for removal or downgrade.
    - Claims contradicted by a conflicting official source, marked `disputed`.
-7. Identify downstream files that may need separate human or agent updates outside this skill's write permissions, including hub playbooks, runtime references, module `SKILL.md` routing, `wiki/index.md` load maps, README, CHANGELOG, or generated provider mirrors.
-8. Produce a proposed patch with exact line-level edits to `knowledge.md` and source URL justification for every change.
-9. Present the full proposed patch and the downstream follow-up list before writing anything. Ask for explicit confirmation.
-10. On confirmation only, apply the patch, update `last_reviewed` to today, set `review_by` from the dominant confidence level, regenerate `llms-full.txt`, and run `npm run validate`.
-11. Report what changed, which source justified it, which confidence labels moved up, down, or to `disputed`, and which follow-up files should be updated outside this skill if any.
+7. Inspect downstream module files that may need aligned updates: `hub/<module>/*.md`, `.skills/agent-skill/agentkit-seo-<module>/references/*.md`, `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`, and `.skills/agent-skill/agentkit-seo-<module>/wiki/index.md`.
+8. Diff extracted claims against downstream module guidance:
+   - Hub playbook claims that should change because official evidence changed.
+   - Runtime reference instructions that should change because agents would otherwise apply stale methodology.
+   - Module `SKILL.md` routing, source hierarchy, or load rules that should change because the module's operating model changed.
+   - `wiki/index.md` load rules that should change because new wiki knowledge should be loaded for different tasks.
+9. Identify forbidden files that still need separate follow-up outside this skill's write permissions, including README, CHANGELOG, provider wrappers, generated provider mirrors, install behavior, or files outside the target module.
+10. Produce a proposed patch with exact line-level edits to every touched allowed file and source URL justification for every change.
+11. Present the full proposed patch and the forbidden-file follow-up list before writing anything. Ask for explicit confirmation.
+12. On confirmation only, apply the patch, update `last_reviewed` to today, set `review_by` from the dominant confidence level, regenerate `llms-full.txt`, and run `npm run validate`.
+13. Report what changed, which source justified it, which confidence labels moved up, down, or to `disputed`, which hub or runtime guidance changed, and which forbidden follow-up files still need separate updates if any.
 
 Use these review intervals:
 
@@ -130,10 +138,11 @@ Use agentkit-seo-wiki-maintenance to audit all modules
 Workflow:
 
 1. Spawn parallel subagent tasks for the six module ids: `agent-context-optimization`, `cv-ats`, `github`, `linkedin`, `web-portfolio`, and `x-twitter`.
-2. Each subagent runs Mode 1 through step 8 only. It produces a proposed patch and downstream follow-up list, but performs no writes.
+2. Each subagent runs Mode 1 through step 10 only. It produces a proposed patch and forbidden-file follow-up list, but performs no writes.
 3. Collect the proposed patches into one unified audit report:
    - Per module: sources fetched, claims changed, confidence movements, new claims, and flagged removals.
    - Cross-module: consistency issues, including the same claim labeled differently across modules or shared taxonomy drift.
+   - Downstream guidance: hub playbooks, runtime references, module `SKILL.md`, or `wiki/index.md` edits proposed for each module.
    - Follow-ups: forbidden files that should be updated separately, with file path, reason, and source URL.
 4. Present the full unified report to the maintainer.
 5. Ask which modules to apply, which to skip, and which require further review.
@@ -175,11 +184,11 @@ For proposed patches, return:
 
 1. Module and mode.
 2. Sources fetched, with URL and fetch date.
-3. Proposed line-level changes.
+3. Proposed line-level changes across wiki, source, hub, and runtime skill files.
 4. Source justification for every change.
 5. Confidence movements.
 6. Claims flagged for removal, downgrade, dispute, or further review.
-7. Downstream follow-up files that should be updated outside this skill, if any.
+7. Forbidden follow-up files that should be updated outside this skill, if any.
 8. Explicit confirmation request before writing.
 
 For completed writes, return:
@@ -188,5 +197,6 @@ For completed writes, return:
 2. Sources used.
 3. Confidence movements.
 4. `llms-full.txt` regeneration status when applicable.
-5. Downstream follow-up files that still need separate updates, if any.
-6. Validation result.
+5. Hub or runtime guidance changed, if applicable.
+6. Forbidden follow-up files that still need separate updates, if any.
+7. Validation result.

@@ -68,3 +68,5 @@ Postgres is the best database. Agree?
 **What it looks like:** Publishing a high-quality thread, logging off, and ignoring the comments it receives. **Why it fails:** It leaves useful conversation unfinished and trains the audience that replying is pointless. **What to do instead:** Allocate a bounded reply window after publishing when the post is meant to start discussion.
 
 ---
+
+*Next step: Check paid-tier assumptions in [Premium strategies](./premium-strategies.md).*

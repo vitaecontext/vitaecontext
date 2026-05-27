@@ -45,3 +45,5 @@ No third-party GitHub optimization source is retained here. The previous GitHub 
 No clean official source was found for exact profile ranking, Explore distribution, star/fork weighting, or contribution-graph ranking effects. Treat those claims as `disputed` unless inspected source material proves a narrower point.
 
 ---
+
+See also: [GitHub optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-github/wiki/knowledge.md).

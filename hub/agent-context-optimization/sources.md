@@ -38,3 +38,5 @@ AgentKit SEO-specific names such as `agent-context-file`, `QUICK REFERENCE`, `VE
 No clean official external source was found for career-specific context-file schemas, cross-platform resume/profile factual ledgers, or guaranteed agent adherence to personal context files. Treat adherence claims as `likely` or `inferred`.
 
 ---
+
+See also: [Agent context optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/knowledge.md).

@@ -36,3 +36,5 @@ The previous source list included MIT CAPD, Microsoft Create, Yale Office of Car
 No clean official source was found for universal claims about exact ATS scores, hidden knockout filters, universal parser ranking, or a single best submission format across all employers. Treat those claims as `inferred` or `disputed`.
 
 ---
+
+See also: [CV and ATS optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md).

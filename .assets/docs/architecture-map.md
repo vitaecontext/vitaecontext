@@ -78,11 +78,11 @@ Use this table to decide what to edit for common tasks.
 | Provider | Runtime source | Adapter source | Installed shape |
 | --- | --- | --- | --- |
 | Shared bundle | `.skills/agent-skill/` | `.skills/export/export-config.json` | Portable folders with `SKILL.md` |
-| Claude Code | `.skills/agent-skill/` | `.skills/providers/claude-code/install.md` | Skills under `~/.claude/skills/` |
-| Codex | `.skills/agent-skill/` | `.skills/providers/codex/install.md` | Skills under `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` |
-| Gemini CLI | `.skills/agent-skill/` | `.skills/providers/gemini-cli/` | Extension under `~/.gemini/extensions/agentkit-seo/` |
-| Antigravity CLI | `.skills/agent-skill/` | `.skills/providers/antigravity/` | Plugin under `~/.gemini/antigravity-cli/plugins/agentkit-seo/` |
-| OpenCode | `.skills/agent-skill/` | `.skills/providers/opencode/` | Skills plus flat command wrappers |
+| Claude Code | `.skills/agent-skill/` | [`.skills/providers/claude-code/install.md`](../../.skills/providers/claude-code/install.md) | Skills under `~/.claude/skills/` |
+| Codex | `.skills/agent-skill/` | [`.skills/providers/codex/install.md`](../../.skills/providers/codex/install.md) | Skills under `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` |
+| Gemini CLI | `.skills/agent-skill/` | [`.skills/providers/gemini-cli/install.md`](../../.skills/providers/gemini-cli/install.md) | Extension under `~/.gemini/extensions/agentkit-seo/` |
+| Antigravity CLI | `.skills/agent-skill/` | [`.skills/providers/antigravity/install.md`](../../.skills/providers/antigravity/install.md) | Plugin under `~/.gemini/antigravity-cli/plugins/agentkit-seo/` |
+| OpenCode | `.skills/agent-skill/` | [`.skills/providers/opencode/install.md`](../../.skills/providers/opencode/install.md) | Skills plus flat command wrappers |
 
 Provider wrappers must route to the shared skill names:
 
@@ -139,3 +139,7 @@ node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --tar
 node .skills/export/scripts/agentkit-seo.mjs install --provider antigravity --target-dir /tmp/agentkit-seo-antigravity --force
 npm pack --dry-run
 ```
+
+---
+
+See also: [current-status.md](./current-status.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).

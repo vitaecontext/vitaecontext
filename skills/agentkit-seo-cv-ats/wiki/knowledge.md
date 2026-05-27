@@ -84,3 +84,5 @@ When producing a CV audit, tailoring pass, or parser-safety plan:
 - Prefer exact revised bullets or section text over generic advice when the source material is sufficient.
 - Use "no conflict found in inspected inputs" for bounded audits instead of implying full verification.
 - Include a one-line `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews.
+
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/cv-ats/sources.md](../../../../hub/cv-ats/sources.md).

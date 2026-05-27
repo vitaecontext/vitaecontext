@@ -72,3 +72,5 @@ When an AI agent is tasked with optimizing a user's CV:
 5. Always prioritize empirical constraints over creative formatting.
 
 ---
+
+Runtime skill: [.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md](../../.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md). Source notes: [sources.md](./sources.md).
