@@ -134,6 +134,7 @@ Human hub files explain playbooks, examples, templates, and source ledgers. Runt
 - [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
 - [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
 - [llms.txt](../../../../llms.txt)
+- [llms-full.txt](../../../../llms-full.txt)
 
 ---
 

@@ -9,13 +9,13 @@ This file is the maintainer snapshot for what is live, what is packaged, and wha
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.6.0`
+- Current package version: `agentkit-seo@1.6.1`
 
 Published release line:
 
 - `v0.1.0` through `v0.1.4`
 - `v1.5.0` through `v1.5.3`
-- `v1.6.0`
+- `v1.6.0` through `v1.6.1`
 
 ### Current architecture
 
@@ -30,7 +30,7 @@ Published release line:
 
 ### Shipped skill coverage
 
-The npm package ships seven portable skill bundles:
+The installable user bundle ships seven portable runtime skill bundles:
 
 - `agentkit-seo`
 - `agentkit-seo-agent-context-optimization`
@@ -81,6 +81,7 @@ The runtime wiki layer is installed and exported with provider bundles.
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
 - `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
+- `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the seven installed runtime skills.
 
 ### Website and discovery status
 
@@ -146,7 +147,7 @@ The project is not currently prioritizing:
 - The main source repo still needs a dedicated GitHub social preview.
 - Installed skills include local package metadata but do not compare against npm latest.
 - Public demo assets and before/after examples are still sparse.
-- Wiki refresh automation from live official sources is planned but not shipped.
+- Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
 
 ---
 

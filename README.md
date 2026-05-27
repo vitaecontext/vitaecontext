@@ -146,7 +146,7 @@ This is not a prompt collection. It is an operating manual for agents working on
 
 ## LLM Wiki
 
-Without a knowledge layer, agents guess at platform constraints from training data: ATS parser behavior, LinkedIn field limits, GitHub Linguist rules, and other details that change or depend on context. That guessing produces confident but wrong advice. AgentKit SEO's wiki layer follows Andrej Karpathy's LLM Wiki concept: a knowledge base the LLM reads, not one it writes. The maintainer writing loop that keeps entries fresh from live sources is planned but not yet shipped.
+Without a knowledge layer, agents guess at platform constraints from training data: ATS parser behavior, LinkedIn field limits, GitHub Linguist rules, and other details that change or depend on context. That guessing produces confident but wrong advice. AgentKit SEO's wiki layer follows Andrej Karpathy's LLM Wiki concept: a knowledge base the LLM reads, not one it writes. A maintainer-only wiki refresh skill exists in the source tree for local source audits; the installed user bundle still ships only the runtime skills.
 
 - Every skill ships with per-module Markdown entries for canonical definitions, platform constraints with confidence labels, known failure modes, evidence rules, and audit output rules.
 - Wiki entries load conditionally, so agents pull deeper context only when the current task needs it.

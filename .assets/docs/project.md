@@ -88,6 +88,8 @@ The package ships these shared skills:
 
 This modular shape solves the context-window problem: a LinkedIn task should load the LinkedIn skill, not the whole system.
 
+The source tree also contains `agentkit-seo-wiki-maintenance` as a maintainer-only workflow for local source audits and wiki refreshes. It is not part of the installed user runtime bundle.
+
 ## 6. Install model
 
 The stable contract is the shared skill folder name. Provider-specific command syntax is a convenience layer.
@@ -135,7 +137,7 @@ The publish workflow validates the package, checks tag/version alignment, publis
 - Add a dedicated GitHub social preview for the source repo.
 - Add selective demos or before/after examples when they improve public communication.
 - Consider online latest-version checks for installed agents.
-- Build maintainer workflow automation for refreshing wiki entries from official sources.
+- Consider more automation around the existing maintainer-only wiki refresh workflow.
 
 ---
 

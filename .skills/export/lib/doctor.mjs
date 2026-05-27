@@ -377,9 +377,12 @@ export function doctor(repoRoot, config) {
   } else {
     const requiredPackagePaths = [
       ".skills/agent-skill",
+      ".skills/architecture.md",
       ".skills/export",
       ".skills/providers",
       "hub/agent-context-optimization/templates/context-file-template.md",
+      "AGENTS.md",
+      "MAINTAINING.md",
       "llms.txt",
       "llms-full.txt"
     ];

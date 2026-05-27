@@ -6,6 +6,12 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.6.1 - 2026-05-27
+
+### Fixed
+
+- Included maintainer graph entrypoints in the npm package file list and validation so README, `llms.txt`, and maintainer-doc links resolve from packed releases.
+
 ## 1.6.0 - 2026-05-27
 
 ### Added
