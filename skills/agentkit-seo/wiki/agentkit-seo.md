@@ -61,6 +61,13 @@ Runtime `references/` files contain focused procedural guidance for a task. Runt
 
 Agents should route to one module by default. Cross-platform work should usually start with the agent-context-optimization skill so user facts are normalized before public outputs are rewritten.
 
+Before loading detailed module files, agents should use this root wiki as the graph entrypoint:
+
+1. Use this file to understand the repository and runtime layers.
+2. Choose the relevant module from the linked module wiki indexes.
+3. Read only that module's `wiki/index.md` before deciding whether `wiki/knowledge.md`, `references/`, or human hub files are needed.
+4. Use `llms.txt` as the public package map and `llms-full.txt` as the full bundled wiki context when those files are available in the package checkout.
+
 ## 6. Install behavior
 
 The CLI installs or exports the same shared skills into provider-specific layouts. Supported providers include:
@@ -101,7 +108,16 @@ Use these labels when source status could affect a recommendation:
 
 Do not turn `Inference`, `Inaccessible`, or `Needs evidence` claims into confident public copy.
 
-## 9. See also
+## 9. Graph navigation
+
+The repository has two connected documentation branches:
+
+- Human layer: `README.md` -> `hub/<module>/README.md` -> `hub/<module>/sources.md`.
+- Runtime layer: this root wiki -> `agentkit-seo-<module>/SKILL.md` -> `wiki/index.md` -> `wiki/knowledge.md`.
+
+Human hub files explain playbooks, examples, templates, and source ledgers. Runtime wiki files explain compact agent-loadable constraints, confidence labels, and failure modes. Prefer the runtime branch for installed-agent work, and use the human branch when the task asks for contributor docs, editorial playbooks, templates, examples, or source provenance.
+
+## 10. See also
 
 - [Agent context optimization wiki index](../../agentkit-seo-agent-context-optimization/wiki/index.md)
 - [CV ATS wiki index](../../agentkit-seo-cv-ats/wiki/index.md)

@@ -12,6 +12,7 @@ Use this skill as the orchestrator for the whole repository. Its main job is to 
 ## Wiki context
 
 - Read [wiki/agentkit-seo.md](wiki/agentkit-seo.md) when the user asks what AgentKit SEO is, what ACO means, how the skill system works, what the installer deploys, or how the repository's runtime architecture is organized.
+- Use [wiki/agentkit-seo.md](wiki/agentkit-seo.md) as the graph entrypoint before loading module wiki, reference, or hub files for broad architecture and routing tasks.
 - If the wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
 
 ## Routing workflow

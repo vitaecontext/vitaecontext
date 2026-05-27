@@ -24,7 +24,8 @@
   <a href="#quick-start">Quick Start</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
-  <a href="https://agentkit-seo.github.io/">Website</a>
+  <a href="https://agentkit-seo.github.io/">Website</a> •
+  <a href="#authors">Authors</a>
 </p>
 
 ---
@@ -149,7 +150,7 @@ Without a knowledge layer, agents guess at platform constraints from training da
 
 - Every skill ships with per-module Markdown entries for canonical definitions, platform constraints with confidence labels, known failure modes, evidence rules, and audit output rules.
 - Wiki entries load conditionally, so agents pull deeper context only when the current task needs it.
-- [agentkit-seo/wiki/agentkit-seo.md](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md) is the root self-description for installed agents.
+- [agentkit-seo/wiki/agentkit-seo.md](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md) is the root self-description and graph entrypoint for installed agents.
 - [llms.txt](./llms.txt) and [llms-full.txt](./llms-full.txt) expose the project map and full wiki bundle for LLM tools.
 
 ## Repository Layout

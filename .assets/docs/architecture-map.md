@@ -21,9 +21,10 @@ For a cold-start agent, use this read order:
 2. Read `.assets/docs/current-status.md` to understand what is already live.
 3. Read `.assets/docs/STYLEGUIDE.md` before editing Markdown, docs, examples, or templates.
 4. Read `.skills/architecture.md` before changing runtime skills, provider adapters, export behavior, or install behavior.
-5. Read only the relevant `SKILL.md` and `references/` files for the target platform.
-6. Make the smallest scoped edit that satisfies the task.
-7. Run the validation listed in the change map before proposing a commit or release.
+5. Read `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` when the task is broad, architectural, package-related, or about graph navigation.
+6. Read only the relevant module `SKILL.md`, `wiki/index.md`, `wiki/knowledge.md`, and `references/` files for the target platform.
+7. Make the smallest scoped edit that satisfies the task.
+8. Run the validation listed in the change map before proposing a commit or release.
 
 Do not load every skill module by default. Route to one module unless the task is explicitly cross-platform.
 
@@ -37,6 +38,7 @@ Do not load every skill module by default. Route to one module unless the task i
 | Runtime skills | `.skills/agent-skill/` | Portable skill source, references, and wiki knowledge shipped to users | Skill behavior, routing, references, wiki entries, or module methodology changes |
 | Provider adapters | `.skills/providers/` | Provider-specific install notes, wrappers, manifests, and command templates | A provider needs different activation, layout, metadata, or wrapper commands |
 | Export CLI | `.skills/export/` | Install, export, doctor, version, and template commands | Package behavior, install targets, generated layouts, or diagnostics change |
+| Gemini-compatible root mirror | `skills/`, `commands/`, `GEMINI.md`, `gemini-extension.json` | Generated root distribution layout for Gemini-compatible discovery | Regenerate from canonical source after runtime skill or command changes |
 | Release automation | `.github/workflows/` | Validation and npm publication workflows | CI, release checks, package publication, or tag behavior changes |
 | Public release notes | `CHANGELOG.md` | User-facing release history | Any package-visible behavior changes |
 | Package metadata | `package.json` | npm package metadata, bin command, scripts, and version | CLI, dependencies, package files, scripts, or version changes |
@@ -46,6 +48,8 @@ Do not load every skill module by default. Route to one module unless the task i
 Runtime methodology belongs in `.skills/agent-skill/`.
 
 Durable runtime knowledge that is too detailed for `SKILL.md` belongs in each skill's `wiki/` folder. Keep wiki entries conditional-load friendly and maintain their metadata so `agentkit-seo doctor` can validate them.
+
+The runtime graph entrypoint is `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md`. Use it to choose the correct module before loading detailed module wiki, reference, or hub files.
 
 Human-readable methodology belongs in `hub/`. Keep the root directory focused on project metadata and distribution entrypoints.
 
@@ -69,6 +73,7 @@ Use this table to decide what to edit for common tasks.
 | Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/agentkit-seo.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |
 | Change CLI commands | `.skills/export/scripts/agentkit-seo.mjs` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm pack --dry-run` |
 | Change context-file template behavior | `.skills/export/scripts/agentkit-seo.mjs`, `.skills/agent-skill/agentkit-seo-agent-context-optimization/references/` | `README.md`, relevant examples/templates, `CHANGELOG.md` | `agentkit-seo template context` smoke test |
+| Change runtime wiki graph or `llms.txt` files | `.skills/agent-skill/*/wiki/`, `llms.txt`, `llms-full.txt` | Generated root `skills/` mirror, `README.md`, `.assets/docs/current-status.md` | `npm run validate`, `npm pack --dry-run` |
 | Change packaging files | `package.json`, `.npmignore` if added later | `.github/workflows/npm-publish.yml`, `README.md`, `CHANGELOG.md` | `npm pack --dry-run` |
 | Prepare a release | `package.json`, provider manifests with explicit versions, `CHANGELOG.md`, `.assets/docs/current-status.md` | Git tag and GitHub release after validation | Full release checklist |
 | Change CI or publication | `.github/workflows/` | `.assets/docs/current-status.md`, release docs if behavior changed | GitHub Actions run on pushed branch/tag |
@@ -119,9 +124,13 @@ Read `.skills/architecture.md` before changing the skill or provider architectur
 
 Read `.assets/docs/current-status.md` before recommending next work.
 
+Read `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` before broad graph, package, install, or module-routing work.
+
 Prefer narrow edits. Do not rewrite unrelated docs while touching a specific skill, provider, or CLI command.
 
 Keep generated or installed output out of commits unless the repository intentionally stores that artifact.
+
+The repo intentionally stores the root Gemini-compatible `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` mirror. Refresh those through the export/install tooling instead of hand-editing them.
 
 When changing package behavior, update both user-facing docs and maintainer status notes in the same branch.
 

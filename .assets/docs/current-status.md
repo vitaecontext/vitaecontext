@@ -1,257 +1,152 @@
-# AgentKit SEO Current Status
+# AgentKit SEO current status
 
-This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
+This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
 ## As of 2026-05-27
 
 ### Public surfaces
 
-AgentKit SEO currently has two live public surfaces:
+- Source repo: `https://github.com/agentkit-seo/agentkit-seo`
+- Website and human-readable hub: `https://agentkit-seo.github.io/`
+- npm package: `https://www.npmjs.com/package/agentkit-seo`
+- Current package version: `agentkit-seo@1.6.0`
 
-- source repo: `https://github.com/agentkit-seo/agentkit-seo`
-- website / human-readable hub: `https://agentkit-seo.github.io/`
+Published release line:
 
-The npm package is live at:
-
-- `https://www.npmjs.com/package/agentkit-seo`
-
-Current package version:
-
-- `agentkit-seo@1.6.0`
-
-GitHub releases currently published or pending:
-
-- `v0.1.0`
-- `v0.1.1`
-- `v0.1.2`
-- `v0.1.3`
-- `v0.1.4`
-- `v1.5.0`
-- `v1.5.1`
-- `v1.5.2`
-- `v1.5.3`
+- `v0.1.0` through `v0.1.4`
+- `v1.5.0` through `v1.5.3`
 - `v1.6.0`
 
-### Core architecture
+### Current architecture
 
-- `.skills/agent-skill/` is the canonical source of truth for the runtime skill system.
-- `.skills/providers/` contains provider-specific adapter notes and install shapes.
-- `.skills/export/` contains the install/export CLI.
-- `hub/` contains the human-readable editorial playbooks, templates, examples, and source notes.
-- root `llms.txt` and `llms-full.txt` expose the project map and bundled wiki layer for LLM tools.
-- the repo root is reserved for project metadata, maintainer entrypoints, and provider distribution artifacts
-- the public site mirrors the human-readable layer for crawlability, indexing, and public navigation
-- `.assets/docs/STYLEGUIDE.md` remains the schema reference for repo Markdown authoring
-- `.assets/docs/architecture-map.md` is the maintainer and agent work map for where to edit, validate, and release changes
+- `.skills/agent-skill/` is the canonical runtime source.
+- `.skills/providers/` contains thin provider adapters.
+- `.skills/export/` contains the install, export, doctor, list, version, and template CLI.
+- `hub/` contains human-readable playbooks, templates, examples, and source notes.
+- `.assets/docs/` contains maintainer docs, status, architecture, and Markdown rules.
+- `llms.txt` and `llms-full.txt` expose the LLM-facing map and bundled wiki layer.
+- `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` is the runtime graph entrypoint for installed agents.
+- Root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` are generated Gemini-compatible distribution artifacts stored in the repo intentionally.
 
-### Skill coverage
+### Shipped skill coverage
 
-The shared portable skills currently shipped are:
+The npm package ships seven portable skill bundles:
 
 - `agentkit-seo`
 - `agentkit-seo-agent-context-optimization`
-- `agentkit-seo-linkedin`
-- `agentkit-seo-github`
 - `agentkit-seo-cv-ats`
+- `agentkit-seo-github`
+- `agentkit-seo-linkedin`
 - `agentkit-seo-web-portfolio`
 - `agentkit-seo-x-twitter`
 
-Each runtime module is self-contained through:
+Each runtime module carries:
 
 - `SKILL.md`
 - local `references/`
-- local `wiki/` entries for canonical definitions, platform constraints, confidence labels, failure modes, evidence rules, and audit output rules
-- provider-agnostic structure suitable for export and install
+- local `wiki/` entries where durable constraints, confidence labels, failure modes, and audit rules belong
 
-### Current install and distribution status
+### Install and distribution status
 
-Working today:
+Working install targets:
 
-- direct install for `codex`
-- Codex installs mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` for compatibility
-- direct install for `claude-code`
-- direct extension install for `gemini-cli`
-- repository-root Gemini CLI extension layout for gallery discovery and direct GitHub installs
-- direct plugin install for `antigravity`, including Antigravity's root `plugin.json`
-- direct install for `opencode`
-- shared bundle export
-- provider-shaped export bundles
-- published npm package usage through `npx agentkit-seo ...`
-- direct GitHub install through `npx github:agentkit-seo/agentkit-seo ...`
-- local maintainer execution through `npx . ...` and `npm exec --package ./. -- ...`
-- CLI diagnostics through `agentkit-seo version` and `agentkit-seo doctor`
-- install-time provider detection warnings for clean-machine setups
-- guided context-file scaffolding through `agentkit-seo template context`
-- local install manifests through `agentkit-seo-install.json`
-- bundled wiki folders in installed and exported skill bundles
-- package-level `llms.txt` and `llms-full.txt` files
+| Provider | Install shape | Notes |
+| --- | --- | --- |
+| `claude-code` | Skill folders under `~/.claude/skills/` | Shared skill folders, no provider-specific methodology copy |
+| `codex` | Skill folders under `~/.agents/skills/` and `CODEX_HOME/skills` or `~/.codex/skills/` | Covers current and legacy discovery paths |
+| `gemini-cli` | Extension under `~/.gemini/extensions/agentkit-seo/` | Includes `GEMINI.md`, `gemini-extension.json`, skills, and namespaced commands |
+| `antigravity` | Plugin under `~/.gemini/antigravity-cli/plugins/agentkit-seo/` | Uses Gemini-compatible plugin layout; exact runtime command surfacing still needs live confirmation |
+| `opencode` | Skills plus flat command wrappers | Commands map to shared skill names |
+| `shared` | Portable skill bundle export | Useful for manual or future provider integration |
 
-Provider-facing command shapes available today:
+Working CLI surfaces:
 
-- Gemini CLI namespaced commands such as `/agentkit-seo:linkedin`
-- Antigravity CLI plugin install from the Gemini-compatible layout, with exact imported command syntax still pending confirmation
-- OpenCode flat wrappers such as `/agentkit-seo-linkedin`
+- `agentkit-seo version`
+- `agentkit-seo doctor`
+- `agentkit-seo list providers`
+- `agentkit-seo list skills`
+- `agentkit-seo list commands --provider <provider>`
+- `agentkit-seo template context`
+- `agentkit-seo install --provider <provider>`
+- `agentkit-seo export --provider <provider|all>`
 
-Gemini marketplace preparation now includes:
+Every install writes `agentkit-seo-install.json` with package version, provider, skills, commands, and target paths.
 
-- `gemini-extension.json` at the repository root
-- `GEMINI.md` at the repository root
-- root `commands/agentkit-seo/` wrappers
-- root `skills/` bundles that match the generated Gemini extension layout
-- the required GitHub topic `gemini-cli-extension`
+### LLM wiki and graph status
 
-### Website status
+The runtime wiki layer is installed and exported with provider bundles.
 
-The public website is live and acts as the human-readable knowledge hub.
+- `llms.txt` is the concise package map.
+- `llms-full.txt` concatenates the root wiki, module wiki indexes, and module knowledge files.
+- The root runtime wiki explains the graph navigation contract before agents load module details.
+- Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
+- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
 
-Current role of the site:
+### Website and discovery status
 
-- public project overview
+The public website is live as the human-readable knowledge hub. It exposes:
+
+- project overview
 - skill pages
 - playbooks
 - provider pages
 - installation and usage docs
 - changelog and contact routes
 
-The site is statically built with Astro and deployed to GitHub Pages.
+Indexing baseline:
 
-### Indexing and discoverability status
-
-The current public indexing baseline is in place:
-
-- canonical site URL configured in Astro
-- `robots.txt` allows crawling and exposes the sitemap
-- `sitemap.xml` is generated from public routes, skill routes, and playbooks
-- `llms.txt` provides a public-safe AI-readable summary and route map
-- `llms-full.txt` concatenates the root self-description, module wiki indexes, and module wiki knowledge entries for LLM tools
-- the main repo has its website URL set to the live site
-
-The OG preview asset for the site was corrected and regenerated to fix layout overflow and inconsistent preview styling.
+- canonical site URL configured
+- `robots.txt` exposes the sitemap
+- `sitemap.xml` covers public routes, skill routes, and playbooks
+- public `llms.txt` and `llms-full.txt` exist for AI-readable discovery
+- the main GitHub repo points to the live website
 
 ### Automation status
 
-Three main GitHub Actions pipelines now exist:
+Main repo automation:
 
-#### 1. Site deployment pipeline
+- `.github/workflows/validate.yml` runs validation on pushes and pull requests targeting `main`.
+- `.github/workflows/npm-publish.yml` publishes to npm on pushed `v*` tags after validation and package dry-run checks.
+- The npm publish workflow verifies tag/version alignment and creates the matching GitHub release.
 
-Repo:
+Website automation:
 
-- `agentkit-seo/agentkit-seo.github.io`
+- The website repo deploys to GitHub Pages from `main` through its Pages workflow.
 
-Workflow:
+Validation surfaces currently include:
 
-- `.github/workflows/deploy-pages.yml`
+- `npm run validate`
+- CLI version check
+- provider export smoke test
+- provider install smoke tests into `/tmp`
+- `npm pack --dry-run`
 
-Current behavior:
+### Current priorities
 
-- triggers on pushes to `main`
-- installs dependencies
-- runs the Astro build
-- uploads the `dist` artifact
-- deploys to GitHub Pages
-
-#### 2. npm publish pipeline
-
-Repo:
-
-- `agentkit-seo/agentkit-seo`
-
-Workflow:
-
-- `.github/workflows/npm-publish.yml`
-
-Current behavior:
-
-- triggers on tags matching `v*`
-- verifies the pushed tag matches `package.json`
-- validates package layout through `npm run validate`
-- runs `npm pack --dry-run`
-- publishes to npm with provenance
-- creates the matching GitHub release on success
-
-Required secret:
-
-- `NPM_TOKEN`
-
-Important note:
-
-- the token must work for non-interactive CI publishing; earlier failures were caused by npm `EOTP` until the token setup was corrected
-
-#### 3. Package validation pipeline
-
-Repo:
-
-- `agentkit-seo/agentkit-seo`
-
-Workflow:
-
-- `.github/workflows/validate.yml`
-
-Current behavior:
-
-- triggers on pushes and pull requests targeting `main`
-- runs `npm run validate`
-- checks the CLI `version` command
-- exports all provider bundles
-- smoke-installs Codex, Gemini CLI, and Antigravity CLI bundles into `/tmp`
-- runs `npm pack --dry-run`
-
-### Repo and docs work already completed
-
-Completed repository work includes:
-
-- npm badge/link added to the main `README.md`
-- maintainer architecture map added for agents working across skills, providers, docs, package metadata, and release automation
-- public playbook links added to the root module table and module README files
-- web portfolio runtime and hub guidance expanded for structured-data accuracy, metadata consistency, preview images, author identity, and realistic SEO expectations
-- install docs aligned with the published package
-- canonical `npx agentkit-seo install --provider codex` flow documented
-- direct GitHub invocation documented
-- maintainer local install flow documented
-- `SECURITY.md` added
-- `.github/CODEOWNERS` added
-- GitHub release flow created and verified
-- npm publish workflow now verifies that pushed `v*` tags match `package.json`
-- npm publish workflow now runs the CLI doctor before packaging
-- push and pull request validation workflow added
-- `CHANGELOG.md` added for public release tracking
-- CLI version, doctor, context template, and install manifest support added
-- package validation now checks that runtime skill and provider assets are included in the npm `files` list
-- GitHub organization profile README updated with clickable maintainer badges
-- root `README.md` rewritten as a public landing page centered on the `CLAUDE.md` / `AGENTS.md` career-context analogy
-- public status and release-process detail removed from `README.md` and kept in maintainer docs and `CHANGELOG.md`
-- LLM wiki layer added to runtime skills with per-module `wiki/index.md` and `wiki/knowledge.md` files
-- root self-description added at `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md`
-- skill `## Wiki context` sections added so wiki entries load conditionally during agent work
-- CLI doctor extended to validate wiki metadata, review dates, local wiki links, skill wiki context sections, Gemini mirror wiki folders, and package `files` entries for `llms.txt` and `llms-full.txt`
-- export and install behavior now includes wiki folders for provider bundles
-
-### Current process boundaries
-
-This project is still prioritizing:
+The project is currently prioritizing:
 
 - shared skill quality
 - provider install reliability
 - package clarity
 - public documentation clarity
 - website discoverability
+- source-backed wiki maintenance
 
-This project is not currently prioritizing:
+The project is not currently prioritizing:
 
 - benchmark or eval suites
-- polished showcase/demo assets
-- online latest-version update detection inside Codex itself
+- elaborate showcase assets
+- online latest-version checks inside installed agents
+- broad marketplace-specific rewrites before provider behavior is confirmed
 
-### Remaining gaps
+### Open gaps
 
-Important gaps still open:
-
-- Gemini CLI gallery listing is pending crawler detection after the tagged release
-- Antigravity CLI command syntax needs a live `agy` confirmation after direct plugin install or `agy plugin import gemini`
-- the main repo does not yet have a separately configured custom GitHub social preview
-- installed skills expose local package metadata, but do not yet compare against npm latest
-- demo assets and before/after public examples are still missing
-- the maintainer writing loop for refreshing wiki entries from live sources is planned but not yet shipped
+- Gemini CLI gallery listing still depends on external crawler/listing behavior after tagged releases.
+- Antigravity CLI command syntax needs live `agy` confirmation.
+- The main source repo still needs a dedicated GitHub social preview.
+- Installed skills include local package metadata but do not compare against npm latest.
+- Public demo assets and before/after examples are still sparse.
+- Wiki refresh automation from live official sources is planned but not shipped.
 
 ---
 

@@ -5,6 +5,8 @@ AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted profes
 ## Root
 
 - [AgentKit SEO self-description](.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md): Authoritative definition of AgentKit SEO, ACO, runtime architecture, install behavior, and shared evidence labels.
+- [Repository README](README.md): Public project entrypoint and human-to-runtime graph root.
+- [Maintainer architecture map](.assets/docs/architecture-map.md): Repository layer map for agents and contributors working inside the source tree.
 
 ## Module wikis
 
