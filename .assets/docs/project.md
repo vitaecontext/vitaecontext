@@ -74,6 +74,8 @@ The root runtime wiki is the graph entrypoint for installed agents. Agents shoul
 
 `llms.txt` is the concise LLM-facing map. `llms-full.txt` is the full bundled wiki context generated from the runtime wiki files.
 
+`.assets/docs/getting-started.md` provides setup onboarding. `.assets/docs/end-to-end-workflows.md` demonstrates skill-ready agent workflows with sample inputs, prompts, multimodal material, expected deliverables, and graph navigation rules.
+
 ## 5. Skill modules
 
 The package ships these shared skills:
@@ -141,4 +143,4 @@ The publish workflow validates the package, checks tag/version alignment, publis
 
 ---
 
-See also: [architecture-map.md](./architecture-map.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [current-status.md](./current-status.md), and [MAINTAINING.md](../../MAINTAINING.md).
+See also: [getting-started.md](./getting-started.md), [end-to-end-workflows.md](./end-to-end-workflows.md), [architecture-map.md](./architecture-map.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [current-status.md](./current-status.md), and [MAINTAINING.md](../../MAINTAINING.md).

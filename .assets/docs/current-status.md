@@ -26,6 +26,7 @@ Published release line:
 - `.assets/docs/` contains maintainer docs, status, architecture, and Markdown rules.
 - `llms.txt` and `llms-full.txt` expose the LLM-facing map and bundled wiki layer.
 - `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` is the runtime graph entrypoint for installed agents.
+- `.assets/docs/getting-started.md` provides setup onboarding, and `.assets/docs/end-to-end-workflows.md` provides skill-ready demos with prompts, inputs, and expected deliverables.
 - Root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` are generated Gemini-compatible distribution artifacts stored in the repo intentionally.
 
 ### Shipped skill coverage
@@ -151,4 +152,4 @@ The project is not currently prioritizing:
 
 ---
 
-See also: [architecture-map.md](./architecture-map.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).
+See also: [getting-started.md](./getting-started.md), [end-to-end-workflows.md](./end-to-end-workflows.md), [architecture-map.md](./architecture-map.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).

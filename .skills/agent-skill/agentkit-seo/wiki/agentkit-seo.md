@@ -67,6 +67,7 @@ Before loading detailed module files, agents should use this root wiki as the gr
 2. Choose the relevant module from the linked module wiki indexes.
 3. Read only that module's `wiki/index.md` before deciding whether `wiki/knowledge.md`, `references/`, or human hub files are needed.
 4. Use `llms.txt` as the public package map and `llms-full.txt` as the full bundled wiki context when those files are available in the package checkout.
+5. Use `.assets/docs/getting-started.md` for setup onboarding and `.assets/docs/end-to-end-workflows.md` for demo prompts, sample inputs, multimodal material, and expected deliverables.
 
 ## 6. Install behavior
 
@@ -125,5 +126,7 @@ Human hub files explain playbooks, examples, templates, and source ledgers. Runt
 - [LinkedIn wiki index](../../agentkit-seo-linkedin/wiki/index.md)
 - [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
 - [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
+- [Getting started](../../../../.assets/docs/getting-started.md)
+- [End-to-end demos](../../../../.assets/docs/end-to-end-workflows.md)
 - [llms.txt](../../../../llms.txt)
 - [llms-full.txt](../../../../llms-full.txt)

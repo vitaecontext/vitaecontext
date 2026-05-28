@@ -380,6 +380,8 @@ export function doctor(repoRoot, config) {
       ".skills/architecture.md",
       ".skills/export",
       ".skills/providers",
+      ".assets/docs/getting-started.md",
+      ".assets/docs/end-to-end-workflows.md",
       "hub/agent-context-optimization/templates/context-file-template.md",
       "AGENTS.md",
       "MAINTAINING.md",

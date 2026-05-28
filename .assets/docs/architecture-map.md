@@ -18,13 +18,15 @@ The most important rule is simple: edit the canonical source first, then update 
 For a cold-start agent, use this read order:
 
 1. Read this file to identify the correct layer and files.
-2. Read `.assets/docs/current-status.md` to understand what is already live.
-3. Read `.assets/docs/STYLEGUIDE.md` before editing Markdown, docs, examples, or templates.
-4. Read `.skills/architecture.md` before changing runtime skills, provider adapters, export behavior, or install behavior.
-5. Read `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` when the task is broad, architectural, package-related, or about graph navigation.
-6. Read only the relevant module `SKILL.md`, `wiki/index.md`, `wiki/knowledge.md`, and `references/` files for the target platform.
-7. Make the smallest scoped edit that satisfies the task.
-8. Run the validation listed in the change map before proposing a commit or release.
+2. Read `.assets/docs/getting-started.md` when the task starts from unclear user intent or onboarding.
+3. Read `.assets/docs/end-to-end-workflows.md` when the task needs demo prompts, sample inputs, and expected deliverables.
+4. Read `.assets/docs/current-status.md` to understand what is already live.
+5. Read `.assets/docs/STYLEGUIDE.md` before editing Markdown, docs, examples, or templates.
+6. Read `.skills/architecture.md` before changing runtime skills, provider adapters, export behavior, or install behavior.
+7. Read `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` when the task is broad, architectural, package-related, or about graph navigation.
+8. Read only the relevant module `SKILL.md`, `wiki/index.md`, `wiki/knowledge.md`, and `references/` files for the target platform.
+9. Make the smallest scoped edit that satisfies the task.
+10. Run the validation listed in the change map before proposing a commit or release.
 
 Do not load every skill module by default. Route to one module unless the task is explicitly cross-platform.
 
@@ -151,4 +153,4 @@ npm pack --dry-run
 
 ---
 
-See also: [current-status.md](./current-status.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).
+See also: [getting-started.md](./getting-started.md), [end-to-end-workflows.md](./end-to-end-workflows.md), [current-status.md](./current-status.md), [STYLEGUIDE.md](./STYLEGUIDE.md), [project.md](./project.md), and [MAINTAINING.md](../../MAINTAINING.md).

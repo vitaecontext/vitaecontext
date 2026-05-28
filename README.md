@@ -22,6 +22,7 @@
   <a href="#why-it-exists">Why</a> •
   <a href="#who-its-for">Who It's For</a> •
   <a href="#quick-start">Quick Start</a> •
+  <a href="#new-here">New Here?</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
   <a href="https://agentkit-seo.github.io/">Website</a> •
@@ -102,6 +103,14 @@ Typical outputs include:
 - LinkedIn headline, About, Experience, Featured, and Skills recommendations.
 - Next actions ranked by impact, evidence, and missing inputs.
 
+## New Here?
+
+Start with the practical onboarding path before opening every module:
+
+- [Getting started](./.assets/docs/getting-started.md) explains the repository layers, first install, first use, and graph navigation order.
+- [End-to-end demos](./.assets/docs/end-to-end-workflows.md) shows skill-ready agent workflows with sample inputs, prompts, multimodal material, and expected deliverables.
+- [Architecture map](./.assets/docs/architecture-map.md) is the maintainer and agent map for deciding which layer to edit.
+
 ## Agent Context Optimization
 
 The agent-context-file is a private Markdown file, usually kept outside the repository at `~/.agentkit-seo/<name-surname>-seo-context.md`.
@@ -167,6 +176,7 @@ Maintainer entrypoints:
 
 - [MAINTAINING.md](./MAINTAINING.md) covers source refresh, wiki maintenance, and validation.
 - [AGENTS.md](./AGENTS.md) defines repository instructions for coding agents.
+- [Getting started](./.assets/docs/getting-started.md) and [end-to-end demos](./.assets/docs/end-to-end-workflows.md) provide guided paths for new users and contributors.
 
 ## Install
 

@@ -22,6 +22,8 @@
     ".skills/export",
     ".skills/providers",
     "hub",
+    ".assets/docs/getting-started.md",
+    ".assets/docs/end-to-end-workflows.md",
     ".assets/docs/current-status.md",
     ".assets/docs/project.md",
     ".assets/docs/architecture-map.md",
