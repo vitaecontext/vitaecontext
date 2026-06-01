@@ -28,6 +28,7 @@ Published release line:
 - `llms.txt` and `llms-full.txt` expose the LLM-facing map and bundled wiki layer.
 - `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` is the runtime graph entrypoint for installed agents.
 - `.assets/docs/getting-started.md` provides setup onboarding, and `.assets/docs/end-to-end-workflows.md` provides skill-ready demos with prompts, inputs, and expected deliverables.
+- `DESIGN.md` is the human and recruiter-facing design overview: applied agentic-AI concepts mapped to their source and location, a knowledge-graph diagram, and a release-by-release evolution record.
 - Root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` are generated Gemini-compatible distribution artifacts stored in the repo intentionally.
 
 ### Shipped skill coverage

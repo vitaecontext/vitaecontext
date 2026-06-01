@@ -12,6 +12,7 @@ Use this table before opening deeper files.
 | See what a skill-ready agent can do | [end-to-end-workflows.md](./end-to-end-workflows.md) | The matching runtime skill |
 | Build a private career context file | [hub/agent-context-optimization/README.md](../../hub/agent-context-optimization/README.md) | [agent-context skill](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
 | Optimize one public surface | The matching `hub/<module>/README.md` | The matching `.skills/agent-skill/agentkit-seo-<module>/SKILL.md` |
+| Understand the design thinking and concepts applied | [DESIGN.md](../../DESIGN.md) | [architecture-map.md](./architecture-map.md) |
 | Understand the repo architecture | [architecture-map.md](./architecture-map.md) | [.skills/architecture.md](../../.skills/architecture.md) |
 | Understand the runtime knowledge graph | [root runtime wiki](../../.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md) | [llms.txt](../../llms.txt) |
 | Maintain or release the package | [MAINTAINING.md](../../MAINTAINING.md) | [current-status.md](./current-status.md) |

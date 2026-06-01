@@ -24,6 +24,7 @@
   <a href="#quick-start">Quick Start</a> •
   <a href="#new-here">New Here?</a> •
   <a href="#modules">Modules</a> •
+  <a href="#design-principles">Design</a> •
   <a href="#install">Install</a> •
   <a href="https://agentkit-seo.github.io/">Website</a> •
   <a href="#authors">Authors</a>
@@ -152,6 +153,45 @@ Keep the context file private. A portable location is:
 ```
 
 This is not a prompt collection. It is an operating manual for agents working on professional identity: verify facts first, then optimize the surface.
+
+## Design principles
+
+AgentKit SEO is a small system that applies current agentic-AI ideas, not just a set of prompts. Each concept below is implemented in the repository.
+
+| Concept | One-line idea | Where it lives |
+| --- | --- | --- |
+| Career context file | A private `AGENTS.md` for a person: verified facts an agent reads before writing | [agent-context-optimization](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
+| LLM Wiki | A knowledge base the model reads, not one it writes | [`wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [llms-full.txt](./llms-full.txt) |
+| Progressive disclosure | Load one module, then only the references a task needs | `## Wiki context` sections in each `SKILL.md` |
+| Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [references](./.skills/agent-skill/agentkit-seo/references/), [llms.txt](./llms.txt) |
+| Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` metadata |
+| One source, many adapters | Keep one portable source, generate per-provider layouts | [`.skills/agent-skill/`](./.skills/agent-skill/), [`.skills/providers/`](./.skills/providers/) |
+
+The pieces connect as a navigable graph: a broad question enters at one entrypoint and narrows to a single module and constraint, instead of loading the whole system.
+
+```mermaid
+flowchart TD
+  CTX["agent-context-file (private source of truth)"]
+  README["README.md"]
+  ROOT["root runtime wiki"]
+  SKILL["agentkit-seo-(module)/SKILL.md"]
+  REF["references/*.md"]
+  WIDX["wiki/index.md"]
+  WKNOW["wiki/knowledge.md"]
+  HUB["hub/(module)/README.md"]
+  LLMS["llms.txt and llms-full.txt"]
+
+  README --> ROOT
+  README --> HUB
+  ROOT --> SKILL
+  ROOT --> LLMS
+  SKILL --> REF
+  SKILL --> WIDX
+  WIDX --> WKNOW
+  CTX -. read before writing .-> SKILL
+```
+
+[DESIGN.md](./DESIGN.md) explains each concept, the graph, and how the design evolved release by release.
 
 ## LLM Wiki
 

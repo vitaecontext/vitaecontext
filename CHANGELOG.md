@@ -6,6 +6,11 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+### Added
+
+- Added `DESIGN.md`, a human and recruiter-facing overview that maps each applied agentic-AI concept (career context file, LLM Wiki, progressive disclosure, Markdown knowledge graph, evidence labeling, one-source-many-adapters) to its origin and to where it lives in the source tree, with a knowledge-graph diagram and a release-by-release record of how the design evolved.
+- Added a `Design principles` section to `README.md` with a concept table and a Mermaid knowledge-graph diagram, plus a `Design` navigation link and a `getting-started.md` path entry.
+
 ### Changed
 
 - Extended `agentkit-seo update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
