@@ -349,6 +349,45 @@ function validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, erro
   validateGeminiWikiMirror(repoRoot, config, errors);
 }
 
+function readSkillFrontmatter(skillFilePath) {
+  const content = fs.readFileSync(skillFilePath, "utf8");
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  return match ? match[1] : null;
+}
+
+// Enforce the Agent Skills description convention: every skill states what it does
+// AND when to use it, within the 1024-character description budget. Agents tend to
+// under-trigger skills whose descriptions omit the "when", so this is a hard check.
+function validateSkillDescriptions(repoRoot, config, errors) {
+  for (const skill of config.skills ?? []) {
+    const skillFile = path.join(repoRoot, skill.source, "SKILL.md");
+    if (!fs.existsSync(skillFile)) {
+      continue;
+    }
+    const frontmatter = readSkillFrontmatter(skillFile);
+    if (!frontmatter) {
+      errors.push(`${skill.source}/SKILL.md is missing YAML frontmatter`);
+      continue;
+    }
+    const descMatch = frontmatter.match(/^description:\s*(.+)$/m);
+    const description = descMatch ? descMatch[1].trim().replace(/^["']|["']$/g, "") : "";
+    if (!description) {
+      errors.push(`${skill.source}/SKILL.md frontmatter is missing description`);
+      continue;
+    }
+    if (description.length > 1024) {
+      errors.push(
+        `${skill.source}/SKILL.md description is ${description.length} chars; keep it within 1024 and move detail into references/`
+      );
+    }
+    if (!/\buse\b[\s\S]*\bwhen\b/i.test(description)) {
+      errors.push(
+        `${skill.source}/SKILL.md description must state when to use the skill (include a "Use when ..." clause)`
+      );
+    }
+  }
+}
+
 export function doctor(repoRoot, config) {
   const errors = [];
   const warnings = [];
@@ -434,6 +473,7 @@ export function doctor(repoRoot, config) {
   for (const [provider, providerSpec] of Object.entries(config.providers ?? {})) {
     validateProvider(repoRoot, provider, providerSpec, packageMetadata, errors);
   }
+  validateSkillDescriptions(repoRoot, config, errors);
   validateWikiFiles(repoRoot, config, errors, warnings);
   validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors);
 
@@ -450,6 +490,7 @@ export function doctor(repoRoot, config) {
 
   console.log(`ok: package ${packageMetadata.name}@${packageMetadata.version}`);
   console.log(`ok: ${config.skills.length} skill source(s)`);
+  console.log("ok: skill descriptions state what and when");
   console.log(`ok: ${Object.keys(config.providers).length} provider adapter(s)`);
   console.log("ok: context template available");
   console.log("ok: wiki files valid");

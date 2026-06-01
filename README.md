@@ -166,6 +166,9 @@ AgentKit SEO is a small system that applies current agentic-AI ideas, not just a
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [references](./.skills/agent-skill/agentkit-seo/references/), [llms.txt](./llms.txt) |
 | Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` metadata |
 | One source, many adapters | Keep one portable source, generate per-provider layouts | [`.skills/agent-skill/`](./.skills/agent-skill/), [`.skills/providers/`](./.skills/providers/) |
+| AI-answer-engine readiness (GEO/AEO) | Structure each surface so AI search and assistants can quote a person accurately | [GitHub Copilot indexing](./hub/github/copilot-and-agents.md), [LinkedIn AI structure](./hub/linkedin/ai-agent-optimization.md), [portfolio AEO](./hub/web-portfolio/llms-and-aeo.md) |
+
+Hiring discovery increasingly runs through AI answer engines, so the same properties these modules enforce, consistent facts across surfaces and verifiable proof, are what those systems can quote accurately. The project treats generative and answer engine optimization as an evolving practice with no guaranteed ranking outcome, not a promise.
 
 The pieces connect as a navigable graph: a broad question enters at one entrypoint and narrows to a single module and constraint, instead of loading the whole system.
 
@@ -211,6 +214,22 @@ The repository separates human documentation from runtime agent artifacts:
 - `.skills/export/` contains the install, export, doctor, and template CLI.
 - `.skills/providers/` contains provider-specific adapter notes and wrappers.
 - `commands/`, `skills/`, `GEMINI.md`, and `gemini-extension.json` provide the Gemini-compatible root distribution layout.
+
+One canonical source generates every provider layout, so methodology never drifts between tools:
+
+```mermaid
+flowchart LR
+  SRC[".skills/agent-skill/<br/>canonical SKILL.md + references + wiki"]
+  ADP[".skills/providers/<br/>thin adapters"]
+  EXP[".skills/export/<br/>export + install CLI"]
+  SRC --> EXP
+  ADP --> EXP
+  EXP --> CC["Claude Code"]
+  EXP --> CX["Codex"]
+  EXP --> GM["Gemini CLI / Antigravity"]
+  EXP --> OC["OpenCode"]
+  EXP --> NPM["npm package +<br/>root Gemini mirror"]
+```
 
 Maintainer entrypoints:
 

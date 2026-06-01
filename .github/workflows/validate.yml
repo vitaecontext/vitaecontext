@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Run unit tests
+        run: npm test
+
       - name: Validate CLI package layout
         run: npm run validate
 

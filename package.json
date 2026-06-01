@@ -47,6 +47,7 @@
     "install:skills": "node .skills/export/scripts/agentkit-seo.mjs install",
     "list:providers": "node .skills/export/scripts/agentkit-seo.mjs list providers",
     "list:skills": "node .skills/export/scripts/agentkit-seo.mjs list skills",
+    "test": "node --test",
     "validate": "node .skills/export/scripts/agentkit-seo.mjs doctor",
     "version:cli": "node .skills/export/scripts/agentkit-seo.mjs version"
   },

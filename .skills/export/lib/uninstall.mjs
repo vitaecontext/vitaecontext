@@ -26,7 +26,7 @@ function readManifest(targetRoot) {
 // artifacts. The manifest is authoritative for *where* files landed (it records the
 // resolved skill and command targets); config supplies the skill folder and command
 // file names. When no manifest is present we fall back to recomputing the same paths.
-function collectRemovals(repoRoot, provider, config, flags, manifest, targetRoot) {
+export function collectRemovals(repoRoot, provider, config, flags, manifest, targetRoot) {
   const providerSpec = config.providers[provider];
   const layout = manifest?.layout ?? providerSpec.layout;
 

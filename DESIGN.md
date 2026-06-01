@@ -25,6 +25,7 @@ The following table maps each concept to its origin and to where it lives in the
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [`references/`](./.skills/agent-skill/agentkit-seo/references/) link graph, [`llms.txt`](./llms.txt) |
 | Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` confidence metadata |
 | One source, many adapters | Keep one portable source of truth, generate per-provider layouts | [`.skills/agent-skill/`](./.skills/agent-skill/) plus [`.skills/providers/`](./.skills/providers/) |
+| AI-answer-engine readiness (GEO/AEO) | Structure each surface so AI search and assistants can quote a person accurately | per-module AI-readability guidance ([GitHub](./hub/github/copilot-and-agents.md), [LinkedIn](./hub/linkedin/ai-agent-optimization.md), [portfolio](./hub/web-portfolio/llms-and-aeo.md)) |
 
 ### Career context file as an `AGENTS.md` for a person
 
@@ -49,6 +50,10 @@ Career advice is only useful if its certainty is visible. Cross-surface output l
 ### One portable source, thin provider adapters
 
 Runtime methodology lives once in [`.skills/agent-skill/`](./.skills/agent-skill/). Provider folders stay thin: install notes, command wrappers, and metadata. The export CLI generates each provider's required layout from the single source, so the same methodology installs into six environments without a second copy drifting out of sync.
+
+### AI-answer-engine readiness (GEO/AEO)
+
+Career discovery increasingly happens inside AI answer engines: people and recruiters ask an assistant rather than scanning a list of links. Generative engine optimization and answer engine optimization are the current names for being quoted accurately in those answers. AgentKit SEO does not chase a ranking trick for this; the same properties it already enforces, consistent facts across surfaces, explicit structure, and verifiable proof, are exactly what an answer engine needs to cite a person without inventing or contradicting details. Each platform module already carries surface-specific AI-readability guidance, from GitHub Copilot indexing to LinkedIn AI-readable structure to portfolio AEO. The project treats this as an evolving practice and labels it as such, rather than promising placement in any AI answer.
 
 ## The knowledge graph
 
@@ -96,7 +101,7 @@ These are influences rather than guarantees. AgentKit SEO does not claim ranking
 - The LLM Wiki framing, knowledge the model reads rather than writes, is associated with Andrej Karpathy's commentary on building knowledge for language models.
 - The context-file pattern follows the repository `AGENTS.md` and `CLAUDE.md` convention for giving agents project context before they act.
 - Progressive disclosure follows the agent-skill design idea that an agent should load instructions and reference material only when a task needs them.
-- `llms.txt` and `llms-full.txt` follow an emerging community convention for exposing an AI-readable map of a site or package; this project treats it as a convention, not a search-ranking guarantee.
+- `llms.txt` and `llms-full.txt` follow an emerging community convention for exposing an AI-readable map of a site or package. As of 2026 its adoption is still limited and its measured effect on AI citations is unproven, so this project ships it as a low-cost, honestly-labeled convention (an inferred, low-confidence signal) rather than a search-ranking lever.
 
 ---
 

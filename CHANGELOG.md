@@ -10,10 +10,14 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 - Added `DESIGN.md`, a human and recruiter-facing overview that maps each applied agentic-AI concept (career context file, LLM Wiki, progressive disclosure, Markdown knowledge graph, evidence labeling, one-source-many-adapters) to its origin and to where it lives in the source tree, with a knowledge-graph diagram and a release-by-release record of how the design evolved.
 - Added a `Design principles` section to `README.md` with a concept table and a Mermaid knowledge-graph diagram, plus a `Design` navigation link and a `getting-started.md` path entry.
+- Added a `node:test` unit suite under `test/` covering semver comparison, CLI flag parsing, package-file matching, install-root resolution, and uninstall path collection, wired into CI through an `npm test` step in `validate.yml`.
+- Named AI-answer-engine readiness (GEO/AEO) as an applied concept in `README.md` and `DESIGN.md`, mapped to the existing per-module AI-readability guidance and labeled as an evolving practice with no ranking guarantee.
+- Added a one-source-to-many-adapters distribution diagram to the `README.md` repository layout section.
 
 ### Changed
 
 - Extended `agentkit-seo update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
+- Extended `agentkit-seo doctor` to enforce the Agent Skills description convention: every configured skill must declare a non-empty `description` within 1024 characters that states when to use the skill. Documented the convention in `STYLEGUIDE.md`.
 
 ## 1.7.0 - 2026-06-01
 

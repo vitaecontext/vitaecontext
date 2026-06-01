@@ -85,7 +85,7 @@ The runtime wiki layer is installed and exported with provider bundles.
 - `llms-full.txt` concatenates the root wiki, module wiki indexes, and module knowledge files.
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
-- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
+- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, skill description convention (what plus when, within 1024 characters), Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
 - `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the seven installed runtime skills.
 
 ### Website and discovery status
@@ -121,6 +121,7 @@ Website automation:
 
 Validation surfaces currently include:
 
+- `npm test` (deterministic `node:test` unit suite for the CLI library)
 - `npm run validate`
 - CLI version check
 - provider export smoke test
