@@ -6,6 +6,11 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+### Added
+
+- Added `agentkit-seo update`, an explicit, opt-in CLI command that compares the local package version against the npm registry latest and reports whether an update is available. It runs only when invoked, supports `--json` and `--timeout`, and never checks for updates automatically.
+- Added `agentkit-seo uninstall --provider <provider>`, which reads the install manifest and removes only the AgentKit SEO skill folders, command wrappers, and manifest it created. Shared skill directories keep unrelated skills; Gemini-style extension and plugin installs remove their dedicated directory. Supports `--dry-run` and `--force`.
+
 ## 1.6.1 - 2026-05-27
 
 ### Fixed

@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-05-27
+## As of 2026-06-01
 
 ### Public surfaces
 
@@ -63,12 +63,14 @@ Working install targets:
 Working CLI surfaces:
 
 - `agentkit-seo version`
+- `agentkit-seo update` (compares the local version against the npm registry latest; explicit, network-only, never automatic; supports `--json` and `--timeout`)
 - `agentkit-seo doctor`
 - `agentkit-seo list providers`
 - `agentkit-seo list skills`
 - `agentkit-seo list commands --provider <provider>`
 - `agentkit-seo template context`
 - `agentkit-seo install --provider <provider>`
+- `agentkit-seo uninstall --provider <provider>` (manifest-driven removal of installed skills, command wrappers, and manifest; supports `--dry-run` and `--force`)
 - `agentkit-seo export --provider <provider|all>`
 
 Every install writes `agentkit-seo-install.json` with package version, provider, skills, commands, and target paths.
@@ -146,7 +148,7 @@ The project is not currently prioritizing:
 - Gemini CLI gallery listing still depends on external crawler/listing behavior after tagged releases.
 - Antigravity CLI command syntax needs live `agy` confirmation.
 - The main source repo still needs a dedicated GitHub social preview.
-- Installed skills include local package metadata but do not compare against npm latest.
+- `agentkit-seo update` provides an explicit npm-latest comparison, but installed skills still carry only local package metadata and do not self-check against npm at agent runtime.
 - Public demo assets and before/after examples are still sparse.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
 

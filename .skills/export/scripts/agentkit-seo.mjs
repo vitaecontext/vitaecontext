@@ -11,9 +11,11 @@ import { exportProvider } from "../lib/export.mjs";
 import { installProvider } from "../lib/install.mjs";
 import { listCommands, listProviders, listSkills } from "../lib/list.mjs";
 import { templateContext } from "../lib/template.mjs";
+import { uninstallProvider } from "../lib/uninstall.mjs";
+import { checkForUpdates } from "../lib/update.mjs";
 import { showVersion } from "../lib/version.mjs";
 
-function run() {
+async function run() {
   const [, , command, ...rest] = process.argv;
   if (!command || command === "help" || command === "--help" || command === "-h") {
     usage();
@@ -25,6 +27,12 @@ function run() {
 
   if (command === "version") {
     showVersion(config);
+    return;
+  }
+
+  if (command === "update") {
+    const flags = parseFlags(rest);
+    await checkForUpdates(config, flags);
     return;
   }
 
@@ -83,6 +91,24 @@ function run() {
     return;
   }
 
+  if (command === "uninstall") {
+    const flags = parseFlags(rest);
+    if (!flags.provider) {
+      throw new Error(
+        "Usage: agentkit-seo uninstall --provider <provider> [--project-root <dir>|--target-dir <dir>] [--dry-run] [--force]"
+      );
+    }
+    if (flags.provider === "all") {
+      throw new Error("Uninstall accepts one provider at a time so destinations stay explicit.");
+    }
+    if (!config.providers[flags.provider]) {
+      const available = Object.keys(config.providers).sort().join(", ");
+      throw new Error(`Unknown provider '${flags.provider}'. Available: ${available}`);
+    }
+    uninstallProvider(repoRoot, flags.provider, config, flags);
+    return;
+  }
+
   if (command !== "export") {
     throw new Error(`Unknown command: ${command}`);
   }
@@ -118,9 +144,7 @@ function run() {
   }
 }
 
-try {
-  run();
-} catch (error) {
+run().catch((error) => {
   console.error(`error: ${error.message}`);
   process.exit(1);
-}
+});

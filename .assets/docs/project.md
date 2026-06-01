@@ -138,7 +138,7 @@ The publish workflow validates the package, checks tag/version alignment, publis
 - Track Gemini gallery listing behavior after release crawler updates.
 - Add a dedicated GitHub social preview for the source repo.
 - Add selective demos or before/after examples when they improve public communication.
-- Consider online latest-version checks for installed agents.
+- The `agentkit-seo update` CLI provides explicit npm-latest checks; consider whether installed agents should surface latest-version status at runtime.
 - Consider more automation around the existing maintainer-only wiki refresh workflow.
 
 ---

@@ -57,7 +57,7 @@ function writeInstallManifest(
   return manifestPath;
 }
 
-function resolveInstallRoot(flags, providerSpec, provider) {
+export function resolveInstallRoot(flags, providerSpec, provider) {
   if (flags["target-dir"]) {
     return path.resolve(expandUserPath(flags["target-dir"]));
   }
@@ -85,7 +85,7 @@ function resolveInstallRoot(flags, providerSpec, provider) {
   );
 }
 
-function resolveCommandInstallRoot(flags, providerSpec) {
+export function resolveCommandInstallRoot(flags, providerSpec) {
   if (!providerSpec.commandTarget || !providerSpec.commands) {
     return null;
   }
@@ -109,7 +109,7 @@ function resolveCommandInstallRoot(flags, providerSpec) {
   return null;
 }
 
-function resolveAdditionalSkillInstallRoots(flags, providerSpec) {
+export function resolveAdditionalSkillInstallRoots(flags, providerSpec) {
   if (flags["target-dir"]) {
     return [];
   }

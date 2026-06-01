@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: 2026-05-19
+Last updated: 2026-06-01
 
 AgentKit SEO is a local-first, open-source npm package. It provides Markdown skills, provider adapters, command wrappers, templates, and a small CLI for exporting or installing those files into supported agent environments.
 
@@ -56,7 +56,9 @@ AgentKit SEO does not create or upload a personal context file unless the user e
 
 The package CLI is designed to work from local package contents. It does not need a hosted AgentKit SEO service.
 
-Network access may still occur outside the package's control when users:
+The one exception is `agentkit-seo update`: when a user explicitly runs that command, the CLI makes a single outbound request to the public npm registry (`https://registry.npmjs.org`) to read the latest published version of the package. It sends no personal data, runs only when invoked, and is never triggered automatically or in the background. All other CLI commands work from local files only.
+
+Network access may also occur outside the package's control when users:
 
 - install the package from npm or GitHub
 - clone or fetch this repository

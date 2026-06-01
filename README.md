@@ -201,10 +201,21 @@ Useful package commands:
 
 ```bash
 npx agentkit-seo version
+npx agentkit-seo update
 npx agentkit-seo doctor
 npx agentkit-seo list providers
 npx agentkit-seo list skills
 ```
+
+`update` checks the npm registry for the latest published version and compares it to the version you are running. It only runs when you invoke it; AgentKit SEO never checks for updates on its own. When an update is available, reinstall the skills from the latest package.
+
+Remove an install with the same provider and destination flags used to install it:
+
+```bash
+npx agentkit-seo uninstall --provider codex
+```
+
+`uninstall` reads the `agentkit-seo-install.json` manifest and removes only the AgentKit SEO skill folders, command wrappers, and manifest it created, leaving unrelated skills in shared directories untouched. Use `--dry-run` to preview the removal first.
 
 Install from GitHub without a local clone:
 
