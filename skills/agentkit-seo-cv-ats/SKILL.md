@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-cv-ats
 description: Optimize CV and resume content for recruiter readability and parser-safe ATS handling without making unsupported claims about exact vendor scoring. Use when the user asks about resumes, CVs, ATS formatting, keyword strategy, bullets, section order, achievement metrics, or job-targeted resume tailoring.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO CV ATS
@@ -16,6 +20,7 @@ Use only the CV and ATS guidance relevant to the requested deliverable. Keep the
 - Job-description tailoring and bullet rewrites: [references/keywords-and-bullets.md](references/keywords-and-bullets.md)
 - Parser-failure diagnosis, LaTeX/PDF post-build QA, or plain-text extraction: [references/parser-risks-and-agent-workflow.md](references/parser-risks-and-agent-workflow.md)
 - Full-document review, consistency checks, maintenance: [references/cv-audit-and-maintenance.md](references/cv-audit-and-maintenance.md)
+- Audit scorecard and prioritized fix-first ranking: [references/audit-scoring.md](references/audit-scoring.md)
 
 ## Wiki context
 
@@ -79,5 +84,6 @@ Return only requested-relevant sections. For full CV audits or broad tailoring p
 5. missing facts or evidence needed before stronger claims
 
 For audits, use concise labels such as `Verified`, `From context`, `From job description`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Include a `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews; omit it for narrow bullet or section rewrites unless more input is needed.
+When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a vendor ATS score or pass guarantee.
 
 Human playbook: [hub/cv-ats/README.md](../../../hub/cv-ats/README.md).

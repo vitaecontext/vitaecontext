@@ -13,11 +13,14 @@ This project follows npm package versions and mirrors them with matching GitHub 
 - Added a `node:test` unit suite under `test/` covering semver comparison, CLI flag parsing, package-file matching, install-root resolution, and uninstall path collection, wired into CI through an `npm test` step in `validate.yml`.
 - Named AI-answer-engine readiness (GEO/AEO) as an applied concept in `README.md` and `DESIGN.md`, mapped to the existing per-module AI-readability guidance and labeled as an evolving practice with no ranking guarantee.
 - Added a one-source-to-many-adapters distribution diagram to the `README.md` repository layout section.
+- Added Claude Code plugin-marketplace distribution: `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json` so the skills install through `/plugin marketplace add` and `/plugin install`, included in the npm package and validated by `doctor`.
+- Added an `audit-scoring.md` reference to the GitHub, LinkedIn, CV/ATS, and web-portfolio skills: a weighted 0-100 triage scorecard with bands and a prioritized fix-first ranking, explicitly labeled as an internal prioritization heuristic rather than a platform ranking, and wired into each skill's response shape.
+- Added `license` and a `metadata` block (homepage, repository) to every runtime `SKILL.md` frontmatter so provenance travels with the installed skill.
 
 ### Changed
 
 - Extended `agentkit-seo update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
-- Extended `agentkit-seo doctor` to enforce the Agent Skills description convention: every configured skill must declare a non-empty `description` within 1024 characters that states when to use the skill. Documented the convention in `STYLEGUIDE.md`.
+- Extended `agentkit-seo doctor` to enforce the Agent Skills description convention: every configured skill must declare a non-empty `description` within 1024 characters (warning over 500) that states when to use the skill, plus a `license` field; and to validate the Claude Code marketplace and plugin manifests against `package.json`. Documented the conventions in `STYLEGUIDE.md`.
 
 ## 1.7.0 - 2026-06-01
 

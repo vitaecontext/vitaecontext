@@ -105,6 +105,14 @@ Do not edit these by hand:
 
 Provider adapter folders under `.skills/providers/` are thin wrappers. Put methodology changes in `hub/` and `.skills/agent-skill/`, not in provider adapter notes.
 
+## Version files to bump on release
+
+When cutting a release, set the new version in `package.json`, then keep these in sync (`agentkit-seo doctor` fails the build if any drift):
+
+- `package.json` - the source of truth.
+- `.claude-plugin/plugin.json` and the plugin entry in `.claude-plugin/marketplace.json` - bump by hand.
+- Root `gemini-extension.json` and the two provider `gemini-extension.json` files - regenerated with the correct version when you re-run the export CLI to refresh the Gemini mirror, so regenerate the mirror after the bump.
+
 ## Pull request checklist
 
 Before opening a PR that touches knowledge, skills, wiki entries, or sources:

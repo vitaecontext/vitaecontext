@@ -18,6 +18,7 @@
     "access": "public"
   },
   "files": [
+    ".claude-plugin",
     ".skills/agent-skill",
     ".skills/export",
     ".skills/providers",

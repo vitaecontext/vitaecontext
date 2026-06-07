@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-linkedin
 description: Optimize LinkedIn profile structure and discoverability for headline, about, featured, experience, skills, and AI-readable positioning. Use when the user asks to improve a LinkedIn profile, headline, about section, featured section, experience entry, skills list, creator visibility, or LinkedIn search and feed discoverability.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO LinkedIn
@@ -16,6 +20,7 @@ Use only the LinkedIn module unless the user explicitly asks for cross-platform 
 - Search visibility, activity, comments, AI readability: [references/discoverability-and-activity.md](references/discoverability-and-activity.md)
 - Full-profile review, consistency checks, update workflow: [references/profile-audit-and-maintenance.md](references/profile-audit-and-maintenance.md)
 - Algorithm rationale, confidence labels, `360Brew`: [references/algorithm-confidence.md](references/algorithm-confidence.md)
+- Audit scorecard and prioritized fix-first ranking: [references/audit-scoring.md](references/audit-scoring.md)
 
 ## Wiki context
 
@@ -74,5 +79,6 @@ Return only requested-relevant sections. For audits, return:
 5. requests for the smallest missing inputs needed to finish the next pass
 
 For audits, use concise labels such as `Verified`, `From context`, `Official guidance`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Include a `Depth note` only for broad audits, incomplete inputs, or intentionally deferred profile/activity review.
+When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a LinkedIn ranking.
 
 Human playbook: [hub/linkedin/README.md](../../../hub/linkedin/README.md).
