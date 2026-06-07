@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-x-twitter
 description: Optimize X and Twitter profile positioning, pinned post strategy, posting structure, and discoverability using conservative platform guidance. Use when the user asks about X or Twitter bio copy, pinned posts, content cadence, profile optimization, engagement strategy, premium tactics, or feed/search discoverability.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO X/Twitter

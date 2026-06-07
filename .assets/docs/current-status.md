@@ -62,6 +62,8 @@ Working install targets:
 | `opencode` | Skills plus flat command wrappers | Commands map to shared skill names |
 | `shared` | Portable skill bundle export | Useful for manual or future provider integration |
 
+The npm CLI install path is complemented by a Claude Code plugin-marketplace channel: `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json` let users run `/plugin marketplace add agentkit-seo/agentkit-seo` and `/plugin install agentkit-seo@agentkit-seo`.
+
 Working CLI surfaces:
 
 - `agentkit-seo version`
@@ -85,7 +87,7 @@ The runtime wiki layer is installed and exported with provider bundles.
 - `llms-full.txt` concatenates the root wiki, module wiki indexes, and module knowledge files.
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
-- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, skill description convention (what plus when, within 1024 characters), Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
+- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, skill description convention (what plus when, within 1024 characters) and `license` field, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
 - `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the seven installed runtime skills.
 
 ### Website and discovery status

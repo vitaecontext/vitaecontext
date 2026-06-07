@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-github
 description: Optimize GitHub profile and repository discoverability, clarity, and trust signals using documented search, metadata, and repository-structure guidance. Use when the user asks about profile README content, pinned repos, repository README structure, topics, descriptions, social preview, code search visibility, or GitHub-facing portfolio positioning.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO GitHub
@@ -16,6 +20,7 @@ Use this skill to improve GitHub discoverability, comprehension, and trust witho
 - Code search, indexing limits, Linguist, language stats: [references/search-indexing-and-linguist.md](references/search-indexing-and-linguist.md)
 - Full-profile or repository audit: [references/profile-and-repo-audit.md](references/profile-and-repo-audit.md)
 - `AGENTS.md`, Copilot instructions, AI-readable repo structure: [references/copilot-and-agent-readiness.md](references/copilot-and-agent-readiness.md)
+- Audit scorecard and prioritized fix-first ranking: [references/audit-scoring.md](references/audit-scoring.md)
 
 ## Wiki context
 
@@ -78,5 +83,6 @@ Return:
 
 For audits, make the output feel like a grounded review rather than a generic marketing report. Use concise labels such as `Verified`, `From context`, and `Inference` when a claim could otherwise be ambiguous.
 When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.
+When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a platform ranking.
 
 Human playbook: [hub/github/README.md](../../../hub/github/README.md).

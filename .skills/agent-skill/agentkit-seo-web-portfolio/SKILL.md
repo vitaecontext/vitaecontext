@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-web-portfolio
 description: Optimize personal website and web portfolio discoverability, crawlability, metadata, structured data, content usefulness, and AI-readable signals. Use when the user asks about portfolio pages, titles, meta descriptions, canonical tags, snippets, indexability, JavaScript SEO, structured data, performance, llms.txt, or web-based personal branding.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO Web Portfolio
@@ -16,6 +20,7 @@ Use this skill to improve how a personal site is crawled, rendered, summarized, 
 - Homepage, About, project page, metadata, `llms.txt` copy: [references/section-recipes.md](references/section-recipes.md)
 - Case studies, performance, AI retrieval conventions: [references/content-performance-and-aeo.md](references/content-performance-and-aeo.md)
 - Existing-site audit or maintenance: [references/portfolio-audit-and-maintenance.md](references/portfolio-audit-and-maintenance.md)
+- Audit scorecard and prioritized fix-first ranking: [references/audit-scoring.md](references/audit-scoring.md)
 
 ## Wiki context
 
@@ -76,5 +81,6 @@ Return:
 5. context-file gaps that affect public claims
 
 For audits, use concise labels such as `Verified`, `From source`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Mark unsupported responsibilities, metrics, seniority, clients, testimonials, or outcomes as gaps rather than turning them into metadata, schema, or copy. When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.
+When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a ranking or indexing guarantee.
 
 Human playbook: [hub/web-portfolio/README.md](../../../hub/web-portfolio/README.md).

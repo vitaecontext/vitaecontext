@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-wiki-maintenance
 description: Maintainer-only skill for refreshing AgentKit SEO wiki knowledge from official sources. Use only from a local repository clone when a maintainer asks to refresh one module, audit all module wiki entries, or audit module source lists.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO Wiki Maintenance

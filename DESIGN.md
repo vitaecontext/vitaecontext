@@ -101,6 +101,7 @@ These are influences rather than guarantees. AgentKit SEO does not claim ranking
 - The LLM Wiki framing, knowledge the model reads rather than writes, is associated with Andrej Karpathy's commentary on building knowledge for language models.
 - The context-file pattern follows the repository `AGENTS.md` and `CLAUDE.md` convention for giving agents project context before they act.
 - Progressive disclosure follows the agent-skill design idea that an agent should load instructions and reference material only when a task needs them.
+- The audit scoring pattern (weighted categories rolled into a 0-100 band with a fix-first ranking) is adapted from open generative-engine-optimization tooling such as the geo-optimizer skill, and used here strictly as an internal prioritization heuristic, not a platform metric.
 - `llms.txt` and `llms-full.txt` follow an emerging community convention for exposing an AI-readable map of a site or package. As of 2026 its adoption is still limited and its measured effect on AI citations is unproven, so this project ships it as a low-cost, honestly-labeled convention (an inferred, low-confidence signal) rather than a search-ranking lever.
 
 ---

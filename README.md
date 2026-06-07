@@ -256,6 +256,13 @@ Supported providers:
 | `antigravity` | `~/.gemini/antigravity-cli/plugins/agentkit-seo/` | Plugin layout based on the Gemini-compatible bundle |
 | `opencode` | `~/.config/opencode/skills/` plus command wrappers | Native skill loading plus flat command wrappers |
 
+In Claude Code, the skills are also available as a plugin marketplace:
+
+```text
+/plugin marketplace add agentkit-seo/agentkit-seo
+/plugin install agentkit-seo@agentkit-seo
+```
+
 Useful package commands:
 
 ```bash

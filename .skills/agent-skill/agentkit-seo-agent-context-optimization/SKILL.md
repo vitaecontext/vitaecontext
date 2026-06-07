@@ -1,6 +1,10 @@
 ---
 name: agentkit-seo-agent-context-optimization
 description: Build, normalize, and maintain the user's personal professional source-of-truth context so downstream platform outputs stay factual and consistent. Use when the user wants to consolidate CV data, LinkedIn exports, GitHub history, project summaries, bio facts, achievements, or positioning into a single agent-readable context file before editing platform-specific assets.
+license: MIT
+metadata:
+  homepage: https://agentkit-seo.github.io/
+  repository: https://github.com/agentkit-seo/agentkit-seo
 ---
 
 # AgentKit SEO Agent Context Optimization

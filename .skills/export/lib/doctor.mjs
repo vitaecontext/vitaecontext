@@ -358,7 +358,8 @@ function readSkillFrontmatter(skillFilePath) {
 // Enforce the Agent Skills description convention: every skill states what it does
 // AND when to use it, within the 1024-character description budget. Agents tend to
 // under-trigger skills whose descriptions omit the "when", so this is a hard check.
-function validateSkillDescriptions(repoRoot, config, errors) {
+// Also require an SPDX license so it travels with the installed skill.
+function validateSkillDescriptions(repoRoot, config, errors, warnings) {
   for (const skill of config.skills ?? []) {
     const skillFile = path.join(repoRoot, skill.source, "SKILL.md");
     if (!fs.existsSync(skillFile)) {
@@ -379,12 +380,74 @@ function validateSkillDescriptions(repoRoot, config, errors) {
       errors.push(
         `${skill.source}/SKILL.md description is ${description.length} chars; keep it within 1024 and move detail into references/`
       );
+    } else if (description.length > 500) {
+      warnings.push(
+        `${skill.source}/SKILL.md description is ${description.length} chars; aim for under 500 so the trigger stays sharp`
+      );
     }
     if (!/\buse\b[\s\S]*\bwhen\b/i.test(description)) {
       errors.push(
         `${skill.source}/SKILL.md description must state when to use the skill (include a "Use when ..." clause)`
       );
     }
+    if (!/^license:\s*\S+/m.test(frontmatter)) {
+      errors.push(`${skill.source}/SKILL.md frontmatter is missing a license field`);
+    }
+  }
+}
+
+// Validate the Claude Code marketplace manifests so the /plugin distribution channel
+// stays consistent with package.json. Mirrors the gemini-extension version checks.
+function validateMarketplace(repoRoot, packageMetadata, errors) {
+  const marketplacePath = path.join(repoRoot, ".claude-plugin", "marketplace.json");
+  const pluginPath = path.join(repoRoot, ".claude-plugin", "plugin.json");
+
+  if (!fs.existsSync(marketplacePath)) {
+    errors.push("Claude Code marketplace manifest is missing: .claude-plugin/marketplace.json");
+  } else {
+    let marketplace;
+    try {
+      marketplace = readJsonFile(marketplacePath);
+    } catch {
+      errors.push(".claude-plugin/marketplace.json is not valid JSON");
+      marketplace = null;
+    }
+    if (marketplace) {
+      const entry = Array.isArray(marketplace.plugins)
+        ? marketplace.plugins.find((plugin) => plugin?.name === packageMetadata.name)
+        : null;
+      if (!entry) {
+        errors.push(
+          `.claude-plugin/marketplace.json has no plugin entry named '${packageMetadata.name}'`
+        );
+      } else if (entry.version && entry.version !== packageMetadata.version) {
+        errors.push(
+          `.claude-plugin/marketplace.json plugin version '${entry.version}' does not match package.json version '${packageMetadata.version}'`
+        );
+      }
+    }
+  }
+
+  if (!fs.existsSync(pluginPath)) {
+    errors.push("Claude Code plugin manifest is missing: .claude-plugin/plugin.json");
+    return;
+  }
+  let plugin;
+  try {
+    plugin = readJsonFile(pluginPath);
+  } catch {
+    errors.push(".claude-plugin/plugin.json is not valid JSON");
+    return;
+  }
+  if (plugin.name !== packageMetadata.name) {
+    errors.push(
+      `.claude-plugin/plugin.json name '${plugin.name ?? "missing"}' does not match package.json name '${packageMetadata.name}'`
+    );
+  }
+  if (plugin.version && plugin.version !== packageMetadata.version) {
+    errors.push(
+      `.claude-plugin/plugin.json version '${plugin.version}' does not match package.json version '${packageMetadata.version}'`
+    );
   }
 }
 
@@ -473,9 +536,10 @@ export function doctor(repoRoot, config) {
   for (const [provider, providerSpec] of Object.entries(config.providers ?? {})) {
     validateProvider(repoRoot, provider, providerSpec, packageMetadata, errors);
   }
-  validateSkillDescriptions(repoRoot, config, errors);
+  validateSkillDescriptions(repoRoot, config, errors, warnings);
   validateWikiFiles(repoRoot, config, errors, warnings);
   validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors);
+  validateMarketplace(repoRoot, packageMetadata, errors);
 
   for (const warning of warnings) {
     console.warn(`warning: ${warning}`);
@@ -491,6 +555,7 @@ export function doctor(repoRoot, config) {
   console.log(`ok: package ${packageMetadata.name}@${packageMetadata.version}`);
   console.log(`ok: ${config.skills.length} skill source(s)`);
   console.log("ok: skill descriptions state what and when");
+  console.log("ok: Claude Code marketplace manifests valid");
   console.log(`ok: ${Object.keys(config.providers).length} provider adapter(s)`);
   console.log("ok: context template available");
   console.log("ok: wiki files valid");

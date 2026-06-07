@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "agentkit-seo",
+  "owner": {
+    "name": "AgentKit SEO"
+  },
+  "plugins": [
+    {
+      "name": "agentkit-seo",
+      "source": "./",
+      "description": "Portable agent skills for optimizing GitHub, LinkedIn, CV/ATS, web portfolio, and X, plus agent context optimization.",
+      "version": "1.7.0",
+      "category": "productivity",
+      "keywords": [
+        "seo",
+        "career",
+        "resume",
+        "linkedin",
+        "github",
+        "portfolio",
+        "geo"
+      ],
+      "license": "MIT"
+    }
+  ]
+}
