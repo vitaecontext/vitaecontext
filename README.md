@@ -161,7 +161,7 @@ AgentKit SEO is a small system that applies current agentic-AI ideas, not just a
 | Concept | One-line idea | Where it lives |
 | --- | --- | --- |
 | Career context file | A private `AGENTS.md` for a person: verified facts an agent reads before writing | [agent-context-optimization](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
-| LLM Wiki | A knowledge base the model reads, not one it writes | [`wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [llms-full.txt](./llms-full.txt) |
+| LLM Wiki | A knowledge base a maintainer agent compiles from sources and keeps current, which runtime agents read instead of re-deriving facts per query | [`wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [llms-full.txt](./llms-full.txt) |
 | Progressive disclosure | Load one module, then only the references a task needs | `## Wiki context` sections in each `SKILL.md` |
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [references](./.skills/agent-skill/agentkit-seo/references/), [llms.txt](./llms.txt) |
 | Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` metadata |
@@ -198,7 +198,7 @@ flowchart TD
 
 ## LLM Wiki
 
-Without a knowledge layer, agents guess at platform constraints from training data: ATS parser behavior, LinkedIn field limits, GitHub Linguist rules, and other details that change or depend on context. That guessing produces confident but wrong advice. AgentKit SEO's wiki layer follows Andrej Karpathy's LLM Wiki concept: a knowledge base the LLM reads, not one it writes. A maintainer-only wiki refresh skill exists in the source tree for local source audits; the installed user bundle still ships only the runtime skills.
+Without a knowledge layer, agents guess at platform constraints from training data: ATS parser behavior, LinkedIn field limits, GitHub Linguist rules, and other details that change or depend on context. That guessing produces confident but wrong advice. AgentKit SEO's wiki layer follows Andrej Karpathy's LLM Wiki concept: a maintainer agent compiles the knowledge from sources and keeps it current, and runtime agents read it instead of re-deriving platform facts on every query. A maintainer-only wiki refresh skill exists in the source tree for local source audits; the installed user bundle still ships only the runtime skills.
 
 - Every skill ships with per-module Markdown entries for canonical definitions, platform constraints with confidence labels, known failure modes, evidence rules, and audit output rules.
 - Wiki entries load conditionally, so agents pull deeper context only when the current task needs it.

@@ -72,6 +72,16 @@ current_location: Amsterdam, Netherlands
 target_roles: [Site Reliability Engineer, Platform Engineer, Backend Engineer]
 # Whether you are willing to relocate for the right opportunity
 open_to_relocation: true
+# Cities or countries you target for applications; use [no restriction] if open
+target_locations: [Amsterdam, Berlin, Remote-EU]
+# Preferred work mode: remote, hybrid, or onsite
+work_mode: hybrid
+# The role you ultimately want, even if a step beyond your current target
+ideal_role: Staff Site Reliability Engineer
+# What you are focused on now and want to work on next
+current_focus: Kubernetes operator development and SLO-driven reliability
+# Professional and personal interests that shape your direction
+interests: [open-source infrastructure, distributed systems, mentoring, climbing]
 
 education:
   # Format: "[DEGREE] Degree Name | Institution | Grade | Month Year"
@@ -116,6 +126,11 @@ name:
 current_location:
 target_roles: []
 open_to_relocation:
+target_locations: []
+work_mode:
+ideal_role:
+current_focus:
+interests: []
 
 education:
   - ""
@@ -139,6 +154,32 @@ languages:
 
 github:
 linkedin:
+```
+
+### Goals and targeting
+
+This section records where you want to go, not what you have already done. Unlike the rest of the file, it holds stated intent and preferences rather than verified facts, so downstream skills can aim output (role, tone, location, keywords) without inventing experience. Keep it honest but forward-looking, and write `No restriction` wherever you have no constraint.
+
+Good example:
+
+```markdown
+**Ideal role:** Staff Site Reliability Engineer at an infrastructure-focused product company.
+**Current focus:** Kubernetes operator development and SLO-driven reliability; want to move from service ownership into platform-wide reliability.
+**Want to work on next:** developer-platform tooling, incident-reduction systems, and mentoring junior engineers.
+**Target locations:** Amsterdam or Berlin on a hybrid basis; open to remote within the EU. No relocation outside the EU for now.
+**Interests:** open-source infrastructure, distributed systems, technical writing, climbing.
+**Constraints:** needs visa sponsorship outside the EU; not pursuing pure management tracks.
+```
+
+Replace the block below with your own goals and targeting. Keep each line to stated intent, and use `No restriction` where you have no constraint:
+
+```markdown
+**Ideal role:** [The role you ultimately want.]
+**Current focus:** [What you are working on and improving now.]
+**Want to work on next:** [Problems, domains, or responsibilities you are aiming for.]
+**Target locations:** [Cities, countries, remote or hybrid preference, relocation stance, or No restriction.]
+**Interests:** [Professional and personal interests that shape your direction.]
+**Constraints:** [Visa, availability, role types to avoid, or No restriction.]
 ```
 
 ### Scope declaration

@@ -16,8 +16,13 @@ This project follows npm package versions and mirrors them with matching GitHub 
 - Added Claude Code plugin-marketplace distribution: `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json` so the skills install through `/plugin marketplace add` and `/plugin install`, included in the npm package and validated by `doctor`.
 - Added an `audit-scoring.md` reference to the GitHub, LinkedIn, CV/ATS, and web-portfolio skills: a weighted 0-100 triage scorecard with bands and a prioritized fix-first ranking, explicitly labeled as an internal prioritization heuristic rather than a platform ranking, and wired into each skill's response shape.
 - Added `license` and a `metadata` block (homepage, repository) to every runtime `SKILL.md` frontmatter so provenance travels with the installed skill.
+- Added a `Goals and targeting` section to the agent-context-file spec, template, and intake workflow, capturing the user's ideal role, current focus, what they want to work on next, target locations (or `No restriction`), interests, and constraints as stated intent kept separate from verified facts, so downstream skills can aim output without inventing experience.
+- Added a professional-persona lens to each skill's overview (for example, hiring manager and open-source maintainer for GitHub, technical recruiter for LinkedIn) to focus the agent's perspective.
+- Added a `Self-review` step to every skill: before returning, the agent checks the draft for fabricated facts, correct evidence labels, scope and goal alignment, and impact ordering, and flags any failure it cannot fix.
 
 ### Changed
+
+- Corrected the LLM Wiki attribution in `README.md` and `DESIGN.md`: the wiki is compiled and kept current by a maintainer agent and read by runtime agents instead of re-derived per query, and documented how the design deliberately adapts Karpathy's personal-second-brain concept to a shipped, versioned knowledge pack.
 
 - Extended `agentkit-seo update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
 - Extended `agentkit-seo doctor` to enforce the Agent Skills description convention: every configured skill must declare a non-empty `description` within 1024 characters (warning over 500) that states when to use the skill, plus a `license` field; and to validate the Claude Code marketplace and plugin manifests against `package.json`. Documented the conventions in `STYLEGUIDE.md`.

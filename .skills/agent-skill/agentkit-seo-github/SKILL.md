@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use this skill to improve GitHub discoverability, comprehension, and trust without claiming undocumented ranking guarantees.
+Work through the lens of a pragmatic engineering hiring manager and open-source maintainer skimming the profile. Use this skill to improve GitHub discoverability, comprehension, and trust without claiming undocumented ranking guarantees.
 
 ## Reference selection
 
@@ -70,6 +70,17 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 - Keep profile metadata, pinned repositories, README copy, and repository structure aligned around the same public positioning.
 - For rewrites, improve clarity, proof, and discoverability before inventing a more aggressive branding angle.
 - Recommend `AGENTS.md` or Copilot instruction files only when the repository is agent-facing, complex enough to need operational guidance, or the user explicitly asks for agent-readiness work.
+
+## Self-review
+
+Before returning, check the draft and fix or flag any failure:
+
+- No fabricated metrics, percentiles, ranking mechanics, or pinned/archived/licensed status; every claim traces to inspected GitHub material, the context file, or is labeled inference.
+- Evidence labels are correct and not upgraded beyond their source.
+- Output matches the requested scope, the target role, and the user's stated goals and target locations; nothing drifted into unrequested work.
+- The highest-impact fixes lead, and copy stays factual to the user's real work.
+
+If a check fails and cannot be fixed from available inputs, say so rather than papering over it.
 
 ## Response shape
 

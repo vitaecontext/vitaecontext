@@ -20,7 +20,7 @@ The following table maps each concept to its origin and to where it lives in the
 | Concept | One-line idea | Where it lives |
 | --- | --- | --- |
 | Career context file | A private `AGENTS.md` for a person: verified facts an agent reads before writing | [`agentkit-seo-agent-context-optimization`](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
-| LLM Wiki | A knowledge base the model reads, not one it writes | [`*/wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [`llms-full.txt`](./llms-full.txt) |
+| LLM Wiki | A knowledge base a maintainer agent compiles from sources and keeps current, read by runtime agents rather than re-derived per query | [`*/wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [`llms-full.txt`](./llms-full.txt) |
 | Progressive disclosure | Load one module, then only the references and wiki a task needs | `## Wiki context` and token-discipline sections in each `SKILL.md` |
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [`references/`](./.skills/agent-skill/agentkit-seo/references/) link graph, [`llms.txt`](./llms.txt) |
 | Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` confidence metadata |
@@ -33,7 +33,9 @@ Developers already accept that a repository should carry a context file so an ag
 
 ### LLM Wiki: knowledge the model reads, not writes
 
-The wiki layer follows the LLM Wiki framing associated with Andrej Karpathy: a curated knowledge base that the model consults, rather than one it generates on the fly. Without it, an agent guesses platform constraints, ATS parser behavior, field limits, ranking signals, from training data, and produces confident but wrong advice. Each module ships `wiki/` entries with canonical definitions, platform constraints, known failure modes, and review dates, bundled for tools as [`llms-full.txt`](./llms-full.txt).
+The wiki layer follows the LLM Wiki framing associated with Andrej Karpathy: a maintainer agent compiles knowledge from official sources and keeps it current, and runtime agents read that compiled knowledge rather than re-deriving it from training data on every query. Without it, an agent guesses platform constraints, ATS parser behavior, field limits, and ranking signals, and produces confident but wrong advice. Each module ships `wiki/` entries with canonical definitions, platform constraints, known failure modes, and review dates, bundled for tools as [`llms-full.txt`](./llms-full.txt).
+
+This adapts Karpathy's design to a shipped package. His LLM Wiki is a personal, ever-growing second brain an agent accumulates from a user's own ingested sources; AgentKit SEO instead ships a curated, versioned knowledge pack about external platform behavior, refreshed by the maintainer-only `agentkit-seo-wiki-maintenance` skill (ingest and lint) rather than mutated during end-user sessions. It keeps the faithful core, compile-once and keep-current instead of per-query retrieval, while deliberately dropping per-user accumulation that does not fit a distributed package.
 
 ### Progressive disclosure and token discipline
 

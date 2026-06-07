@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use this skill to improve how a personal site is crawled, rendered, summarized, and trusted by search engines and AI systems.
+Work through the lens of a technical SEO specialist and a hiring manager skimming the site. Use this skill to improve how a personal site is crawled, rendered, summarized, and trusted by search engines and AI systems.
 
 ## Reference selection
 
@@ -69,6 +69,17 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 - When facts are missing, ask for the canonical URL, page inventory, or source content before inventing portfolio copy or structured data.
 - When editing portfolio code, preserve existing styling and application logic unless the user explicitly asks for a redesign. Prefer metadata, structured data, semantic HTML, crawlability, and content changes before layout changes.
 - For direct code edits, run the available build, lint, test, or preview command when the project provides one, and report any verification that could not run.
+
+## Self-review
+
+Before returning, check the draft and fix or flag any failure:
+
+- No invented projects, testimonials, metrics, employers, or credentials; structured data and copy reflect only verified or supplied facts.
+- Rankings, rich results, and indexing are framed as eligibility, not guarantees; emerging conventions are not presented as standards.
+- Output matches the requested scope and the user's stated goals; metadata, structured data, and visible copy stay consistent for each page.
+- Any code edits preserve existing styling and logic, and verification that could not run is reported.
+
+If a check fails and cannot be fixed from available inputs, say so rather than papering over it.
 
 ## Response shape
 

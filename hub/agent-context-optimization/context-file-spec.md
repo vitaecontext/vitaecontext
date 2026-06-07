@@ -23,22 +23,23 @@ The file can live wherever the user wants. Prefer an explicit user-chosen path. 
 
 ## 2. File structure
 
-The context file contains ten sections in a fixed order. The table below defines the requirement status of each section.
+The context file contains eleven sections in a fixed order. The table below defines the requirement status of each section.
 
 | # | Section | Status |
 |---|---|---|
 | 1 | Title | Required |
 | 2 | QUICK REFERENCE block | Required |
-| 3 | Scope declaration | Required |
-| 4 | Education | Required |
-| 5 | Professional experience | Conditional |
-| 6 | Research and publications | Conditional |
-| 7 | Skills index | Required |
-| 8 | Certifications and achievements | Conditional |
-| 9 | Languages | Required |
-| 10 | Extracurricular and leadership | Optional |
+| 3 | Goals and targeting | Recommended |
+| 4 | Scope declaration | Required |
+| 5 | Education | Required |
+| 6 | Professional experience | Conditional |
+| 7 | Research and publications | Conditional |
+| 8 | Skills index | Required |
+| 9 | Certifications and achievements | Conditional |
+| 10 | Languages | Required |
+| 11 | Extracurricular and leadership | Optional |
 
-**Required:** present in every valid context file. **Conditional:** present if the described content exists. **Optional:** may be omitted.
+**Required:** present in every valid context file. **Recommended:** include unless the user declines; it sharpens downstream targeting. **Conditional:** present if the described content exists. **Optional:** may be omitted.
 
 ### 2.1 Title
 
@@ -61,6 +62,11 @@ name: Firstname Lastname
 current_location: City, Country
 target_roles: [Role A, Role B]
 open_to_relocation: true/false
+target_locations: [City, Country, Remote-Region]   # or [No restriction]
+work_mode: remote/hybrid/onsite
+ideal_role: The role the person ultimately wants
+current_focus: What the person is working on and improving now
+interests: [interest1, interest2, interest3]
 
 education:
   - "[DEGREE] Degree Name | Institution | Grade | Month Year"
@@ -96,7 +102,26 @@ portfolio: https://yoursite.com
 
 The `gpa_summary` field lists all graded courses on a single comma-separated line. This lets an agent retrieve the full academic record without leaving the block.
 
-### 2.3 Scope declaration
+### 2.3 Goals and targeting
+
+Place the **Goals and targeting** section immediately after the QUICK REFERENCE block. It records where the person wants to go, so downstream skills can aim role, tone, location, and keyword choices.
+
+**Rule:** This section holds stated intent and preferences, not verified facts. Keep it separate from the verified record and never convert an aspiration into claimed experience. Do not list it inside the `<!-- VERIFIED FACTS -->` comment.
+
+```markdown
+## Goals and targeting
+
+**Ideal role:** The role the person ultimately wants.
+**Current focus:** What the person is working on and improving now.
+**Want to work on next:** Problems, domains, or responsibilities they are aiming for.
+**Target locations:** Cities, countries, remote or hybrid preference, relocation stance, or No restriction.
+**Interests:** Professional and personal interests that shape direction.
+**Constraints:** Visa, availability, role types to avoid, or No restriction.
+```
+
+**Rule:** Write `No restriction` where the person has no constraint rather than omitting the line, so an agent does not guess.
+
+### 2.4 Scope declaration
 
 The **scope declaration** is a single paragraph written in third person. It states what the file is, what it is not, and what it is for. Write it so an agent can read it as instructions rather than self-description.
 
@@ -114,7 +139,7 @@ cert score=NNN, cert id=XXXXXXX, competition result=Nth place, score=XXXXXXX -->
 
 The HTML comment is invisible in rendered Markdown but visible to any agent reading raw text.
 
-### 2.4 Education
+### 2.5 Education
 
 Write each degree as an H2 heading using the `[DEGREE]` tag.
 
@@ -169,7 +194,7 @@ Write the thesis as an H3 entry under its parent degree, using the `[THESIS]` ta
 **TL;DR:** One sentence — contribution and outcome.
 ```
 
-### 2.5 Professional experience
+### 2.6 Professional experience
 
 Write each role as an H3 entry using the `[ROLE]` tag.
 
@@ -186,7 +211,7 @@ If the role is the industry context for a thesis, add a cross-reference on the l
 *This role is the industry context for the [THESIS] documented under [degree section].*
 ```
 
-### 2.6 Research and publications
+### 2.7 Research and publications
 
 Include this section only if the person has formal research outputs: published papers, preprints, DOI-linked reports, or papers under review.
 
@@ -202,7 +227,7 @@ Write each paper as an H3 entry using the `[PAPER]` or `[PREPRINT]` tag.
 
 For work not yet published, use `[PREPRINT]` and add the status after the year: `| Under review` or `| In preparation`.
 
-### 2.7 Skills index
+### 2.8 Skills index
 
 **Rule:** Write the Skills index as a flat categorical enumeration. Do not use prose or bullet lists.
 
@@ -222,7 +247,7 @@ Write each category as a bold label followed by a comma-separated list on the sa
 
 Add or remove categories to match the person's field. **Rule:** Every skill listed must appear in at least one other section of the file. Do not add skills without supporting evidence in the body.
 
-### 2.8 Certifications and achievements
+### 2.9 Certifications and achievements
 
 Write each entry as an H3 using the appropriate tag. The three entry types and their formats are shown below.
 
@@ -237,7 +262,7 @@ Score: overall score and per-component breakdown if applicable.
 One sentence describing what was recognized and in what context.
 ```
 
-### 2.9 Languages
+### 2.10 Languages
 
 **Rule:** Write the Languages section as a table. Do not use prose.
 
@@ -251,7 +276,7 @@ The table below shows the required columns and an example row for each case.
 
 Use CEFR levels as the standard. Include standardized test scores and IDs in the Certificate column.
 
-### 2.10 Extracurricular and leadership
+### 2.11 Extracurricular and leadership
 
 Write each entry as an H3 using the `[ORG]` tag.
 
@@ -396,6 +421,7 @@ Before considering a context file complete, verify all of the following items.
 
 - [ ] The file opens with an H1 title in the specified format.
 - [ ] The QUICK REFERENCE YAML block is complete and appears before the scope declaration.
+- [ ] The Goals and targeting section is present (or intentionally declined), holds stated intent only, and is kept out of the `<!-- VERIFIED FACTS -->` comment.
 - [ ] The scope declaration includes the `<!-- VERIFIED FACTS: ... -->` comment.
 - [ ] Every verified fact in the file appears inside the `<!-- VERIFIED FACTS: ... -->` comment.
 - [ ] Every H3 and deeper heading representing a professional artifact has a semantic tag.

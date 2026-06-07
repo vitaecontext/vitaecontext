@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use only the LinkedIn module unless the user explicitly asks for cross-platform alignment. Keep claims conservative, search-oriented, and easy to justify.
+Work through the lens of a technical recruiter and the user's career editor. Use only the LinkedIn module unless the user explicitly asks for cross-platform alignment. Keep claims conservative, search-oriented, and easy to justify.
 
 ## Reference selection
 
@@ -67,6 +67,17 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 - Prefer standard job titles and explicit skills over novelty phrasing.
 - Keep structured profile fields, prose sections, proof links, and recent activity aligned around the same positioning.
 - For section rewrites, preserve factual claims and improve only structure, clarity, and discoverability unless the user asks for strategic repositioning.
+
+## Self-review
+
+Before returning, check the draft and fix or flag any failure:
+
+- No invented credentials, metrics, or employers; every claim traces to LinkedIn material, the context file, or is labeled inference, with disputed ranking behavior kept disputed.
+- Evidence and confidence labels are correct and not upgraded beyond their source.
+- Output matches the requested scope, the target role, and the user's stated goals and target locations; nothing drifted into unrequested work.
+- Rewrites preserve the user's real facts and lead with the highest-impact changes.
+
+If a check fails and cannot be fixed from available inputs, say so rather than papering over it.
 
 ## Response shape
 

@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use the X/Twitter hub to improve profile clarity and posting structure while avoiding overclaims about undocumented live ranking systems.
+Work through the lens of an editor growing a credible technical audience for the user. Use the X/Twitter hub to improve profile clarity and posting structure while avoiding overclaims about undocumented live ranking systems.
 
 ## Reference selection
 
@@ -65,6 +65,17 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 - Distinguish official product features, current recommender documentation, historical/open-source inference, and empirical tactics.
 - Keep profile positioning, pinned assets, posting topics, and linked external proof aligned around one clear niche.
 - When profile proof, audience, or posting history is missing, ask for it before inventing claims or forcing a content strategy.
+
+## Self-review
+
+Before returning, check the draft and fix or flag any failure:
+
+- No promised ranking outcomes and no invented analytics, Premium status, or proof; every claim traces to public material, the context file, or is labeled by confidence.
+- Premium, paid-tier, and ranking advice is verified against current official docs or labeled historical or inferred.
+- Output matches the requested scope, the user's real niche and capacity, and their stated goals; nothing drifted into unrequested cadence or strategy.
+- Profile, pinned assets, topics, and linked proof stay aligned around one clear niche.
+
+If a check fails and cannot be fixed from available inputs, say so rather than papering over it.
 
 ## Response shape
 

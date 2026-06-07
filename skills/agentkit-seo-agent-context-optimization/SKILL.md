@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use this skill before any cross-platform optimization pass that depends on a stable factual record. The goal is to turn scattered inputs into one reliable, agent-readable context file.
+Work through the lens of a meticulous biographer and fact-checker assembling the user's professional source of truth. Use this skill before any cross-platform optimization pass that depends on a stable factual record. The goal is to turn scattered inputs into one reliable, agent-readable context file.
 
 ## Workflow
 
@@ -55,6 +55,8 @@ Default to `Default pass` for broad context-file work. Offer `Deep reconciliatio
 - If no path is supplied, ask where the file should live before writing: in the current workspace, at an explicit user path, or at a portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
 - Do not assume the agent can write outside the current workspace. If writing requires permission, ask before writing.
 - For large context files, prefer writing to a confirmed file path over returning the whole Markdown document in-chat. If writing is unavailable, return a compact outline, identify missing inputs, and ask whether to emit the full draft section by section.
+- When building or repairing a context file, also capture the user's direction, not just their history: ideal role or dream job, current focus and what they want to work on next, professional and personal interests, and target locations for applications (specific cities or countries, remote or hybrid preference, willingness to relocate, or no restriction). Ask for any of these that are missing, and record "no restriction" or "open" explicitly rather than leaving a guess.
+- Treat these goals as the user's stated intent, not verified facts. Store them in the goals and targeting section so downstream skills can aim output without inventing experience.
 - If the user gives scattered material, normalize it into the canonical context structure before platform rewriting.
 - Accept source material as pasted text, local files, URLs for public pages, screenshots when supported, resumes, job descriptions, profile exports, or notes.
 - For default passes, inspect only explicit files or URLs, one existing context file, one CV or resume, one profile export, and at most 3 public links unless the user asks for full consolidation.
@@ -72,6 +74,18 @@ Default to `Default pass` for broad context-file work. Offer `Deep reconciliatio
 - Keep the context file as the factual source of truth; platform skills add formatting and channel constraints, not facts.
 - When drafting from scratch, produce the canonical section order first and populate only verified material.
 - When updating an existing file, prefer targeted entry-level edits over rewriting the whole document.
+- Keep the user's goals, interests, and targeting separate from verified facts. Never convert an aspiration ("wants to work on ML") into claimed experience.
+
+## Self-review
+
+Before returning, check the draft and fix or flag any failure:
+
+- Every fact traces to supplied source material or the existing file; nothing was invented or upgraded beyond its evidence.
+- Goals, interests, and target locations are recorded as stated intent, kept distinct from verified facts.
+- Conflicts across inputs are surfaced, not silently resolved.
+- The output matches the requested scope and storage mode.
+
+If a check fails and cannot be resolved from the available inputs, say so explicitly instead of smoothing it over.
 
 ## Handoff
 

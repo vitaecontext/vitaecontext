@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use only the CV and ATS guidance relevant to the requested deliverable. Keep the advice conservative, parser-safe, and grounded in documented, durable constraints.
+Work through the lens of a recruiter screening resumes against ATS parsers and the target role's hiring bar. Use only the CV and ATS guidance relevant to the requested deliverable. Keep the advice conservative, parser-safe, and grounded in documented, durable constraints.
 
 ## Reference selection
 
@@ -72,6 +72,17 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 - Optimize for reliable parsing first, recruiter readability second, and visual polish third.
 - Preserve factual alignment with the user's context file, LinkedIn, and public portfolio.
 - For rewrites, improve section clarity and evidence density before changing the user's positioning strategy.
+
+## Self-review
+
+Before returning, check the draft and fix or flag any failure:
+
+- No fabricated tools, metrics, employers, dates, or credentials; every keyword and bullet traces to supplied material, the context file, or the job description.
+- No guaranteed-ATS-pass or exact-vendor-scoring claims; parser advice stays within documented, durable constraints.
+- Output matches the requested scope, the target role and job description, and the user's stated goals; nothing drifted into unrequested work.
+- Parser safety leads, then recruiter readability, then polish, with the highest-impact fixes first.
+
+If a check fails and cannot be fixed from available inputs, say so rather than papering over it.
 
 ## Response shape
 
