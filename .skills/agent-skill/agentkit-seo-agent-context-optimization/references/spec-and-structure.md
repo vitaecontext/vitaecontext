@@ -12,18 +12,19 @@ Recommended portable location when the user wants a reusable path:
 
 This path is a convention, not a requirement. An explicit path supplied by the user always wins. A local workspace draft such as `./<name-surname>-seo-context.md` is also valid when the user wants to iterate inside the active project before moving the file to a private reusable location.
 
-Required and conditional sections, in order:
+Required, recommended, and conditional sections, in order:
 
 1. H1 with full name and positioning descriptor
 2. `QUICK REFERENCE` section as YAML in a fenced block
-3. scope declaration
-4. education
-5. professional experience if any
-6. research and publications if any
-7. skills index
-8. certifications and achievements if any
-9. languages
-10. extracurricular and leadership if any
+3. goals and targeting if the user has not declined it
+4. scope declaration
+5. education
+6. professional experience if any
+7. research and publications if any
+8. skills index
+9. certifications and achievements if any
+10. languages
+11. extracurricular and leadership if any
 
 Do not move required sections for style reasons. The stable order is part of the interface the agent relies on.
 
@@ -51,8 +52,20 @@ Recommended fields:
 
 - `name`
 - `current_location`
+- `positioning_summary`
 - `target_roles`
+- `growth_direction`
+- `emerging_interests`
+- `evidence_boundaries`
+- `positioning_constraints`
+- `claims_to_avoid`
 - `open_to_relocation`
+- `target_locations`
+- `work_mode`
+- `ideal_role`
+- `current_focus`
+- `want_to_work_on_next`
+- `interests`
 - `education`
 - `gpa_summary`
 - `professional`
@@ -62,6 +75,29 @@ Recommended fields:
 - `certifications`
 - `languages`
 - public profile links such as `github`, `linkedin`, and `portfolio`
+
+## Goals and targeting rules
+
+Place `## Goals and targeting` immediately after the `QUICK REFERENCE` block unless the user explicitly declines future-direction capture.
+
+This section records stated intent, not verified history:
+
+- ideal role or dream job
+- current focus
+- what the user wants to work on next
+- target roles
+- target locations, relocation stance, and work mode
+- growth direction
+- professional and personal interests
+- evidence boundaries
+- positioning constraints
+- claims to avoid
+
+Use verified evidence as the foundation, future direction as the positioning target, and constraints as guardrails against overclaiming.
+
+Keep this section outside the `VERIFIED FACTS` comment. If a direction has partial evidence, state the evidence level explicitly, such as "verified through project X", "current practical exposure", or "target development area".
+
+Write `No restriction` where the user has no constraint rather than leaving an ambiguous blank.
 
 ## Scope declaration rules
 

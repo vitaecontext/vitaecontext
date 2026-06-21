@@ -17,7 +17,7 @@ metadata:
 
 ## 1. Overview
 
-The agent context file is a single Markdown document containing a person's full professional record. It is the source of truth from which any career output can be generated: CVs, cover letters, LinkedIn sections, portfolio copy, and interview preparation material. Two readers use it simultaneously — a human who maintains it and an agent that extracts facts from it. Every rule in this spec serves both readers. Following this spec produces a file that any agent can load, navigate by section tag, and use immediately without additional instructions.
+The agent context file is a single Markdown document containing a person's full professional record and stated career direction. It is the source of truth from which any career output can be generated: CVs, cover letters, LinkedIn sections, portfolio copy, and interview preparation material. Two readers use it simultaneously — a human who maintains it and an agent that extracts verified facts, goals, and positioning constraints from it. Every rule in this spec serves both readers. Following this spec produces a file that any agent can load, navigate by section tag, and use immediately without additional instructions.
 
 The file can live wherever the user wants. Prefer an explicit user-chosen path. A useful portable convention is `~/.agentkit-seo/<name-surname>-seo-context.md`; a local workspace draft is also valid while the file is being created. Agents must confirm the destination before creating or overwriting the file. Because valid context files can become large, agents should prefer file writes or targeted diffs over full in-chat drafts; if file writing is unavailable, return a compact outline first and split the full Markdown draft by section only when requested.
 
@@ -64,8 +64,15 @@ target_roles: [Role A, Role B]
 open_to_relocation: true/false
 target_locations: [City, Country, Remote-Region]   # or [No restriction]
 work_mode: remote/hybrid/onsite
+positioning_summary: Current verified identity plus the direction the person is building toward
 ideal_role: The role the person ultimately wants
 current_focus: What the person is working on and improving now
+want_to_work_on_next: Problems, domains, or responsibilities the person is aiming for
+growth_direction: Future domain, seniority, or role family the person wants to move toward
+emerging_interests: [topic1, topic2, topic3]
+evidence_boundaries: Which direction claims are verified, emerging, or target development areas
+positioning_constraints: How to frame transitions without overstating experience
+claims_to_avoid: [claim that is not yet supported, claim that would distort the profile]
 interests: [interest1, interest2, interest3]
 
 education:
@@ -104,7 +111,7 @@ The `gpa_summary` field lists all graded courses on a single comma-separated lin
 
 ### 2.3 Goals and targeting
 
-Place the **Goals and targeting** section immediately after the QUICK REFERENCE block. It records where the person wants to go, so downstream skills can aim role, tone, location, and keyword choices.
+Place the **Goals and targeting** section immediately after the QUICK REFERENCE block. It records where the person wants to go, so downstream skills can aim role, tone, location, keyword choices, and proof selection.
 
 **Rule:** This section holds stated intent and preferences, not verified facts. Keep it separate from the verified record and never convert an aspiration into claimed experience. Do not list it inside the `<!-- VERIFIED FACTS -->` comment.
 
@@ -114,12 +121,18 @@ Place the **Goals and targeting** section immediately after the QUICK REFERENCE 
 **Ideal role:** The role the person ultimately wants.
 **Current focus:** What the person is working on and improving now.
 **Want to work on next:** Problems, domains, or responsibilities they are aiming for.
+**Growth direction:** The future domain, role family, seniority, or positioning shift they are building toward.
 **Target locations:** Cities, countries, remote or hybrid preference, relocation stance, or No restriction.
 **Interests:** Professional and personal interests that shape direction.
+**Evidence boundaries:** Which parts of the direction are already verified, which are emerging, and which are target development areas.
+**Positioning constraints:** Rules for framing the transition without overstating experience.
+**Claims to avoid:** Claims that should not appear in public copy unless new evidence is supplied.
 **Constraints:** Visa, availability, role types to avoid, or No restriction.
 ```
 
 **Rule:** Write `No restriction` where the person has no constraint rather than omitting the line, so an agent does not guess.
+
+**Rule:** Use verified evidence as the foundation, future direction as the positioning target, and constraints as guardrails. For example, if a person has applied cryptography evidence and wants to move toward agentic AI security, public copy can say "building toward agentic AI security from applied security foundations" but must not claim mature agentic AI security expertise without supporting work.
 
 ### 2.4 Scope declaration
 

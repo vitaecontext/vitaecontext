@@ -68,6 +68,8 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 - Avoid absolute alignment claims such as "perfectly aligned" unless every relevant claim was checked. Prefer "no conflict found in the inspected inputs" for bounded audits.
 - Prefer simple structure, plain section names, and measurable outcomes.
 - Tailor wording to the target role, but do not fabricate tools, metrics, or employers.
+- Use career direction to choose emphasis and role language, but keep every skill, responsibility, project, credential, and metric grounded in verified evidence.
+- Honor context-file evidence boundaries, positioning constraints, and claims to avoid when the user is moving toward a new domain or role family.
 - If the user supplies a job description, align terminology to that role while preserving the user's real experience.
 - Optimize for reliable parsing first, recruiter readability second, and visual polish third.
 - Preserve factual alignment with the user's context file, LinkedIn, and public portfolio.

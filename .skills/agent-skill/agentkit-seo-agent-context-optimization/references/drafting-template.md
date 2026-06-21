@@ -6,14 +6,15 @@ Use one Markdown file with this fixed order:
 
 1. `# Full Name - positioning descriptor`
 2. `## QUICK REFERENCE`
-3. scope declaration paragraph
-4. education
-5. professional experience if any
-6. research and publications if any
-7. skills index
-8. certifications and achievements if any
-9. languages
-10. extracurricular and leadership if any
+3. `## Goals and targeting`
+4. scope declaration paragraph
+5. education
+6. professional experience if any
+7. research and publications if any
+8. skills index
+9. certifications and achievements if any
+10. languages
+11. extracurricular and leadership if any
 
 Do not reorder sections for stylistic reasons. Stable order helps both human maintenance and agent retrieval.
 
@@ -24,8 +25,20 @@ Write the section as YAML in a fenced block directly under the `QUICK REFERENCE`
 ```yaml
 name: Full Name
 current_location: City, Country
+positioning_summary: "Current verified identity plus the direction the person is building toward."
 target_roles: [Role A, Role B]
+growth_direction: "Future domain, seniority, or role family the person wants to move toward."
+emerging_interests: [topic1, topic2, topic3]
+evidence_boundaries: "Which direction claims are verified, emerging, or target development areas."
+positioning_constraints: "How to frame transitions without overstating experience."
+claims_to_avoid: [claim that is not yet supported, claim that would distort the profile]
 open_to_relocation: true
+target_locations: [City, Country, Remote-Region]
+work_mode: remote/hybrid/onsite
+ideal_role: Role the person ultimately wants
+current_focus: What the person is working on and improving now
+want_to_work_on_next: Problems, domains, or responsibilities the person is aiming for
+interests: [interest1, interest2, interest3]
 
 education:
   - "[DEGREE] Degree Name | Institution | Grade | Month Year"

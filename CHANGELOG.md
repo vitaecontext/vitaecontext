@@ -6,6 +6,14 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## 1.8.1 - 2026-06-21
+
+### Changed
+
+- Extended career direction awareness across the agent-context runtime, public spec, and guided template with growth direction, emerging interests, evidence boundaries, positioning constraints, and claims to avoid. Downstream platform skills now use future direction for emphasis while keeping public claims grounded in verified evidence.
+
 ## 1.8.0 - 2026-06-07
 
 ### Added

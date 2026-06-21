@@ -29,11 +29,13 @@ For context-file work, `From context` means a fact is already present in the exi
 
 ## 3. Canonical definitions
 
-**Agent-context-file** means a private Markdown source of truth for a person's professional facts, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
+**Agent-context-file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
 
 **Agent context optimization** means building, normalizing, validating, and maintaining that file so downstream platform outputs reuse facts instead of inventing or re-asking for them.
 
 **QUICK REFERENCE** means the selective YAML snapshot directly under the H1. It carries current positioning, target roles, top skills, tools, credentials, and public links for fast agent loading.
+
+**Goals and targeting** means the stated-intent section that records ideal role, current focus, target roles, target locations, growth direction, interests, evidence boundaries, positioning constraints, and claims to avoid. It guides platform outputs but is not a verified-facts record.
 
 **VERIFIED FACTS** means the HTML comment in the scope declaration that stores hard factual anchors such as dates, grades, scores, IDs, rankings, and other facts that must not be guessed.
 
@@ -45,6 +47,8 @@ For context-file work, `From context` means a fact is already present in the exi
 - `stable`: The H1 uses `# Full Name - positioning descriptor`.
 - `stable`: `QUICK REFERENCE` appears immediately after the title and uses a fenced YAML block.
 - `stable`: QUICK REFERENCE values should stay flat and selective; omit empty fields.
+- `stable`: `Goals and targeting` appears after QUICK REFERENCE unless the user intentionally declines direction capture.
+- `stable`: Goals, growth direction, emerging interests, evidence boundaries, positioning constraints, and claims to avoid are stated intent, not verified facts.
 - `stable`: Required sections include scope declaration, education, skills index, and languages.
 - `stable`: Conditional sections appear only when relevant material exists, including professional experience, research and publications, certifications and achievements, and extracurricular or leadership material.
 - `stable`: The scope declaration closes with a `VERIFIED FACTS` HTML comment.
@@ -56,6 +60,7 @@ For context-file work, `From context` means a fact is already present in the exi
 
 - `stable`: Update only when a real-world fact is verifiable.
 - `stable`: Do not add speculative future roles, awards, certifications, or project outcomes.
+- `stable`: Use future direction to select emphasis, not to invent evidence. Frame weakly evidenced direction as "building toward", "targeting", or "interested in" until a verified project, role, course, or artifact supports stronger wording.
 - `stable`: Repair structure before polishing language when the file is structurally weak.
 - `stable`: Preserve chronology, role titles, metrics, and project ownership across downstream outputs.
 - `stable`: Surface conflicts instead of silently normalizing them.
@@ -70,6 +75,8 @@ For context-file work, `From context` means a fact is already present in the exi
 - Writing outside the workspace without confirming the destination and provider permissions.
 - Turning unsupported claims into polished public copy.
 - Adding skills to QUICK REFERENCE or the skills index without evidence in the body.
+- Converting target roles, growth direction, or emerging interests into claimed mature expertise.
+- Omitting claims-to-avoid or evidence boundaries when a user is repositioning across fields.
 - Reordering canonical sections for style reasons.
 - Rewriting the whole context file when a targeted entry update would preserve history and reduce risk.
 - Treating `From context` as externally verified when no evidence line or inspected source supports it.

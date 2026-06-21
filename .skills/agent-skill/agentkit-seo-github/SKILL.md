@@ -67,6 +67,8 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 - Avoid hype language unless the user provided evidence that supports it. Prefer precise proof over louder branding.
 - Keep examples factual to the user's real projects.
 - Keep recommendations scoped to the user's actual repositories and public goals.
+- Use career direction to choose profile README emphasis, pinned-repository strategy, and repository descriptions, but do not make an emerging direction look like mature repository evidence unless the public work supports it.
+- Honor context-file evidence boundaries, positioning constraints, and claims to avoid when selecting proof points.
 - Keep profile metadata, pinned repositories, README copy, and repository structure aligned around the same public positioning.
 - For rewrites, improve clarity, proof, and discoverability before inventing a more aggressive branding angle.
 - Recommend `AGENTS.md` or Copilot instruction files only when the repository is agent-facing, complex enough to need operational guidance, or the user explicitly asks for agent-readiness work.

@@ -2,9 +2,9 @@
 metadata:
   title: "Context file maintenance"
   platform: "general"
-  objective: "Explains when and how to update the personal agent context file, how to manage token growth, and how to keep the VERIFIED FACTS comment and version history accurate."
+  objective: "Explains when and how to update the personal agent context file, how to manage token growth, and how to keep goals, VERIFIED FACTS, and version history accurate."
   status: "draft"
-  last_updated: "2026-04-24"
+  last_updated: "2026-06-21"
   tags: ["context-file", "maintenance", "versioning", "token-efficiency"]
   agent_priority: "low"
 -->
@@ -17,7 +17,7 @@ metadata:
 
 ## 1. Overview
 
-This file covers the maintenance lifecycle of a personal agent context file. A context file that is outdated, disorganized, or bloated with redundant detail produces worse outputs than a well-maintained one, because agents spend tokens on irrelevant content and may surface stale facts. Following the rules in this file keeps the context file reliable as the primary source of truth for all generated career outputs. The primary audience is a human who has already built a valid context file and wants to maintain it correctly over time.
+This file covers the maintenance lifecycle of a personal agent context file. A context file that is outdated, disorganized, or bloated with redundant detail produces worse outputs than a well-maintained one, because agents spend tokens on irrelevant content, stale facts, or stale direction. Following the rules in this file keeps the context file reliable as the primary source of truth for all generated career outputs. The primary audience is a human who has already built a valid context file and wants to maintain it correctly over time.
 
 ## 2. When to update
 
@@ -34,6 +34,19 @@ The trigger for every update is a completed, confirmable fact. These are the eve
 - A language certificate is received with an official score.
 
 Do not add a course before the grade is official. Do not add a project before it has a concrete deliverable. Do not add a role before the start date has passed. A context file that contains unverified facts is worse than one that is slightly out of date — the VERIFIED FACTS comment in the scope declaration exists precisely to enforce this rule.
+
+**Rule:** Update `Goals and targeting` when the person's direction changes, but keep those edits outside the verified record.
+
+Direction changes can happen before a new credential exists. These updates belong in `Goals and targeting`, not in education, experience, projects, or `VERIFIED FACTS`:
+
+- The target role list changes.
+- A new growth direction becomes important.
+- Emerging interests become more or less central.
+- Target locations, relocation stance, or work mode changes.
+- Evidence boundaries need clearer wording.
+- Positioning constraints or claims to avoid change.
+
+The rule is different from verified history because direction is stated intent. Record the intent plainly, then state which parts are already supported by evidence and which parts are still emerging.
 
 ## 3. How to integrate new content using an agent
 
@@ -64,6 +77,9 @@ Instructions:
 5. Identify any new skills demonstrated in the new material that should be
    added to the Skills index. For each one, confirm that it is supported by
    evidence in the new entry before adding it.
+6. If the material changes my target roles, growth direction, evidence
+   boundaries, positioning constraints, or claims to avoid, update only the
+   Goals and targeting section and keep those statements out of VERIFIED FACTS.
 
 Do not modify any existing content in the context file. Only add.
 ```
@@ -81,6 +97,8 @@ As the context file grows over multiple years, it may reach a size where loading
 **Rule:** The QUICK REFERENCE block must always reflect current positioning, not historical completeness. If a role ended three years ago and is no longer relevant to your target roles, remove it from the `professional:` field in the QUICK REFERENCE block. The full entry stays in the body.
 
 **Rule:** The `top_skills` field in the QUICK REFERENCE block lists the 8–15 skills most central to your current positioning. Remove skills that have become background knowledge and are no longer differentiating. The skill still stays in the Skills index body; it just drops out of the quick-access list.
+
+**Rule:** Keep direction fields compact. `positioning_summary`, `growth_direction`, `evidence_boundaries`, `positioning_constraints`, and `claims_to_avoid` should guide an agent quickly, not duplicate project entries or long career strategy notes.
 
 The net effect of these rules is that the QUICK REFERENCE block always reads as a current snapshot of your positioning, while the file body preserves the full historical record for deep queries.
 

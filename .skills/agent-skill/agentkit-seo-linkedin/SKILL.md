@@ -65,6 +65,8 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 - Keep profile text searchable, human-readable, and aligned with the user's actual positioning.
 - If the user asks for full profile optimization, recommend or use the `agentkit-seo-agent-context-optimization` skill first when facts are messy.
 - Prefer standard job titles and explicit skills over novelty phrasing.
+- Use career direction to choose headline, About, Featured, Skills, and Experience emphasis, but frame emerging directions as building toward, targeting, or interested in until the context file supplies stronger evidence.
+- Honor context-file evidence boundaries, positioning constraints, and claims to avoid when the user is repositioning across domains.
 - Keep structured profile fields, prose sections, proof links, and recent activity aligned around the same positioning.
 - For section rewrites, preserve factual claims and improve only structure, clarity, and discoverability unless the user asks for strategic repositioning.
 

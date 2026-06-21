@@ -38,7 +38,7 @@ Developers already understand `CLAUDE.md`, `AGENTS.md`, and repo-level context f
 
 AgentKit SEO applies that same pattern to a career.
 
-It gives agents a private Markdown source of truth called an **agent-context-file**. That file stores verified facts about experience, projects, metrics, target roles, constraints, links, and positioning. Every platform skill then works from the same context instead of rebuilding professional history from scratch in every chat.
+It gives agents a private Markdown source of truth called an **agent-context-file**. That file stores verified facts about experience, projects, metrics, target roles, growth direction, evidence boundaries, constraints, links, and positioning. Every platform skill then works from the same context instead of rebuilding professional history from scratch in every chat.
 
 Most AI agents can rewrite a CV, LinkedIn bio, GitHub README, or portfolio page. The hard part is making the output factual, consistent, platform-aware, and reusable across tools.
 
@@ -116,7 +116,7 @@ Start with the practical onboarding path before opening every module:
 
 The agent-context-file is a private Markdown file, usually kept outside the repository at `~/.agentkit-seo/<name-surname>-seo-context.md`.
 
-It contains verified identity facts, roles, projects, links, metrics, constraints, target roles, tone, and positioning notes.
+It contains verified identity facts, roles, projects, links, metrics, constraints, target roles, growth direction, claims to avoid, tone, and positioning notes.
 
 Platform skills read that file first, then adapt the same facts to LinkedIn, GitHub, CV/ATS, web portfolio, or X/Twitter output rules.
 
@@ -160,7 +160,7 @@ AgentKit SEO is a small system that applies current agentic-AI ideas, not just a
 
 | Concept | One-line idea | Where it lives |
 | --- | --- | --- |
-| Career context file | A private `AGENTS.md` for a person: verified facts plus stated goals and targeting an agent reads before writing | [agent-context-optimization](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
+| Career context file | A private `AGENTS.md` for a person: verified facts plus stated goals, growth direction, evidence boundaries, and targeting an agent reads before writing | [agent-context-optimization](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
 | LLM Wiki | A knowledge base a maintainer agent compiles from sources and keeps current, which runtime agents read instead of re-deriving facts per query | [`wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [llms-full.txt](./llms-full.txt) |
 | Progressive disclosure | Load one module, then only the references a task needs | `## Wiki context` sections in each `SKILL.md` |
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [references](./.skills/agent-skill/agentkit-seo/references/), [llms.txt](./llms.txt) |

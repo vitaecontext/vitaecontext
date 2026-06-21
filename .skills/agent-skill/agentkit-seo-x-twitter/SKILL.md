@@ -64,6 +64,8 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 - Keep recommendations aligned with the user's actual niche, expertise, and posting capacity.
 - Distinguish official product features, current recommender documentation, historical/open-source inference, and empirical tactics.
 - Keep profile positioning, pinned assets, posting topics, and linked external proof aligned around one clear niche.
+- Use career direction to choose niche, bio emphasis, pinned-post framing, and topic lanes, but keep emerging directions framed as exploration or building-in-public until proof exists.
+- Honor context-file evidence boundaries, positioning constraints, and claims to avoid when turning interests into public profile copy.
 - When profile proof, audience, or posting history is missing, ask for it before inventing claims or forcing a content strategy.
 
 ## Self-review

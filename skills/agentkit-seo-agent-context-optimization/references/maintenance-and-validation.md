@@ -2,7 +2,7 @@
 
 ## When to update
 
-Update only when a real-world fact is verifiable, such as:
+Update verified record sections only when a real-world fact is verifiable, such as:
 
 - a confirmed grade
 - a completed project with a deliverable
@@ -10,7 +10,7 @@ Update only when a real-world fact is verifiable, such as:
 - a certification with a real score or ID
 - a published result, paper, ranking, or award
 
-Do not add speculative future entries.
+Do not add speculative future entries to the verified record. Store aspirations, target roles, growth direction, emerging interests, and claims to avoid in `Goals and targeting` as stated intent.
 
 ## Safe integration workflow
 
@@ -18,7 +18,8 @@ Do not add speculative future entries.
 2. Draft only the new or revised entry in the required format.
 3. Update the `VERIFIED FACTS` comment if the material adds dates, grades, scores, IDs, rankings, or other hard anchors.
 4. Check whether the material evidences a new skill that belongs in the Skills index.
-5. Apply the smallest edit that preserves the rest of the file untouched.
+5. If the material changes future direction, update `Goals and targeting` and keep evidence boundaries explicit.
+6. Apply the smallest edit that preserves the rest of the file untouched.
 
 ## Validation checklist
 
@@ -27,6 +28,9 @@ A valid context file should satisfy all of the following:
 - exactly one H1 title with full name and positioning descriptor
 - `QUICK REFERENCE` appears immediately after the title
 - the QUICK REFERENCE block is YAML and uses only flat values or flat arrays
+- `Goals and targeting` appears after QUICK REFERENCE unless intentionally declined
+- career-direction fields are stated intent and remain outside the `VERIFIED FACTS` comment
+- growth direction, emerging interests, evidence boundaries, positioning constraints, and claims to avoid are present when the user is repositioning across domains
 - required sections are present: scope declaration, education, skills index, languages
 - conditional sections appear only when the user has relevant content
 - semantic tags are used consistently: `[DEGREE]`, `[COURSE]`, `[PROJECT]`, `[THESIS]`, `[ROLE]`, `[PAPER]`, `[PREPRINT]`, `[CERT]`, `[COMPETITION]`, `[AWARD]`, `[ORG]`

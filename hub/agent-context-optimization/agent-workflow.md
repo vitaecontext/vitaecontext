@@ -82,7 +82,7 @@ rewrite my LinkedIn [About | Headline | Experience entry for ROLE NAME].
 
 Constraints:
 - Target audience: [e.g., security research groups and senior engineering recruiters]
-- Positioning: use the target_roles and top_skills from the QUICK REFERENCE block
+- Positioning: use the target_roles, growth_direction, evidence_boundaries, positioning_constraints, claims_to_avoid, and top_skills from the QUICK REFERENCE block and Goals and targeting section
 - Length: follow the platform limits defined in the linkedin submodule
 - Do not use the first person in the headline
 - Include at least one quantified result

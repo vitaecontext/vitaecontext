@@ -51,7 +51,7 @@ npx agentkit-seo version
 Expected output:
 
 ```text
-agentkit-seo 1.8.0
+agentkit-seo 1.8.1
 Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.
 ```
 

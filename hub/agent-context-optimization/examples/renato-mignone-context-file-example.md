@@ -1,4 +1,4 @@
-# Renato Mignone — Cybersecurity engineer and security researcher
+# Renato Mignone — Security researcher building toward agentic AI and cybersecurity from applied security foundations
 
 > Public example derived from a real local context file. Some exact identifiers and verification-only details are intentionally redacted for repository use.
 
@@ -7,6 +7,13 @@
 ```yaml
 name: Renato Mignone
 current_location: Düsseldorf, Germany
+positioning_summary: "Security researcher with verified foundations in applied cryptography, privacy-preserving systems, systems security, and AI-driven threat detection, building toward the intersection of agentic AI and cybersecurity."
+target_roles: [Security Research Engineer, AI Security Engineer, Applied Cryptography Research Engineer]
+growth_direction: "Agentic AI security and AI-assisted cybersecurity research."
+emerging_interests: [secure tool use, prompt injection, context poisoning, agent auditability, agent permissions, policy enforcement]
+evidence_boundaries: "Applied cryptography, systems security, and AI-driven threat detection are verified through coursework, thesis, research, and projects. Agentic AI security is a growth direction and should be framed as building toward unless a specific verified project supports a stronger claim."
+positioning_constraints: "Preserve the security-research foundation and avoid flattening the profile into generic AI enthusiasm."
+claims_to_avoid: [mature agentic AI security expert, production agent-security ownership, post-quantum cryptography specialist without context]
 linkedin: https://www.linkedin.com/in/renato-mignone/
 website: https://renatomignone.github.io/
 github: https://github.com/RenatoMignone
@@ -39,6 +46,19 @@ languages:
   - "French: Basic"
 
 ```
+
+## Goals and targeting
+
+**Ideal role:** Security Research Engineer working at the intersection of AI systems and cybersecurity.
+**Current focus:** Applied cryptography, privacy-preserving systems, systems security, and AI-driven threat detection, with practical experimentation in agentic AI workflows.
+**Want to work on next:** secure tool use, prompt injection and context poisoning analysis, agent permissions, policy enforcement, and auditability for agentic systems.
+**Growth direction:** Agentic AI security and AI-assisted cybersecurity research.
+**Target locations:** Europe or remote-friendly international roles; relocation open for strong research opportunities.
+**Interests:** applied cryptography, privacy-preserving authorization, post-quantum security, systems security, AI-assisted cybersecurity, agentic AI workflows.
+**Evidence boundaries:** Applied cryptography, systems security, and AI-driven threat detection are verified. Agentic AI security is a direction supported by AgentKit SEO and agent-workflow experimentation, but should be framed as building toward unless tied to a specific verified artifact.
+**Positioning constraints:** Preserve the security-research foundation. Do not over-index on the current post-quantum cryptography thesis when tailoring for broader AI security roles.
+**Claims to avoid:** Mature agentic AI security expert; production ownership of agent-security systems; generic AI enthusiast language.
+**Constraints:** No restriction documented in this public example beyond the evidence boundaries above.
 
 Personal knowledge base for Renato Mignone's academic and professional cybersecurity career. Not for direct third-party distribution. Use as a verified source of truth for cover letters, CVs, LinkedIn sections, role-specific applications, and interview preparation.
 

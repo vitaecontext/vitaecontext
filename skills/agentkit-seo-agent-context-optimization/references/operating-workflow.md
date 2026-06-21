@@ -44,14 +44,19 @@ For large files, avoid dumping the full context file into chat by default. Prefe
 
 The context file supplies facts.
 
+The goals and targeting section supplies direction, priorities, and constraints.
+
 The platform skill supplies formatting, discoverability, and channel-specific constraints.
 
 Do not let the platform skill become the factual source of truth.
 
+When tailoring output, use verified evidence as the foundation, future direction as the positioning target, and constraints or claims-to-avoid as guardrails. Do not turn a growth direction into a claimed credential, completed project, employer responsibility, or mature expertise unless the context file supplies evidence.
+
 ## Maintenance rules
 
 - update only when a fact is real and verifiable
-- do not add speculative future items
+- do not add speculative future items to verified record sections
+- record aspirations, target roles, growth direction, and claims to avoid in `Goals and targeting`
 - when adding new content, also update the `VERIFIED FACTS` anchor if relevant
 - keep a version history, ideally in Git
 - when a file is structurally weak, repair canonical structure before downstream rewriting

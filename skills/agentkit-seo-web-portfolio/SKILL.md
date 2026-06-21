@@ -66,6 +66,8 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 - Match structured data to page purpose. Use article-like schema only for visible article-like pages with supported author, date, and body content.
 - Treat rankings, rich results, image thumbnails, snippets, and indexing speed as eligibility outcomes, not guarantees.
 - Keep page purpose, URL structure, internal links, and proof assets aligned so every important claim resolves to a crawlable page.
+- Use career direction to prioritize homepage positioning, About copy, project ordering, and case-study framing, but keep every public claim tied to visible or supplied proof.
+- Honor context-file evidence boundaries, positioning constraints, and claims to avoid when writing metadata, schema, and visible copy.
 - When facts are missing, ask for the canonical URL, page inventory, or source content before inventing portfolio copy or structured data.
 - When editing portfolio code, preserve existing styling and application logic unless the user explicitly asks for a redesign. Prefer metadata, structured data, semantic HTML, crawlability, and content changes before layout changes.
 - For direct code edits, run the available build, lint, test, or preview command when the project provides one, and report any verification that could not run.

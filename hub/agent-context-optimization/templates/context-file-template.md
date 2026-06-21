@@ -76,10 +76,24 @@ open_to_relocation: true
 target_locations: [Amsterdam, Berlin, Remote-EU]
 # Preferred work mode: remote, hybrid, or onsite
 work_mode: hybrid
+# One compact sentence combining verified identity and future direction
+positioning_summary: "Platform engineer with verified distributed-systems foundations, building toward staff-level reliability and developer-platform leadership."
 # The role you ultimately want, even if a step beyond your current target
 ideal_role: Staff Site Reliability Engineer
 # What you are focused on now and want to work on next
 current_focus: Kubernetes operator development and SLO-driven reliability
+# Problems, domains, or responsibilities you want to move toward next
+want_to_work_on_next: developer-platform tooling, incident-reduction systems, and mentoring junior engineers
+# The future domain, seniority, or role family you are building toward
+growth_direction: Staff-level platform reliability and developer experience
+# Emerging topics that should guide positioning but not be overstated
+emerging_interests: [platform product strategy, reliability coaching, incident learning systems]
+# Which direction claims are verified, emerging, or target development areas
+evidence_boundaries: "Kubernetes, observability, and backend reliability are verified; staff-level leadership is a growth direction supported by mentoring and project ownership examples."
+# Rules for framing your transition without exaggeration
+positioning_constraints: "Frame staff-level reliability as a direction, not as a current title."
+# Claims that should not appear unless new evidence is added
+claims_to_avoid: [Staff Engineer title, company-wide incident ownership, formal people management]
 # Professional and personal interests that shape your direction
 interests: [open-source infrastructure, distributed systems, mentoring, climbing]
 
@@ -128,8 +142,15 @@ target_roles: []
 open_to_relocation:
 target_locations: []
 work_mode:
+positioning_summary:
 ideal_role:
 current_focus:
+want_to_work_on_next:
+growth_direction:
+emerging_interests: []
+evidence_boundaries:
+positioning_constraints:
+claims_to_avoid: []
 interests: []
 
 education:
@@ -166,8 +187,12 @@ Good example:
 **Ideal role:** Staff Site Reliability Engineer at an infrastructure-focused product company.
 **Current focus:** Kubernetes operator development and SLO-driven reliability; want to move from service ownership into platform-wide reliability.
 **Want to work on next:** developer-platform tooling, incident-reduction systems, and mentoring junior engineers.
+**Growth direction:** Staff-level platform reliability and developer experience.
 **Target locations:** Amsterdam or Berlin on a hybrid basis; open to remote within the EU. No relocation outside the EU for now.
 **Interests:** open-source infrastructure, distributed systems, technical writing, climbing.
+**Evidence boundaries:** Kubernetes, observability, and backend reliability are verified; staff-level leadership is a growth direction supported by mentoring and project ownership examples.
+**Positioning constraints:** Frame staff-level reliability as a direction, not as a current title.
+**Claims to avoid:** Staff Engineer title, company-wide incident ownership, formal people management.
 **Constraints:** needs visa sponsorship outside the EU; not pursuing pure management tracks.
 ```
 
@@ -177,8 +202,12 @@ Replace the block below with your own goals and targeting. Keep each line to sta
 **Ideal role:** [The role you ultimately want.]
 **Current focus:** [What you are working on and improving now.]
 **Want to work on next:** [Problems, domains, or responsibilities you are aiming for.]
+**Growth direction:** [Future domain, role family, seniority, or positioning shift you are building toward.]
 **Target locations:** [Cities, countries, remote or hybrid preference, relocation stance, or No restriction.]
 **Interests:** [Professional and personal interests that shape your direction.]
+**Evidence boundaries:** [Which direction claims are verified, emerging, or target development areas.]
+**Positioning constraints:** [Rules for framing the transition without overstating experience.]
+**Claims to avoid:** [Claims that should not appear in public copy unless new evidence is supplied.]
 **Constraints:** [Visa, availability, role types to avoid, or No restriction.]
 ```
 

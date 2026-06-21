@@ -38,7 +38,7 @@ The package is distributed as `agentkit-seo` on npm. Its stable runtime unit is 
 
 Agent context optimization, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
 
-The resulting agent-context-file stores verified identity, education, experience, projects, achievements, links, target roles, constraints, and positioning notes. Platform skills use that file as factual input. They should not invent missing credentials, metrics, projects, employers, testimonials, or responsibilities.
+The resulting agent-context-file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
 
 The context file is private user material. Do not commit it to this repository or include it in public generated docs.
 
