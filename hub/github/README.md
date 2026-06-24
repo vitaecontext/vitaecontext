@@ -66,11 +66,14 @@ The optimization logic is divided into the following documents, ordered from fou
 
 When an AI agent is tasked with optimizing a user's GitHub presence:
 
-1. Review this index to determine which specific sub-module is relevant to the task.
-2. If optimizing the overarching profile (`username/username`), load `profile-architecture.md` and `profile-readme.md`.
-3. If optimizing a specific project repository, load `repository-seo.md` and `linguist-and-stats.md`.
-4. If writing AI instructions for a codebase, load `copilot-and-agents.md`.
-5. Always enforce the formatting constraints defined in the sub-modules over generic creative writing.
+1. **Information Fetching**: Before auditing, you can retrieve the user's public bio, profile README, and up to 20 recent repository READMEs without consuming REST API rate limits by executing:
+   `node skills/agentkit-seo-github/scripts/github-fetcher.mjs <username> [output_dir] [max_repos]`
+   Then inspect the generated report at `output/github_<username>_report.md`.
+2. Review this index to determine which specific sub-module is relevant to the task.
+3. If optimizing the overarching profile (`username/username`), load `profile-architecture.md` and `profile-readme.md`.
+4. If optimizing a specific project repository, load `repository-seo.md` and `linguist-and-stats.md`.
+5. If writing AI instructions for a codebase, load `copilot-and-agents.md`.
+6. Always enforce the formatting constraints defined in the sub-modules over generic creative writing.
 
 ---
 
