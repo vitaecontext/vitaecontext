@@ -1,5 +1,5 @@
 ---
-description: Build or maintain a personal AgentKit SEO context file
+description: Build or maintain a personal career context file
 ---
 
 Use the `agentkit-seo-agent-context-optimization` skill before producing output.

@@ -48,9 +48,9 @@ Install and export commands may also write local manifest files such as `agentki
 
 ## Personal career context
 
-AgentKit SEO encourages users to maintain a private `agent-context-file` for verified career facts. That file can contain sensitive information such as work history, education, links, target roles, achievements, constraints, and personal positioning notes.
+AgentKit SEO encourages users to maintain a private **personal career context file** for verified career facts. That file can contain sensitive information such as work history, education, links, target roles, achievements, constraints, and personal positioning notes.
 
-AgentKit SEO does not create or upload a personal context file unless the user explicitly asks an agent or CLI command to create a template at a chosen local path. Users should not commit private context files, CV exports, screenshots, recruiter notes, or other sensitive career material to public repositories.
+AgentKit SEO does not create or upload a personal career context file unless the user explicitly asks an agent or CLI command to create a template at a chosen local path. Users should not commit private context files, CV exports, screenshots, recruiter notes, or other sensitive career material to public repositories.
 
 ## Network access
 
@@ -69,7 +69,7 @@ Those tools and services control their own network behavior and data handling.
 
 ## Third-party AI providers
 
-AgentKit SEO skills are instructions for agent environments. If a user gives an AI agent a CV, LinkedIn export, GitHub profile, portfolio source, screenshots, or an `agent-context-file`, that provider may process the content under its own terms and privacy policy.
+AgentKit SEO skills are instructions for agent environments. If a user gives an AI agent a CV, LinkedIn export, GitHub profile, portfolio source, screenshots, or a personal career context file, that provider may process the content under its own terms and privacy policy.
 
 Review the privacy settings and data-use policy of the chosen AI provider before sending sensitive personal or career information to an agent.
 

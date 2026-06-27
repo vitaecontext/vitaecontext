@@ -1,23 +1,23 @@
 <!--
 metadata:
-  title: "Agent context file specification"
+  title: "Personal career context file specification"
   platform: "general"
-  objective: "Defines the required structure, section order, formatting conventions, and agent-optimization rules for a personal agent context file."
+  objective: "Defines the required structure, section order, formatting conventions, and agent-optimization rules for a personal career context file."
   status: "draft"
   last_updated: "2026-04-24"
   tags: ["context-file", "specification", "agent-optimization", "formatting"]
   agent_priority: "high"
 -->
 
-# Agent context file specification
+# Personal career context file specification
 
-> Defines the required structure, section order, and formatting rules that every personal agent context file must follow to remain usable by both a human maintainer and an AI agent.
+> Defines the required structure, section order, and formatting rules that every personal career context file must follow to remain usable by both a human maintainer and an AI agent.
 
 ---
 
 ## 1. Overview
 
-The agent context file is a single Markdown document containing a person's full professional record and stated career direction. It is the source of truth from which any career output can be generated: CVs, cover letters, LinkedIn sections, portfolio copy, and interview preparation material. Two readers use it simultaneously — a human who maintains it and an agent that extracts verified facts, goals, and positioning constraints from it. Every rule in this spec serves both readers. Following this spec produces a file that any agent can load, navigate by section tag, and use immediately without additional instructions.
+The personal career context file is a single Markdown document containing a person's full professional record and stated career direction. It is the source of truth from which any career output can be generated: CVs, cover letters, LinkedIn sections, portfolio copy, and interview preparation material. Two readers use it simultaneously — a human who maintains it and an agent that extracts verified facts, goals, and positioning constraints from it. Every rule in this spec serves both readers. Following this spec produces a file that any agent can load, navigate by section tag, and use immediately without additional instructions.
 
 The file can live wherever the user wants. Prefer an explicit user-chosen path. A useful portable convention is `~/.agentkit-seo/<name-surname>-seo-context.md`; a local workspace draft is also valid while the file is being created. Agents must confirm the destination before creating or overwriting the file. Because valid context files can become large, agents should prefer file writes or targeted diffs over full in-chat drafts; if file writing is unavailable, return a compact outline first and split the full Markdown draft by section only when requested.
 

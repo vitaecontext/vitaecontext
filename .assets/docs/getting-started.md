@@ -10,7 +10,7 @@ Use this table before opening deeper files.
 | --- | --- | --- |
 | Install AgentKit SEO into an agent tool | [README.md](../../README.md) | First install |
 | See what a skill-ready agent can do | [end-to-end-workflows.md](./end-to-end-workflows.md) | The matching runtime skill |
-| Build a private career context file | [hub/agent-context-optimization/README.md](../../hub/agent-context-optimization/README.md) | [agent-context skill](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
+| Build a personal career context file | [hub/agent-context-optimization/README.md](../../hub/agent-context-optimization/README.md) | [context-optimization skill](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
 | Optimize one public surface | The matching `hub/<module>/README.md` | The matching `.skills/agent-skill/agentkit-seo-<module>/SKILL.md` |
 | Understand the design thinking and concepts applied | [DESIGN.md](../../DESIGN.md) | [architecture-map.md](./architecture-map.md) |
 | Understand the repo architecture | [architecture-map.md](./architecture-map.md) | [.skills/architecture.md](../../.skills/architecture.md) |
@@ -104,7 +104,7 @@ Uninstall reads the install manifest and removes only the AgentKit SEO skill fol
 
 ## 4. First use
 
-Create a private context-file template outside the repository:
+Create the personal career context file template outside the repository:
 
 ```bash
 npx agentkit-seo template context --output ~/.agentkit-seo/my-context.md
@@ -116,10 +116,10 @@ Expected shape:
 Wrote context template to ~/.agentkit-seo/my-context.md
 ```
 
-Ask the agent to fill the context file from trusted material:
+Give trusted raw material to the agent and invoke the context-optimization skill to create the personal career context file:
 
 ```text
-Use agentkit-seo-agent-context-optimization to create my agent-context-file.
+Use agentkit-seo-agent-context-optimization to create my personal career context file.
 I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
 screenshots, or any other career material you need.
 ```
@@ -128,7 +128,7 @@ Then use one platform skill:
 
 ```text
 Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
-Use my personal context file at ~/.agentkit-seo/my-context.md.
+Use my personal career context file at ~/.agentkit-seo/my-context.md.
 ```
 
 ## 5. How agents should navigate

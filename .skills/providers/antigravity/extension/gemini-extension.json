@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "1.8.2",
-  "description": "Portable personal-branding and discoverability skills for LinkedIn, GitHub, CV/ATS, web portfolios, X, and agent-readable context files.",
+  "version": "1.8.3",
+  "description": "Portable personal-branding and discoverability skills for LinkedIn, GitHub, CV/ATS, web portfolios, X, and personal career context files.",
   "contextFileName": "GEMINI.md"
 }

@@ -51,7 +51,7 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 - If the user provides an X/Twitter URL or handle, inspect publicly accessible profile material and recent posts when tools allow it.
 - If public access is blocked, stale, or incomplete, ask for screenshots, pasted bio and pinned post, recent post examples, analytics summaries, or a local text file export.
 - Ask for the target audience, niche, posting capacity, proof links, and topics the user can credibly discuss before building a posting strategy.
-- If the account strategy depends on professional facts or cross-platform consistency, recommend creating or updating the agent context file first.
+- If the account strategy depends on professional facts or cross-platform consistency, recommend creating or updating the personal career context file first.
 
 ## Rules
 

@@ -56,7 +56,7 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 - Treat extraction warnings as unavailable evidence. GitHub HTML is a public observation surface, not a stable API contract, so a missing parsed field does not prove that the field or repository is absent.
 - If the user provides only a username, treat it as enough to inspect public GitHub material when tools allow it.
 - If the task depends on private repositories, contribution details, or account settings, ask the user for screenshots, copied settings, exports, or explicit local files instead of guessing.
-- If the user has or needs an agent context file, load or recommend `agentkit-seo-agent-context-optimization` before rewriting profile-level positioning.
+- If the user has or needs a personal career context file, load or recommend `agentkit-seo-agent-context-optimization` before rewriting profile-level positioning.
 - For repository-specific work, prefer concrete file edits when the repository is available locally; otherwise return copy blocks and a change checklist.
 - Do not request login or tokens unless the user explicitly asks for private repository work.
 

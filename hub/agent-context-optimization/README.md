@@ -11,7 +11,7 @@ metadata:
 
 # Agent context optimization
 
-> This folder defines the standard for building and maintaining a personal agent context file: the private source of truth that keeps career-focused AI work grounded in verified facts.
+> This folder defines the standard for building and maintaining a personal career context file: the private source of truth that keeps career-focused AI work grounded in verified facts.
 > Public web page: [Agent context optimization playbook](https://agentkit-seo.github.io/playbooks/agent-context-optimization/).
 
 ---
@@ -29,12 +29,12 @@ Before:
 "Here is my CV. Also my GitHub is different now. Actually ignore that old project."
 
 After:
-"Use my agent-context-file as the source of truth, then audit my LinkedIn profile."
+"Use my personal career context file as the source of truth, then audit my LinkedIn profile."
 ```
 
 ## 2. Use this module when
 
-- A user does not yet have an agent-context-file.
+- A user does not yet have a personal career context file.
 - Existing career material is scattered across CVs, LinkedIn, GitHub, notes, and portfolio pages.
 - An agent needs one verified source of truth before rewriting public career material.
 - A user wants to move toward a new role, domain, seniority level, or research direction without overclaiming.
@@ -55,17 +55,17 @@ After:
 - [why-context-files.md](./why-context-files.md): The motivation document explaining why a context file outperforms copy-pasted raw text or agent memory.
 - [agent-workflow.md](./agent-workflow.md): The operational guide for loading the file into agent sessions and combining it with other modules.
 - [file-maintenance.md](./file-maintenance.md): The maintenance lifecycle for updates, token growth, goals, verified facts, and version history.
-- [templates/context-file-template.md](./templates/context-file-template.md): A guided template for building a new personal context file.
+- [templates/context-file-template.md](./templates/context-file-template.md): A guided template for building a new personal career context file.
 - [examples/renato-mignone-context-file-example.md](./examples/renato-mignone-context-file-example.md): A filled example copied from a real context file and lightly redacted where exact identifiers or verification-only details would be too specific for the public repo.
 
 ## 5. Usage for agents
 
-When an AI agent is asked to work with a personal context file:
+When an AI agent is asked to work with a personal career context file:
 
 1. Load [context-file-spec.md](./context-file-spec.md) before editing or validating the file.
 2. Load [agent-workflow.md](./agent-workflow.md) when the task is about prompting or module routing.
 3. Load [file-maintenance.md](./file-maintenance.md) when new content must be integrated into an existing file.
-4. Treat the personal context file itself as the factual source of truth, not the surrounding explanatory docs.
+4. Treat the personal career context file itself as the factual source of truth, not the surrounding explanatory docs.
 
 ---
 

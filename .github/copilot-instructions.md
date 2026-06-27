@@ -15,7 +15,7 @@ Follow the repository map in `.assets/docs/architecture-map.md` before suggestin
 - Keep edits scoped to the requested layer.
 - Do not duplicate runtime methodology into provider adapter folders.
 - Do not invent platform ranking behavior or unsupported SEO/ATS claims.
-- Do not commit private agent-context files or user career data.
+- Do not commit personal career context files or user career data.
 - Use plain Markdown and concise instructions for agent-facing files.
 
 ## Validation

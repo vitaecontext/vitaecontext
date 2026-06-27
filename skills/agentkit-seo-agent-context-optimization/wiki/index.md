@@ -23,13 +23,13 @@ If this file is unavailable in an older install, continue with the matching `ref
 
 ## 2. Wiki files
 
-- [knowledge.md](knowledge.md): Compiled runtime knowledge for agent-context-file structure, source-of-truth behavior, maintenance, validation, evidence handling, and known agent failure modes.
+- [knowledge.md](knowledge.md): Compiled runtime knowledge for personal career context file structure, source-of-truth behavior, maintenance, validation, evidence handling, and known agent failure modes.
 
 ## 3. Conditional loads
 
 Read [knowledge.md](knowledge.md) when the task asks about any of these topics:
 
-- What an agent-context-file is, when to create one, where to store it, or how it relates to platform skills
+- What a personal career context file is, when to create one, where to store it, or how it relates to platform skills
 - Context-file structure, `QUICK REFERENCE`, canonical section order, semantic tags, or `VERIFIED FACTS`
 - Maintenance, validation, chronology checks, source ledgers, or targeted updates
 - Cross-platform fact conflicts, unsupported claims, or downstream public-output grounding

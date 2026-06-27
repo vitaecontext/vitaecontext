@@ -1,8 +1,8 @@
-# Context file spec and structure
+# Personal career context file specification and structure
 
 ## Required shape
 
-The context file is one Markdown document with a fixed, stable structure.
+The personal career context file is one Markdown document with a fixed, stable structure.
 
 Recommended portable location when the user wants a reusable path:
 

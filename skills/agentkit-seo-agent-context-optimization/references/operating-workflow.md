@@ -1,19 +1,19 @@
-# Context file operating workflow
+# Personal career context file operating workflow
 
 ## Session workflow
 
-1. load the context file first
+1. load the personal career context file first
 2. state the task and hard constraints
 3. load the matching platform skill only if needed
 4. review the output against factual grounding
-5. revise the source context file if the task exposed missing or conflicting facts
+5. revise the personal career context file if the task exposed missing or conflicting facts
 
 ## File discovery convention
 
 Prefer an explicit path supplied by the user. Good options include:
 
 ```text
-Use the context file at ~/career/name-surname-seo-context.md.
+Use the personal career context file at ~/career/name-surname-seo-context.md.
 Create a draft in this workspace at ./name-surname-seo-context.md.
 ```
 
@@ -42,7 +42,7 @@ For large files, avoid dumping the full context file into chat by default. Prefe
 
 ## Combination rule
 
-The context file supplies facts.
+The personal career context file supplies facts.
 
 The goals and targeting section supplies direction, priorities, and constraints.
 

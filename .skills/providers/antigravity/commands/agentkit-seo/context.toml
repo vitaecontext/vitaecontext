@@ -1,4 +1,4 @@
-description = "Build or maintain a personal AgentKit SEO context file."
+description = "Build or maintain a personal career context file."
 prompt = """
 Use AgentKit SEO module `agentkit-seo-agent-context-optimization`.
 

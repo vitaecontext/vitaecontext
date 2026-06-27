@@ -11,13 +11,13 @@ metadata:
 
 # Agent workflow for context file users
 
-> Practical instructions for using a personal agent context file in an agent session, covering invocation patterns, Skill submodule routing, prompt templates, and output quality criteria for the four most common career tasks.
+> Practical instructions for using a personal career context file in an agent session, covering invocation patterns, Skill submodule routing, prompt templates, and output quality criteria for the four most common career tasks.
 
 ---
 
 ## 1. Overview
 
-This file is for users who have already built a personal agent context file following the rules in [context-file-spec.md](./context-file-spec.md). It explains how to load the file into an agent session, how to write effective task prompts, and how to combine the context file with platform-specific Skill submodules. The outcome of following this workflow is accurate, platform-ready career outputs that require minimal editing.
+This file is for users who have already built a personal career context file following the rules in [context-file-spec.md](./context-file-spec.md). It explains how to load the file into an agent session, how to write effective task prompts, and how to combine the context file with platform-specific Skill submodules. The outcome of following this workflow is accurate, platform-ready career outputs that require minimal editing.
 
 ## 2. Invoking the context file
 

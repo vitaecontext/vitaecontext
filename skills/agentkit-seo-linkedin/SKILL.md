@@ -52,7 +52,7 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 - Assume most LinkedIn profile details are login-gated or incomplete from a public URL alone.
 - If the user gives a LinkedIn URL, use only public information that tools can access, then ask for pasted section text, screenshots, an export, or a local text file for the full profile.
 - For full optimization, request a compact profile text dump if available. Otherwise ask only for the missing sections needed for the next pass, such as headline, About, Featured items, Experience entries, Skills, target roles, target geography, or proof links.
-- If the user's facts are scattered or the task affects multiple profile sections, recommend creating or updating the agent context file before rewriting.
+- If the user's facts are scattered or the task affects multiple profile sections, recommend creating or updating the personal career context file before rewriting.
 - If the user supplies a context file, use it as the factual source of truth and treat LinkedIn copy as a channel-specific adaptation.
 - Do not infer private metrics, endorsements, applicant outcomes, or hidden profile fields from public visibility.
 

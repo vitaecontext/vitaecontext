@@ -1,23 +1,23 @@
 <!--
 metadata:
-  title: "Why build a personal agent context file"
+  title: "Why build a personal career context file"
   platform: "general"
-  objective: "Explains the problem that a personal agent context file solves and why it outperforms the alternatives a user would otherwise rely on."
+  objective: "Explains the problem that a personal career context file solves and why it outperforms the alternatives a user would otherwise rely on."
   status: "draft"
   last_updated: "2026-06-21"
   tags: ["context-file", "motivation", "workflow", "productivity"]
   agent_priority: "low"
 -->
 
-# Why build a personal agent context file
+# Why build a personal career context file
 
-> Every time you ask an agent to write a cover letter or update your LinkedIn profile, it starts from zero — with no knowledge of who you are, what you have done, or how you want to be positioned. A personal agent context file ends that problem permanently.
+> Every time you ask an agent to write a cover letter or update your LinkedIn profile, it starts from zero — with no knowledge of who you are, what you have done, or how you want to be positioned. A personal career context file ends that problem permanently.
 
 ---
 
 ## 1. Overview
 
-This file explains the practical problem that a personal agent context file solves. It also covers what the file changes about the daily workflow of using an agent for career tasks, and why it outperforms the workarounds most people currently use. It is written for a human who has not yet built a context file and is deciding whether to do so. Agents loading this folder do not need to read this file to perform their tasks.
+This file explains the practical problem that a personal career context file solves. It also covers what the file changes about the daily workflow of using an agent for career tasks, and why it outperforms the workarounds most people currently use. It is written for a human who has not yet built a context file and is deciding whether to do so. Agents loading this folder do not need to read this file to perform their tasks.
 
 ## 2. The problem: every session starts from scratch
 
@@ -33,7 +33,7 @@ All three approaches produce the same outcome: generic, loosely grounded outputs
 
 ## 3. What the context file changes
 
-A personal agent context file is a single Markdown document you maintain in your own file system. It contains your complete professional record: education, experience, projects, skills, certifications, and languages, structured according to a consistent schema defined in [context-file-spec.md](./context-file-spec.md). It also records career direction, target roles, evidence boundaries, positioning constraints, and claims to avoid as stated intent, separate from verified facts.
+A personal career context file is a single Markdown document you maintain in your own file system. It contains your complete professional record: education, experience, projects, skills, certifications, and languages, structured according to a consistent schema defined in [context-file-spec.md](./context-file-spec.md). It also records career direction, target roles, evidence boundaries, positioning constraints, and claims to avoid as stated intent, separate from verified facts.
 
 When the file exists and is up to date, the workflow for any career task collapses to three steps.
 
@@ -75,7 +75,7 @@ These are not special prompts that require new skills to write. They are the nat
 
 ## 5. Why this outperforms the alternatives
 
-The table below compares the personal agent context file against the three workarounds described in section 2.
+The table below compares the personal career context file against the three workarounds described in section 2.
 
 The approach being compared and why each falls short is summarized here.
 
@@ -97,4 +97,4 @@ That is the case for building it.
 
 ---
 
-*Next step: Learn the required architecture in the [Agent context file specification](./context-file-spec.md).*
+*Next step: Learn the required architecture in the [Personal career context file specification](./context-file-spec.md).*

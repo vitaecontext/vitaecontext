@@ -79,7 +79,7 @@ When producing a LinkedIn audit or rewrite:
 - Separate factual issues, discoverability improvements, proof-of-work improvements, and activity recommendations.
 - Use exact paste-ready copy only for sections supported by supplied or verified facts.
 - Mark exact UI limits, preview behavior, or paid-feature advice as current-source verified, UI-observed, or inferred.
-- Preserve factual alignment with the agent-context-file when available.
+- Preserve factual alignment with the personal career context file when available.
 - Include a one-line `Depth note` for broad audits, inaccessible sections, or intentionally deferred activity review.
 
 Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/linkedin/sources.md](../../../../hub/linkedin/sources.md).

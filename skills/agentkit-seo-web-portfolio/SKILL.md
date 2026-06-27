@@ -52,7 +52,7 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 - If the user provides a public portfolio URL, fetch and inspect the homepage, important pages, metadata, canonicals, sitemap, robots, structured data, and visible copy when tools allow it.
 - If the portfolio source is available locally and the user asks for implementation, inspect the source and prefer direct code edits for metadata, structured data, semantic HTML, links, and content. For audit-only requests, return patch-ready recommendations unless the user asks to edit.
 - If public crawling is blocked or the site is not deployed, ask for local source paths, built HTML, screenshots, page inventory, or pasted page copy.
-- If the site copy depends on biography, project claims, or career facts, recommend using the agent context file before rewriting.
+- If the site copy depends on biography, project claims, or career facts, recommend using the personal career context file before rewriting.
 - Do not invent projects, testimonials, metrics, employers, or credentials to fill portfolio pages.
 
 ## Rules

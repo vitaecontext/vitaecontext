@@ -33,7 +33,7 @@ If this file is unavailable in an older install, use `SKILL.md`, `references/ins
 
 AgentKit SEO is an installable set of Markdown-first agent skills for improving public professional surfaces:
 
-- Agent context files
+- Personal career context files
 - LinkedIn profiles
 - GitHub profiles and repositories
 - CV and resume material for ATS-safe parsing
@@ -46,7 +46,7 @@ The package is distributed as `agentkit-seo` on npm. Its stable runtime unit is 
 
 Agent context optimization, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
 
-The resulting agent-context-file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
+The resulting personal career context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
 
 The context file is private user material. Do not commit it to this repository or include it in public generated docs.
 
@@ -109,7 +109,7 @@ When a claim depends on current platform behavior, paid-tier behavior, provider 
 Use these labels when source status could affect a recommendation:
 
 - `Verified`: Observed directly in inspected public material, local files, rendered output, supplied screenshots, extracted text, or a supplied source-of-truth file.
-- `From context`: Taken from the user's agent-context-file.
+- `From context`: Taken from the user's personal career context file.
 - `From source`: Taken from supplied source material such as pasted text, exports, screenshots, public URLs, local files, or job descriptions.
 - `Inference`: Reasoned from inspected evidence, but not directly observed as a fact.
 - `Inaccessible`: Could not be inspected because the surface is private, login-gated, unavailable, blocked, or outside the task scope.
@@ -168,13 +168,13 @@ If this file is unavailable in an older install, continue with the matching `ref
 
 ## 2. Wiki files
 
-- [knowledge.md](knowledge.md): Compiled runtime knowledge for agent-context-file structure, source-of-truth behavior, maintenance, validation, evidence handling, and known agent failure modes.
+- [knowledge.md](knowledge.md): Compiled runtime knowledge for personal career context file structure, source-of-truth behavior, maintenance, validation, evidence handling, and known agent failure modes.
 
 ## 3. Conditional loads
 
 Read [knowledge.md](knowledge.md) when the task asks about any of these topics:
 
-- What an agent-context-file is, when to create one, where to store it, or how it relates to platform skills
+- What a personal career context file is, when to create one, where to store it, or how it relates to platform skills
 - Context-file structure, `QUICK REFERENCE`, canonical section order, semantic tags, or `VERIFIED FACTS`
 - Maintenance, validation, chronology checks, source ledgers, or targeted updates
 - Cross-platform fact conflicts, unsupported claims, or downstream public-output grounding
@@ -229,11 +229,11 @@ If this file is unavailable in an older install, continue with `references/why-a
 
 Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
 
-For context-file work, `From context` means a fact is already present in the existing agent-context-file. Do not treat `From context` as verified against external evidence unless the source entry or inspected material supports it.
+For context-file work, `From context` means a fact is already present in the existing personal career context file. Do not treat `From context` as verified against external evidence unless the source entry or inspected material supports it.
 
 ## 3. Canonical definitions
 
-**Agent-context-file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
+**Personal career context file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
 
 **Agent context optimization** means building, normalizing, validating, and maintaining that file so downstream platform outputs reuse facts instead of inventing or re-asking for them.
 
@@ -747,7 +747,7 @@ When producing a LinkedIn audit or rewrite:
 - Separate factual issues, discoverability improvements, proof-of-work improvements, and activity recommendations.
 - Use exact paste-ready copy only for sections supported by supplied or verified facts.
 - Mark exact UI limits, preview behavior, or paid-feature advice as current-source verified, UI-observed, or inferred.
-- Preserve factual alignment with the agent-context-file when available.
+- Preserve factual alignment with the personal career context file when available.
 - Include a one-line `Depth note` for broad audits, inaccessible sections, or intentionally deferred activity review.
 
 Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/linkedin/sources.md](../../../../hub/linkedin/sources.md).

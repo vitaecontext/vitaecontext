@@ -38,9 +38,9 @@ Expected agent output:
 - risks or inaccessible surfaces
 ```
 
-## 2. Demo: build the private context file
+## 2. Demo: create the personal career context file
 
-Goal: turn scattered material into one private source of truth before optimizing public surfaces.
+Goal: give scattered career material to an agent and use `agentkit-seo-agent-context-optimization` to turn it into one private source of truth before optimizing public surfaces.
 
 Example inputs:
 
@@ -59,7 +59,7 @@ Prompt:
 ```text
 Use agentkit-seo-agent-context-optimization.
 
-Create my agent-context-file from these inputs:
+Create my personal career context file from these inputs:
 - CV: ~/career/current-cv.pdf
 - LinkedIn sections: pasted below
 - GitHub: https://github.com/<user>
@@ -79,7 +79,7 @@ Ask before turning uncertain claims into public copy.
 Expected output:
 
 ```text
-- context-file draft or saved file path
+- personal career context file draft or saved file path
 - source ledger for every major claim
 - conflicts found across CV, LinkedIn, GitHub, and portfolio material
 - goals and targeting captured as stated intent, kept separate from verified facts

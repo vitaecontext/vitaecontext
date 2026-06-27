@@ -25,7 +25,7 @@ If this file is unavailable in an older install, use `SKILL.md`, `references/ins
 
 AgentKit SEO is an installable set of Markdown-first agent skills for improving public professional surfaces:
 
-- Agent context files
+- Personal career context files
 - LinkedIn profiles
 - GitHub profiles and repositories
 - CV and resume material for ATS-safe parsing
@@ -38,7 +38,7 @@ The package is distributed as `agentkit-seo` on npm. Its stable runtime unit is 
 
 Agent context optimization, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
 
-The resulting agent-context-file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
+The resulting personal career context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
 
 The context file is private user material. Do not commit it to this repository or include it in public generated docs.
 
@@ -101,7 +101,7 @@ When a claim depends on current platform behavior, paid-tier behavior, provider 
 Use these labels when source status could affect a recommendation:
 
 - `Verified`: Observed directly in inspected public material, local files, rendered output, supplied screenshots, extracted text, or a supplied source-of-truth file.
-- `From context`: Taken from the user's agent-context-file.
+- `From context`: Taken from the user's personal career context file.
 - `From source`: Taken from supplied source material such as pasted text, exports, screenshots, public URLs, local files, or job descriptions.
 - `Inference`: Reasoned from inspected evidence, but not directly observed as a fact.
 - `Inaccessible`: Could not be inspected because the surface is private, login-gated, unavailable, blocked, or outside the task scope.

@@ -2,7 +2,7 @@
 metadata:
   title: "Context file maintenance"
   platform: "general"
-  objective: "Explains when and how to update the personal agent context file, how to manage token growth, and how to keep goals, VERIFIED FACTS, and version history accurate."
+  objective: "Explains when and how to update the personal career context file, how to manage token growth, and how to keep goals, VERIFIED FACTS, and version history accurate."
   status: "draft"
   last_updated: "2026-06-21"
   tags: ["context-file", "maintenance", "versioning", "token-efficiency"]
@@ -11,13 +11,13 @@ metadata:
 
 # Context file maintenance
 
-> Rules and workflows for keeping a personal agent context file accurate, current, and token-efficient as the user's career evolves over time.
+> Rules and workflows for keeping a personal career context file accurate, current, and token-efficient as the user's career evolves over time.
 
 ---
 
 ## 1. Overview
 
-This file covers the maintenance lifecycle of a personal agent context file. A context file that is outdated, disorganized, or bloated with redundant detail produces worse outputs than a well-maintained one, because agents spend tokens on irrelevant content, stale facts, or stale direction. Following the rules in this file keeps the context file reliable as the primary source of truth for all generated career outputs. The primary audience is a human who has already built a valid context file and wants to maintain it correctly over time.
+This file covers the maintenance lifecycle of a personal career context file. A context file that is outdated, disorganized, or bloated with redundant detail produces worse outputs than a well-maintained one, because agents spend tokens on irrelevant content, stale facts, or stale direction. Following the rules in this file keeps the context file reliable as the primary source of truth for all generated career outputs. The primary audience is a human who has already built a valid context file and wants to maintain it correctly over time.
 
 ## 2. When to update
 
@@ -55,7 +55,7 @@ Integrating new content into an existing context file by hand is error-prone, es
 Use the prompt template below for every integration task.
 
 ```text
-I have new content to add to my agent context file. The context file is loaded
+I have new content to add to my personal career context file. The context file is loaded
 in this session. The rules that govern its structure are in context-file-spec.md,
 also loaded in this session.
 

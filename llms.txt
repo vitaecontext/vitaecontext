@@ -1,6 +1,6 @@
 # AgentKit SEO
 
-AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. It gives LLM agents a private context-file workflow, platform-specific optimization methods, evidence labels, and provider-aware install layouts for Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
+AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its context-optimization skill turns user-supplied career material into a private Markdown source of truth called a personal career context file. Platform-specific skills, evidence labels, and provider-aware install layouts then support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
 
 ## Root
 
@@ -12,7 +12,7 @@ AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted profes
 
 ## Module wikis
 
-- [Agent context optimization](.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/index.md): Source-of-truth context-file structure, maintenance, validation, and handoff rules.
+- [Agent context optimization](.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/index.md): Personal career context file structure, maintenance, validation, and handoff rules.
 - [CV ATS](.skills/agent-skill/agentkit-seo-cv-ats/wiki/index.md): ATS-safe CV structure, parser constraints, tailoring, and audit rules.
 - [GitHub](.skills/agent-skill/agentkit-seo-github/wiki/index.md): GitHub profile, repository, search, Linguist, and agent-readiness rules.
 - [LinkedIn](.skills/agent-skill/agentkit-seo-linkedin/wiki/index.md): LinkedIn profile architecture, search visibility, activity, and algorithm-confidence rules.

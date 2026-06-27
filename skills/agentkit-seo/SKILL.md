@@ -37,15 +37,15 @@ For broad requests with no clear surface:
 ## Token discipline
 
 - Route to one module by default.
-- Load the agent context file before platform references only when facts, consistency, or cross-surface rewriting matter.
+- Load the personal career context file before platform references only when facts, consistency, or cross-surface rewriting matter.
 - Prefer public URL inspection, local search, or a compact pasted section over asking the user to dump every asset into the prompt.
 - Summarize inspected inputs and ask for the smallest missing input set.
 - Do not expand into algorithm explanation unless the user asks why.
 
 ## Intake workflow
 
-- If the user already has an agent context file, ask for or use its explicit path before rewriting platform assets.
-- If the task spans multiple surfaces, or the user's facts are scattered, recommend creating or repairing the agent context file first.
+- If the user already has a personal career context file, ask for or use its explicit path before rewriting platform assets.
+- If the task spans multiple surfaces, or the user's facts are scattered, recommend creating or repairing the personal career context file first.
 - Do not block a narrow one-off edit on a full context file when the supplied material is already enough.
 - For public URLs, fetch or inspect public material when tools allow it and cite which source was used.
 - For private or login-gated surfaces, ask the user for pasted section text, screenshots, exports, or a local text file instead of guessing.

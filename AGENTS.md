@@ -17,7 +17,7 @@ These instructions apply to the whole repository.
 - Keep provider folders thin. Treat `.skills/providers/` as adapter-specific install notes, wrapper commands, and metadata.
 - Keep the export and install implementation in `.skills/export/`.
 - Keep public project positioning, install commands, and module summaries in `README.md`.
-- Do not commit private agent-context files, user career exports, screenshots, or unstaged generated install output.
+- Do not commit personal career context files, user career exports, screenshots, or unstaged generated install output.
 
 ## Editing rules
 

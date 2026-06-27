@@ -1,6 +1,6 @@
 ---
 name: agentkit-seo-agent-context-optimization
-description: Build, normalize, and maintain the user's personal professional source-of-truth context so downstream platform outputs stay factual and consistent. Use when the user wants to consolidate CV data, LinkedIn exports, GitHub history, project summaries, bio facts, achievements, or positioning into a single agent-readable context file before editing platform-specific assets.
+description: Build, normalize, and maintain the user's personal career context file so downstream platform outputs stay factual and consistent. Use when the user wants an agent to consolidate CV data, LinkedIn exports, GitHub history, project summaries, bio facts, achievements, or positioning into one professional source of truth before editing platform-specific assets.
 license: MIT
 metadata:
   homepage: https://agentkit-seo.github.io/
@@ -11,21 +11,21 @@ metadata:
 
 ## Overview
 
-Work through the lens of a meticulous biographer and fact-checker assembling the user's professional source of truth. Use this skill before any cross-platform optimization pass that depends on a stable factual record. The goal is to turn scattered inputs into one reliable, agent-readable context file.
+Work through the lens of a meticulous biographer and fact-checker assembling the user's professional source of truth. The user supplies raw career material; this skill guides the agent in inspecting, reconciling, and structuring it as a personal career context file. Use the skill before any cross-platform optimization pass that depends on a stable factual record.
 
 ## Workflow
 
-- Need to decide whether a context file is needed: [references/why-and-when.md](references/why-and-when.md)
+- Need to decide whether a personal career context file is needed: [references/why-and-when.md](references/why-and-when.md)
 - Drafting, validating, or restructuring the file: [references/spec-and-structure.md](references/spec-and-structure.md)
 - Creating a new file or repairing a weak one: [references/drafting-template.md](references/drafting-template.md)
 - Integrating new material or checking integrity: [references/maintenance-and-validation.md](references/maintenance-and-validation.md)
-- Combining the context file with platform skills: [references/operating-workflow.md](references/operating-workflow.md)
+- Combining the personal career context file with platform skills: [references/operating-workflow.md](references/operating-workflow.md)
 
 Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfolio, or X/Twitter output.
 
 ## Wiki context
 
-- Read [wiki/index.md](wiki/index.md) when the task asks what an agent-context-file is, how it should be structured, how source-of-truth behavior works, how validation and `VERIFIED FACTS` work, or how to handle context-file failure modes.
+- Read [wiki/index.md](wiki/index.md) when the task asks what a personal career context file is, how it should be structured, how source-of-truth behavior works, how validation and `VERIFIED FACTS` work, or how to handle context-file failure modes.
 - Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
 - If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
 

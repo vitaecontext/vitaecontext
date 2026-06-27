@@ -6,7 +6,7 @@ AgentKit SEO is a two-surface system: a public human-readable website and an ins
 
 AgentKit SEO lets a user install a focused skill bundle into their preferred coding agent, point it at career material, and receive grounded optimization work for LinkedIn, GitHub, CVs, portfolios, X/Twitter, and reusable professional context files.
 
-The core workflow is context first. A private agent context file acts like a `CLAUDE.md` or `AGENTS.md` for a person's career: verified facts, constraints, target roles, links, achievements, and positioning live in one reusable Markdown source of truth outside this repository. The file also records the user's direction in a `Goals and targeting` section: ideal role, current focus, what they want to work on next, growth direction, target locations (or no restriction), interests, evidence boundaries, positioning constraints, and claims to avoid. These entries stay as stated intent separate from verified facts so downstream skills can aim output without inventing experience.
+The core workflow is context first. The personal career context file is private and acts like a `CLAUDE.md` or `AGENTS.md` for a person's career: verified facts, constraints, target roles, links, achievements, and positioning live in one reusable Markdown source of truth outside this repository. The file also records the user's direction in a `Goals and targeting` section: ideal role, current focus, what they want to work on next, growth direction, target locations (or no restriction), interests, evidence boundaries, positioning constraints, and claims to avoid. These entries stay as stated intent separate from verified facts so downstream skills can aim output without inventing experience.
 
 ## 2. Public surfaces
 
@@ -131,7 +131,7 @@ The publish workflow validates the package, checks tag/version alignment, publis
 - Keep human-readable playbooks in `hub/`.
 - Keep durable, conditional-load runtime knowledge in skill-local `wiki/` folders.
 - Keep `llms.txt` concise and `llms-full.txt` synchronized with wiki sources.
-- Do not commit private agent context files, user career exports, screenshots, or generated install output.
+- Do not commit personal career context files, user career exports, screenshots, or generated install output.
 - Treat `llms.txt` as an emerging AI-readability convention, not as a search ranking guarantee.
 
 ## 9. Later work

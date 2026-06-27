@@ -1,8 +1,8 @@
-# Why and when to use a context file
+# Why and when to use a personal career context file
 
 ## Core purpose
 
-A personal context file is the factual source of truth for career-oriented agent work. It prevents the agent from starting from zero on every session and keeps outputs grounded in one maintained record.
+A personal career context file is the factual source of truth for career-oriented agent work. It prevents the agent from starting from zero on every session and keeps outputs grounded in one maintained record.
 
 ## When it is most valuable
 

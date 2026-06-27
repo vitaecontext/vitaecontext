@@ -9,7 +9,7 @@
       "name": "agentkit-seo",
       "source": "./",
       "description": "Portable agent skills for optimizing GitHub, LinkedIn, CV/ATS, web portfolio, and X, plus agent context optimization.",
-      "version": "1.8.2",
+      "version": "1.8.3",
       "category": "productivity",
       "keywords": [
         "seo",

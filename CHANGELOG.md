@@ -8,6 +8,18 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 No unreleased changes yet.
 
+## 1.8.3 - 2026-06-27
+
+### Added
+
+- Added a public workflow overview and a grounded-optimization visual to explain how raw career material becomes evidence-bounded platform output.
+
+### Changed
+
+- Restructured the README around the problem, workflow, grounding, quick start, modules, installation, and documentation, with a smaller set of linked project-status badges.
+- Renamed the user-facing `agent context file` concept to `personal career context file` across runtime skills, provider adapters, public guidance, and generated mirrors while preserving stable technical identifiers and the `Agent context optimization` module name.
+- Clarified that users supply raw career material to an AI agent, which invokes `agentkit-seo-agent-context-optimization` to create and maintain the personal career context file.
+
 ## 1.8.2 - 2026-06-24
 
 ### Added

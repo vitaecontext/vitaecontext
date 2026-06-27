@@ -25,11 +25,11 @@ If this file is unavailable in an older install, continue with `references/why-a
 
 Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
 
-For context-file work, `From context` means a fact is already present in the existing agent-context-file. Do not treat `From context` as verified against external evidence unless the source entry or inspected material supports it.
+For context-file work, `From context` means a fact is already present in the existing personal career context file. Do not treat `From context` as verified against external evidence unless the source entry or inspected material supports it.
 
 ## 3. Canonical definitions
 
-**Agent-context-file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
+**Personal career context file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
 
 **Agent context optimization** means building, normalizing, validating, and maintaining that file so downstream platform outputs reuse facts instead of inventing or re-asking for them.
 
