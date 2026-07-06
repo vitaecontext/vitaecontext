@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-06-27
+## As of 2026-07-06
 
 ### Public surfaces
 
@@ -31,16 +31,18 @@ Published release line:
 - `.assets/docs/getting-started.md` provides setup onboarding, and `.assets/docs/end-to-end-workflows.md` provides skill-ready demos with prompts, inputs, and expected deliverables.
 - `DESIGN.md` is the human and recruiter-facing design overview: applied agentic-AI concepts mapped to their source and location, a knowledge-graph diagram, and a release-by-release evolution record.
 - Root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` are generated Gemini-compatible distribution artifacts stored in the repo intentionally.
+- Root `vitaegraph/` is the shipped product entrypoint for VitaeGraph schemas and canonical templates. Private user graphs remain outside the repository.
 
 ### Shipped skill coverage
 
-The installable user bundle ships seven portable runtime skill bundles:
+The installable user bundle ships eight portable runtime skill bundles:
 
 - `agentkit-seo`
 - `agentkit-seo-agent-context-optimization`
 - `agentkit-seo-cv-ats`
 - `agentkit-seo-github`
 - `agentkit-seo-linkedin`
+- `agentkit-seo-vitaegraph`
 - `agentkit-seo-web-portfolio`
 - `agentkit-seo-x-twitter`
 
@@ -53,7 +55,7 @@ Each runtime module carries:
 
 The `agentkit-seo-agent-context-optimization` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, growth direction, target locations (or `No restriction`), interests, evidence boundaries, positioning constraints, and claims to avoid as stated intent kept separate from verified facts.
 
-The `agentkit-seo-github` module includes a tokenless public-profile fetcher. It reads public GitHub HTML and raw repository files without requesting a user token, distinguishes pinned repositories from the popular-repository fallback, defaults to three selected repositories, and emits Markdown plus JSON with extraction warnings when public markup cannot be interpreted confidently.
+The `agentkit-seo-github` module includes a tokenless public-profile fetcher. It combines the unauthenticated GitHub API, public profile HTML, and raw README files without requesting a user token; distinguishes pinned repositories from the popular-repository fallback; defaults to three selected repositories; and emits Markdown plus JSON with repository metadata and extraction warnings. It creates a unique operating-system temporary directory by default instead of writing reports into the current repository.
 
 ### Install and distribution status
 
@@ -79,6 +81,9 @@ Working CLI surfaces:
 - `agentkit-seo list skills`
 - `agentkit-seo list commands --provider <provider>`
 - `agentkit-seo template context`
+- `agentkit-seo graph init [--root <vitaegraph-directory>]`
+- `agentkit-seo graph validate [--root <vitaegraph-directory>]`
+- `agentkit-seo graph index [--root <vitaegraph-directory>]`
 - `agentkit-seo install --provider <provider>`
 - `agentkit-seo uninstall --provider <provider>` (manifest-driven removal of installed skills, command wrappers, and manifest; supports `--dry-run` and `--force`)
 - `agentkit-seo export --provider <provider|all>`
@@ -89,11 +94,15 @@ Every install writes `agentkit-seo-install.json` with package version, provider,
 
 The runtime wiki layer is installed and exported with provider bundles.
 
+VitaeGraph ships as a separate runtime skill and private user artifact at `~/.agentkit-seo/vitaegraph` by default. A custom `--root` names the exact graph directory. Its canonical model uses dedicated project and role folders, degree subtrees containing thesis and university-course records, and separate certification records. The CLI validates stable IDs, record types, parent and related-record links, internal links, and duplicates, then writes deterministic graph, lexical-index, and diagnostics JSON only under `.generated/`.
+
+The runtime skill inventories supplied material before writing, processes one supported domain at a time through conditionally loaded node workflows, and enriches projects from exact GitHub repository URLs through the bundled tokenless GitHub fetcher. The canonical graph does not create evidence nodes, source ledgers, evidence references, or evidence-level metadata.
+
 - `llms.txt` is the concise package map.
 - `llms-full.txt` concatenates the root wiki, module wiki indexes, and module knowledge files.
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
-- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, skill description convention (what plus when, within 1024 characters) and `license` field, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
+- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters) and `license` field, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
 - `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the seven installed runtime skills.
 
 ### Website and discovery status

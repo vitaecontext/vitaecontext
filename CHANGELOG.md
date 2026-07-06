@@ -6,7 +6,19 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
-No unreleased changes yet.
+### Added
+
+- Added VitaeGraph as the separate `agentkit-seo-vitaegraph` runtime skill and root product subsystem, with schemas, canonical Markdown templates, provider wrappers, runtime wiki guidance, and package coverage.
+- Added `graph init`, `graph validate`, and `graph index` commands using `~/.agentkit-seo/vitaegraph` by default and an exact custom `--root` when supplied. They preserve Markdown as source, validate stable IDs, record types, parent and related-record links, duplicates, and internal links, and generate deterministic graph, lexical-index, and diagnostics JSON under `.generated/`.
+- Added deterministic tests for VitaeGraph parsing, initialization, validation, indexing, CLI behavior, provider wrappers, and package coverage.
+
+### Changed
+
+- Updated root routing and platform skills to consume selected VitaeGraph records when the user supplies an explicit path, while preserving the independent compact personal career context workflow.
+- Redesigned VitaeGraph around hierarchical degree, course, thesis, project, role, and certification records. The canonical graph now uses parent containment and rich domain templates instead of evidence nodes, source ledgers, evidence references, or evidence-level metadata.
+- Expanded the root VitaeGraph product entrypoint into a self-contained guide covering its architecture, installation, workspace model, authoring lifecycle, validation, generated artifacts, retrieval, and privacy boundaries.
+- Added conditional per-node workflows that inventory sources before writing, finish one domain at a time, deepen every node through repeated extraction and synthesis passes, and enrich exact GitHub repository URLs through the bundled public fetcher.
+- Updated the GitHub fetcher to create unique temporary report directories by default, enrich selected repositories through the unauthenticated GitHub API with homepage, topics, primary language, default branch, license, fork/archive state, and lifecycle timestamps, and retain public-page fallback warnings without adding volatile popularity counts.
 
 ## 1.8.3 - 2026-06-27
 

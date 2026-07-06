@@ -8,7 +8,7 @@ It is written for a reader who wants to understand the project quickly, includin
 
 - **What it is:** a portable skill bundle that installs into AI coding agents (Claude Code, Codex, Gemini CLI, Antigravity, OpenCode) and helps optimize a developer's public career surfaces: GitHub, LinkedIn, CV/ATS, web portfolio, and X/Twitter.
 - **The problem:** most agents can already rewrite a CV or a bio, but the output drifts between tools, invents facts, and ignores platform constraints. Consistency and grounding are the hard parts.
-- **The core idea:** keep one private, verified source of truth, a personal career context file, and have every platform skill read it before writing. The file captures both evidence and career direction, so agents can help with transitions without turning aspirations into claims. This is the same pattern as a repository `AGENTS.md` or `CLAUDE.md`, applied to a career.
+- **The core idea:** use a compact personal career context file for fast positioning and an optional, separate VitaeGraph for deep hierarchical records. Platform skills progressively load only the private context needed for a task.
 - **What makes it interesting:** the project is not a prompt collection. It is a small system that applies current ideas from agentic AI, an LLM-readable knowledge layer, progressive context loading, a cross-referenced knowledge graph, and explicit evidence labeling, and ships them as a validated, versioned package.
 
 ## Agentic-AI concepts applied
@@ -20,6 +20,7 @@ The following table maps each concept to its origin and to where it lives in the
 | Concept | One-line idea | Where it lives |
 | --- | --- | --- |
 | Personal career context file | A private `AGENTS.md` for a person: verified facts, stated goals, growth direction, and constraints an agent reads before writing | [`agentkit-seo-agent-context-optimization`](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
+| VitaeGraph | A separate local Markdown graph of deep hierarchical career records, containment and cross-record relationships, and deterministic retrieval artifacts | [`vitaegraph/`](./vitaegraph/), [`agentkit-seo-vitaegraph`](./.skills/agent-skill/agentkit-seo-vitaegraph/SKILL.md) |
 | LLM Wiki | A knowledge base a maintainer agent compiles from sources and keeps current, read by runtime agents rather than re-derived per query | [`*/wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [`llms-full.txt`](./llms-full.txt) |
 | Progressive disclosure | Load one module, then only the references and wiki a task needs | `## Wiki context` and token-discipline sections in each `SKILL.md` |
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [`references/`](./.skills/agent-skill/agentkit-seo/references/) link graph, [`llms.txt`](./llms.txt) |
@@ -30,6 +31,10 @@ The following table maps each concept to its origin and to where it lives in the
 ### Personal career context file as an `AGENTS.md` for a person
 
 Developers already accept that a repository should carry a context file so an agent understands the codebase before editing it. AgentKit SEO applies that pattern to a career: a private Markdown file holds verified identity facts, roles, projects, metrics, links, target roles, growth direction, evidence boundaries, claims to avoid, and positioning. Platform skills read that file first, then adapt the same facts and direction to each surface. This keeps output consistent across LinkedIn, GitHub, CV, and portfolio instead of rebuilding a professional history in every chat.
+
+### VitaeGraph as the deeper career graph
+
+VitaeGraph avoids forcing every detail into the compact context file. Stable `type:slug` records model projects and roles in dedicated folders, with thesis and university courses nested under their degree. Explicit parent and cross-record links preserve both hierarchy and graph traversal, while `VITAEGRAPH.md` and `index.md` provide progressive retrieval. The CLI validates structural references and builds deterministic graph and lexical JSON under `.generated/`; it does not authenticate real-world claims or guarantee retrieval quality.
 
 ### LLM Wiki: knowledge the model reads, not writes
 
@@ -64,6 +69,7 @@ The intended read path is hierarchical. A broad question enters at the root and 
 ```mermaid
 flowchart TD
   CTX["personal career context file (private source of truth)"]
+  VG["VitaeGraph (private hierarchical career graph)"]
   README["README.md"]
   ROOT["root runtime wiki: agentkit-seo/wiki/agentkit-seo.md"]
   SKILL["agentkit-seo-(module)/SKILL.md"]
@@ -83,6 +89,7 @@ flowchart TD
   SKILL --> WIDX
   WIDX --> WKNOW
   CTX -. read before writing .-> SKILL
+  VG -. selected records .-> SKILL
 ```
 
 Two properties matter here. First, there is one entrypoint: the root wiki decides which module to load before any module detail is read. Second, the deepest knowledge, module `wiki/knowledge.md`, is only reached when a task actually needs it, which keeps routine work cheap in context.

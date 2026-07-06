@@ -1,6 +1,6 @@
 # AgentKit SEO
 
-AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its context-optimization skill turns user-supplied career material into a private Markdown source of truth called a personal career context file. Platform-specific skills, evidence labels, and provider-aware install layouts then support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
+AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its context-optimization skill maintains a compact private career context file, while its separate VitaeGraph skill maintains an optional deeper local career knowledge graph. Platform-specific skills, evidence labels, and provider-aware install layouts support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
 
 ## Root
 
@@ -9,6 +9,7 @@ AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted profes
 - [Getting started](.assets/docs/getting-started.md): Human and agent onboarding path for choosing the right documentation branch.
 - [End-to-end demos](.assets/docs/end-to-end-workflows.md): Skill-ready agent workflows with sample inputs, prompts, multimodal material, and expected deliverables.
 - [Maintainer architecture map](.assets/docs/architecture-map.md): Repository layer map for agents and contributors working inside the source tree.
+- [VitaeGraph product entrypoint](vitaegraph/README.md): Public schemas, templates, CLI contract, and private-artifact boundary.
 
 ## Module wikis
 
@@ -16,6 +17,7 @@ AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted profes
 - [CV ATS](.skills/agent-skill/agentkit-seo-cv-ats/wiki/index.md): ATS-safe CV structure, parser constraints, tailoring, and audit rules.
 - [GitHub](.skills/agent-skill/agentkit-seo-github/wiki/index.md): GitHub profile, repository, search, Linguist, and agent-readiness rules.
 - [LinkedIn](.skills/agent-skill/agentkit-seo-linkedin/wiki/index.md): LinkedIn profile architecture, search visibility, activity, and algorithm-confidence rules.
+- [VitaeGraph](.skills/agent-skill/agentkit-seo-vitaegraph/wiki/index.md): Deep hierarchical career records, progressive retrieval, validation, and generated artifacts.
 - [Web portfolio](.skills/agent-skill/agentkit-seo-web-portfolio/wiki/index.md): Portfolio SEO, metadata, structured data, AI retrieval, and `llms.txt` rules.
 - [X/Twitter](.skills/agent-skill/agentkit-seo-x-twitter/wiki/index.md): X/Twitter profile, post, engagement, Premium, and ranking-confidence rules.
 

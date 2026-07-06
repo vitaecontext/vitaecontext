@@ -292,6 +292,25 @@ function validateGeminiWikiMirror(repoRoot, config, errors) {
   }
 }
 
+function validateLlmsFullWikiBundle(repoRoot, config, errors) {
+  const bundlePath = path.join(repoRoot, "llms-full.txt");
+  if (!fs.existsSync(bundlePath)) {
+    return;
+  }
+  const bundle = fs.readFileSync(bundlePath, "utf8");
+  for (const skill of config.skills ?? []) {
+    const wikiRoot = path.join(repoRoot, skill.source, "wiki");
+    for (const wikiFile of listFilesRecursive(wikiRoot).filter((file) => file.endsWith(".md"))) {
+      const content = fs.readFileSync(wikiFile, "utf8").trim();
+      if (!bundle.includes(content)) {
+        errors.push(
+          `llms-full.txt does not contain current wiki file: ${normalizeRelativePath(path.relative(repoRoot, wikiFile))}`
+        );
+      }
+    }
+  }
+}
+
 function validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors) {
   const providerSpec = config.providers?.["gemini-cli"];
   if (!providerSpec) {
@@ -485,6 +504,8 @@ export function doctor(repoRoot, config) {
       ".assets/docs/getting-started.md",
       ".assets/docs/end-to-end-workflows.md",
       "hub/agent-context-optimization/templates/context-file-template.md",
+      "vitaegraph/templates/VITAEGRAPH.md",
+      "vitaegraph/schema/record-schema.json",
       "AGENTS.md",
       "MAINTAINING.md",
       "llms.txt",
@@ -538,6 +559,7 @@ export function doctor(repoRoot, config) {
   }
   validateSkillDescriptions(repoRoot, config, errors, warnings);
   validateWikiFiles(repoRoot, config, errors, warnings);
+  validateLlmsFullWikiBundle(repoRoot, config, errors);
   validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors);
   validateMarketplace(repoRoot, packageMetadata, errors);
 

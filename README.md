@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/agentkit-seo"><img src="https://img.shields.io/npm/v/agentkit-seo?style=flat-square&logo=npm&color=CB3837" alt="npm version" /></a>
-  <a href="#modules"><img src="https://img.shields.io/badge/agent_skills-7-2563EB?style=flat-square" alt="7 agent skills" /></a>
+  <a href="#modules"><img src="https://img.shields.io/badge/agent_skills-8-2563EB?style=flat-square" alt="8 agent skills" /></a>
   <a href="https://github.com/agentkit-seo/agentkit-seo/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/agentkit-seo/agentkit-seo/validate.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=build" alt="build status" /></a>
   <a href="https://github.com/agentkit-seo/agentkit-seo/stargazers"><img src="https://img.shields.io/github/stars/agentkit-seo/agentkit-seo?style=flat-square&logo=github&label=stars" alt="GitHub stars" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/agentkit-seo/agentkit-seo?style=flat-square&label=license" alt="MIT license" /></a>
@@ -107,13 +107,34 @@ Keep the personal career context file private. A portable default location is:
 ~/.agentkit-seo/<name-surname>-seo-context.md
 ```
 
+## VitaeGraph
+
+[VitaeGraph](./vitaegraph/README.md) is a separate local, Markdown-first career knowledge graph for deep hierarchical records and relationships. Its root directory is an independently readable product entrypoint containing the format specification, schema, graph model, and canonical templates. It complements the compact personal career context file without replacing it. The skill inventories supplied material first, then completes domain-specific workflows for education, projects, experience, certifications, awards, and publications.
+
+```text
+~/.agentkit-seo/
+├── <name-surname>-seo-context.md
+└── vitaegraph/
+```
+
+Create and check the default private graph:
+
+```bash
+npx agentkit-seo graph init
+npx agentkit-seo graph validate
+npx agentkit-seo graph index
+```
+
+Pass `--root /path/to/custom-vitaegraph` to use that exact directory. Indexing creates deterministic `graph.json`, `search-index.json`, and `diagnostics.json` under `.generated/`. Markdown remains canonical. The CLI does not overwrite a non-empty graph without `--force`, and provider or npm exports never include user workspace data.
+
 ## Modules
 
-AgentKit SEO ships one context module and five platform modules.
+AgentKit SEO ships one compact-context module, VitaeGraph, and five platform modules, coordinated by the root routing skill.
 
 | Goal | Module | Public playbook |
 | --- | --- | --- |
 | Build the reusable personal context layer | [`agentkit-seo-agent-context-optimization`](./hub/agent-context-optimization/README.md) | [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/) |
+| Build a detailed local career knowledge graph | [`agentkit-seo-vitaegraph`](./.skills/agent-skill/agentkit-seo-vitaegraph/SKILL.md) | [VitaeGraph specification and templates](./vitaegraph/README.md) |
 | Improve GitHub profile and repository discoverability | [`agentkit-seo-github`](./hub/github/README.md) | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/) |
 | Improve LinkedIn structure, search visibility, and proof | [`agentkit-seo-linkedin`](./hub/linkedin/README.md) | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/) |
 | Tailor a CV or resume for ATS parsing and recruiter readability | [`agentkit-seo-cv-ats`](./hub/cv-ats/README.md) | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/) |
@@ -122,7 +143,7 @@ AgentKit SEO ships one context module and five platform modules.
 
 Typical outputs include prioritized audits, evidence-backed rewrites, ATS-safe CV recommendations, GitHub README and repository fixes, LinkedIn section improvements, portfolio patches, and action plans ranked by impact and missing evidence.
 
-The GitHub skill also includes a tokenless public-profile fetcher. It produces bounded Markdown and JSON evidence reports from public profile HTML and raw README files, requests no personal access token for public audits, and reports extraction uncertainty.
+The GitHub skill also includes a tokenless public-profile fetcher. It produces bounded Markdown and JSON reports from the unauthenticated GitHub API, public profile HTML, and raw README files; adds repository evaluation metadata such as topics, default branch, license, and activity timestamps; and reports extraction uncertainty. Reports use a unique temporary directory by default so agent runs do not write into the current repository.
 
 ## Who it is for
 
@@ -214,6 +235,7 @@ Provider invocation varies. The stable contract is the shared skill name or prov
 This repository keeps human guidance, runtime skills, provider adapters, and packaging separate:
 
 - [`hub/`](./hub/) contains public playbooks, templates, examples, and source notes.
+- [`vitaegraph/`](./vitaegraph/) contains the public VitaeGraph specification, schemas, and canonical artifact templates.
 - [`.skills/agent-skill/`](./.skills/agent-skill/) contains the canonical portable skill source.
 - [`.skills/export/`](./.skills/export/) contains the install, export, doctor, and template CLI.
 - [`.skills/providers/`](./.skills/providers/) contains thin provider-specific adapters.

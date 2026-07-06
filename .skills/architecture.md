@@ -12,6 +12,7 @@ This directory stores the portable skill bundles, provider adapters, and export 
     agentkit-seo-cv-ats/
     agentkit-seo-github/
     agentkit-seo-linkedin/
+    agentkit-seo-vitaegraph/
     agentkit-seo-web-portfolio/
     agentkit-seo-x-twitter/
   providers/
@@ -39,6 +40,8 @@ The portable skill folders use names like `agentkit-seo-linkedin` instead of pla
 2. Portable skill bundle: Self-contained skills in `.skills/agent-skill/` using `SKILL.md` and `references/`, with optional agent-specific metadata such as `agents/openai.yaml` for OpenAI/Codex interfaces.
 3. Provider adapter: Install notes, wrappers, or provider-specific templates in `.skills/providers/<provider>/`.
 4. Export layer: Generated provider-facing layouts produced from `.skills/export/`.
+
+VitaeGraph adds a root product subsystem, `vitaegraph/`, for public schemas and canonical user-artifact templates. Its runtime workflow remains in `.skills/agent-skill/agentkit-seo-vitaegraph/`, and its CLI implementation remains in `.skills/export/lib/vitaegraph/`. Private user graphs are never repository or provider artifacts.
 
 ## Design rules
 

@@ -36,6 +36,7 @@ Do not load every skill module by default. Route to one module unless the task i
 | --- | --- | --- | --- |
 | Project overview | `README.md` | Public GitHub overview, problem narrative, install commands, module list, and links to release/privacy docs | Public package behavior, install flow, or project positioning changes |
 | Human-readable hub | `hub/` | Editorial playbooks, templates, examples, and source-traceable methodology for humans | Public playbook content, examples, templates, or source notes change |
+| VitaeGraph product subsystem | `vitaegraph/` | Independently readable product entrypoint with the public specification, schemas, graph model, and canonical templates for private user-side graphs | VitaeGraph artifact format or initialization templates change |
 | Maintainer docs | `.assets/docs/` | Internal project notes, status, style rules, and this architecture map | Maintainer-facing process or architecture changes |
 | Runtime skills | `.skills/agent-skill/` | Portable skill source, references, and wiki knowledge shipped to users | Skill behavior, routing, references, wiki entries, or module methodology changes |
 | Provider adapters | `.skills/providers/` | Provider-specific install notes, wrappers, manifests, and command templates | A provider needs different activation, layout, metadata, or wrapper commands |
@@ -74,6 +75,7 @@ Use this table to decide what to edit for common tasks.
 | Change a platform skill workflow | `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`, `.skills/agent-skill/agentkit-seo-<module>/references/`, `.skills/agent-skill/agentkit-seo-<module>/wiki/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
 | Change a human-readable playbook | `hub/<module>/` | Related runtime skill reference if behavior changes, `README.md`, `.assets/docs/current-status.md` | Link/path smoke check, `npm run validate` if runtime behavior changes |
 | Add a new skill module | `.skills/agent-skill/agentkit-seo-<module>/` | `.skills/export/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
+| Change VitaeGraph behavior | `vitaegraph/`, `.skills/agent-skill/agentkit-seo-vitaegraph/`, `.skills/export/lib/vitaegraph/` | Root routing, provider wrappers, mirrors, public docs, tests | VitaeGraph smoke tests, `npm run validate`, export all providers |
 | Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/agentkit-seo.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |
 | Change CLI commands | `.skills/export/scripts/agentkit-seo.mjs` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm pack --dry-run` |
 | Change context-file template behavior | `.skills/export/scripts/agentkit-seo.mjs`, `.skills/agent-skill/agentkit-seo-agent-context-optimization/references/` | `README.md`, relevant examples/templates, `CHANGELOG.md` | `agentkit-seo template context` smoke test |
@@ -100,6 +102,7 @@ Provider wrappers must route to the shared skill names:
 - `agentkit-seo-cv-ats`
 - `agentkit-seo-github`
 - `agentkit-seo-linkedin`
+- `agentkit-seo-vitaegraph`
 - `agentkit-seo-web-portfolio`
 - `agentkit-seo-x-twitter`
 
