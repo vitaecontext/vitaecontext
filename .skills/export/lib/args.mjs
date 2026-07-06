@@ -12,6 +12,9 @@ Usage:
   agentkit-seo install --provider shared --target-dir <dir> [--force]
   agentkit-seo uninstall --provider <provider> [--project-root <dir>|--target-dir <dir>] [--dry-run] [--force]
   agentkit-seo template context [--output <file>] [--force]
+  agentkit-seo graph init [--root <vitaegraph-directory>] [--force]
+  agentkit-seo graph validate [--root <vitaegraph-directory>]
+  agentkit-seo graph index [--root <vitaegraph-directory>]
   agentkit-seo list providers
   agentkit-seo list skills
   agentkit-seo list commands --provider <provider>

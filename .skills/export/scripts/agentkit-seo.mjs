@@ -9,6 +9,7 @@ import { loadConfig, repoRootFromScript } from "../lib/config.mjs";
 import { doctor } from "../lib/doctor.mjs";
 import { exportProvider } from "../lib/export.mjs";
 import { installProvider } from "../lib/install.mjs";
+import { runGraphCommand } from "../lib/vitaegraph/cli.mjs";
 import { listCommands, listProviders, listSkills } from "../lib/list.mjs";
 import { templateContext } from "../lib/template.mjs";
 import { uninstallProvider } from "../lib/uninstall.mjs";
@@ -50,6 +51,13 @@ async function run() {
       return;
     }
     throw new Error("Usage: agentkit-seo template context [--output <file>] [--force]");
+  }
+
+  if (command === "graph") {
+    const subject = rest[0];
+    const flags = parseFlags(rest.slice(1));
+    runGraphCommand(repoRoot, subject, flags);
+    return;
   }
 
   if (command === "list") {
