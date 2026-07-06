@@ -91,6 +91,8 @@ If a check fails and cannot be resolved from the available inputs, say so explic
 
 Once the context file is clean, hand off to exactly one target platform skill unless the user explicitly requests a multi-surface pass.
 
+Hand off to `agentkit-seo-vitaegraph` only when the user asks for a deeper multi-file graph or conversion. Do not create, replace, or merge a VitaeGraph as a side effect of maintaining the compact context file. Optional reciprocal links do not change either artifact's ownership.
+
 ## Response shape
 
 Return:

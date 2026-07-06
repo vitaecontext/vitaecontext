@@ -58,6 +58,8 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 
 ## Rules
 
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant experience, project, education, direction, and constraint records. Preserve stated limitations and claims to avoid.
+
 - Treat disputed `360Brew` rollout claims as disputed, not as settled production truth.
 - Separate facts verified on LinkedIn or supplied files, facts supplied by the user's context material, and recommendations inferred from those facts.
 - Do not invent credentials, metrics, or employers.

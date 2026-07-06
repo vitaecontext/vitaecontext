@@ -52,7 +52,8 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 
 - If the user provides a GitHub profile or repository URL, fetch and inspect public profile, pinned repository, repository metadata, README, topics, default branch, and visible language signals when tools allow it.
 - To retrieve public profile fields, pinned or popular repositories, recent source repositories, and bounded README excerpts without authentication, execute:
-  `node <skill_dir>/scripts/github-fetcher.mjs <username>` (where `<skill_dir>` is the current skill directory). The default depth is 3 repositories. Read the generated Markdown report for agent context and the JSON report for structured evidence.
+  `node <skill_dir>/scripts/github-fetcher.mjs <profile-or-repository-url>` (where `<skill_dir>` is the current skill directory). Profile mode defaults to 3 repositories; repository mode inspects the exact repository. Read the generated Markdown report for context and the JSON report for structured observations.
+- The fetcher creates a unique directory under the operating system's temporary directory unless an explicit output directory is supplied. Read both reports, then remove the temporary directory after the task. Never write reports into the skill directory, user repository, personal context file, or VitaeGraph.
 - Treat extraction warnings as unavailable evidence. GitHub HTML is a public observation surface, not a stable API contract, so a missing parsed field does not prove that the field or repository is absent.
 - If the user provides only a username, treat it as enough to inspect public GitHub material when tools allow it.
 - If the task depends on private repositories, contribution details, or account settings, ask the user for screenshots, copied settings, exports, or explicit local files instead of guessing.
@@ -61,6 +62,8 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 - Do not request login or tokens unless the user explicitly asks for private repository work.
 
 ## Rules
+
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant public project records. Preserve stated limitations and omit private paths from output.
 
 - Distinguish documented GitHub behavior from inference.
 - Separate facts verified on GitHub, facts supplied by the user's context files, and recommendations inferred from those facts.

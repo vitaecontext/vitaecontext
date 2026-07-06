@@ -63,6 +63,8 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 
 ## Rules
 
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only target-relevant experience, education, certification, and project records. Preserve stated limitations and claims to avoid.
+
 - Do not claim guaranteed ATS success or exact ranking behavior.
 - Separate facts visible in the CV, facts supplied by the user's context material, job-description requirements, and recommendations inferred from those inputs.
 - Avoid absolute alignment claims such as "perfectly aligned" unless every relevant claim was checked. Prefer "no conflict found in the inspected inputs" for bounded audits.

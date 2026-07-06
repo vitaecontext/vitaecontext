@@ -12,6 +12,7 @@ Use the command-specific prompt to select the relevant module, then read the mat
 - `agentkit-seo:portfolio`: `skills/agentkit-seo-web-portfolio/SKILL.md`
 - `agentkit-seo:x-twitter`: `skills/agentkit-seo-x-twitter/SKILL.md`
 - `agentkit-seo:context`: `skills/agentkit-seo-agent-context-optimization/SKILL.md`
+- `agentkit-seo:vitaegraph`: `skills/agentkit-seo-vitaegraph/SKILL.md`
 
 For broad or ambiguous requests, use `skills/agentkit-seo/SKILL.md` first and route to the minimum relevant module.
 

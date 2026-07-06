@@ -57,6 +57,8 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 
 ## Rules
 
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant public project, thesis, award, and publication records. Never expose private paths.
+
 - Separate documented standards from emerging conventions such as `llms.txt`.
 - Separate facts verified from public pages or local source, facts supplied by the user's context material, and recommendations inferred from those facts.
 - Prefer changes that improve crawlability, information scent, and snippet quality without adding hype.

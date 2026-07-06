@@ -55,6 +55,8 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 
 ## Rules
 
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant public projects, directions, and safe claims. Exclude private evidence and `avoid` records.
+
 - Prefer current official X help and recommender-system documentation before historical open-source repositories when explaining platform behavior.
 - Treat Phoenix, Grok, and related architecture clues as design signals, not as a complete live-production contract.
 - Verify current official X product documentation before giving paid-tier, Premium, post-length, media-length, monetization, or account-capability advice. If verification is unavailable, label the guidance as historical or inferred.

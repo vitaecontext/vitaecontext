@@ -26,6 +26,7 @@ If this file is unavailable in an older install, use `SKILL.md`, `references/ins
 AgentKit SEO is an installable set of Markdown-first agent skills for improving public professional surfaces:
 
 - Personal career context files
+- Private VitaeGraph career knowledge graphs
 - LinkedIn profiles
 - GitHub profiles and repositories
 - CV and resume material for ATS-safe parsing
@@ -41,6 +42,8 @@ Agent context optimization, or ACO, is the process of building and maintaining a
 The resulting personal career context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
 
 The context file is private user material. Do not commit it to this repository or include it in public generated docs.
+
+VitaeGraph is a separate private, multi-file career knowledge graph for deep hierarchical records, containment and cross-record relationships, and progressive retrieval. Its default directory is `~/.agentkit-seo/vitaegraph/`. The personal career context file remains a separately located and separately usable artifact. Neither artifact silently creates or replaces the other.
 
 ## 4. Runtime architecture
 
@@ -124,6 +127,7 @@ Human hub files explain playbooks, examples, templates, and source ledgers. Runt
 - [CV ATS wiki index](../../agentkit-seo-cv-ats/wiki/index.md)
 - [GitHub wiki index](../../agentkit-seo-github/wiki/index.md)
 - [LinkedIn wiki index](../../agentkit-seo-linkedin/wiki/index.md)
+- [VitaeGraph wiki index](../../agentkit-seo-vitaegraph/wiki/index.md)
 - [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
 - [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
 - [Getting started](../../../../.assets/docs/getting-started.md)

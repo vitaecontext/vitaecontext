@@ -33,6 +33,7 @@ For broad requests with no clear surface:
 - Proof-of-work, repositories, or developer credibility: route to `agentkit-seo-github` or `agentkit-seo-web-portfolio`, based on the supplied asset.
 - Audience building, posting strategy, or public conversation loops: route to `agentkit-seo-x-twitter`.
 - Conflicting, scattered, or cross-platform facts: route to `agentkit-seo-agent-context-optimization` first.
+- Detailed multi-file career records, hierarchical education or project modeling, graph validation, or graph indexing: route to `agentkit-seo-vitaegraph`.
 
 ## Token discipline
 
@@ -67,6 +68,7 @@ For broad requests with no clear surface:
 - Web portfolio work: `agentkit-seo-web-portfolio`
 - X or Twitter work: `agentkit-seo-x-twitter`
 - Personal source-of-truth context work: `agentkit-seo-agent-context-optimization`
+- Detailed career knowledge graph work: `agentkit-seo-vitaegraph`
 
 ## Boundaries
 
