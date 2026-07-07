@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../.assets/image/banners/lighter/vitaegraph-new-banner.png" alt="VitaeGraph" width="80%" />
+  <img src="../.assets/image/banners/lighter/vitaegraph-banner-light.png" alt="VitaeGraph" width="80%" />
 </p>
 
 <p align="center">
