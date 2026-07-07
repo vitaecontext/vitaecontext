@@ -18,6 +18,7 @@
   <a href="#why-agentkit-seo">Why</a> •
   <a href="#how-it-works">How it works</a> •
   <a href="#quick-start">Quick start</a> •
+  <a href="#vitaegraph">VitaeGraph</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
   <a href="#documentation">Documentation</a> •
