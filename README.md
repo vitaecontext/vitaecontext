@@ -104,16 +104,22 @@ Use my personal career context file at ~/.agentkit-seo/my-context.md.
 Keep the personal career context file private. A portable default location is:
 
 ```text
-~/.agentkit-seo/<name-surname>-seo-context.md
+~/.agentkit-seo/<name-surname>-career-context.md
 ```
 
 ## VitaeGraph
 
-[VitaeGraph](./vitaegraph/README.md) is a separate local, Markdown-first career knowledge graph for deep hierarchical records and relationships. Its root directory is an independently readable product entrypoint containing the format specification, schema, graph model, and canonical templates. It complements the compact personal career context file without replacing it. The skill inventories supplied material first, then completes domain-specific workflows for education, projects, experience, certifications, awards, and publications.
+[VitaeGraph](./vitaegraph/README.md) is the deeper sibling of the personal career context file. Use the context file for compact, repeated facts and quick grounded drafts. Use VitaeGraph when the agent needs detailed records for projects, roles, degrees, courses, thesis work, certifications, awards, publications, and the relationships between them.
+
+<p align="center">
+  <img src=".assets/image/vitaegraph/vitaegraph-context-file.png" alt="Comparison between the compact personal career context file for fast facts and VitaeGraph for deep hierarchical records" width="100%" />
+</p>
+
+Its root directory is an independently readable product entrypoint containing the format specification, schema, graph model, and canonical templates. The skill inventories supplied material first, then completes domain-specific workflows. Markdown remains canonical; generated JSON files are rebuildable local indexes.
 
 ```text
 ~/.agentkit-seo/
-├── <name-surname>-seo-context.md
+├── <name-surname>-career-context.md
 └── vitaegraph/
 ```
 

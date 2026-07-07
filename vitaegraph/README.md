@@ -2,11 +2,52 @@
   <img src="../.assets/image/vitaegraph-banner.png" alt="VitaeGraph" width="80%" />
 </p>
 
+<p align="center">
+  <strong>A private, Markdown-first career knowledge graph for deep agent context.</strong>
+</p>
+
+<p align="center">
+  <a href="#product-boundary"><img src="https://img.shields.io/badge/module-VitaeGraph-7C3AED?style=flat-square" alt="VitaeGraph module" /></a>
+  <a href="#record-model"><img src="https://img.shields.io/badge/format-Markdown-111827?style=flat-square&logo=markdown&logoColor=white" alt="Markdown format" /></a>
+  <a href="#privacy-and-safety"><img src="https://img.shields.io/badge/privacy-local_first-059669?style=flat-square" alt="Local-first privacy" /></a>
+  <a href="#generated-artifacts"><img src="https://img.shields.io/badge/index-deterministic_JSON-2563EB?style=flat-square" alt="Deterministic JSON index" /></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/github/license/agentkit-seo/agentkit-seo?style=flat-square&label=license" alt="MIT license" /></a>
+</p>
+
+<p align="center">
+  <a href="#why-vitaegraph-exists">Why</a> •
+  <a href="#quick-start">Quick start</a> •
+  <a href="#canonical-workspace">Workspace</a> •
+  <a href="#record-model">Records</a> •
+  <a href="#validation">Validation</a> •
+  <a href="#specification-index">Specification</a>
+</p>
+
+# VitaeGraph
+
 VitaeGraph is AgentKit SEO's private, Markdown-first career knowledge graph. It gives detailed projects, roles, degrees, courses, thesis work, certifications, awards, and publications a durable structure that agents can inspect selectively.
 
 This directory is the self-contained product entrypoint for the VitaeGraph format. It contains the public specification, record schema, graph model, and canonical Markdown templates. The runtime skill and CLI live elsewhere in the AgentKit SEO repository, but use this directory as their artifact contract.
 
 VitaeGraph is optional. It complements the compact personal career context file; it does not replace it.
+
+<p align="center">
+  <img src="../.assets/image/vitaegraph/vitaegraph-overview.png" alt="VitaeGraph converts raw career material into hierarchical Markdown records, graph relationships, and rebuildable local indexes for selective agent retrieval" width="100%" />
+</p>
+
+## Module at a glance
+
+| Topic | VitaeGraph behavior |
+| --- | --- |
+| Primary use | Deep private career memory for agents that need more than a compact context file |
+| Canonical source | User-owned Markdown files under a private graph directory |
+| Default location | `~/.agentkit-seo/vitaegraph/` beside, not inside, the compact context file |
+| Structure | Hierarchical records with optional cross-links |
+| Generated output | Rebuildable JSON graph, lexical index, and diagnostics under `.generated/` |
+| Runtime support | `agentkit-seo-vitaegraph` skill plus `agentkit-seo graph` CLI commands |
+| Privacy model | Local-first; no user career data belongs in this repository, package, or installed skill directory |
+
+VitaeGraph should feel like a small submodule because it owns a durable artifact contract: records, schemas, templates, validation rules, and generated cache formats. It is still distributed inside the main `agentkit-seo` package so users get one installer, one CLI, and one provider export path.
 
 ## Why VitaeGraph exists
 
@@ -32,15 +73,42 @@ The VitaeGraph subsystem is deliberately separated into three repository layers:
 | Runtime skill | [`../.skills/agent-skill/agentkit-seo-vitaegraph/`](../.skills/agent-skill/agentkit-seo-vitaegraph/) | Agent workflow, domain-specific enrichment, and retrieval guidance |
 | CLI implementation | [`../.skills/export/lib/vitaegraph/`](../.skills/export/lib/vitaegraph/) | Initialization, parsing, validation, and deterministic indexing |
 
+Inside this folder, the pieces are intentionally small:
+
+```text
+vitaegraph/
+├── README.md
+├── schema/
+│   ├── graph-model.md
+│   └── record-schema.json
+└── templates/
+    ├── VITAEGRAPH.md
+    ├── index.md
+    ├── project.md
+    ├── experience.md
+    ├── education.md
+    ├── course.md
+    ├── thesis.md
+    ├── certification.md
+    ├── award.md
+    └── publication.md
+```
+
+Add new files here only when they describe the portable VitaeGraph artifact itself. Agent instructions belong in the runtime skill. Implementation code belongs in the CLI export layer. Private records belong in the user's graph workspace.
+
 Private user graphs do not belong in any of these locations. The default workspace is outside the package and repository:
 
 ```text
 ~/.agentkit-seo/
-├── name-surname-seo-context.md
+├── name-surname-career-context.md
 └── vitaegraph/
 ```
 
 The two artifacts are independently usable. Either may contain an optional link to the other when the user wants that connection.
+
+<p align="center">
+  <img src="../.assets/image/vitaegraph/vitaegraph-context-file.png" alt="Comparison between the compact personal career context file for fast facts and VitaeGraph for deep hierarchical records" width="100%" />
+</p>
 
 ## Install
 
