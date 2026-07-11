@@ -19,6 +19,16 @@ These instructions apply to the whole repository.
 - Keep public project positioning, install commands, and module summaries in `README.md`.
 - Do not commit Career Context files, user career exports, screenshots, or unstaged generated install output.
 
+## Brand contract
+
+- Product: **VitaeContext**. Tagline: **Keep your career context. Reuse it across AI.**
+- Canonical definition: **VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.**
+- Use **Career Context** for the private user-owned artifact. Describe **VitaeGraph** as VitaeContext's optional deeper structured-record layer.
+- Frame the product as career-context infrastructure. SEO, AEO, ATS, and platform optimization are capabilities of focused modules, not the umbrella identity.
+- Keep `agentkit-seo` only where compatibility behavior or migration history requires it.
+- Use the established brand assets under `.assets/image/`. Do not remove historical visual assets solely because they predate the rename.
+- Brand colors: `#123C2D`, `#1F684B`, `#91B9A3`, `#E7F0EB`, `#F7F5EF`, `#0D2019`, `#18201C`, `#5C6861`, and `#CED8D2`. Semantic accents: `#287A55`, `#4C7180`, `#B7792D`, `#A14E46`, and `#716B86`.
+
 ## Editing rules
 
 - Prefer narrow edits that follow the existing repository structure.

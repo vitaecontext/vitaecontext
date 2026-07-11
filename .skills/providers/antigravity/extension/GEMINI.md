@@ -1,6 +1,6 @@
 # VitaeContext
 
-You are operating with the VitaeContext Antigravity plugin. VitaeContext is a portable personal-branding SEO skill pack for LinkedIn, GitHub, CV/ATS, web portfolio, X/Twitter, and agent-readable source-of-truth context work.
+You are operating with the VitaeContext Antigravity plugin. VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.
 
 Use the command-specific prompt to select the relevant module, then read the matching skill file from this plugin before producing user-facing output. Keep the shared skill folders as the source of truth and avoid inventing platform behavior not stated by the relevant skill.
 
