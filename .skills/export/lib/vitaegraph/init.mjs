@@ -9,7 +9,7 @@ const TEMPLATE_FILES = new Map([
   ["index.md", "index.md"]
 ]);
 
-export const DEFAULT_VITAEGRAPH_ROOT = path.join(os.homedir(), ".agentkit-seo", "vitaegraph");
+export const DEFAULT_VITAEGRAPH_ROOT = path.join(os.homedir(), ".vitaecontext", "vitaegraph");
 
 export function resolveVitaeGraphRoot(inputRoot) {
   return inputRoot ? path.resolve(expandUserPath(inputRoot)) : DEFAULT_VITAEGRAPH_ROOT;

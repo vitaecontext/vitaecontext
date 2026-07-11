@@ -1,4 +1,0 @@
-interface:
-  display_name: "AgentKit SEO GitHub"
-  short_description: "Improve GitHub discoverability and trust"
-  default_prompt: "Use $agentkit-seo-github to run a bounded audit of my public GitHub URL and improve my profile or repository positioning."

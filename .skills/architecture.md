@@ -1,20 +1,20 @@
 # Agent skill architecture
 
-This directory stores the portable skill bundles, provider adapters, and export tooling for `AgentKit SEO`.
+This directory stores the portable skill bundles, provider adapters, and export tooling for `VitaeContext`.
 
 ## Recommended structure
 
 ```text
 .skills/
   agent-skill/
-    agentkit-seo/
-    agentkit-seo-agent-context-optimization/
-    agentkit-seo-cv-ats/
-    agentkit-seo-github/
-    agentkit-seo-linkedin/
-    agentkit-seo-vitaegraph/
-    agentkit-seo-web-portfolio/
-    agentkit-seo-x-twitter/
+    vitaecontext/
+    vitaecontext-build/
+    vitaecontext-cv/
+    vitaecontext-github/
+    vitaecontext-linkedin/
+    vitaecontext-vitaegraph/
+    vitaecontext-portfolio/
+    vitaecontext-x/
   providers/
     claude-code/
     codex/
@@ -28,11 +28,11 @@ This directory stores the portable skill bundles, provider adapters, and export 
 
 ## Why the shared skills are namespaced
 
-The portable skill folders use names like `agentkit-seo-linkedin` instead of plain `linkedin` for three reasons:
+The portable skill folders use names like `vitaecontext-linkedin` instead of plain `linkedin` for three reasons:
 
 1. They avoid collisions with unrelated skills in a user's global skill directory.
 2. OpenCode documents a stricter contract where the skill `name` must match the containing folder name.
-3. Provider adapters can still expose a cleaner command surface on top, such as `/agentkit-seo:linkedin`, where that syntax is actually supported.
+3. Provider adapters can still expose a cleaner command surface on top, such as `/vitaecontext:linkedin`, where that syntax is actually supported.
 
 ## Four layers
 
@@ -41,7 +41,7 @@ The portable skill folders use names like `agentkit-seo-linkedin` instead of pla
 3. Provider adapter: Install notes, wrappers, or provider-specific templates in `.skills/providers/<provider>/`.
 4. Export layer: Generated provider-facing layouts produced from `.skills/export/`.
 
-VitaeGraph adds a root product subsystem, `vitaegraph/`, for public schemas and canonical user-artifact templates. Its runtime workflow remains in `.skills/agent-skill/agentkit-seo-vitaegraph/`, and its CLI implementation remains in `.skills/export/lib/vitaegraph/`. Private user graphs are never repository or provider artifacts.
+VitaeGraph adds a root product subsystem, `vitaegraph/`, for public schemas and canonical user-artifact templates. Its runtime workflow remains in `.skills/agent-skill/vitaecontext-vitaegraph/`, and its CLI implementation remains in `.skills/export/lib/vitaegraph/`. Private user graphs are never repository or provider artifacts.
 
 ## Design rules
 
@@ -61,7 +61,7 @@ The shared skills should be installable on their own without requiring the entir
 When a provider expects a different directory layout, install or export that layout from the canonical `.skills` source tree instead of editing provider folders by hand. The reference CLI lives at:
 
 - `.skills/export/export-config.json`
-- `.skills/export/scripts/agentkit-seo.mjs`
+- `.skills/export/scripts/vitaecontext.mjs`
 
 Current supported direct install targets are:
 
@@ -73,16 +73,16 @@ Current supported direct install targets are:
 
 Codex installs mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` (or `CODEX_HOME/skills`) to cover current and legacy discovery paths.
 
-Gemini CLI installs as an extension at `~/.gemini/extensions/agentkit-seo`. The extension includes `gemini-extension.json`, a `GEMINI.md` context file, shared skill folders under `skills/`, and namespaced command wrappers under `commands/agentkit-seo/`. Gemini exposes those wrappers as commands such as `/agentkit-seo:linkedin`. A `--project-root` install can still preview the same generated extension layout inside a repository, but the active Gemini extension discovery path is the user extension directory.
+Gemini CLI installs as an extension at `~/.gemini/extensions/vitaecontext`. The extension includes `gemini-extension.json`, a `GEMINI.md` context file, shared skill folders under `skills/`, and namespaced command wrappers under `commands/vitaecontext/`. Gemini exposes those wrappers as commands such as `/vitaecontext:linkedin`. A `--project-root` install can still preview the same generated extension layout inside a repository, but the active Gemini extension discovery path is the user extension directory.
 
-Antigravity CLI installs as a plugin at `~/.gemini/antigravity-cli/plugins/agentkit-seo`. The plugin uses the Gemini-compatible extension structure because Antigravity imports Gemini CLI extensions with `agy plugin import gemini` and stages plugins under `~/.gemini/antigravity-cli/plugins`. The exact imported command syntax in `agy` is still TBD, so keep the command wrappers thin and verify runtime invocation before making stronger claims.
+Antigravity CLI installs as a plugin at `~/.gemini/antigravity-cli/plugins/vitaecontext`. The plugin uses the Gemini-compatible extension structure because Antigravity imports Gemini CLI extensions with `agy plugin import gemini` and stages plugins under `~/.gemini/antigravity-cli/plugins`. The exact imported command syntax in `agy` is still TBD, so keep the command wrappers thin and verify runtime invocation before making stronger claims.
 
-OpenCode installs include both shared skill folders and thin flat command wrappers. The wrappers live in `.skills/providers/opencode/commands/` and map commands such as `/agentkit-seo-linkedin` to the corresponding shared skill.
+OpenCode installs include both shared skill folders and thin flat command wrappers. The wrappers live in `.skills/providers/opencode/commands/` and map commands such as `/vitaecontext-linkedin` to the corresponding shared skill.
 
 Direct install example:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider claude-code \
   --project-root .
 ```
@@ -101,9 +101,9 @@ Keep Gemini extension files generated from `.skills/providers/gemini-cli/`, Anti
 Preview export example:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs export \
+node .skills/export/scripts/vitaecontext.mjs export \
   --provider claude-code \
-  --output /tmp/agentkit-seo-bundles
+  --output /tmp/vitaecontext-bundles
 ```
 
 ## Root files and distribution
@@ -121,4 +121,4 @@ Generate provider-facing manifests only when we intentionally publish a provider
 
 ---
 
-See also: [repository architecture map](../.assets/docs/architecture-map.md), [maintainer guide](../MAINTAINING.md), and [root runtime wiki](./agent-skill/agentkit-seo/wiki/agentkit-seo.md).
+See also: [repository architecture map](../.assets/docs/architecture-map.md), [maintainer guide](../MAINTAINING.md), and [root runtime wiki](./agent-skill/vitaecontext/wiki/vitaecontext.md).

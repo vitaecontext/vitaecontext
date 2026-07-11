@@ -12,7 +12,7 @@ import {
   parseRepositoryListHtml,
   renderMarkdownReport,
   renderRepositoryMarkdownReport
-} from "../.skills/agent-skill/agentkit-seo-github/scripts/github-fetcher.mjs";
+} from "../.skills/agent-skill/vitaecontext-github/scripts/github-fetcher.mjs";
 
 const PROFILE_WITH_PINS = `
 <meta property="og:image" content="https://avatars.example/user.png">

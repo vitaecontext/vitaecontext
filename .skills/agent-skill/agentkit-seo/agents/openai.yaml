@@ -1,4 +1,0 @@
-interface:
-  display_name: "AgentKit SEO"
-  short_description: "Route AgentKit SEO workflows"
-  default_prompt: "Use $agentkit-seo to choose one primary module, resolve audit or edit authority and evidence scope, load only needed context, and verify the requested output."

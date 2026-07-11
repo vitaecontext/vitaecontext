@@ -1,20 +1,20 @@
-# AgentKit SEO project brief
+# VitaeContext project brief
 
-AgentKit SEO is a two-surface system: a public human-readable website and an installable npm skill package for coding agents. It covers personal branding, SEO/AEO, ATS-safe CV workflows, agent-readable career context, and a bundled LLM wiki for durable platform knowledge.
+VitaeContext is a two-surface system: a public human-readable website and an installable npm skill package for coding agents. It covers personal branding, SEO/AEO, ATS-safe CV workflows, agent-readable career context, and a bundled LLM wiki for durable platform knowledge.
 
 ## 1. Vision
 
-AgentKit SEO lets a user install a focused skill bundle into their preferred coding agent, point it at career material, and receive grounded optimization work for LinkedIn, GitHub, CVs, portfolios, X/Twitter, and reusable professional context files.
+VitaeContext lets a user install a focused skill bundle into their preferred coding agent, point it at career material, and receive grounded optimization work for LinkedIn, GitHub, CVs, portfolios, X/Twitter, and reusable professional context files.
 
-The core workflow is context first. The personal career context file is private and acts like a `CLAUDE.md` or `AGENTS.md` for a person's career: verified facts, constraints, target roles, links, achievements, and positioning live in one reusable Markdown source of truth outside this repository. The file also records the user's direction in a `Goals and targeting` section: ideal role, current focus, what they want to work on next, growth direction, target locations (or no restriction), interests, evidence boundaries, positioning constraints, and claims to avoid. These entries stay as stated intent separate from verified facts so downstream skills can aim output without inventing experience.
+The core workflow is context first. The Career Context file is private and acts like a `CLAUDE.md` or `AGENTS.md` for a person's career: verified facts, constraints, target roles, links, achievements, and positioning live in one reusable Markdown source of truth outside this repository. The file also records the user's direction in a `Goals and targeting` section: ideal role, current focus, what they want to work on next, growth direction, target locations (or no restriction), interests, evidence boundaries, positioning constraints, and claims to avoid. These entries stay as stated intent separate from verified facts so downstream skills can aim output without inventing experience.
 
 ## 2. Public surfaces
 
 | Surface | URL | Purpose |
 | --- | --- | --- |
-| Website | `https://agentkit-seo.github.io/` | Public human-readable hub, playbooks, provider pages, and project docs |
-| npm package | `https://www.npmjs.com/package/agentkit-seo` | Installable CLI and provider-shaped skill bundles |
-| Source repo | `https://github.com/agentkit-seo/agentkit-seo` | Canonical authoring, packaging, validation, and release source |
+| Website | `https://vitaecontext.github.io/` | Public human-readable hub, playbooks, provider pages, and project docs |
+| npm package | `https://www.npmjs.com/package/vitaecontext` | Installable CLI and provider-shaped skill bundles |
+| Source repo | `https://github.com/vitaecontext/vitaecontext` | Canonical authoring, packaging, validation, and release source |
 
 ## 3. Repository architecture
 
@@ -25,14 +25,14 @@ hub/
 .assets/docs/
 .skills/
   agent-skill/
-    agentkit-seo/
-    agentkit-seo-agent-context-optimization/
-    agentkit-seo-cv-ats/
-    agentkit-seo-github/
-    agentkit-seo-linkedin/
-    agentkit-seo-vitaegraph/
-    agentkit-seo-web-portfolio/
-    agentkit-seo-x-twitter/
+    vitaecontext/
+    vitaecontext-build/
+    vitaecontext-cv/
+    vitaecontext-github/
+    vitaecontext-linkedin/
+    vitaecontext-vitaegraph/
+    vitaecontext-portfolio/
+    vitaecontext-x/
   providers/
     claude-code/
     codex/
@@ -46,7 +46,7 @@ The `hub/` directory is the human-readable layer. It contains playbooks, templat
 
 Current hub modules:
 
-- `hub/agent-context-optimization/`
+- `hub/context-builder/`
 - `hub/cv-ats/`
 - `hub/github/`
 - `hub/linkedin/`
@@ -67,8 +67,8 @@ The intended read path is hierarchical:
 README.md
 ├── hub/<module>/README.md
 │   └── hub/<module>/sources.md
-└── .skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md
-    └── agentkit-seo-<module>/SKILL.md
+└── .skills/agent-skill/vitaecontext/wiki/vitaecontext.md
+    └── vitaecontext-<module>/SKILL.md
         └── wiki/index.md
             └── wiki/knowledge.md
 ```
@@ -83,14 +83,14 @@ The root runtime wiki is the graph entrypoint for installed agents. Agents shoul
 
 The package ships these shared skills:
 
-- `agentkit-seo`: orchestration, routing, package architecture, provider strategy
-- `agentkit-seo-agent-context-optimization`: private professional source-of-truth files
-- `agentkit-seo-cv-ats`: ATS-safe CV and resume work
-- `agentkit-seo-github`: GitHub profile, repository, search, and agent-readiness work
-- `agentkit-seo-linkedin`: LinkedIn profile, search, positioning, and activity work
-- `agentkit-seo-vitaegraph`: private hierarchical career knowledge graphs, record enrichment, validation, and selective retrieval
-- `agentkit-seo-web-portfolio`: portfolio SEO, metadata, structured data, AI retrieval, and crawlability
-- `agentkit-seo-x-twitter`: X/Twitter profile, posting, Premium, and engagement guidance
+- `vitaecontext`: orchestration, routing, package architecture, provider strategy
+- `vitaecontext-build`: private professional source-of-truth files
+- `vitaecontext-cv`: ATS-safe CV and resume work
+- `vitaecontext-github`: GitHub profile, repository, search, and agent-readiness work
+- `vitaecontext-linkedin`: LinkedIn profile, search, positioning, and activity work
+- `vitaecontext-vitaegraph`: private hierarchical career knowledge graphs, record enrichment, validation, and selective retrieval
+- `vitaecontext-portfolio`: portfolio SEO, metadata, structured data, AI retrieval, and crawlability
+- `vitaecontext-x`: X/Twitter profile, posting, Premium, and engagement guidance
 
 This modular shape solves the context-window problem: a LinkedIn task should load the LinkedIn skill, not the whole system.
 
@@ -98,7 +98,7 @@ Each user-facing module opens its `SKILL.md` from a role-grounded professional p
 
 The root orchestrator resolves the primary surface, task mode, mutation authority, evidence scope, and bounded depth before loading module detail. VitaeGraph separately routes create, deepen, maintain, validate, index, retrieve, and migrate operations so read-only graph work does not enter the full build workflow.
 
-The source tree also contains `agentkit-seo-wiki-maintenance` as a maintainer-only workflow for local source audits and wiki refreshes. It is not part of the installed user runtime bundle.
+The source tree also contains `vitaecontext-wiki-maintenance` as a maintainer-only workflow for local source audits and wiki refreshes. It is not part of the installed user runtime bundle.
 
 ## 6. Install model
 
@@ -121,7 +121,7 @@ The npm package is the canonical registry artifact. GitHub releases mirror npm v
 
 Before release:
 
-1. Set the new version in `package.json`, then keep the six version-bearing files in sync: `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files (the Gemini manifests are refreshed by regenerating the mirror through the export CLI). `agentkit-seo doctor` fails on any drift.
+1. Set the new version in `package.json`, then keep the six version-bearing files in sync: `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files (the Gemini manifests are refreshed by regenerating the mirror through the export CLI). `vitaecontext doctor` fails on any drift.
 2. Update `CHANGELOG.md` and `.assets/docs/current-status.md`.
 3. Run `npm test` and `npm run validate`.
 4. Run provider export or install smoke tests.
@@ -137,7 +137,7 @@ The publish workflow validates the package, checks tag/version alignment, publis
 - Keep human-readable playbooks in `hub/`.
 - Keep durable, conditional-load runtime knowledge in skill-local `wiki/` folders.
 - Keep `llms.txt` concise and `llms-full.txt` synchronized with wiki sources.
-- Do not commit personal career context files, user career exports, screenshots, or generated install output.
+- Do not commit Career Context files, user career exports, screenshots, or generated install output.
 - Treat `llms.txt` as an emerging AI-readability convention, not as a search ranking guarantee.
 
 ## 9. Later work
@@ -146,7 +146,7 @@ The publish workflow validates the package, checks tag/version alignment, publis
 - Track Gemini gallery listing behavior after release crawler updates.
 - Finalize and upload a dedicated GitHub social preview for the source repo.
 - Add selective demos or before/after examples when they improve public communication.
-- The `agentkit-seo update --provider <provider>` flow lets installed agents surface an explicit provider-version check without adding background network behavior.
+- The `vitaecontext update --provider <provider>` flow lets installed agents surface an explicit provider-version check without adding background network behavior.
 - Consider more automation around the existing maintainer-only wiki refresh workflow.
 
 ---

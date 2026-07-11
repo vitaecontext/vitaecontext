@@ -1,4 +1,4 @@
-# AgentKit SEO getting started
+# VitaeContext getting started
 
 This guide gives new users and new contributors the shortest safe path through the repository. It explains which files to read first, which commands to run, and when to switch from human docs to runtime skill files.
 
@@ -8,19 +8,19 @@ Use this table before opening deeper files.
 
 | Goal | Start with | Then read |
 | --- | --- | --- |
-| Install AgentKit SEO into an agent tool | [README.md](../../README.md) | First install |
+| Install VitaeContext into an agent tool | [README.md](../../README.md) | First install |
 | See what a skill-ready agent can do | [end-to-end-workflows.md](./end-to-end-workflows.md) | The matching runtime skill |
-| Build a personal career context file | [hub/agent-context-optimization/README.md](../../hub/agent-context-optimization/README.md) | [context-optimization skill](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
-| Build, maintain, validate, or retrieve a detailed private career graph | [vitaegraph/README.md](../../vitaegraph/README.md) | [VitaeGraph skill](../../.skills/agent-skill/agentkit-seo-vitaegraph/SKILL.md) |
-| Optimize one public surface | The matching `hub/<module>/README.md` | The matching `.skills/agent-skill/agentkit-seo-<module>/SKILL.md` |
+| Build a Career Context file | [hub/context-builder/README.md](../../hub/context-builder/README.md) | [Context Builder skill](../../.skills/agent-skill/vitaecontext-build/SKILL.md) |
+| Build, maintain, validate, or retrieve a detailed private career graph | [vitaegraph/README.md](../../vitaegraph/README.md) | [VitaeGraph skill](../../.skills/agent-skill/vitaecontext-vitaegraph/SKILL.md) |
+| Optimize one public surface | The matching `hub/<module>/README.md` | The matching `.skills/agent-skill/vitaecontext-<module>/SKILL.md` |
 | Understand the design thinking and concepts applied | [DESIGN.md](../../DESIGN.md) | [architecture-map.md](./architecture-map.md) |
 | Understand the repo architecture | [architecture-map.md](./architecture-map.md) | [.skills/architecture.md](../../.skills/architecture.md) |
-| Understand the runtime knowledge graph | [root runtime wiki](../../.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md) | [llms.txt](../../llms.txt) |
+| Understand the runtime knowledge graph | [root runtime wiki](../../.skills/agent-skill/vitaecontext/wiki/vitaecontext.md) | [llms.txt](../../llms.txt) |
 | Maintain or release the package | [MAINTAINING.md](../../MAINTAINING.md) | [current-status.md](./current-status.md) |
 
 ## 2. Repository layers
 
-AgentKit SEO has two documentation branches plus the VitaeGraph product contract.
+VitaeContext has two documentation branches plus the VitaeGraph product contract.
 
 Human layer:
 
@@ -33,8 +33,8 @@ README.md
 Runtime layer:
 
 ```text
-.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md
-└── .skills/agent-skill/agentkit-seo-<module>/SKILL.md
+.skills/agent-skill/vitaecontext/wiki/vitaecontext.md
+└── .skills/agent-skill/vitaecontext-<module>/SKILL.md
     └── wiki/index.md
         └── wiki/knowledge.md
 ```
@@ -54,20 +54,20 @@ The human layer explains playbooks, templates, examples, and source ledgers. The
 Check the package version:
 
 ```bash
-npx agentkit-seo version
+npx vitaecontext version
 ```
 
 Expected output:
 
 ```text
-agentkit-seo 1.9.1
+vitaecontext 1.9.1
 Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.
 ```
 
 Install the skills for one provider:
 
 ```bash
-npx agentkit-seo install --provider codex
+npx vitaecontext install --provider codex
 ```
 
 Expected shape:
@@ -75,13 +75,13 @@ Expected shape:
 ```text
 Installed 8 skill folder(s) for codex
 - target: <codex skill directory>
-- manifest: <codex skill directory>/agentkit-seo-install.json
+- manifest: <codex skill directory>/vitaecontext-install.json
 ```
 
 List supported providers when choosing a target:
 
 ```bash
-npx agentkit-seo list providers
+npx vitaecontext list providers
 ```
 
 Expected output:
@@ -98,37 +98,37 @@ shared
 Check whether a newer package is published before reinstalling:
 
 ```bash
-npx agentkit-seo update
+npx vitaecontext update
 ```
 
-This compares your local package version against the npm registry latest. To check a provider install instead, run `npx agentkit-seo@latest update --provider codex` and preserve any custom `--project-root` or `--target-dir` flags. The check runs only when invoked and needs network access; there is no background or automatic check. To update, reinstall from the latest package.
+This compares your local package version against the npm registry latest. To check a provider install instead, run `npx vitaecontext@latest update --provider codex` and preserve any custom `--project-root` or `--target-dir` flags. The check runs only when invoked and needs network access; there is no background or automatic check. To update, reinstall from the latest package.
 
 Remove an install with the same provider and destination flags used to install it:
 
 ```bash
-npx agentkit-seo uninstall --provider codex
+npx vitaecontext uninstall --provider codex
 ```
 
-Uninstall reads the install manifest and removes only the AgentKit SEO skill folders, command wrappers, and manifest. Use `--dry-run` to preview removals before deleting anything.
+Uninstall reads the install manifest and removes only the VitaeContext skill folders, command wrappers, and manifest. Use `--dry-run` to preview removals before deleting anything.
 
 ## 4. First use
 
-Create the personal career context file template outside the repository:
+Create the Career Context file template outside the repository:
 
 ```bash
-npx agentkit-seo template context --output ~/.agentkit-seo/my-context.md
+npx vitaecontext template context --output ~/.vitaecontext/my-context.md
 ```
 
 Expected shape:
 
 ```text
-Wrote context template to ~/.agentkit-seo/my-context.md
+Wrote context template to ~/.vitaecontext/my-context.md
 ```
 
-Give trusted raw material to the agent and invoke the context-optimization skill to create the personal career context file:
+Give trusted raw material to the agent and invoke the Context Builder skill to create the Career Context file:
 
 ```text
-Use agentkit-seo-agent-context-optimization to create my personal career context file.
+Use vitaecontext-build to create my Career Context file.
 I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
 screenshots, or any other career material you need.
 ```
@@ -136,19 +136,19 @@ screenshots, or any other career material you need.
 Then use one platform skill:
 
 ```text
-Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
-Use my personal career context file at ~/.agentkit-seo/my-context.md.
+Use vitaecontext-github to audit my GitHub profile for hiring visibility.
+Use my Career Context file at ~/.vitaecontext/my-context.md.
 ```
 
 For detailed multi-file records, initialize a separate private VitaeGraph and ask the skill to select the smallest lifecycle mode:
 
 ```bash
-npx agentkit-seo graph init
+npx vitaecontext graph init
 ```
 
 ```text
-Use agentkit-seo-vitaegraph to deepen the project records in
-~/.agentkit-seo/vitaegraph from these explicit repositories and notes.
+Use vitaecontext-vitaegraph to deepen the project records in
+~/.vitaecontext/vitaegraph from these explicit repositories and notes.
 Do not modify unrelated domains. Validate and index after the update.
 ```
 
@@ -158,7 +158,7 @@ For broad or unclear tasks, agents should read in this order:
 
 1. [README.md](../../README.md) for the project surface.
 2. [architecture-map.md](./architecture-map.md) for repository layers.
-3. [root runtime wiki](../../.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md) for graph navigation.
+3. [root runtime wiki](../../.skills/agent-skill/vitaecontext/wiki/vitaecontext.md) for graph navigation.
 4. One relevant module `SKILL.md`.
 5. That module's `wiki/index.md`.
 6. That module's `wiki/knowledge.md` only when detailed constraints are needed.

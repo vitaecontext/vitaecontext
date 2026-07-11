@@ -1,0 +1,4 @@
+interface:
+  display_name: "VitaeContext"
+  short_description: "Route VitaeContext workflows"
+  default_prompt: "Use $vitaecontext to choose one primary module, resolve audit or edit authority and evidence scope, load only needed context, and verify the requested output."

@@ -25,7 +25,7 @@ Search engines infer a large part of a portfolio's meaning from structure. Clear
 
 **Rule:** Keep important pages within a shallow, obvious hierarchy. The homepage should link directly to the major hubs. Hub pages should link directly to their detail pages. Do not hide critical pages behind multiple overlays, filters, or client-side interactions.
 
-**Rule:** Use readable, stable, lowercase, hyphenated URLs. Portfolio URLs should communicate content at a glance. Prefer `/projects/agentkit-seo/` over `/work?id=17` or `/ProjectPhoenixFinalV2/`. Stable URLs also make future redirects and external linking easier.
+**Rule:** Use readable, stable, lowercase, hyphenated URLs. Portfolio URLs should communicate content at a glance. Prefer `/projects/vitaecontext/` over `/work?id=17` or `/ProjectPhoenixFinalV2/`. Stable URLs also make future redirects and external linking easier.
 
 **Rule:** Use real internal links. For navigation and content discovery, use `<a href="...">` links that resolve to real URLs. Do not rely on buttons, `onclick` handlers, or fragment-driven routes for primary navigation.
 
@@ -43,7 +43,7 @@ The exact portfolio can vary by profession, but the baseline structure should lo
 /
 /about/
 /projects/
-/projects/agentkit-seo/
+/projects/vitaecontext/
 /projects/personal-site-rebuild/
 /writing/
 /writing/how-i-designed-a-context-file/

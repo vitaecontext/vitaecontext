@@ -2,49 +2,49 @@
 
 ## Preferred install targets
 
-Install AgentKit SEO as a Gemini CLI extension:
+Install VitaeContext as a Gemini CLI extension:
 
-- global extension: `~/.gemini/extensions/agentkit-seo/`
-- local generated-layout preview: `<project>/.gemini/extensions/agentkit-seo/`
+- global extension: `~/.gemini/extensions/vitaecontext/`
+- local generated-layout preview: `<project>/.gemini/extensions/vitaecontext/`
 
 The extension contains:
 
 - `gemini-extension.json`
 - `GEMINI.md`
 - shared skills copied into `skills/<skill-name>/`
-- commands copied into `commands/agentkit-seo/<module>.toml`
+- commands copied into `commands/vitaecontext/<module>.toml`
 
 OpenAI/Codex-only metadata from `agents/` is excluded from generated Gemini CLI installs.
 
 Gemini CLI exposes the nested command files as namespaced commands:
 
-- `/agentkit-seo:context`
-- `/agentkit-seo:vitaegraph`
-- `/agentkit-seo:linkedin`
-- `/agentkit-seo:github`
-- `/agentkit-seo:cv-ats`
-- `/agentkit-seo:portfolio`
-- `/agentkit-seo:x-twitter`
+- `/vitaecontext:context`
+- `/vitaecontext:vitaegraph`
+- `/vitaecontext:linkedin`
+- `/vitaecontext:github`
+- `/vitaecontext:cv`
+- `/vitaecontext:portfolio`
+- `/vitaecontext:x`
 
 After installing or changing the extension, restart Gemini CLI. For loose custom command files, Gemini also supports `/commands reload`, but extension changes are picked up on restart.
 
 ## Install command
 
 ```bash
-npx agentkit-seo install --provider gemini-cli
+npx vitaecontext install --provider gemini-cli
 ```
 
 From a local checkout:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider gemini-cli
 ```
 
 For a project-local generated-layout preview:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider gemini-cli \
   --project-root .
 ```
@@ -66,7 +66,7 @@ If we later publish a provider-facing installer, the root should only expose the
 
 ## Why Gemini CLI is a strong fit for namespaced commands
 
-Gemini CLI documents namespaced custom commands derived from nested command file paths. That makes `/agentkit-seo:linkedin` a good fit for Gemini CLI command wrappers.
+Gemini CLI documents namespaced custom commands derived from nested command file paths. That makes `/vitaecontext:linkedin` a good fit for Gemini CLI command wrappers.
 
 ## Practical recommendation
 

@@ -1,4 +1,4 @@
-# AgentKit SEO current status
+# VitaeContext current status
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
@@ -6,10 +6,10 @@ This file is the maintainer snapshot for what is live, what is packaged, and wha
 
 ### Public surfaces
 
-- Source repo: `https://github.com/agentkit-seo/agentkit-seo`
-- Website and human-readable hub: `https://agentkit-seo.github.io/`
-- npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.9.2`
+- Source repo: `https://github.com/vitaecontext/vitaecontext`
+- Website and human-readable hub: `https://vitaecontext.github.io/`
+- npm package: `https://www.npmjs.com/package/vitaecontext`
+- Current package version: `vitaecontext@1.9.2`
 
 Published release line:
 
@@ -28,7 +28,7 @@ Published release line:
 - `hub/` contains human-readable playbooks, templates, examples, and source notes.
 - `.assets/docs/` contains maintainer docs, status, architecture, and Markdown rules.
 - `llms.txt` and `llms-full.txt` expose the LLM-facing map and bundled wiki layer.
-- `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` is the runtime graph entrypoint for installed agents.
+- `.skills/agent-skill/vitaecontext/wiki/vitaecontext.md` is the runtime graph entrypoint for installed agents.
 - `.assets/docs/getting-started.md` provides setup onboarding, and `.assets/docs/end-to-end-workflows.md` provides skill-ready demos with prompts, inputs, and expected deliverables.
 - `DESIGN.md` is the human and recruiter-facing design overview: applied agentic-AI concepts mapped to their source and location, a knowledge-graph diagram, and a release-by-release evolution record.
 - Root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` are generated Gemini-compatible distribution artifacts stored in the repo intentionally.
@@ -38,14 +38,14 @@ Published release line:
 
 The installable user bundle ships eight portable runtime skill bundles:
 
-- `agentkit-seo`
-- `agentkit-seo-agent-context-optimization`
-- `agentkit-seo-cv-ats`
-- `agentkit-seo-github`
-- `agentkit-seo-linkedin`
-- `agentkit-seo-vitaegraph`
-- `agentkit-seo-web-portfolio`
-- `agentkit-seo-x-twitter`
+- `vitaecontext`
+- `vitaecontext-build`
+- `vitaecontext-cv`
+- `vitaecontext-github`
+- `vitaecontext-linkedin`
+- `vitaecontext-vitaegraph`
+- `vitaecontext-portfolio`
+- `vitaecontext-x`
 
 Each runtime module carries:
 
@@ -58,9 +58,9 @@ The root orchestrator resolves surface, task mode, mutation authority, evidence 
 
 VitaeGraph routes create, deepen, maintain, validate, index, retrieve, and migrate operations separately. It previews destructive or many-record changes, preserves stable IDs, treats `visibility: public` as eligibility rather than publication consent, and reports degraded manual checks when the graph CLI is unavailable.
 
-The `agentkit-seo-agent-context-optimization` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, growth direction, target locations (or `No restriction`), interests, evidence boundaries, positioning constraints, and claims to avoid as stated intent kept separate from verified facts.
+The `vitaecontext-build` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, growth direction, target locations (or `No restriction`), interests, evidence boundaries, positioning constraints, and claims to avoid as stated intent kept separate from verified facts.
 
-The `agentkit-seo-github` module includes a tokenless public-profile fetcher. It combines the unauthenticated GitHub API, public profile HTML, and raw README files without requesting a user token; distinguishes pinned repositories from the popular-repository fallback; defaults to three selected repositories; and emits Markdown plus JSON with repository metadata and extraction warnings. It creates a unique operating-system temporary directory by default instead of writing reports into the current repository.
+The `vitaecontext-github` module includes a tokenless public-profile fetcher. It combines the unauthenticated GitHub API, public profile HTML, and raw README files without requesting a user token; distinguishes pinned repositories from the popular-repository fallback; defaults to three selected repositories; and emits Markdown plus JSON with repository metadata and extraction warnings. It creates a unique operating-system temporary directory by default instead of writing reports into the current repository.
 
 ### Install and distribution status
 
@@ -70,36 +70,36 @@ Working install targets:
 | --- | --- | --- |
 | `claude-code` | Skill folders under `~/.claude/skills/` | Shared skill folders, no provider-specific methodology copy |
 | `codex` | Skill folders under `~/.agents/skills/` and `CODEX_HOME/skills` or `~/.codex/skills/` | Covers current and legacy discovery paths |
-| `gemini-cli` | Extension under `~/.gemini/extensions/agentkit-seo/` | Includes `GEMINI.md`, `gemini-extension.json`, skills, and namespaced commands |
-| `antigravity` | Plugin under `~/.gemini/antigravity-cli/plugins/agentkit-seo/` | Uses Gemini-compatible plugin layout; exact runtime command surfacing still needs live confirmation |
+| `gemini-cli` | Extension under `~/.gemini/extensions/vitaecontext/` | Includes `GEMINI.md`, `gemini-extension.json`, skills, and namespaced commands |
+| `antigravity` | Plugin under `~/.gemini/antigravity-cli/plugins/vitaecontext/` | Uses Gemini-compatible plugin layout; exact runtime command surfacing still needs live confirmation |
 | `opencode` | Skills plus flat command wrappers | Commands map to shared skill names |
 | `shared` | Portable skill bundle export | Useful for manual or future provider integration |
 
-The npm CLI install path is complemented by a Claude Code plugin-marketplace channel: `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json` let users run `/plugin marketplace add agentkit-seo/agentkit-seo` and `/plugin install agentkit-seo@agentkit-seo`.
+The npm CLI install path is complemented by a Claude Code plugin-marketplace channel: `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json` let users run `/plugin marketplace add vitaecontext/vitaecontext` and `/plugin install vitaecontext@vitaecontext`.
 
 Working CLI surfaces:
 
-- `agentkit-seo version`
-- `agentkit-seo update` (compares either the running package or an installed provider manifest against the npm registry latest; explicit, network-only, never automatic; supports `--provider`, `--json`, and `--timeout`)
-- `agentkit-seo doctor`
-- `agentkit-seo list providers`
-- `agentkit-seo list skills`
-- `agentkit-seo list commands --provider <provider>`
-- `agentkit-seo template context`
-- `agentkit-seo graph init [--root <vitaegraph-directory>]`
-- `agentkit-seo graph validate [--root <vitaegraph-directory>]`
-- `agentkit-seo graph index [--root <vitaegraph-directory>]`
-- `agentkit-seo install --provider <provider>`
-- `agentkit-seo uninstall --provider <provider>` (manifest-driven removal of installed skills, command wrappers, and manifest; supports `--dry-run` and `--force`)
-- `agentkit-seo export --provider <provider|all>`
+- `vitaecontext version`
+- `vitaecontext update` (compares either the running package or an installed provider manifest against the npm registry latest; explicit, network-only, never automatic; supports `--provider`, `--json`, and `--timeout`)
+- `vitaecontext doctor`
+- `vitaecontext list providers`
+- `vitaecontext list skills`
+- `vitaecontext list commands --provider <provider>`
+- `vitaecontext template context`
+- `vitaecontext graph init [--root <vitaegraph-directory>]`
+- `vitaecontext graph validate [--root <vitaegraph-directory>]`
+- `vitaecontext graph index [--root <vitaegraph-directory>]`
+- `vitaecontext install --provider <provider>`
+- `vitaecontext uninstall --provider <provider>` (manifest-driven removal of installed skills, command wrappers, and manifest; supports `--dry-run` and `--force`)
+- `vitaecontext export --provider <provider|all>`
 
-Every install writes `agentkit-seo-install.json` with package version, provider, skills, commands, and target paths.
+Every install writes `vitaecontext-install.json` with package version, provider, skills, commands, and target paths.
 
 ### LLM wiki and graph status
 
 The runtime wiki layer is installed and exported with provider bundles.
 
-VitaeGraph ships as a separate runtime skill and private user artifact at `~/.agentkit-seo/vitaegraph` by default. A custom `--root` names the exact graph directory. Its canonical model uses dedicated project and role folders, degree subtrees containing thesis and university-course records, and separate certification records. The CLI validates stable IDs, record types, parent and related-record links, internal links, and duplicates, then writes deterministic graph, lexical-index, and diagnostics JSON only under `.generated/`.
+VitaeGraph ships as a separate runtime skill and private user artifact at `~/.vitaecontext/vitaegraph` by default. A custom `--root` names the exact graph directory. Its canonical model uses dedicated project and role folders, degree subtrees containing thesis and university-course records, and separate certification records. The CLI validates stable IDs, record types, parent and related-record links, internal links, and duplicates, then writes deterministic graph, lexical-index, and diagnostics JSON only under `.generated/`.
 
 The runtime skill inventories supplied material before writing, processes one supported domain at a time through conditionally loaded node workflows, and enriches projects from exact GitHub repository URLs through the bundled tokenless GitHub fetcher. The canonical graph does not create evidence nodes, source ledgers, evidence references, or evidence-level metadata.
 
@@ -107,8 +107,8 @@ The runtime skill inventories supplied material before writing, processes one su
 - `llms-full.txt` concatenates the root wiki, module wiki indexes, and module knowledge files.
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
-- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters), `license`, configured-skill routing, self-review sections, portable runtime links, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
-- `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the eight installed runtime skills.
+- `vitaecontext doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters), `license`, configured-skill routing, self-review sections, portable runtime links, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
+- `vitaecontext-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the eight installed runtime skills.
 
 ### Website and discovery status
 
@@ -172,8 +172,8 @@ The project is not currently prioritizing:
 
 - Gemini CLI gallery listing still depends on external crawler/listing behavior after tagged releases.
 - Antigravity CLI command syntax needs live `agy` confirmation.
-- A dedicated GitHub social preview candidate exists at `.assets/image/preview/image.png`, and README banner assets live under `.assets/image/banners/`; upload or replace the GitHub social preview through the GitHub repository settings when final.
-- Installed skills can prompt an explicit `agentkit-seo update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
+- The VitaeContext GitHub social preview is stored at `.assets/image/preview/vitaecontext-social-preview.png`, and README banner assets live under `.assets/image/banners/`; upload the social preview through the GitHub repository settings when the repository identifier is migrated.
+- Installed skills can prompt an explicit `vitaecontext update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
 - Public demo assets and before/after examples are still sparse.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
 

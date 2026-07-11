@@ -81,7 +81,7 @@ Good example:
 
 ```text
 <!-- CORRECT: descriptive title and aligned page summary -->
-<title>AgentKit SEO Case Study | Renato Mignone</title>
+<title>VitaeContext Case Study | Renato Mignone</title>
 <meta name="description" content="Case study of an open-source documentation system for personal branding, ATS optimization, and agent-readable career assets." />
 ```
 

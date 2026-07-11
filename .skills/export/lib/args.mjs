@@ -1,23 +1,23 @@
 const BOOLEAN_FLAGS = new Set(["force", "dry-run", "json"]);
 
 export function usage() {
-  console.log(`AgentKit SEO CLI
+  console.log(`VitaeContext CLI
 
 Usage:
-  agentkit-seo version
-  agentkit-seo update [--provider <provider>] [--project-root <dir>|--target-dir <dir>] [--json] [--timeout <ms>]
-  agentkit-seo doctor
-  agentkit-seo export --provider <provider|all> --output <dir> [--force]
-  agentkit-seo install --provider <provider> [--project-root <dir>|--target-dir <dir>] [--commands-target-dir <dir>] [--force]
-  agentkit-seo install --provider shared --target-dir <dir> [--force]
-  agentkit-seo uninstall --provider <provider> [--project-root <dir>|--target-dir <dir>] [--dry-run] [--force]
-  agentkit-seo template context [--output <file>] [--force]
-  agentkit-seo graph init [--root <vitaegraph-directory>] [--force]
-  agentkit-seo graph validate [--root <vitaegraph-directory>]
-  agentkit-seo graph index [--root <vitaegraph-directory>]
-  agentkit-seo list providers
-  agentkit-seo list skills
-  agentkit-seo list commands --provider <provider>
+  vitaecontext version
+  vitaecontext update [--provider <provider>] [--project-root <dir>|--target-dir <dir>] [--json] [--timeout <ms>]
+  vitaecontext doctor
+  vitaecontext export --provider <provider|all> --output <dir> [--force]
+  vitaecontext install --provider <provider> [--project-root <dir>|--target-dir <dir>] [--commands-target-dir <dir>] [--force]
+  vitaecontext install --provider shared --target-dir <dir> [--force]
+  vitaecontext uninstall --provider <provider> [--project-root <dir>|--target-dir <dir>] [--dry-run] [--force]
+  vitaecontext template context [--output <file>] [--force]
+  vitaecontext graph init [--root <vitaegraph-directory>] [--force]
+  vitaecontext graph validate [--root <vitaegraph-directory>]
+  vitaecontext graph index [--root <vitaegraph-directory>]
+  vitaecontext list providers
+  vitaecontext list skills
+  vitaecontext list commands --provider <provider>
 `);
 }
 

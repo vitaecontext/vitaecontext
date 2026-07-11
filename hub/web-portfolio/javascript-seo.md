@@ -47,14 +47,14 @@ Good example:
 
 ```html
 <!-- CORRECT: crawlable URL with visible anchor text -->
-<a href="/projects/agentkit-seo/">AgentKit SEO case study</a>
+<a href="/projects/vitaecontext/">VitaeContext case study</a>
 ```
 
 Bad example:
 
 ```html
 <!-- WRONG: route depends on JavaScript event handling -->
-<div onclick="goToProject('agentkit-seo')">AgentKit SEO case study</div>
+<div onclick="goToProject('vitaecontext')">VitaeContext case study</div>
 ```
 
 ## 5. Anti-Patterns

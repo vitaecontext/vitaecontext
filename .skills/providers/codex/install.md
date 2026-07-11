@@ -17,7 +17,7 @@ Do not hand-maintain a second Codex skill tree in the repo root. Author in `.ski
 For the published package, the default command is:
 
 ```bash
-npx agentkit-seo install --provider codex
+npx vitaecontext install --provider codex
 ```
 
 This installs the shared skills into:
@@ -28,14 +28,14 @@ This installs the shared skills into:
 From a local checkout, use:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider codex
 ```
 
 For project-local installation, pass `--project-root`:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider codex \
   --project-root .
 ```
@@ -49,10 +49,10 @@ Use `export` only when you want a preview bundle or a packaging artifact.
 
 Codex skills are better treated as explicit skills than as slash commands. Design the Codex experience around selecting or explicitly invoking the shared skill, for example:
 
-- `$agentkit-seo-linkedin`
-- `$agentkit-seo-github`
-- `$agentkit-seo-cv-ats`
-- `$agentkit-seo-vitaegraph`
+- `$vitaecontext-linkedin`
+- `$vitaecontext-github`
+- `$vitaecontext-cv`
+- `$vitaecontext-vitaegraph`
 
 ## Practical recommendation
 

@@ -8,11 +8,13 @@ import {
   resolveInstallRoot
 } from "./install.mjs";
 
-const MANIFEST_NAME = "agentkit-seo-install.json";
+const MANIFEST_NAMES = ["vitaecontext-install.json", "agentkit-seo-install.json"];
 
 function readManifest(targetRoot) {
-  const manifestPath = path.join(targetRoot, MANIFEST_NAME);
-  if (!fs.existsSync(manifestPath)) {
+  const manifestPath = MANIFEST_NAMES.map((name) => path.join(targetRoot, name)).find((entry) =>
+    fs.existsSync(entry)
+  );
+  if (!manifestPath) {
     return null;
   }
   try {
@@ -22,7 +24,7 @@ function readManifest(targetRoot) {
   }
 }
 
-// Collect the exact paths an install created so uninstall removes only AgentKit SEO
+// Collect the exact paths an install created so uninstall removes only VitaeContext
 // artifacts. The manifest is authoritative for *where* files landed (it records the
 // resolved skill and command targets); config supplies the skill folder and command
 // file names. When no manifest is present we fall back to recomputing the same paths.
@@ -30,7 +32,7 @@ export function collectRemovals(repoRoot, provider, config, flags, manifest, tar
   const providerSpec = config.providers[provider];
   const layout = manifest?.layout ?? providerSpec.layout;
 
-  // Gemini-style providers install into a dedicated agentkit-seo extension/plugin
+  // Gemini-style providers install into a dedicated vitaecontext extension/plugin
   // directory, so the whole install root is ours to remove.
   if (layout === "gemini-extension") {
     return [targetRoot];
@@ -58,7 +60,9 @@ export function collectRemovals(repoRoot, provider, config, flags, manifest, tar
   }
 
   // Remove the manifest itself last so a failed run leaves a record behind.
-  removals.push(path.join(targetRoot, MANIFEST_NAME));
+  const manifestName =
+    manifest?.package?.name === "agentkit-seo" ? "agentkit-seo-install.json" : MANIFEST_NAMES[0];
+  removals.push(path.join(targetRoot, manifestName));
 
   return removals;
 }
@@ -71,7 +75,7 @@ export function uninstallProvider(repoRoot, provider, config, flags) {
 
   if (!manifest && !flags.force) {
     throw new Error(
-      `No AgentKit SEO install manifest found at ${targetRoot}. Confirm the install location with --target-dir or --project-root, or pass --force to remove the expected AgentKit SEO files anyway.`
+      `No VitaeContext install manifest found at ${targetRoot}. Confirm the install location with --target-dir or --project-root, or pass --force to remove the expected VitaeContext files anyway.`
     );
   }
 

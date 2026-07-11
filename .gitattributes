@@ -4,7 +4,7 @@
 .assets/docs/** linguist-documentation=true
 .skills/agent-skill/** linguist-documentation=true
 .skills/providers/**/*.md linguist-documentation=true
-agent-context-optimization/** linguist-documentation=true
+context-builder/** linguist-documentation=true
 cv-ats/** linguist-documentation=true
 github/** linguist-documentation=true
 linkedin/** linguist-documentation=true

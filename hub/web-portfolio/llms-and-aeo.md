@@ -46,7 +46,7 @@ Good example:
 
 - [About](https://example.com/about/): Professional profile, current focus, and links to external identities.
 - [Projects](https://example.com/projects/): Hub for major engineering and documentation projects.
-- [AgentKit SEO case study](https://example.com/projects/agentkit-seo/): Detailed write-up of repository architecture and authoring system.
+- [VitaeContext case study](https://example.com/projects/vitaecontext/): Detailed write-up of repository architecture and authoring system.
 
 ## Optional
 

@@ -12,7 +12,7 @@ metadata:
 # X (Twitter) optimization
 
 > This module helps make an X profile and posting loop easier to understand, easier to follow, and less dependent on vague growth advice.
-> Public web page: [X/Twitter optimization playbook](https://agentkit-seo.github.io/playbooks/x-twitter/).
+> Public web page: [X/Twitter optimization playbook](https://vitaecontext.github.io/playbooks/x-twitter/).
 
 ---
 
@@ -67,4 +67,4 @@ Agents must route to the specific file needed for the task at hand. Do not load 
 
 ---
 
-Runtime skill: [.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md](../../.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md). Source notes: [sources.md](./sources.md).
+Runtime skill: [.skills/agent-skill/vitaecontext-x/SKILL.md](../../.skills/agent-skill/vitaecontext-x/SKILL.md). Source notes: [sources.md](./sources.md).

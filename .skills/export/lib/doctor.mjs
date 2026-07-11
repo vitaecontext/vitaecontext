@@ -352,7 +352,7 @@ function validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, erro
   }
 
   for (const command of providerSpec.commands ?? []) {
-    const relativeCommandPath = path.join("commands", "agentkit-seo", path.basename(command.source));
+    const relativeCommandPath = path.join("commands", "vitaecontext", path.basename(command.source));
     if (!fs.existsSync(path.join(repoRoot, relativeCommandPath))) {
       errors.push(`root Gemini extension command is missing: ${normalizeRelativePath(relativeCommandPath)}`);
     }
@@ -421,7 +421,7 @@ function validateRuntimeContracts(repoRoot, config, errors) {
     repoRoot,
     ".skills",
     "agent-skill",
-    "agentkit-seo",
+    "vitaecontext",
     "references",
     "module-routing.md"
   );
@@ -437,7 +437,7 @@ function validateRuntimeContracts(repoRoot, config, errors) {
     if (!/^## Self-review$/m.test(skillContent)) {
       errors.push(`configured runtime skill is missing ## Self-review: ${skill.source}/SKILL.md`);
     }
-    if (skill.name !== "agentkit-seo" && !routing.includes(`\`${skill.name}\``)) {
+    if (skill.name !== "vitaecontext" && !routing.includes(`\`${skill.name}\``)) {
       errors.push(`root module routing is missing configured skill: ${skill.name}`);
     }
 
@@ -466,11 +466,11 @@ function validateRuntimeContracts(repoRoot, config, errors) {
   }
 
   const vitaeGraphConsumers = [
-    "agentkit-seo-cv-ats",
-    "agentkit-seo-github",
-    "agentkit-seo-linkedin",
-    "agentkit-seo-web-portfolio",
-    "agentkit-seo-x-twitter"
+    "vitaecontext-cv",
+    "vitaecontext-github",
+    "vitaecontext-linkedin",
+    "vitaecontext-portfolio",
+    "vitaecontext-x"
   ];
   const legacyVocabulary = [
     /direction and constraint records/i,
@@ -555,7 +555,7 @@ export function doctor(repoRoot, config) {
   const contextTemplate = path.join(
     repoRoot,
     "hub",
-    "agent-context-optimization",
+    "context-builder",
     "templates",
     "context-file-template.md"
   );
@@ -579,7 +579,7 @@ export function doctor(repoRoot, config) {
       ".skills/providers",
       ".assets/docs/getting-started.md",
       ".assets/docs/end-to-end-workflows.md",
-      "hub/agent-context-optimization/templates/context-file-template.md",
+      "hub/context-builder/templates/context-file-template.md",
       "vitaegraph/templates/VITAEGRAPH.md",
       "vitaegraph/schema/record-schema.json",
       "AGENTS.md",
@@ -598,7 +598,7 @@ export function doctor(repoRoot, config) {
     errors.push("no skills configured");
   }
   if (!fs.existsSync(contextTemplate)) {
-    errors.push("context template is missing: hub/agent-context-optimization/templates/context-file-template.md");
+    errors.push("context template is missing: hub/context-builder/templates/context-file-template.md");
   }
 
   for (const skill of config.skills ?? []) {

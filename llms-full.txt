@@ -1,16 +1,16 @@
-# AgentKit SEO full LLM wiki
+# VitaeContext full LLM wiki
 
-This file concatenates the installed AgentKit SEO wiki entries for LLM-readable project and module context.
+This file concatenates the installed VitaeContext wiki entries for LLM-readable project and module context.
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md
+## Source: .skills/agent-skill/vitaecontext/wiki/vitaecontext.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo
-  title: "AgentKit SEO"
+  wiki: vitaecontext
+  module: vitaecontext
+  title: "VitaeContext"
   status: stable
   confidence: stable
   last_reviewed: 2026-07-10
@@ -19,21 +19,21 @@ metadata:
   agent_priority: high
 -->
 
-# AgentKit SEO
+# VitaeContext
 
-> AgentKit SEO is a portable skill bundle for agent-assisted professional discoverability work. It gives agents a context-first workflow, platform-specific methods, and provider-aware install layouts.
+> VitaeContext is a portable skill bundle for agent-assisted professional discoverability work. It gives agents a context-first workflow, platform-specific methods, and provider-aware install layouts.
 
 ## 1. Load contract
 
-Read this file when the user asks what AgentKit SEO is, what ACO means, how the skill system works, what the installer deploys, or how the repository's runtime architecture is organized.
+Read this file when the user asks what VitaeContext is, what ACO means, how the skill system works, what the installer deploys, or how the repository's runtime architecture is organized.
 
-If this file is unavailable in an older install, use `SKILL.md`, `references/installation-strategy.md`, and the installed `agentkit-seo-install.json` manifest when present. State that the wiki entry is unavailable before making architecture claims that depend on it.
+If this file is unavailable in an older install, use `SKILL.md`, `references/installation-strategy.md`, and the installed `vitaecontext-install.json` manifest when present. State that the wiki entry is unavailable before making architecture claims that depend on it.
 
 ## 2. Canonical definition
 
-AgentKit SEO is an installable set of Markdown-first agent skills for improving public professional surfaces:
+VitaeContext is an installable set of Markdown-first agent skills for improving public professional surfaces:
 
-- Personal career context files
+- Career Context files
 - Private VitaeGraph career knowledge graphs
 - LinkedIn profiles
 - GitHub profiles and repositories
@@ -41,21 +41,21 @@ AgentKit SEO is an installable set of Markdown-first agent skills for improving 
 - Web portfolios
 - X/Twitter profiles and posting surfaces
 
-The package is distributed as `agentkit-seo` on npm. Its stable runtime unit is a folder containing `SKILL.md` plus supporting references. Provider adapters copy or wrap those shared skill folders for different agent environments.
+The package is distributed as `vitaecontext` on npm. Its stable runtime unit is a folder containing `SKILL.md` plus supporting references. Provider adapters copy or wrap those shared skill folders for different agent environments.
 
-## 3. Agent context optimization
+## 3. Context Builder
 
-Agent context optimization, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
+Context Builder, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
 
-The resulting personal career context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
+The resulting Career Context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
 
 The context file is private user material. Do not commit it to this repository or include it in public generated docs.
 
-VitaeGraph is a separate private, multi-file career knowledge graph for deep hierarchical records, containment and cross-record relationships, and progressive retrieval. Its default directory is `~/.agentkit-seo/vitaegraph/`. The personal career context file remains a separately located and separately usable artifact. Neither artifact silently creates or replaces the other.
+VitaeGraph is a separate private, multi-file career knowledge graph for deep hierarchical records, containment and cross-record relationships, and progressive retrieval. Its default directory is `~/.vitaecontext/vitaegraph/`. The Career Context file remains a separately located and separately usable artifact. Neither artifact silently creates or replaces the other.
 
 ## 4. Runtime architecture
 
-AgentKit SEO uses four runtime-facing layers:
+VitaeContext uses four runtime-facing layers:
 
 - `hub/`: human-readable playbooks, examples, templates, and source notes.
 - `.skills/agent-skill/`: canonical portable runtime skills.
@@ -70,7 +70,7 @@ The root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` files 
 
 Runtime `references/` files contain focused procedural guidance for a task. Runtime `wiki/` files contain durable definitions, constraints, confidence labels, and failure modes that the agent loads only when the task needs them.
 
-Agents should route to one module by default. Cross-platform work should use an explicit existing personal career context file for compact current facts or retrieve the smallest relevant subtree from an explicit existing VitaeGraph. Start with the agent-context-optimization skill when facts are scattered, conflicting, or no usable source of truth exists. Do not silently create or convert either private artifact.
+Agents should route to one module by default. Cross-platform work should use an explicit existing Career Context file for compact current facts or retrieve the smallest relevant subtree from an explicit existing VitaeGraph. Start with the context-builder skill when facts are scattered, conflicting, or no usable source of truth exists. Do not silently create or convert either private artifact.
 
 Before loading detailed module files, agents should use this root wiki as the graph entrypoint:
 
@@ -95,9 +95,9 @@ Provider behavior is not identical. Some environments use native skill loading. 
 
 ## 7. Boundaries
 
-AgentKit SEO does not guarantee rankings, recruiter attention, ATS scores, rich results, snippets, indexing speed, AI citations, or platform distribution.
+VitaeContext does not guarantee rankings, recruiter attention, ATS scores, rich results, snippets, indexing speed, AI citations, or platform distribution.
 
-Agents using AgentKit SEO must separate:
+Agents using VitaeContext must separate:
 
 - Verified facts from the user's supplied context
 - Facts observed in public pages or local files
@@ -112,7 +112,7 @@ When a claim depends on current platform behavior, paid-tier behavior, provider 
 Use these labels when source status could affect a recommendation:
 
 - `Verified`: Observed directly in inspected public material, local files, rendered output, supplied screenshots, extracted text, or a supplied source-of-truth file.
-- `From context`: Taken from the user's personal career context file.
+- `From context`: Taken from the user's Career Context file.
 - `From source`: Taken from supplied source material such as pasted text, exports, screenshots, public URLs, local files, or job descriptions.
 - `Inference`: Reasoned from inspected evidence, but not directly observed as a fact.
 - `Inaccessible`: Could not be inspected because the surface is private, login-gated, unavailable, blocked, or outside the task scope.
@@ -125,33 +125,33 @@ Do not turn `Inference`, `Inaccessible`, or `Needs evidence` claims into confide
 The repository has two connected documentation branches:
 
 - Human layer: `README.md` -> `hub/<module>/README.md` -> `hub/<module>/sources.md`.
-- Runtime layer: this root wiki -> `agentkit-seo-<module>/SKILL.md` -> `wiki/index.md` -> `wiki/knowledge.md`.
+- Runtime layer: this root wiki -> `vitaecontext-<module>/SKILL.md` -> `wiki/index.md` -> `wiki/knowledge.md`.
 
 Human hub files explain playbooks, examples, templates, and source ledgers. Runtime wiki files explain compact agent-loadable constraints, confidence labels, and failure modes. Prefer the runtime branch for installed-agent work, and use the human branch when the task asks for contributor docs, editorial playbooks, templates, examples, or source provenance.
 
 ## 10. See also
 
-- [Agent context optimization wiki index](../../agentkit-seo-agent-context-optimization/wiki/index.md)
-- [CV ATS wiki index](../../agentkit-seo-cv-ats/wiki/index.md)
-- [GitHub wiki index](../../agentkit-seo-github/wiki/index.md)
-- [LinkedIn wiki index](../../agentkit-seo-linkedin/wiki/index.md)
-- [VitaeGraph wiki index](../../agentkit-seo-vitaegraph/wiki/index.md)
-- [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
-- [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
-- [Getting started](https://github.com/agentkit-seo/agentkit-seo/blob/main/.assets/docs/getting-started.md)
-- [End-to-end demos](https://github.com/agentkit-seo/agentkit-seo/blob/main/.assets/docs/end-to-end-workflows.md)
-- [llms.txt](https://agentkit-seo.github.io/llms.txt)
-- [llms-full.txt](https://agentkit-seo.github.io/llms-full.txt)
+- [Context Builder wiki index](../../vitaecontext-build/wiki/index.md)
+- [CV ATS wiki index](../../vitaecontext-cv/wiki/index.md)
+- [GitHub wiki index](../../vitaecontext-github/wiki/index.md)
+- [LinkedIn wiki index](../../vitaecontext-linkedin/wiki/index.md)
+- [VitaeGraph wiki index](../../vitaecontext-vitaegraph/wiki/index.md)
+- [Web portfolio wiki index](../../vitaecontext-portfolio/wiki/index.md)
+- [X Twitter wiki index](../../vitaecontext-x/wiki/index.md)
+- [Getting started](https://github.com/vitaecontext/vitaecontext/blob/main/.assets/docs/getting-started.md)
+- [End-to-end demos](https://github.com/vitaecontext/vitaecontext/blob/main/.assets/docs/end-to-end-workflows.md)
+- [llms.txt](https://vitaecontext.github.io/llms.txt)
+- [llms-full.txt](https://vitaecontext.github.io/llms-full.txt)
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-build/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-agent-context-optimization
-  title: "Agent context optimization wiki index"
+  wiki: vitaecontext
+  module: vitaecontext-build
+  title: "Context Builder wiki index"
   status: stable
   confidence: stable
   last_reviewed: 2026-05-27
@@ -160,25 +160,25 @@ metadata:
   agent_priority: high
 -->
 
-# Agent context optimization wiki index
+# Context Builder wiki index
 
 > This file maps the agent-context wiki files to the tasks that need them. Load this index before reading agent-context wiki entries.
 
 ## 1. Load contract
 
-Read this file when `agentkit-seo-agent-context-optimization/SKILL.md` routes a task to the local wiki.
+Read this file when `vitaecontext-build/SKILL.md` routes a task to the local wiki.
 
 If this file is unavailable in an older install, continue with the matching `references/` file and mark wiki-specific guidance as unavailable. Do not fail the task only because the wiki index is missing.
 
 ## 2. Wiki files
 
-- [knowledge.md](knowledge.md): Compiled runtime knowledge for personal career context file structure, source-of-truth behavior, maintenance, validation, evidence handling, and known agent failure modes.
+- [knowledge.md](knowledge.md): Compiled runtime knowledge for Career Context file structure, source-of-truth behavior, maintenance, validation, evidence handling, and known agent failure modes.
 
 ## 3. Conditional loads
 
 Read [knowledge.md](knowledge.md) when the task asks about any of these topics:
 
-- What a personal career context file is, when to create one, where to store it, or how it relates to platform skills
+- What a Career Context file is, when to create one, where to store it, or how it relates to platform skills
 - Context-file structure, `QUICK REFERENCE`, canonical section order, semantic tags, or `VERIFIED FACTS`
 - Maintenance, validation, chronology checks, source ledgers, or targeted updates
 - Cross-platform fact conflicts, unsupported claims, or downstream public-output grounding
@@ -200,17 +200,17 @@ When a wiki file referenced here is missing:
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
 
-Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).
+Root wiki: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-build/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-agent-context-optimization
-  title: "Agent context optimization runtime knowledge"
+  wiki: vitaecontext
+  module: vitaecontext-build
+  title: "Context Builder runtime knowledge"
   status: stable
   confidence: stable
   last_reviewed: 2026-05-27
@@ -219,7 +219,7 @@ metadata:
   agent_priority: high
 -->
 
-# Agent context optimization runtime knowledge
+# Context Builder runtime knowledge
 
 > This file contains durable agent-context knowledge for agents. Use it to keep personal source-of-truth files structured, private, factual, and maintainable.
 
@@ -231,15 +231,15 @@ If this file is unavailable in an older install, continue with `references/why-a
 
 ## 2. Evidence labels
 
-Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
+Use the VitaeContext evidence labels defined in `vitaecontext/wiki/vitaecontext.md`.
 
-For context-file work, `From context` means a fact is already present in the existing personal career context file. Do not treat `From context` as verified against external evidence unless the source entry or inspected material supports it.
+For context-file work, `From context` means a fact is already present in the existing Career Context file. Do not treat `From context` as verified against external evidence unless the source entry or inspected material supports it.
 
 ## 3. Canonical definitions
 
-**Personal career context file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
+**Career Context file** means a private Markdown source of truth for a person's professional facts and stated career direction, used to ground repeated CV, LinkedIn, GitHub, portfolio, and X/Twitter work.
 
-**Agent context optimization** means building, normalizing, validating, and maintaining that file so downstream platform outputs reuse facts instead of inventing or re-asking for them.
+**Context Builder** means building, normalizing, validating, and maintaining that file so downstream platform outputs reuse facts instead of inventing or re-asking for them.
 
 **QUICK REFERENCE** means the selective YAML snapshot directly under the H1. It carries current positioning, target roles, top skills, tools, credentials, and public links for fast agent loading.
 
@@ -262,7 +262,7 @@ For context-file work, `From context` means a fact is already present in the exi
 - `stable`: The scope declaration closes with a `VERIFIED FACTS` HTML comment.
 - `stable`: Skills in the skills index must be evidenced elsewhere in the file.
 - `stable`: Languages should be represented as a table.
-- `likely`: `~/.agentkit-seo/<name-surname>-career-context.md` is a portable default path when the user wants a reusable file, but an explicit user path always wins.
+- `likely`: `~/.vitaecontext/<name-surname>-career-context.md` is a portable default path when the user wants a reusable file, but an explicit user path always wins.
 
 ## 5. Maintenance and validation rules
 
@@ -301,16 +301,16 @@ When producing a context-file audit, creation plan, or maintenance edit:
 - Hand off to exactly one platform skill after context cleanup unless the user asks for a multi-surface pass.
 - Include a one-line `Depth note` when sources, sections, or cross-platform checks were intentionally bounded.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/agent-context-optimization/sources.md).
+Shared taxonomy: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md). Source grounding: [repository source inventory](https://github.com/vitaecontext/vitaecontext/blob/main/hub/context-builder/sources.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-cv-ats/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-cv/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-cv-ats
+  wiki: vitaecontext
+  module: vitaecontext-cv
   title: "CV ATS wiki index"
   status: stable
   confidence: stable
@@ -326,7 +326,7 @@ metadata:
 
 ## 1. Load contract
 
-Read this file when `agentkit-seo-cv-ats/SKILL.md` routes a task to the local wiki.
+Read this file when `vitaecontext-cv/SKILL.md` routes a task to the local wiki.
 
 If this file is unavailable in an older install, continue with the matching `references/` file and mark wiki-specific guidance as unavailable. Do not fail the task only because the wiki index is missing.
 
@@ -360,16 +360,16 @@ When a wiki file referenced here is missing:
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
 
-Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).
+Root wiki: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-cv/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-cv-ats
+  wiki: vitaecontext
+  module: vitaecontext-cv
   title: "CV ATS runtime knowledge"
   status: stable
   confidence: likely
@@ -391,7 +391,7 @@ If this file is unavailable in an older install, continue with `references/struc
 
 ## 2. Evidence labels
 
-Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
+Use the VitaeContext evidence labels defined in `vitaecontext/wiki/vitaecontext.md`.
 
 For CV work, `Verified` means the fact was observed in the CV, editable source, rendered PDF, plain-text extraction, supplied job description, supplied context file, or inspected public proof. `Inaccessible` commonly applies to ATS vendor scoring, recruiter screen behavior, hidden job filters, private profiles, and uninspected cross-platform facts.
 
@@ -453,16 +453,16 @@ When producing a CV audit, tailoring pass, or parser-safety plan:
 - Use "no conflict found in inspected inputs" for bounded audits instead of implying full verification.
 - Include a one-line `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/cv-ats/sources.md).
+Shared taxonomy: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md). Source grounding: [repository source inventory](https://github.com/vitaecontext/vitaecontext/blob/main/hub/cv-ats/sources.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-github/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-github/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-github
+  wiki: vitaecontext
+  module: vitaecontext-github
   title: "GitHub wiki index"
   status: stable
   confidence: stable
@@ -478,7 +478,7 @@ metadata:
 
 ## 1. Load contract
 
-Read this file when `agentkit-seo-github/SKILL.md` routes a task to the local wiki.
+Read this file when `vitaecontext-github/SKILL.md` routes a task to the local wiki.
 
 If this file is unavailable in an older install, continue with the matching `references/` file and mark wiki-specific guidance as unavailable. Do not fail the task only because the wiki index is missing.
 
@@ -513,16 +513,16 @@ When a wiki file referenced here is missing:
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
 
-Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).
+Root wiki: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-github/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-github/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-github
+  wiki: vitaecontext
+  module: vitaecontext-github
   title: "GitHub runtime knowledge"
   status: stable
   confidence: likely
@@ -544,7 +544,7 @@ If this file is unavailable in an older install, continue with `references/profi
 
 ## 2. Evidence labels
 
-Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
+Use the VitaeContext evidence labels defined in `vitaecontext/wiki/vitaecontext.md`.
 
 For GitHub work, `Verified` means the fact was observed in public GitHub profile fields, repository metadata, topics, README content, fetched files, language stats, or local repository files. `Inaccessible` commonly applies to private repositories, account settings, social-preview settings, contribution visibility settings, organization-only material, and analytics.
 
@@ -605,16 +605,16 @@ When producing a GitHub audit or implementation plan:
 - Prefer concrete README, About text, topic, pin, or file changes over generic branding advice.
 - Include a one-line `Depth note` when the audit did not inspect every relevant repository or file.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/github/sources.md).
+Shared taxonomy: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md). Source grounding: [repository source inventory](https://github.com/vitaecontext/vitaecontext/blob/main/hub/github/sources.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-linkedin/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-linkedin/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-linkedin
+  wiki: vitaecontext
+  module: vitaecontext-linkedin
   title: "LinkedIn wiki index"
   status: stable
   confidence: stable
@@ -630,7 +630,7 @@ metadata:
 
 ## 1. Load contract
 
-Read this file when `agentkit-seo-linkedin/SKILL.md` routes a task to the local wiki.
+Read this file when `vitaecontext-linkedin/SKILL.md` routes a task to the local wiki.
 
 If this file is unavailable in an older install, continue with the matching `references/` file and mark wiki-specific guidance as unavailable. Do not fail the task only because the wiki index is missing.
 
@@ -664,16 +664,16 @@ When a wiki file referenced here is missing:
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
 
-Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).
+Root wiki: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-linkedin/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-linkedin
+  wiki: vitaecontext
+  module: vitaecontext-linkedin
   title: "LinkedIn runtime knowledge"
   status: stable
   confidence: likely
@@ -695,7 +695,7 @@ If this file is unavailable in an older install, continue with `references/posit
 
 ## 2. Evidence labels
 
-Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
+Use the VitaeContext evidence labels defined in `vitaecontext/wiki/vitaecontext.md`.
 
 For LinkedIn work, `Verified` means the fact was observed in public profile fields, supplied screenshots, exports, pasted section text, visible Featured links, or accessible activity samples. `Inaccessible` commonly applies to login-gated sections, private job preferences, profile completeness, endorsements, recruiter views, analytics, impressions, and applicant outcomes.
 
@@ -751,19 +751,19 @@ When producing a LinkedIn audit or rewrite:
 - Separate factual issues, discoverability improvements, proof-of-work improvements, and activity recommendations.
 - Use exact paste-ready copy only for sections supported by supplied or verified facts.
 - Mark exact UI limits, preview behavior, or paid-feature advice as current-source verified, UI-observed, or inferred.
-- Preserve factual alignment with the personal career context file when available.
+- Preserve factual alignment with the Career Context file when available.
 - Include a one-line `Depth note` for broad audits, inaccessible sections, or intentionally deferred activity review.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/linkedin/sources.md).
+Shared taxonomy: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md). Source grounding: [repository source inventory](https://github.com/vitaecontext/vitaecontext/blob/main/hub/linkedin/sources.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-vitaegraph/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-vitaegraph/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo-vitaegraph
-  module: agentkit-seo-vitaegraph
+  wiki: vitaecontext-vitaegraph
+  module: vitaecontext-vitaegraph
   title: "VitaeGraph wiki index"
   status: stable
   confidence: stable
@@ -791,12 +791,12 @@ Read `knowledge.md` for graph creation, restructuring, validation, indexing, mig
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-vitaegraph/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-vitaegraph/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo-vitaegraph
-  module: agentkit-seo-vitaegraph
+  wiki: vitaecontext-vitaegraph
+  module: vitaecontext-vitaegraph
   title: "VitaeGraph runtime knowledge"
   status: stable
   confidence: stable
@@ -816,9 +816,9 @@ Read this file after the wiki index routes a task involving graph structure, val
 
 ## 2. Artifact boundary
 
-VitaeGraph is separate from the compact personal career context file. The context file provides a quick positioning summary; VitaeGraph provides deep records and relationships. Neither artifact silently creates or overwrites the other.
+VitaeGraph is separate from the compact Career Context file. The context file provides a quick positioning summary; VitaeGraph provides deep records and relationships. Neither artifact silently creates or overwrites the other.
 
-The default graph is `~/.agentkit-seo/vitaegraph`. An explicit `--root` is the exact graph directory.
+The default graph is `~/.vitaecontext/vitaegraph`. An explicit `--root` is the exact graph directory.
 
 ## 3. Hierarchical model
 
@@ -866,12 +866,12 @@ Deletion, duplicate merges, and many-record migrations require a preview because
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-web-portfolio/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-portfolio/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-web-portfolio
+  wiki: vitaecontext
+  module: vitaecontext-portfolio
   title: "Web portfolio wiki index"
   status: stable
   confidence: stable
@@ -887,7 +887,7 @@ metadata:
 
 ## 1. Load contract
 
-Read this file when `agentkit-seo-web-portfolio/SKILL.md` routes a task to the local wiki.
+Read this file when `vitaecontext-portfolio/SKILL.md` routes a task to the local wiki.
 
 If this file is unavailable in an older install, continue with the matching `references/` file and mark wiki-specific guidance as unavailable. Do not fail the task only because the wiki index is missing.
 
@@ -921,16 +921,16 @@ When a wiki file referenced here is missing:
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
 
-Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).
+Root wiki: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-portfolio/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-web-portfolio
+  wiki: vitaecontext
+  module: vitaecontext-portfolio
   title: "Web portfolio runtime knowledge"
   status: stable
   confidence: likely
@@ -993,11 +993,11 @@ Do not convert `likely`, `inferred`, or `disputed` claims into guarantees.
 - `disputed`: No major search or AI provider should be assumed to guarantee ranking, citation, ingestion, or retrieval benefits from `llms.txt`.
 - `stable`: Treat `llms.txt` as inference-time guidance, not as crawler permission policy. Use `robots.txt` and provider-specific bot controls for crawler permissions.
 
-AgentKit SEO's web-portfolio methodology treats `llms.txt` as an optional AI-readability layer after canonical pages, metadata, structured data, sitemap, robots, and visible proof are coherent.
+VitaeContext's web-portfolio methodology treats `llms.txt` as an optional AI-readability layer after canonical pages, metadata, structured data, sitemap, robots, and visible proof are coherent.
 
 ## 6. Evidence and inference rules
 
-Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
+Use the VitaeContext evidence labels defined in `vitaecontext/wiki/vitaecontext.md`.
 
 For web-portfolio work, `Verified` means the fact was observed in public pages, rendered HTML, local source files, built output, HTTP responses, metadata tags, structured data, sitemap or robots files, supplied screenshots, a supplied context file, or pasted source material.
 
@@ -1026,16 +1026,16 @@ When producing a web-portfolio audit or implementation plan:
 - Keep `llms.txt` recommendations short, curated, and synchronized with public pages.
 - Name the smallest next inspection when the current audit is bounded.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/web-portfolio/sources.md).
+Shared taxonomy: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md). Source grounding: [repository source inventory](https://github.com/vitaecontext/vitaecontext/blob/main/hub/web-portfolio/sources.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-x-twitter/wiki/index.md
+## Source: .skills/agent-skill/vitaecontext-x/wiki/index.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-x-twitter
+  wiki: vitaecontext
+  module: vitaecontext-x
   title: "X Twitter wiki index"
   status: stable
   confidence: stable
@@ -1051,7 +1051,7 @@ metadata:
 
 ## 1. Load contract
 
-Read this file when `agentkit-seo-x-twitter/SKILL.md` routes a task to the local wiki.
+Read this file when `vitaecontext-x/SKILL.md` routes a task to the local wiki.
 
 If this file is unavailable in an older install, continue with the matching `references/` file and mark wiki-specific guidance as unavailable. Do not fail the task only because the wiki index is missing.
 
@@ -1085,16 +1085,16 @@ When a wiki file referenced here is missing:
 - Add a short note only when the missing wiki would affect confidence, source status, or maintenance guidance.
 - Do not ask the user to reinstall unless the missing file blocks a requested wiki-specific maintenance task.
 
-Root wiki: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md).
+Root wiki: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md).
 
 ---
 
-## Source: .skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md
+## Source: .skills/agent-skill/vitaecontext-x/wiki/knowledge.md
 
 <!--
 metadata:
-  wiki: agentkit-seo
-  module: agentkit-seo-x-twitter
+  wiki: vitaecontext
+  module: vitaecontext-x
   title: "X Twitter runtime knowledge"
   status: stable
   confidence: likely
@@ -1116,7 +1116,7 @@ If this file is unavailable in an older install, continue with `references/profi
 
 ## 2. Evidence labels
 
-Use the AgentKit SEO evidence labels defined in `agentkit-seo/wiki/agentkit-seo.md`.
+Use the VitaeContext evidence labels defined in `vitaecontext/wiki/vitaecontext.md`.
 
 For X/Twitter work, `Verified` means the fact was observed in public account fields, visible posts, pinned posts, accessible media, supplied screenshots, analytics summaries, exports, pasted text, or inspected proof links. `Inaccessible` commonly applies to private analytics, Premium status unless visible or supplied, hidden ranking treatment, shadowban claims, paid tools, monetization, and account settings.
 
@@ -1183,4 +1183,4 @@ When producing an X/Twitter audit or content plan:
 - Size recommendations to the user's posting capacity and credible niche.
 - Include a one-line `Depth note` when the audit did not inspect enough post history, replies, analytics, or Premium state.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/x-twitter/sources.md).
+Shared taxonomy: [vitaecontext/wiki/vitaecontext.md](../../vitaecontext/wiki/vitaecontext.md). Source grounding: [repository source inventory](https://github.com/vitaecontext/vitaecontext/blob/main/hub/x-twitter/sources.md).

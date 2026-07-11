@@ -89,7 +89,7 @@ function getProviderRuntimeHints(provider, providerSpec) {
         path.join(os.homedir(), ".agents", "skills")
       ].filter(Boolean),
       installHint:
-        "Install Codex first or set CODEX_HOME/--target-dir if this machine uses a non-default skills location. AgentKit SEO also writes ~/.agents/skills for Codex compatibility."
+        "Install Codex first or set CODEX_HOME/--target-dir if this machine uses a non-default skills location. VitaeContext also writes ~/.agents/skills for Codex compatibility."
     },
     "gemini-cli": {
       displayName: "Gemini CLI",
@@ -140,14 +140,14 @@ export function warnIfProviderRuntimeLooksMissing(provider, providerSpec, flags,
 
   if (!foundExecutable && !foundConfigRoot) {
     console.warn(
-      `warning: ${hints.displayName} was not detected on this machine. AgentKit SEO will still install files to ${targetRoot}. ${hints.installHint}`
+      `warning: ${hints.displayName} was not detected on this machine. VitaeContext will still install files to ${targetRoot}. ${hints.installHint}`
     );
     return;
   }
 
   if (!explicitTarget && !foundConfigRoot && hints.globalTarget) {
     console.warn(
-      `warning: ${hints.displayName} was not detected in its usual config location. AgentKit SEO is creating ${hints.globalTarget}. If this machine uses a different location, rerun with --target-dir or --project-root.`
+      `warning: ${hints.displayName} was not detected in its usual config location. VitaeContext is creating ${hints.globalTarget}. If this machine uses a different location, rerun with --target-dir or --project-root.`
     );
   }
 }

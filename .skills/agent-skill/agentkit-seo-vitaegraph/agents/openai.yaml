@@ -1,4 +1,0 @@
-interface:
-  display_name: "AgentKit SEO VitaeGraph"
-  short_description: "Build a deep hierarchical career graph"
-  default_prompt: "Use $agentkit-seo-vitaegraph to select the smallest create, deepen, maintain, validate, index, retrieve, or migrate workflow for my explicit graph path and supplied material."

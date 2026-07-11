@@ -40,4 +40,4 @@ Record stated future direction separately from demonstrated history.
 
 ## Optional sibling context
 
-Add a link to the separate personal career context file only when it exists and the user wants the connection.
+Add a link to the separate Career Context file only when it exists and the user wants the connection.

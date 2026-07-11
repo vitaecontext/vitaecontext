@@ -1,4 +1,0 @@
-interface:
-  display_name: "AgentKit SEO X/Twitter"
-  short_description: "Optimize X profile and posting strategy"
-  default_prompt: "Use $agentkit-seo-x-twitter to run a bounded audit of my public handle or pasted account data and improve my profile, pinned post, or posting strategy."

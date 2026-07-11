@@ -1,6 +1,6 @@
-# AgentKit SEO end-to-end demos
+# VitaeContext end-to-end demos
 
-This file demonstrates what AgentKit SEO can do once an agent already has the skills installed and available. It assumes the user is working inside a provider agentic coding tool such as Codex, Claude Code, Gemini CLI, Antigravity, OpenCode, or another environment that can read files, inspect public URLs, process pasted text, and use screenshots when the provider supports image inputs.
+This file demonstrates what VitaeContext can do once an agent already has the skills installed and available. It assumes the user is working inside a provider agentic coding tool such as Codex, Claude Code, Gemini CLI, Antigravity, OpenCode, or another environment that can read files, inspect public URLs, process pasted text, and use screenshots when the provider supports image inputs.
 
 These demos are not installation instructions. Use [getting-started.md](./getting-started.md) for setup and [architecture-map.md](./architecture-map.md) for maintainer validation.
 
@@ -22,7 +22,7 @@ Inputs available:
 The agent should first route through the root skill or the root runtime wiki, then load only the module needed for the current task.
 
 ```text
-Use AgentKit SEO to plan the workflow before editing anything.
+Use VitaeContext to plan the workflow before editing anything.
 Inspect the available inputs, choose the relevant skill, and tell me which files,
 screenshots, URLs, or pasted sections you need for the first pass.
 Do not invent missing facts.
@@ -31,16 +31,16 @@ Do not invent missing facts.
 Expected agent output:
 
 ```text
-- selected AgentKit SEO module
+- selected VitaeContext module
 - inputs already usable
 - smallest missing input set
 - proposed first-pass workflow
 - risks or inaccessible surfaces
 ```
 
-## 2. Demo: create the personal career context file
+## 2. Demo: create the Career Context file
 
-Goal: give scattered career material to an agent and use `agentkit-seo-agent-context-optimization` to turn it into one private source of truth before optimizing public surfaces.
+Goal: give scattered career material to an agent and use `vitaecontext-build` to turn it into one private source of truth before optimizing public surfaces.
 
 Example inputs:
 
@@ -57,9 +57,9 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-agent-context-optimization.
+Use vitaecontext-build.
 
-Create my personal career context file from these inputs:
+Create my Career Context file from these inputs:
 - CV: ~/career/current-cv.pdf
 - LinkedIn sections: pasted below
 - GitHub: https://github.com/<user>
@@ -68,7 +68,7 @@ Create my personal career context file from these inputs:
 - Target role: security-focused software engineer
 - Project notes: pasted below
 
-Write the result to ~/.agentkit-seo/<name>-context.md if file editing is available.
+Write the result to ~/.vitaecontext/<name>-context.md if file editing is available.
 Separate verified facts, supplied context, inferences, and missing evidence.
 Also capture my goals and targeting: ideal role, current focus, what I want to
 work on next, growth direction, target locations (or no restriction), interests,
@@ -79,7 +79,7 @@ Ask before turning uncertain claims into public copy.
 Expected output:
 
 ```text
-- personal career context file draft or saved file path
+- Career Context file draft or saved file path
 - source ledger for every major claim
 - conflicts found across CV, LinkedIn, GitHub, and portfolio material
 - goals and targeting captured as stated intent, kept separate from verified facts
@@ -96,7 +96,7 @@ Goal: improve hiring visibility and agent-readiness on GitHub without rewriting 
 Example inputs:
 
 ```text
-- ~/.agentkit-seo/<name>-context.md
+- ~/.vitaecontext/<name>-context.md
 - GitHub profile URL
 - 2-3 repository URLs
 - local checkout for one portfolio repository
@@ -106,11 +106,11 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-github.
+Use vitaecontext-github.
 
 Audit my GitHub profile and selected repositories for hiring visibility.
 Read my context file first:
-~/.agentkit-seo/<name>-context.md
+~/.vitaecontext/<name>-context.md
 
 Inputs:
 - Profile: https://github.com/<user>
@@ -143,7 +143,7 @@ Goal: rewrite profile sections from verified facts, supplied section text, scree
 Example inputs:
 
 ```text
-- ~/.agentkit-seo/<name>-context.md
+- ~/.vitaecontext/<name>-context.md
 - pasted LinkedIn headline, About, Experience, Featured, and Skills sections
 - screenshots of profile layout or Featured cards
 - target job description
@@ -153,11 +153,11 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-linkedin.
+Use vitaecontext-linkedin.
 
 Optimize my LinkedIn profile for the target role below.
 Read my context file first:
-~/.agentkit-seo/<name>-context.md
+~/.vitaecontext/<name>-context.md
 
 Inputs:
 - Current LinkedIn headline, About, Experience, Featured, and Skills sections pasted below
@@ -192,7 +192,7 @@ Goal: tailor a CV to a target role while preserving parser safety and factual ac
 Example inputs:
 
 ```text
-- ~/.agentkit-seo/<name>-context.md
+- ~/.vitaecontext/<name>-context.md
 - current CV as LaTeX, Markdown, DOCX text, or extracted PDF text
 - target job description
 - optional screenshot or PDF render for visual QA
@@ -201,11 +201,11 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-cv-ats.
+Use vitaecontext-cv.
 
 Tailor my CV for this target role without inventing facts.
 Read my context file first:
-~/.agentkit-seo/<name>-context.md
+~/.vitaecontext/<name>-context.md
 
 Inputs:
 - CV source file: ./cv/main.tex
@@ -235,7 +235,7 @@ Goal: inspect a live or local portfolio and improve metadata, structured data, c
 Example inputs:
 
 ```text
-- ~/.agentkit-seo/<name>-context.md
+- ~/.vitaecontext/<name>-context.md
 - portfolio URL
 - local source folder or built HTML
 - screenshots of key pages
@@ -245,11 +245,11 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-web-portfolio.
+Use vitaecontext-portfolio.
 
 Audit my portfolio for SEO, AI readability, and hiring proof.
 Read my context file first:
-~/.agentkit-seo/<name>-context.md
+~/.vitaecontext/<name>-context.md
 
 Inputs:
 - Live site: https://<user>.github.io
@@ -280,7 +280,7 @@ Goal: align the profile, pinned post, recent posts, and proof links with the use
 Example inputs:
 
 ```text
-- ~/.agentkit-seo/<name>-context.md
+- ~/.vitaecontext/<name>-context.md
 - public X/Twitter profile URL
 - pasted bio, pinned post, and recent posts
 - screenshots if public access is blocked or incomplete
@@ -290,11 +290,11 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-x-twitter.
+Use vitaecontext-x.
 
 Audit my X/Twitter profile and recent posts for professional positioning.
 Read my context file first:
-~/.agentkit-seo/<name>-context.md
+~/.vitaecontext/<name>-context.md
 
 Inputs:
 - Profile: https://x.com/<user>
@@ -324,8 +324,8 @@ Goal: create or deepen detailed private career records without loading every dom
 Example inputs:
 
 ```text
-- exact graph path: ~/.agentkit-seo/vitaegraph
-- current CV or personal career context file
+- exact graph path: ~/.vitaecontext/vitaegraph
+- current CV or Career Context file
 - selected project notes and repository URLs
 - degree, course, or thesis material
 - corrections to existing records
@@ -334,9 +334,9 @@ Example inputs:
 Prompt:
 
 ```text
-Use agentkit-seo-vitaegraph.
+Use vitaecontext-vitaegraph.
 
-Graph: ~/.agentkit-seo/vitaegraph
+Graph: ~/.vitaecontext/vitaegraph
 Mode: deepen
 Scope: projects and the related degree only
 
@@ -368,10 +368,10 @@ Goal: coordinate all public surfaces from the same private context file.
 Prompt:
 
 ```text
-Use AgentKit SEO for a full cross-platform refresh.
+Use VitaeContext for a full cross-platform refresh.
 
 Start from my context file:
-~/.agentkit-seo/<name>-context.md
+~/.vitaecontext/<name>-context.md
 
 Surfaces:
 - GitHub profile and selected repos
@@ -400,5 +400,5 @@ Expected output:
 
 - [Getting started](./getting-started.md)
 - [Architecture map](./architecture-map.md)
-- [Root runtime wiki](../../.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md)
-- [Agent context optimization hub](../../hub/agent-context-optimization/README.md)
+- [Root runtime wiki](../../.skills/agent-skill/vitaecontext/wiki/vitaecontext.md)
+- [Context Builder hub](../../hub/context-builder/README.md)

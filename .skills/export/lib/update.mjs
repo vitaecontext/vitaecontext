@@ -7,7 +7,7 @@ import { resolveInstallRoot } from "./install.mjs";
 
 const REGISTRY_URL = "https://registry.npmjs.org";
 const DEFAULT_TIMEOUT_MS = 7000;
-const MANIFEST_NAME = "agentkit-seo-install.json";
+const MANIFEST_NAMES = ["vitaecontext-install.json", "agentkit-seo-install.json"];
 
 function parseSemver(version) {
   const match = /^(\d+)\.(\d+)\.(\d+)(?:[-+]([0-9A-Za-z.-]+))?$/.exec(version ?? "");
@@ -50,7 +50,7 @@ export function compareSemver(a, b) {
 async function fetchLatestVersion(name, timeoutMs) {
   if (typeof fetch !== "function") {
     throw new Error(
-      "This Node.js runtime has no global fetch(). Upgrade to Node.js 18 or newer to run 'agentkit-seo update'."
+      "This Node.js runtime has no global fetch(). Upgrade to Node.js 18 or newer to run 'vitaecontext update'."
     );
   }
 
@@ -96,10 +96,12 @@ function readInstalledVersion(config, flags) {
   }
 
   const targetRoot = resolveInstallRoot(flags, providerSpec, provider);
-  const manifestPath = path.join(targetRoot, MANIFEST_NAME);
-  if (!fs.existsSync(manifestPath)) {
+  const manifestPath = MANIFEST_NAMES.map((name) => path.join(targetRoot, name)).find((entry) =>
+    fs.existsSync(entry)
+  );
+  if (!manifestPath) {
     throw new Error(
-      `No AgentKit SEO install manifest found at ${targetRoot}. Confirm the install location with --target-dir or --project-root, then rerun the update check.`
+      `No VitaeContext install manifest found at ${targetRoot}. Confirm the install location with --target-dir or --project-root, then rerun the update check.`
     );
   }
 
@@ -140,7 +142,7 @@ export async function checkForUpdates(config, flags) {
     } else {
       console.error(`error: could not check npm for the latest ${name} version: ${error.message}`);
       console.error(
-        "This check needs network access to https://registry.npmjs.org. AgentKit SEO never checks for updates on its own; it only runs when you call 'agentkit-seo update'."
+        "This check needs network access to https://registry.npmjs.org. VitaeContext never checks for updates on its own; it only runs when you call 'vitaecontext update'."
       );
     }
     process.exitCode = 1;
@@ -185,7 +187,7 @@ export async function checkForUpdates(config, flags) {
     } else if (installed.provider === "shared") {
       destinationFlags = " --target-dir <dir>";
     }
-    console.log(`  npx agentkit-seo@latest install --provider ${providerFlag}${destinationFlags} --force`);
+    console.log(`  npx vitaecontext@latest install --provider ${providerFlag}${destinationFlags} --force`);
   } else if (status === "ahead") {
     console.log("Your local version is newer than the latest published release.");
   } else {

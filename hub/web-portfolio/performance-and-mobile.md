@@ -46,8 +46,8 @@ Good example:
 ```html
 <!-- CORRECT: stable image dimensions and meaningful alt text -->
 <img
-  src="/images/agentkit-seo-homepage.webp"
-  alt="Screenshot of the AgentKit SEO documentation homepage"
+  src="/images/vitaecontext-homepage.webp"
+  alt="Screenshot of the VitaeContext documentation homepage"
   width="1280"
   height="720"
   loading="lazy"

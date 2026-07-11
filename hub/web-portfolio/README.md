@@ -12,7 +12,7 @@ metadata:
 # Web portfolio SEO and indexing
 
 > This directory helps make a personal portfolio discoverable, crawlable, and persuasive instead of just visually polished.
-> Public web page: [Web portfolio SEO playbook](https://agentkit-seo.github.io/playbooks/web-portfolio/).
+> Public web page: [Web portfolio SEO playbook](https://vitaecontext.github.io/playbooks/web-portfolio/).
 
 ---
 
@@ -27,7 +27,7 @@ Weak project page:
 "Project One - React app"
 
 Stronger project page:
-"AgentKit SEO - installable AI skill package for career profile optimization"
+"VitaeContext - installable AI skill package for career profile optimization"
 ```
 
 ## 2. Use this module when
@@ -74,6 +74,6 @@ When an AI agent is tasked with optimizing a user's personal website:
 
 ---
 
-Runtime skill: [.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md](../../.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md). Source notes: [sources.md](./sources.md).
+Runtime skill: [.skills/agent-skill/vitaecontext-portfolio/SKILL.md](../../.skills/agent-skill/vitaecontext-portfolio/SKILL.md). Source notes: [sources.md](./sources.md).
 
 *Next step: Start with [Indexability and submission](./indexability-and-submission.md).*

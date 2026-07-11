@@ -14,7 +14,7 @@ function writeBundleManifest(bundleRoot, provider, config, exportedSkills) {
     commands: providerSpec.commands?.map((command) => command.name) ?? [],
     layout: providerSpec.layout
   };
-  const manifestPath = path.join(bundleRoot, "agentkit-seo-export.json");
+  const manifestPath = path.join(bundleRoot, "vitaecontext-export.json");
   writeJsonFile(manifestPath, manifest);
 }
 

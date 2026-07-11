@@ -30,5 +30,5 @@ export function runGraphCommand(repoRoot, subject, flags) {
     console.log(`- generated: ${result.generated}`);
     return;
   }
-  throw new Error("Usage: agentkit-seo graph init|validate|index [--root <vitaegraph-directory>] [--force]");
+  throw new Error("Usage: vitaecontext graph init|validate|index [--root <vitaegraph-directory>] [--force]");
 }

@@ -12,7 +12,7 @@ metadata:
 # CV and ATS optimization
 
 > This directory helps turn a CV into a document that parsers can extract, recruiters can scan, and agents can safely tailor without breaking the layout.
-> Public web page: [CV and ATS optimization playbook](https://agentkit-seo.github.io/playbooks/cv-ats/).
+> Public web page: [CV and ATS optimization playbook](https://vitaecontext.github.io/playbooks/cv-ats/).
 
 ---
 
@@ -73,4 +73,4 @@ When an AI agent is tasked with optimizing a user's CV:
 
 ---
 
-Runtime skill: [.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md](../../.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md). Source notes: [sources.md](./sources.md).
+Runtime skill: [.skills/agent-skill/vitaecontext-cv/SKILL.md](../../.skills/agent-skill/vitaecontext-cv/SKILL.md). Source notes: [sources.md](./sources.md).

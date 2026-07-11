@@ -8,7 +8,7 @@ export function templateContext(repoRoot, flags) {
   const source = path.join(
     repoRoot,
     "hub",
-    "agent-context-optimization",
+    "context-builder",
     "templates",
     "context-file-template.md"
   );

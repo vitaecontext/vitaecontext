@@ -37,4 +37,4 @@ No clean official source was found for universal claims about exact ATS scores, 
 
 ---
 
-See also: [CV and ATS optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md).
+See also: [CV and ATS optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/vitaecontext-cv/wiki/knowledge.md).

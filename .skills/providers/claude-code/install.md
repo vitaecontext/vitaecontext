@@ -16,13 +16,13 @@ Do not treat `.claude/skills/` as the canonical authoring surface in this reposi
 If you want a Claude-ready layout installed globally from the published package, use:
 
 ```bash
-npx agentkit-seo install --provider claude-code
+npx vitaecontext install --provider claude-code
 ```
 
 From a local checkout, use:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider claude-code
 ```
 
@@ -33,7 +33,7 @@ This installs the shared skills into:
 If you want a Claude-ready layout installed directly into a project, pass `--project-root`:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider claude-code \
   --project-root .
 ```
@@ -54,18 +54,18 @@ If you want a preview bundle instead of writing directly into the project, use t
 
 ## Important constraint
 
-The exact `/agentkit-seo:linkedin` syntax is not the normal project-skill path for Claude Code. Local project commands live in `.claude/commands/`, but subdirectories do not create namespaced command names. The clean `plugin-name:skill-name` namespace exists for plugin skills.
+The exact `/vitaecontext:linkedin` syntax is not the normal project-skill path for Claude Code. Local project commands live in `.claude/commands/`, but subdirectories do not create namespaced command names. The clean `plugin-name:skill-name` namespace exists for plugin skills.
 
 ## Practical recommendation
 
 Use the shared skills directly for the first version:
 
-- `agentkit-seo-linkedin`
-- `agentkit-seo-github`
-- `agentkit-seo-cv-ats`
-- `agentkit-seo-web-portfolio`
-- `agentkit-seo-x-twitter`
-- `agentkit-seo-agent-context-optimization`
-- `agentkit-seo-vitaegraph`
+- `vitaecontext-linkedin`
+- `vitaecontext-github`
+- `vitaecontext-cv`
+- `vitaecontext-portfolio`
+- `vitaecontext-x`
+- `vitaecontext-build`
+- `vitaecontext-vitaegraph`
 
-If you later want the exact `/agentkit-seo:linkedin` interface in Claude Code, package the provider adapter as a Claude plugin instead of relying only on local project commands.
+If you later want the exact `/vitaecontext:linkedin` interface in Claude Code, package the provider adapter as a Claude plugin instead of relying only on local project commands.

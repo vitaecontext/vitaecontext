@@ -2,10 +2,10 @@
 
 ## Preferred install targets
 
-Install AgentKit SEO as an Antigravity CLI plugin:
+Install VitaeContext as an Antigravity CLI plugin:
 
-- global plugin: `~/.gemini/antigravity-cli/plugins/agentkit-seo/`
-- local generated-layout preview: `<project>/.gemini/antigravity-cli/plugins/agentkit-seo/`
+- global plugin: `~/.gemini/antigravity-cli/plugins/vitaecontext/`
+- local generated-layout preview: `<project>/.gemini/antigravity-cli/plugins/vitaecontext/`
 
 The plugin uses the Gemini extension-compatible structure that Antigravity imports from Gemini CLI extensions:
 
@@ -13,31 +13,31 @@ The plugin uses the Gemini extension-compatible structure that Antigravity impor
 - `gemini-extension.json`
 - `GEMINI.md`
 - shared skills copied into `skills/<skill-name>/`
-- commands copied into `commands/agentkit-seo/<module>.toml`
+- commands copied into `commands/vitaecontext/<module>.toml`
 
-The generated wrappers include the separate `agentkit-seo:vitaegraph` entrypoint. Exact Antigravity command surfacing still requires live runtime confirmation.
+The generated wrappers include the separate `vitaecontext:vitaegraph` entrypoint. Exact Antigravity command surfacing still requires live runtime confirmation.
 
 OpenAI/Codex-only metadata from `agents/` is excluded from generated Antigravity installs.
 
-Antigravity CLI migration documentation and real user output indicate that imported Gemini CLI extensions are staged as plugins under `~/.gemini/antigravity-cli/plugins`. The exact in-session command surface for imported TOML commands is still settling. Treat Gemini-style commands such as `/agentkit-seo:linkedin` as the expected compatibility target, but verify in `agy` before documenting it as guaranteed.
+Antigravity CLI migration documentation and real user output indicate that imported Gemini CLI extensions are staged as plugins under `~/.gemini/antigravity-cli/plugins`. The exact in-session command surface for imported TOML commands is still settling. Treat Gemini-style commands such as `/vitaecontext:linkedin` as the expected compatibility target, but verify in `agy` before documenting it as guaranteed.
 
 ## Install command
 
 ```bash
-npx agentkit-seo install --provider antigravity
+npx vitaecontext install --provider antigravity
 ```
 
 From a local checkout:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider antigravity
 ```
 
 For a project-local generated-layout preview:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider antigravity \
   --project-root .
 ```
@@ -52,7 +52,7 @@ Antigravity CLI provides a migration command for existing Gemini CLI extensions:
 agy plugin import gemini
 ```
 
-AgentKit SEO can also install directly to the Antigravity plugin staging path with `--provider antigravity`, which avoids requiring a separate Gemini CLI install first.
+VitaeContext can also install directly to the Antigravity plugin staging path with `--provider antigravity`, which avoids requiring a separate Gemini CLI install first.
 
 ## Source-first workflow
 

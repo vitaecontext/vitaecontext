@@ -1,4 +1,0 @@
-interface:
-  display_name: "AgentKit SEO Web Portfolio"
-  short_description: "Improve portfolio crawlability and snippets"
-  default_prompt: "Use $agentkit-seo-web-portfolio to run a bounded first-pass audit of my portfolio URL or local source, flag unsupported public claims, and improve crawlability and metadata."

@@ -1,10 +1,10 @@
-# AgentKit SEO
+# VitaeContext
 
-AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its context-optimization skill maintains a compact private career context file, while its separate VitaeGraph skill maintains an optional deeper local career knowledge graph. Platform-specific skills, evidence labels, and provider-aware install layouts support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
+VitaeContext is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its Context Builder skill maintains a compact private career context file, while its separate VitaeGraph skill maintains an optional deeper local career knowledge graph. Platform-specific skills, evidence labels, and provider-aware install layouts support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
 
 ## Root
 
-- [AgentKit SEO self-description](.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md): Authoritative definition of AgentKit SEO, ACO, runtime architecture, install behavior, and shared evidence labels.
+- [VitaeContext self-description](.skills/agent-skill/vitaecontext/wiki/vitaecontext.md): Authoritative definition of VitaeContext, ACO, runtime architecture, install behavior, and shared evidence labels.
 - [Repository README](README.md): Public project entrypoint and human-to-runtime graph root.
 - [Getting started](.assets/docs/getting-started.md): Human and agent onboarding path for choosing the right documentation branch.
 - [End-to-end demos](.assets/docs/end-to-end-workflows.md): Skill-ready agent workflows with sample inputs, prompts, multimodal material, and expected deliverables.
@@ -13,16 +13,16 @@ AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted profes
 
 ## Module wikis
 
-- [Agent context optimization](.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/index.md): Personal career context file structure, maintenance, validation, and handoff rules.
-- [CV ATS](.skills/agent-skill/agentkit-seo-cv-ats/wiki/index.md): ATS-safe CV structure, parser constraints, tailoring, and audit rules.
-- [GitHub](.skills/agent-skill/agentkit-seo-github/wiki/index.md): GitHub profile, repository, search, Linguist, and agent-readiness rules.
-- [LinkedIn](.skills/agent-skill/agentkit-seo-linkedin/wiki/index.md): LinkedIn profile architecture, search visibility, activity, and algorithm-confidence rules.
-- [VitaeGraph](.skills/agent-skill/agentkit-seo-vitaegraph/wiki/index.md): Deep hierarchical career records, progressive retrieval, validation, and generated artifacts.
-- [Web portfolio](.skills/agent-skill/agentkit-seo-web-portfolio/wiki/index.md): Portfolio SEO, metadata, structured data, AI retrieval, and `llms.txt` rules.
-- [X/Twitter](.skills/agent-skill/agentkit-seo-x-twitter/wiki/index.md): X/Twitter profile, post, engagement, Premium, and ranking-confidence rules.
+- [Context Builder](.skills/agent-skill/vitaecontext-build/wiki/index.md): Career Context file structure, maintenance, validation, and handoff rules.
+- [CV ATS](.skills/agent-skill/vitaecontext-cv/wiki/index.md): ATS-safe CV structure, parser constraints, tailoring, and audit rules.
+- [GitHub](.skills/agent-skill/vitaecontext-github/wiki/index.md): GitHub profile, repository, search, Linguist, and agent-readiness rules.
+- [LinkedIn](.skills/agent-skill/vitaecontext-linkedin/wiki/index.md): LinkedIn profile architecture, search visibility, activity, and algorithm-confidence rules.
+- [VitaeGraph](.skills/agent-skill/vitaecontext-vitaegraph/wiki/index.md): Deep hierarchical career records, progressive retrieval, validation, and generated artifacts.
+- [Web portfolio](.skills/agent-skill/vitaecontext-portfolio/wiki/index.md): Portfolio SEO, metadata, structured data, AI retrieval, and `llms.txt` rules.
+- [X/Twitter](.skills/agent-skill/vitaecontext-x/wiki/index.md): X/Twitter profile, post, engagement, Premium, and ranking-confidence rules.
 
 ## Public surfaces
 
-- Website: https://agentkit-seo.github.io/
-- npm package: https://www.npmjs.com/package/agentkit-seo
-- GitHub repository: https://github.com/agentkit-seo/agentkit-seo
+- Website: https://vitaecontext.github.io/
+- npm package: https://www.npmjs.com/package/vitaecontext
+- GitHub repository: https://github.com/vitaecontext/vitaecontext

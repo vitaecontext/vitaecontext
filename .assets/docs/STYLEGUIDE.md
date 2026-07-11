@@ -216,7 +216,7 @@ When generating or editing Markdown:
 - Match the correct file-class schema.
 - Set complete hidden metadata for editorial hub files.
 - Set `status: draft` for new editorial files unless told otherwise.
-- Use Agent Skills frontmatter for runtime `SKILL.md` files. The `description` must state both what the skill does and when to use it: write one or two sentences of capability, then a "Use when ..." clause listing concrete triggers. Keep it within 1024 characters and push detail into `references/`. Also set a `license` field and a `metadata` block (homepage, repository) so provenance travels with the installed skill. `agentkit-seo doctor` enforces the presence, length, "when" clause, and `license`.
+- Use Agent Skills frontmatter for runtime `SKILL.md` files. The `description` must state both what the skill does and when to use it: write one or two sentences of capability, then a "Use when ..." clause listing concrete triggers. Keep it within 1024 characters and push detail into `references/`. Also set a `license` field and a `metadata` block (homepage, repository) so provenance travels with the installed skill. `vitaecontext doctor` enforces the presence, length, "when" clause, and `license`.
 - Keep runtime references lean, procedural, and self-contained.
 - Use the current date for `last_updated`.
 - Do not add sections outside the relevant template.

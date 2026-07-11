@@ -12,7 +12,7 @@ metadata:
 # GitHub optimization
 
 > This directory helps turn a GitHub profile from a code dump into a searchable proof-of-work system for humans, GitHub search, Copilot, and other AI agents.
-> Public web page: [GitHub optimization playbook](https://agentkit-seo.github.io/playbooks/github/).
+> Public web page: [GitHub optimization playbook](https://vitaecontext.github.io/playbooks/github/).
 
 ---
 
@@ -78,6 +78,6 @@ When an AI agent is tasked with optimizing a user's GitHub presence:
 
 ---
 
-Runtime skill: [.skills/agent-skill/agentkit-seo-github/SKILL.md](../../.skills/agent-skill/agentkit-seo-github/SKILL.md). Source notes: [sources.md](./sources.md).
+Runtime skill: [.skills/agent-skill/vitaecontext-github/SKILL.md](../../.skills/agent-skill/vitaecontext-github/SKILL.md). Source notes: [sources.md](./sources.md).
 
 *Next step: Understand the search engine in [GitHub code search and Blackbird](./algorithm-blackbird.md).*

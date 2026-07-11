@@ -76,5 +76,5 @@ jobs:
         run: |
           gh release create "$TAG_NAME" \
             --repo "$GITHUB_REPOSITORY" \
-            --title "agentkit-seo $TAG_NAME" \
-            --notes "Npm package: https://www.npmjs.com/package/agentkit-seo"
+            --title "vitaecontext $TAG_NAME" \
+            --notes "Npm package: https://www.npmjs.com/package/vitaecontext"

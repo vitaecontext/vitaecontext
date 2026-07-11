@@ -1,41 +1,41 @@
 {
   "package": {
-    "name": "agentkit-seo",
+    "name": "vitaecontext",
     "version": "from-package-json",
-    "description": "Portable AgentKit SEO skill bundle generated from the canonical .skills source tree."
+    "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work."
   },
   "skills": [
     {
-      "name": "agentkit-seo",
-      "source": ".skills/agent-skill/agentkit-seo"
+      "name": "vitaecontext",
+      "source": ".skills/agent-skill/vitaecontext"
     },
     {
-      "name": "agentkit-seo-agent-context-optimization",
-      "source": ".skills/agent-skill/agentkit-seo-agent-context-optimization"
+      "name": "vitaecontext-build",
+      "source": ".skills/agent-skill/vitaecontext-build"
     },
     {
-      "name": "agentkit-seo-cv-ats",
-      "source": ".skills/agent-skill/agentkit-seo-cv-ats"
+      "name": "vitaecontext-cv",
+      "source": ".skills/agent-skill/vitaecontext-cv"
     },
     {
-      "name": "agentkit-seo-github",
-      "source": ".skills/agent-skill/agentkit-seo-github"
+      "name": "vitaecontext-github",
+      "source": ".skills/agent-skill/vitaecontext-github"
     },
     {
-      "name": "agentkit-seo-linkedin",
-      "source": ".skills/agent-skill/agentkit-seo-linkedin"
+      "name": "vitaecontext-linkedin",
+      "source": ".skills/agent-skill/vitaecontext-linkedin"
     },
     {
-      "name": "agentkit-seo-vitaegraph",
-      "source": ".skills/agent-skill/agentkit-seo-vitaegraph"
+      "name": "vitaecontext-vitaegraph",
+      "source": ".skills/agent-skill/vitaecontext-vitaegraph"
     },
     {
-      "name": "agentkit-seo-web-portfolio",
-      "source": ".skills/agent-skill/agentkit-seo-web-portfolio"
+      "name": "vitaecontext-portfolio",
+      "source": ".skills/agent-skill/vitaecontext-portfolio"
     },
     {
-      "name": "agentkit-seo-x-twitter",
-      "source": ".skills/agent-skill/agentkit-seo-x-twitter"
+      "name": "vitaecontext-x",
+      "source": ".skills/agent-skill/vitaecontext-x"
     }
   ],
   "providers": {
@@ -68,13 +68,13 @@
     },
     "gemini-cli": {
       "layout": "gemini-extension",
-      "target": ".gemini/extensions/agentkit-seo",
-      "globalTarget": "~/.gemini/extensions/agentkit-seo",
+      "target": ".gemini/extensions/vitaecontext",
+      "globalTarget": "~/.gemini/extensions/vitaecontext",
       "skillTarget": "skills",
       "skillExcludes": [
         "agents"
       ],
-      "commandTarget": "commands/agentkit-seo",
+      "commandTarget": "commands/vitaecontext",
       "files": [
         {
           "source": ".skills/providers/gemini-cli/extension/gemini-extension.json",
@@ -86,44 +86,44 @@
       ],
       "commands": [
         {
-          "name": "agentkit-seo:context",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/context.toml"
+          "name": "vitaecontext:context",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/context.toml"
         },
         {
-          "name": "agentkit-seo:cv-ats",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/cv-ats.toml"
+          "name": "vitaecontext:cv",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/cv.toml"
         },
         {
-          "name": "agentkit-seo:github",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/github.toml"
+          "name": "vitaecontext:github",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/github.toml"
         },
         {
-          "name": "agentkit-seo:linkedin",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/linkedin.toml"
+          "name": "vitaecontext:linkedin",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/linkedin.toml"
         },
         {
-          "name": "agentkit-seo:vitaegraph",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/vitaegraph.toml"
+          "name": "vitaecontext:vitaegraph",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/vitaegraph.toml"
         },
         {
-          "name": "agentkit-seo:portfolio",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/portfolio.toml"
+          "name": "vitaecontext:portfolio",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/portfolio.toml"
         },
         {
-          "name": "agentkit-seo:x-twitter",
-          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/x-twitter.toml"
+          "name": "vitaecontext:x",
+          "source": ".skills/providers/gemini-cli/commands/vitaecontext/x.toml"
         }
       ]
     },
     "antigravity": {
       "layout": "gemini-extension",
-      "target": ".gemini/antigravity-cli/plugins/agentkit-seo",
-      "globalTarget": "~/.gemini/antigravity-cli/plugins/agentkit-seo",
+      "target": ".gemini/antigravity-cli/plugins/vitaecontext",
+      "globalTarget": "~/.gemini/antigravity-cli/plugins/vitaecontext",
       "skillTarget": "skills",
       "skillExcludes": [
         "agents"
       ],
-      "commandTarget": "commands/agentkit-seo",
+      "commandTarget": "commands/vitaecontext",
       "files": [
         {
           "source": ".skills/providers/antigravity/extension/plugin.json"
@@ -138,32 +138,32 @@
       ],
       "commands": [
         {
-          "name": "agentkit-seo:context",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/context.toml"
+          "name": "vitaecontext:context",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/context.toml"
         },
         {
-          "name": "agentkit-seo:cv-ats",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/cv-ats.toml"
+          "name": "vitaecontext:cv",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/cv.toml"
         },
         {
-          "name": "agentkit-seo:github",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/github.toml"
+          "name": "vitaecontext:github",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/github.toml"
         },
         {
-          "name": "agentkit-seo:linkedin",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/linkedin.toml"
+          "name": "vitaecontext:linkedin",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/linkedin.toml"
         },
         {
-          "name": "agentkit-seo:vitaegraph",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/vitaegraph.toml"
+          "name": "vitaecontext:vitaegraph",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/vitaegraph.toml"
         },
         {
-          "name": "agentkit-seo:portfolio",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/portfolio.toml"
+          "name": "vitaecontext:portfolio",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/portfolio.toml"
         },
         {
-          "name": "agentkit-seo:x-twitter",
-          "source": ".skills/providers/antigravity/commands/agentkit-seo/x-twitter.toml"
+          "name": "vitaecontext:x",
+          "source": ".skills/providers/antigravity/commands/vitaecontext/x.toml"
         }
       ]
     },
@@ -178,32 +178,32 @@
       "globalCommandTarget": "~/.config/opencode/commands",
       "commands": [
         {
-          "name": "agentkit-seo-context",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-context.md"
+          "name": "vitaecontext-context",
+          "source": ".skills/providers/opencode/commands/vitaecontext-context.md"
         },
         {
-          "name": "agentkit-seo-cv-ats",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-cv-ats.md"
+          "name": "vitaecontext-cv",
+          "source": ".skills/providers/opencode/commands/vitaecontext-cv.md"
         },
         {
-          "name": "agentkit-seo-github",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-github.md"
+          "name": "vitaecontext-github",
+          "source": ".skills/providers/opencode/commands/vitaecontext-github.md"
         },
         {
-          "name": "agentkit-seo-linkedin",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-linkedin.md"
+          "name": "vitaecontext-linkedin",
+          "source": ".skills/providers/opencode/commands/vitaecontext-linkedin.md"
         },
         {
-          "name": "agentkit-seo-vitaegraph",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-vitaegraph.md"
+          "name": "vitaecontext-vitaegraph",
+          "source": ".skills/providers/opencode/commands/vitaecontext-vitaegraph.md"
         },
         {
-          "name": "agentkit-seo-portfolio",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-portfolio.md"
+          "name": "vitaecontext-portfolio",
+          "source": ".skills/providers/opencode/commands/vitaecontext-portfolio.md"
         },
         {
-          "name": "agentkit-seo-x-twitter",
-          "source": ".skills/providers/opencode/commands/agentkit-seo-x-twitter.md"
+          "name": "vitaecontext-x",
+          "source": ".skills/providers/opencode/commands/vitaecontext-x.md"
         }
       ]
     }

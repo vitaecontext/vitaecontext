@@ -25,28 +25,28 @@ Keep `.skills/agent-skill/` as the only canonical source tree, then install an O
 For the published package, the default command is:
 
 ```bash
-npx agentkit-seo install --provider opencode
+npx vitaecontext install --provider opencode
 ```
 
 This installs the shared skills into:
 
 - `~/.config/opencode/skills/`
 
-It also installs the AgentKit SEO command wrappers into:
+It also installs the VitaeContext command wrappers into:
 
 - `~/.config/opencode/commands/`
 
 From a local checkout, use:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider opencode
 ```
 
 For project-local installation, pass `--project-root`:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install \
+node .skills/export/scripts/vitaecontext.mjs install \
   --provider opencode \
   --project-root .
 ```
@@ -64,13 +64,13 @@ OpenCode has native skill discovery and also supports custom commands.
 
 The docs clearly describe flat custom command names from filenames, but they do not document the same clean colon namespace pattern for commands that Gemini CLI does. Because of that, the safest OpenCode command surface is flat:
 
-- `/agentkit-seo-context`
-- `/agentkit-seo-vitaegraph`
-- `/agentkit-seo-linkedin`
-- `/agentkit-seo-github`
-- `/agentkit-seo-cv-ats`
-- `/agentkit-seo-portfolio`
-- `/agentkit-seo-x-twitter`
+- `/vitaecontext-context`
+- `/vitaecontext-vitaegraph`
+- `/vitaecontext-linkedin`
+- `/vitaecontext-github`
+- `/vitaecontext-cv`
+- `/vitaecontext-portfolio`
+- `/vitaecontext-x`
 
 ## Practical recommendation
 

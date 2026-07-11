@@ -12,7 +12,7 @@ metadata:
 # LinkedIn profile optimization
 
 > This directory helps turn a LinkedIn profile from a generic professional summary into a searchable, evidence-backed profile that recruiters and AI tools can understand.
-> Public web page: [LinkedIn optimization playbook](https://agentkit-seo.github.io/playbooks/linkedin/).
+> Public web page: [LinkedIn optimization playbook](https://vitaecontext.github.io/playbooks/linkedin/).
 
 ---
 
@@ -85,4 +85,4 @@ When an AI agent is tasked with optimizing a user's LinkedIn profile:
 
 ---
 
-Runtime skill: [.skills/agent-skill/agentkit-seo-linkedin/SKILL.md](../../.skills/agent-skill/agentkit-seo-linkedin/SKILL.md). Source notes: [sources.md](./sources.md).
+Runtime skill: [.skills/agent-skill/vitaecontext-linkedin/SKILL.md](../../.skills/agent-skill/vitaecontext-linkedin/SKILL.md). Source notes: [sources.md](./sources.md).

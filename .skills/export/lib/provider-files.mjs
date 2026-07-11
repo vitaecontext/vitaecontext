@@ -88,7 +88,7 @@ export function copyProviderFiles(repoRoot, files, targetRoot, force, packageMet
     if (fs.existsSync(destination)) {
       if (!force) {
         throw new Error(
-          `Provider file target already exists: ${destination}. Use --force to replace AgentKit SEO provider files.`
+          `Provider file target already exists: ${destination}. Use --force to replace VitaeContext provider files.`
         );
       }
       removeIfExists(destination);
@@ -122,7 +122,7 @@ export function copyCommandFiles(repoRoot, commands, targetRoot, force) {
     if (fs.existsSync(destination)) {
       if (!force) {
         throw new Error(
-          `Command target already exists: ${destination}. Use --force to replace AgentKit SEO command files.`
+          `Command target already exists: ${destination}. Use --force to replace VitaeContext command files.`
         );
       }
       removeIfExists(destination);
@@ -148,7 +148,7 @@ export function installSkillFolders(repoRoot, skills, targetRoot, force, exclude
     if (fs.existsSync(destination)) {
       if (!force) {
         throw new Error(
-          `Install target already exists: ${destination}. Use --force to replace AgentKit SEO skill folders.`
+          `Install target already exists: ${destination}. Use --force to replace VitaeContext skill folders.`
         );
       }
       removeIfExists(destination);

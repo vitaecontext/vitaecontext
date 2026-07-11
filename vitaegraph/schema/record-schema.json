@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/agentkit-seo/agentkit-seo/vitaegraph/schema/record-schema.json",
+  "$id": "https://github.com/vitaecontext/vitaecontext/vitaegraph/schema/record-schema.json",
   "title": "VitaeGraph record frontmatter",
   "type": "object",
   "required": ["type", "id", "title"],

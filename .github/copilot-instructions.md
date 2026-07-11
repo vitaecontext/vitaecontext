@@ -15,7 +15,7 @@ Follow the repository map in `.assets/docs/architecture-map.md` before suggestin
 - Keep edits scoped to the requested layer.
 - Do not duplicate runtime methodology into provider adapter folders.
 - Do not invent platform ranking behavior or unsupported SEO/ATS claims.
-- Do not commit personal career context files or user career data.
+- Do not commit Career Context files or user career data.
 - Use plain Markdown and concise instructions for agent-facing files.
 
 ## Validation
@@ -24,7 +24,7 @@ Prefer these checks when touching package behavior, provider output, or release 
 
 ```bash
 npm run validate
-node .skills/export/scripts/agentkit-seo.mjs version
-node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-export --force
+node .skills/export/scripts/vitaecontext.mjs version
+node .skills/export/scripts/vitaecontext.mjs export --provider all --output /tmp/vitaecontext-export --force
 npm pack --dry-run
 ```

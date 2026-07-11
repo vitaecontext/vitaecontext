@@ -72,4 +72,4 @@ No clean official source was found for guaranteed AI citation, guaranteed LLM in
 
 ---
 
-See also: [Web portfolio SEO and indexing](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md).
+See also: [Web portfolio SEO and indexing](./README.md) and [runtime knowledge](../../.skills/agent-skill/vitaecontext-portfolio/wiki/knowledge.md).

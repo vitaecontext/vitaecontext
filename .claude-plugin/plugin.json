@@ -1,12 +1,12 @@
 {
-  "name": "agentkit-seo",
-  "version": "1.9.2",
-  "description": "Portable agent skills for VitaeGraph, career context, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.",
+  "name": "vitaecontext",
+  "version": "2.0.0",
+  "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
   "author": {
     "name": "Renato Mignone and Elia Innocenti"
   },
-  "homepage": "https://agentkit-seo.github.io/",
-  "repository": "https://github.com/agentkit-seo/agentkit-seo",
+  "homepage": "https://vitaecontext.github.io/",
+  "repository": "https://github.com/vitaecontext/vitaecontext",
   "license": "MIT",
   "keywords": [
     "agent-skills",

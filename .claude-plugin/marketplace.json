@@ -1,15 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "agentkit-seo",
+  "name": "vitaecontext",
   "owner": {
-    "name": "AgentKit SEO"
+    "name": "VitaeContext"
   },
   "plugins": [
     {
-      "name": "agentkit-seo",
+      "name": "vitaecontext",
       "source": "./",
-      "description": "Portable agent skills for VitaeGraph, career context, GitHub, LinkedIn, CV/ATS, web portfolio, and X.",
-      "version": "1.9.2",
+      "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
+      "version": "2.0.0",
       "category": "productivity",
       "keywords": [
         "seo",

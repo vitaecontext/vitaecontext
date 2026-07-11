@@ -23,7 +23,7 @@ function formatFilesystemInstallError(error, provider, targetRoot, commandTarget
 
   if (error.code === "ENOENT") {
     return new Error(
-      `Install failed for ${provider} because a required source or parent directory was not found. Install root: ${targetRoot}.${commandTargetSuffix} Run 'agentkit-seo doctor' to verify the package contents, then rerun with an explicit --target-dir if needed.`
+      `Install failed for ${provider} because a required source or parent directory was not found. Install root: ${targetRoot}.${commandTargetSuffix} Run 'vitaecontext doctor' to verify the package contents, then rerun with an explicit --target-dir if needed.`
     );
   }
 
@@ -52,7 +52,7 @@ function writeInstallManifest(
     skill_targets: skillTargetRoots ?? [skillTargetRoot],
     command_target: commandTargetRoot
   };
-  const manifestPath = path.join(targetRoot, "agentkit-seo-install.json");
+  const manifestPath = path.join(targetRoot, "vitaecontext-install.json");
   writeJsonFile(manifestPath, manifest);
   return manifestPath;
 }

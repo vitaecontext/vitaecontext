@@ -1,0 +1,4 @@
+interface:
+  display_name: "VitaeContext VitaeGraph"
+  short_description: "Build a deep hierarchical career graph"
+  default_prompt: "Use $vitaecontext-vitaegraph to select the smallest create, deepen, maintain, validate, index, retrieve, or migrate workflow for my explicit graph path and supplied material."

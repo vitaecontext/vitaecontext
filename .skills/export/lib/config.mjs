@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 import { readJsonFile } from "./filesystem.mjs";
 
-const PACKAGE_NAME = "agentkit-seo";
+const PACKAGE_NAME = "vitaecontext";
 
 export function repoRootFromScript(scriptUrl = import.meta.url) {
   let currentDirectory = path.dirname(fileURLToPath(scriptUrl));

@@ -46,4 +46,4 @@ No clean official source was found for exact profile ranking, Explore distributi
 
 ---
 
-See also: [GitHub optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-github/wiki/knowledge.md).
+See also: [GitHub optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/vitaecontext-github/wiki/knowledge.md).

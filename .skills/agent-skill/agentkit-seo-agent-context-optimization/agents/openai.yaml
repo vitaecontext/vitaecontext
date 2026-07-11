@@ -1,4 +1,0 @@
-interface:
-  display_name: "AgentKit SEO Context"
-  short_description: "Build a personal career context file"
-  default_prompt: "Use $agentkit-seo-agent-context-optimization to run a bounded source pass and create or repair my personal career context file from explicit files, links, and notes."

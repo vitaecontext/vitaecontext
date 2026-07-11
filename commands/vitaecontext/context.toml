@@ -1,0 +1,18 @@
+description = "Build or maintain a Career Context file."
+prompt = """
+Use VitaeContext module `vitaecontext-build`.
+
+Read `skills/vitaecontext-build/SKILL.md` from the active
+VitaeContext Gemini extension context before drafting or editing. Treat the
+user arguments as the source path, target path, persona focus, or requested
+context update:
+
+{{args}}
+
+Prefer explicit files provided by the user. If no target is provided, ask
+whether to use a workspace draft, a named portable default such as
+`~/.vitaecontext/<name-surname>-career-context.md`, or the generic
+`~/.vitaecontext/context.md` only by user preference. Do not scan the whole
+filesystem. Use bounded source ingestion and add a depth note before expanding
+to full reconciliation.
+"""

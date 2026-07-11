@@ -1,10 +1,21 @@
 # Changelog
 
-All notable changes to AgentKit SEO are documented here.
+All notable changes to VitaeContext are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
-## Unreleased
+## 2.0.0 - 2026-07-11
+
+### Changed
+
+- Renamed the project, npm package, CLI, runtime skills, provider adapters, config paths, manifests, documentation, and generated distribution mirrors from AgentKit SEO to VitaeContext.
+- Repositioned the project as reusable career context infrastructure for grounded AI work and documented VitaeGraph as its deeper structured-record layer.
+- Added the VitaeContext visual assets and retained distinct, service-appropriate colors for repository badges.
+
+### Compatibility
+
+- Kept `agentkit-seo` as a deprecated executable alias that forwards to `vitaecontext` with a warning.
+- Kept update and uninstall support for existing `agentkit-seo-install.json` manifests while new installs write `vitaecontext-install.json`.
 
 ## 1.9.2 - 2026-07-11
 
@@ -22,7 +33,7 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Changed
 
-- Refreshed the AgentKit SEO and VitaeGraph README banners with lighter, clearer public branding.
+- Refreshed the VitaeContext and VitaeGraph README banners with lighter, clearer public branding.
 - Included the new README banner asset directory in the npm package and removed stale package file entries for retired banner paths.
 - Updated maintainer docs so the repository map reflects VitaeGraph as an installed product module and the current eight-skill runtime bundle.
 
@@ -30,13 +41,13 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Added
 
-- Added VitaeGraph as the separate `agentkit-seo-vitaegraph` runtime skill and root product subsystem, with schemas, canonical Markdown templates, provider wrappers, runtime wiki guidance, and package coverage.
-- Added `graph init`, `graph validate`, and `graph index` commands using `~/.agentkit-seo/vitaegraph` by default and an exact custom `--root` when supplied. They preserve Markdown as source, validate stable IDs, record types, parent and related-record links, duplicates, and internal links, and generate deterministic graph, lexical-index, and diagnostics JSON under `.generated/`.
+- Added VitaeGraph as the separate `vitaecontext-vitaegraph` runtime skill and root product subsystem, with schemas, canonical Markdown templates, provider wrappers, runtime wiki guidance, and package coverage.
+- Added `graph init`, `graph validate`, and `graph index` commands using `~/.vitaecontext/vitaegraph` by default and an exact custom `--root` when supplied. They preserve Markdown as source, validate stable IDs, record types, parent and related-record links, duplicates, and internal links, and generate deterministic graph, lexical-index, and diagnostics JSON under `.generated/`.
 - Added deterministic tests for VitaeGraph parsing, initialization, validation, indexing, CLI behavior, provider wrappers, and package coverage.
 
 ### Changed
 
-- Standardized personal career context examples on the private `~/.agentkit-seo/<name-surname>-career-context.md` convention across runtime guidance, provider wrappers, hub docs, generated mirrors, and the README.
+- Standardized personal career context examples on the private `~/.vitaecontext/<name-surname>-career-context.md` convention across runtime guidance, provider wrappers, hub docs, generated mirrors, and the README.
 - Included the public README and VitaeGraph visual assets in the npm package so packed documentation resolves its referenced images without adding private workspace data.
 - Updated root routing and platform skills to consume selected VitaeGraph records when the user supplies an explicit path, while preserving the independent compact personal career context workflow.
 - Redesigned VitaeGraph around hierarchical degree, course, thesis, project, role, and certification records. The canonical graph now uses parent containment and rich domain templates instead of evidence nodes, source ledgers, evidence references, or evidence-level metadata.
@@ -53,14 +64,14 @@ This project follows npm package versions and mirrors them with matching GitHub 
 ### Changed
 
 - Restructured the README around the problem, workflow, grounding, quick start, modules, installation, and documentation, with a smaller set of linked project-status badges.
-- Renamed the user-facing `agent context file` concept to `personal career context file` across runtime skills, provider adapters, public guidance, and generated mirrors while preserving stable technical identifiers and the `Agent context optimization` module name.
-- Clarified that users supply raw career material to an AI agent, which invokes `agentkit-seo-agent-context-optimization` to create and maintain the personal career context file.
+- Renamed the user-facing `agent context file` concept to `Career Context file` across runtime skills, provider adapters, public guidance, and generated mirrors while preserving stable technical identifiers and the `Context Builder` module name.
+- Clarified that users supply raw career material to an AI agent, which invokes `vitaecontext-build` to create and maintain the Career Context file.
 
 ## 1.8.2 - 2026-06-24
 
 ### Added
 
-- Added a tokenless GitHub public-profile fetcher to the `agentkit-seo-github` skill. It extracts public profile fields, distinguishes pinned repositories from GitHub's popular-repository fallback, retrieves recent source repositories and bounded README excerpts, and writes compact Markdown plus structured JSON reports.
+- Added a tokenless GitHub public-profile fetcher to the `vitaecontext-github` skill. It extracts public profile fields, distinguishes pinned repositories from GitHub's popular-repository fallback, retrieves recent source repositories and bounded README excerpts, and writes compact Markdown plus structured JSON reports.
 
 ### Changed
 
@@ -93,15 +104,15 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 - Corrected the LLM Wiki attribution in `README.md` and `DESIGN.md`: the wiki is compiled and kept current by a maintainer agent and read by runtime agents instead of re-derived per query, and documented how the design deliberately adapts Karpathy's personal-second-brain concept to a shipped, versioned knowledge pack.
 
-- Extended `agentkit-seo update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
-- Extended `agentkit-seo doctor` to enforce the Agent Skills description convention: every configured skill must declare a non-empty `description` within 1024 characters (warning over 500) that states when to use the skill, plus a `license` field; and to validate the Claude Code marketplace and plugin manifests against `package.json`. Documented the conventions in `STYLEGUIDE.md`.
+- Extended `vitaecontext update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
+- Extended `vitaecontext doctor` to enforce the Agent Skills description convention: every configured skill must declare a non-empty `description` within 1024 characters (warning over 500) that states when to use the skill, plus a `license` field; and to validate the Claude Code marketplace and plugin manifests against `package.json`. Documented the conventions in `STYLEGUIDE.md`.
 
 ## 1.7.0 - 2026-06-01
 
 ### Added
 
-- Added `agentkit-seo update`, an explicit, opt-in CLI command that compares the local package version against the npm registry latest and reports whether an update is available. It runs only when invoked, supports `--json` and `--timeout`, and never checks for updates automatically.
-- Added `agentkit-seo uninstall --provider <provider>`, which reads the install manifest and removes only the AgentKit SEO skill folders, command wrappers, and manifest it created. Shared skill directories keep unrelated skills; Gemini-style extension and plugin installs remove their dedicated directory. Supports `--dry-run` and `--force`.
+- Added `vitaecontext update`, an explicit, opt-in CLI command that compares the local package version against the npm registry latest and reports whether an update is available. It runs only when invoked, supports `--json` and `--timeout`, and never checks for updates automatically.
+- Added `vitaecontext uninstall --provider <provider>`, which reads the install manifest and removes only the VitaeContext skill folders, command wrappers, and manifest it created. Shared skill directories keep unrelated skills; Gemini-style extension and plugin installs remove their dedicated directory. Supports `--dry-run` and `--force`.
 
 ## 1.6.1 - 2026-05-27
 
@@ -113,13 +124,13 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Added
 
-- Added an LLM wiki layer with `wiki/` folders for all six platform modules, a root AgentKit SEO self-description, a conditional loading convention, shared evidence labels, and inline confidence labels.
+- Added an LLM wiki layer with `wiki/` folders for all six platform modules, a root VitaeContext self-description, a conditional loading convention, shared evidence labels, and inline confidence labels.
 - Added root `llms.txt` and `llms-full.txt` files and included them in the npm package.
 - Added `MAINTAINING.md` with platform update chains, source quality rules, generated-file boundaries, and a contributor pull request checklist.
 
 ### Changed
 
-- Extended `agentkit-seo doctor` to validate wiki metadata, stale review dates, local wiki links, skill wiki context sections, Gemini mirror wiki presence, and package file coverage for LLM-facing files.
+- Extended `vitaecontext doctor` to validate wiki metadata, stale review dates, local wiki links, skill wiki context sections, Gemini mirror wiki presence, and package file coverage for LLM-facing files.
 - Updated provider install and export copying so `wiki/` folders are included for all providers alongside `SKILL.md` and `references/`.
 - Cleaned `hub/*/sources.md` inventories per module by removing third-party sources from stable support or downgrading unsupported claims to inferred or disputed handling.
 - Rewrote the root `README.md` around the `AGENTS.md` career-context analogy, added an LLM Wiki section, and tightened the public landing-page structure for production use.
@@ -138,7 +149,7 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Added
 
-- Added native `--provider antigravity` install and export support using the Antigravity CLI plugin staging path under `~/.gemini/antigravity-cli/plugins/agentkit-seo/`.
+- Added native `--provider antigravity` install and export support using the Antigravity CLI plugin staging path under `~/.gemini/antigravity-cli/plugins/vitaecontext/`.
 
 ### Changed
 
@@ -158,10 +169,10 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Changed
 
-- Hardened `agentkit-seo install` with provider detection warnings for clean-machine installs and clearer permission or missing-path failure messages.
-- Extended `agentkit-seo doctor` to verify that the npm `files` list still includes the runtime skills, export CLI, provider adapters, and context template required for external installs.
+- Hardened `vitaecontext install` with provider detection warnings for clean-machine installs and clearer permission or missing-path failure messages.
+- Extended `vitaecontext doctor` to verify that the npm `files` list still includes the runtime skills, export CLI, provider adapters, and context template required for external installs.
 - Added a repository-root Gemini CLI extension layout with `gemini-extension.json`, `GEMINI.md`, root `commands/`, and root `skills/` so gallery discovery and direct GitHub installs can use the repository as the extension root.
-- Extended `agentkit-seo doctor` to verify the repository-root Gemini extension manifest, context file, commands, and bundled skills required for Gemini gallery distribution.
+- Extended `vitaecontext doctor` to verify the repository-root Gemini extension manifest, context file, commands, and bundled skills required for Gemini gallery distribution.
 
 ## 0.1.4 - 2026-05-11
 
@@ -179,10 +190,10 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Added
 
-- Added `agentkit-seo version` for quick package identity checks.
-- Added `agentkit-seo doctor` and `npm run validate` for package layout validation.
-- Added `agentkit-seo template context` to scaffold the guided private context-file template.
-- Added `agentkit-seo-install.json` manifests during provider installs.
+- Added `vitaecontext version` for quick package identity checks.
+- Added `vitaecontext doctor` and `npm run validate` for package layout validation.
+- Added `vitaecontext template context` to scaffold the guided private context-file template.
+- Added `vitaecontext-install.json` manifests during provider installs.
 - Added push and pull request validation through `.github/workflows/validate.yml`.
 
 ### Changed
@@ -210,6 +221,6 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Added
 
-- Published the initial npm package for AgentKit SEO.
+- Published the initial npm package for VitaeContext.
 - Added tag-based npm publish automation with GitHub release creation.
 - Added repository policy files including `SECURITY.md` and `.github/CODEOWNERS`.

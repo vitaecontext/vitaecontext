@@ -1,6 +1,6 @@
 {
-  "name": "agentkit-seo",
-  "version": "1.9.2",
-  "description": "Portable discoverability skills for VitaeGraph, career context files, LinkedIn, GitHub, CV/ATS, web portfolios, and X.",
+  "name": "vitaecontext",
+  "version": "2.0.0",
+  "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
   "contextFileName": "GEMINI.md"
 }

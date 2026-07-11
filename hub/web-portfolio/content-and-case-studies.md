@@ -55,7 +55,7 @@ Good example:
 
 ```text
 <!-- CORRECT: clear role, scope, and outcome -->
-AgentKit SEO is an open-source documentation system for personal branding and
+VitaeContext is an open-source documentation system for personal branding and
 ATS optimization. I designed the repository structure, writing rules, and
 module routing so that both humans and coding agents can use the same source of
 truth. The result is a markdown-first knowledge base that supports targeted CV,

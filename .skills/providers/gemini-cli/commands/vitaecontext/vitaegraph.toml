@@ -1,0 +1,16 @@
+description = "Create, validate, index, or use a private VitaeGraph."
+prompt = """
+Use VitaeContext module `vitaecontext-vitaegraph`.
+
+Read `skills/vitaecontext-vitaegraph/SKILL.md` from the active VitaeContext
+Gemini extension before acting. Treat the user arguments as an optional exact
+VitaeGraph path, source set, validation request, or retrieval task:
+
+{{args}}
+
+Use `~/.vitaecontext/vitaegraph` when no directory is supplied, and treat an
+explicit directory as exact. Do not scan for private data. Inventory supplied
+material first, finish one relevant domain workflow at a time, keep the compact
+Career Context file separate, and never publish or overwrite private
+graph content by default.
+"""

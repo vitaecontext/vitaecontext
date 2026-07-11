@@ -1,0 +1,4 @@
+interface:
+  display_name: "VitaeContext Context"
+  short_description: "Build a Career Context file"
+  default_prompt: "Use $vitaecontext-build to run a bounded source pass and create or repair my Career Context file from explicit files, links, and notes."

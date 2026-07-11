@@ -1,4 +1,4 @@
-# AgentKit SEO architecture map
+# VitaeContext architecture map
 
 > This file is the maintainer and agent work map for the repository. Read it before changing runtime skills, provider adapters, package commands, docs, or release automation.
 
@@ -8,7 +8,7 @@
 
 This repository has two jobs:
 
-- Maintain the canonical runtime skill package published as `agentkit-seo`.
+- Maintain the canonical runtime skill package published as `vitaecontext`.
 - Keep the human-readable project docs aligned with the runtime behavior.
 
 The most important rule is simple: edit the canonical source first, then update the adapter, docs, and validation surface that depend on it.
@@ -23,7 +23,7 @@ For a cold-start agent, use this read order:
 4. Read `.assets/docs/current-status.md` to understand what is already live.
 5. Read `.assets/docs/STYLEGUIDE.md` before editing Markdown, docs, examples, or templates.
 6. Read `.skills/architecture.md` before changing runtime skills, provider adapters, export behavior, or install behavior.
-7. Read `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` when the task is broad, architectural, package-related, or about graph navigation.
+7. Read `.skills/agent-skill/vitaecontext/wiki/vitaecontext.md` when the task is broad, architectural, package-related, or about graph navigation.
 8. Read only the relevant module `SKILL.md`, `wiki/index.md`, `wiki/knowledge.md`, and `references/` files for the target platform.
 9. Make the smallest scoped edit that satisfies the task.
 10. Run the validation listed in the change map before proposing a commit or release.
@@ -52,9 +52,9 @@ Do not load every skill module by default. Route to one module unless the task i
 
 Runtime methodology belongs in `.skills/agent-skill/`.
 
-Durable runtime knowledge that is too detailed for `SKILL.md` belongs in each skill's `wiki/` folder. Keep wiki entries conditional-load friendly and maintain their metadata so `agentkit-seo doctor` can validate them.
+Durable runtime knowledge that is too detailed for `SKILL.md` belongs in each skill's `wiki/` folder. Keep wiki entries conditional-load friendly and maintain their metadata so `vitaecontext doctor` can validate them.
 
-The runtime graph entrypoint is `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md`. Use it to choose the correct module before loading detailed module wiki, reference, or hub files.
+The runtime graph entrypoint is `.skills/agent-skill/vitaecontext/wiki/vitaecontext.md`. Use it to choose the correct module before loading detailed module wiki, reference, or hub files.
 
 Human-readable methodology belongs in `hub/`. Keep the root directory focused on project metadata and distribution entrypoints.
 
@@ -72,13 +72,13 @@ Use this table to decide what to edit for common tasks.
 
 | Task | Primary files | Usually also update | Validation |
 | --- | --- | --- | --- |
-| Change a platform skill workflow | `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`, `.skills/agent-skill/agentkit-seo-<module>/references/`, `.skills/agent-skill/agentkit-seo-<module>/wiki/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
+| Change a platform skill workflow | `.skills/agent-skill/vitaecontext-<module>/SKILL.md`, `.skills/agent-skill/vitaecontext-<module>/references/`, `.skills/agent-skill/vitaecontext-<module>/wiki/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
 | Change a human-readable playbook | `hub/<module>/` | Related runtime skill reference if behavior changes, `README.md`, `.assets/docs/current-status.md` | Link/path smoke check, `npm run validate` if runtime behavior changes |
-| Add a new skill module | `.skills/agent-skill/agentkit-seo-<module>/` | `.skills/export/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
-| Change VitaeGraph behavior | `vitaegraph/`, `.skills/agent-skill/agentkit-seo-vitaegraph/`, `.skills/export/lib/vitaegraph/` | Root routing, provider wrappers, mirrors, public docs, tests | VitaeGraph smoke tests, `npm run validate`, export all providers |
-| Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/agentkit-seo.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |
-| Change CLI commands | `.skills/export/scripts/agentkit-seo.mjs` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm pack --dry-run` |
-| Change context-file template behavior | `.skills/export/scripts/agentkit-seo.mjs`, `.skills/agent-skill/agentkit-seo-agent-context-optimization/references/` | `README.md`, relevant examples/templates, `CHANGELOG.md` | `agentkit-seo template context` smoke test |
+| Add a new skill module | `.skills/agent-skill/vitaecontext-<module>/` | `.skills/export/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
+| Change VitaeGraph behavior | `vitaegraph/`, `.skills/agent-skill/vitaecontext-vitaegraph/`, `.skills/export/lib/vitaegraph/` | Root routing, provider wrappers, mirrors, public docs, tests | VitaeGraph smoke tests, `npm run validate`, export all providers |
+| Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/vitaecontext.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |
+| Change CLI commands | `.skills/export/scripts/vitaecontext.mjs` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm pack --dry-run` |
+| Change context-file template behavior | `.skills/export/scripts/vitaecontext.mjs`, `.skills/agent-skill/vitaecontext-build/references/` | `README.md`, relevant examples/templates, `CHANGELOG.md` | `vitaecontext template context` smoke test |
 | Change runtime wiki graph or `llms.txt` files | `.skills/agent-skill/*/wiki/`, `llms.txt`, `llms-full.txt` | Generated root `skills/` mirror, `README.md`, `.assets/docs/current-status.md` | `npm run validate`, `npm pack --dry-run` |
 | Change packaging files | `package.json`, `.npmignore` if added later | `.github/workflows/npm-publish.yml`, `README.md`, `CHANGELOG.md` | `npm pack --dry-run` |
 | Prepare a release | `package.json`, provider manifests with explicit versions, `CHANGELOG.md`, `.assets/docs/current-status.md` | Git tag and GitHub release after validation | Full release checklist |
@@ -91,20 +91,20 @@ Use this table to decide what to edit for common tasks.
 | Shared bundle | `.skills/agent-skill/` | `.skills/export/export-config.json` | Portable folders with `SKILL.md` |
 | Claude Code | `.skills/agent-skill/` | [`.skills/providers/claude-code/install.md`](../../.skills/providers/claude-code/install.md) | Skills under `~/.claude/skills/` |
 | Codex | `.skills/agent-skill/` | [`.skills/providers/codex/install.md`](../../.skills/providers/codex/install.md) | Skills under `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` |
-| Gemini CLI | `.skills/agent-skill/` | [`.skills/providers/gemini-cli/install.md`](../../.skills/providers/gemini-cli/install.md) | Extension under `~/.gemini/extensions/agentkit-seo/` |
-| Antigravity CLI | `.skills/agent-skill/` | [`.skills/providers/antigravity/install.md`](../../.skills/providers/antigravity/install.md) | Plugin under `~/.gemini/antigravity-cli/plugins/agentkit-seo/` |
+| Gemini CLI | `.skills/agent-skill/` | [`.skills/providers/gemini-cli/install.md`](../../.skills/providers/gemini-cli/install.md) | Extension under `~/.gemini/extensions/vitaecontext/` |
+| Antigravity CLI | `.skills/agent-skill/` | [`.skills/providers/antigravity/install.md`](../../.skills/providers/antigravity/install.md) | Plugin under `~/.gemini/antigravity-cli/plugins/vitaecontext/` |
 | OpenCode | `.skills/agent-skill/` | [`.skills/providers/opencode/install.md`](../../.skills/providers/opencode/install.md) | Skills plus flat command wrappers |
 
 Provider wrappers must route to the shared skill names:
 
-- `agentkit-seo`
-- `agentkit-seo-agent-context-optimization`
-- `agentkit-seo-cv-ats`
-- `agentkit-seo-github`
-- `agentkit-seo-linkedin`
-- `agentkit-seo-vitaegraph`
-- `agentkit-seo-web-portfolio`
-- `agentkit-seo-x-twitter`
+- `vitaecontext`
+- `vitaecontext-build`
+- `vitaecontext-cv`
+- `vitaecontext-github`
+- `vitaecontext-linkedin`
+- `vitaecontext-vitaegraph`
+- `vitaecontext-portfolio`
+- `vitaecontext-x`
 
 ## 7. Release checklist
 
@@ -131,7 +131,7 @@ Read `.skills/architecture.md` before changing the skill or provider architectur
 
 Read `.assets/docs/current-status.md` before recommending next work.
 
-Read `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md` before broad graph, package, install, or module-routing work.
+Read `.skills/agent-skill/vitaecontext/wiki/vitaecontext.md` before broad graph, package, install, or module-routing work.
 
 Prefer narrow edits. Do not rewrite unrelated docs while touching a specific skill, provider, or CLI command.
 
@@ -147,12 +147,12 @@ When changing provider behavior, test at least one generated or installed provid
 
 ```bash
 npm run validate
-node .skills/export/scripts/agentkit-seo.mjs version
-node .skills/export/scripts/agentkit-seo.mjs doctor
-node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-export --force
-node .skills/export/scripts/agentkit-seo.mjs install --provider codex --target-dir /tmp/agentkit-seo-codex --force
-node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --target-dir /tmp/agentkit-seo-gemini --force
-node .skills/export/scripts/agentkit-seo.mjs install --provider antigravity --target-dir /tmp/agentkit-seo-antigravity --force
+node .skills/export/scripts/vitaecontext.mjs version
+node .skills/export/scripts/vitaecontext.mjs doctor
+node .skills/export/scripts/vitaecontext.mjs export --provider all --output /tmp/vitaecontext-export --force
+node .skills/export/scripts/vitaecontext.mjs install --provider codex --target-dir /tmp/vitaecontext-codex --force
+node .skills/export/scripts/vitaecontext.mjs install --provider gemini-cli --target-dir /tmp/vitaecontext-gemini --force
+node .skills/export/scripts/vitaecontext.mjs install --provider antigravity --target-dir /tmp/vitaecontext-antigravity --force
 npm pack --dry-run
 ```
 

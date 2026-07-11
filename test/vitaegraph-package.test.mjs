@@ -10,7 +10,7 @@ const repoRoot = path.resolve(import.meta.dirname, "..");
 
 test("VitaeGraph is configured for every provider and npm packaging", () => {
   const config = loadConfig(repoRoot);
-  assert.ok(config.skills.some((skill) => skill.name === "agentkit-seo-vitaegraph"));
+  assert.ok(config.skills.some((skill) => skill.name === "vitaecontext-vitaegraph"));
   for (const [provider, spec] of Object.entries(config.providers)) {
     assert.ok(spec.layout, `${provider} has a layout`);
   }
@@ -19,7 +19,7 @@ test("VitaeGraph is configured for every provider and npm packaging", () => {
   assert.equal(
     packageFileIncludes(
       packageJson.files,
-      ".skills/agent-skill/agentkit-seo-vitaegraph/SKILL.md"
+      ".skills/agent-skill/vitaecontext-vitaegraph/SKILL.md"
     ),
     true
   );

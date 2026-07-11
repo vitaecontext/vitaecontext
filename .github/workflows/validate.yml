@@ -31,19 +31,19 @@ jobs:
         run: npm run validate
 
       - name: Check CLI version command
-        run: node .skills/export/scripts/agentkit-seo.mjs version
+        run: node .skills/export/scripts/vitaecontext.mjs version
 
       - name: Export provider bundles
-        run: node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-export-check --force
+        run: node .skills/export/scripts/vitaecontext.mjs export --provider all --output /tmp/vitaecontext-export-check --force
 
       - name: Smoke install Codex bundle
-        run: node .skills/export/scripts/agentkit-seo.mjs install --provider codex --target-dir /tmp/agentkit-seo-codex-install-check --force
+        run: node .skills/export/scripts/vitaecontext.mjs install --provider codex --target-dir /tmp/vitaecontext-codex-install-check --force
 
       - name: Smoke install Gemini CLI bundle
-        run: node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --target-dir /tmp/agentkit-seo-gemini-install-check --force
+        run: node .skills/export/scripts/vitaecontext.mjs install --provider gemini-cli --target-dir /tmp/vitaecontext-gemini-install-check --force
 
       - name: Smoke install Antigravity CLI bundle
-        run: node .skills/export/scripts/agentkit-seo.mjs install --provider antigravity --target-dir /tmp/agentkit-seo-antigravity-install-check --force
+        run: node .skills/export/scripts/vitaecontext.mjs install --provider antigravity --target-dir /tmp/vitaecontext-antigravity-install-check --force
 
       - name: Verify package contents
         run: npm pack --dry-run

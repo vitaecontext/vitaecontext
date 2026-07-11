@@ -42,4 +42,4 @@ No clean official source was found for exact field limits across every profile s
 
 ---
 
-See also: [LinkedIn profile optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md).
+See also: [LinkedIn profile optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/vitaecontext-linkedin/wiki/knowledge.md).

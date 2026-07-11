@@ -52,4 +52,4 @@ No clean official source was found for exact live ranking weights, universal ext
 
 ---
 
-See also: [X (Twitter) optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md).
+See also: [X (Twitter) optimization](./README.md) and [runtime knowledge](../../.skills/agent-skill/vitaecontext-x/wiki/knowledge.md).

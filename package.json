@@ -1,19 +1,20 @@
 {
-  "name": "agentkit-seo",
-  "version": "1.9.2",
-  "description": "Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.",
+  "name": "vitaecontext",
+  "version": "2.0.0",
+  "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
   "type": "module",
   "bin": {
-    "agentkit-seo": ".skills/export/scripts/agentkit-seo.mjs"
+    "vitaecontext": ".skills/export/scripts/vitaecontext.mjs",
+    "agentkit-seo": ".skills/export/scripts/vitaecontext.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agentkit-seo/agentkit-seo.git"
+    "url": "git+https://github.com/vitaecontext/vitaecontext.git"
   },
   "bugs": {
-    "url": "https://github.com/agentkit-seo/agentkit-seo/issues"
+    "url": "https://github.com/vitaecontext/vitaecontext/issues"
   },
-  "homepage": "https://agentkit-seo.github.io/",
+  "homepage": "https://vitaecontext.github.io/",
   "publishConfig": {
     "access": "public"
   },
@@ -28,6 +29,7 @@
     ".assets/image/preview",
     ".assets/image/public-visuals",
     ".assets/image/vitaegraph",
+    ".assets/image/logos",
     ".assets/docs/getting-started.md",
     ".assets/docs/end-to-end-workflows.md",
     ".assets/docs/current-status.md",
@@ -49,13 +51,13 @@
     "README.md"
   ],
   "scripts": {
-    "export": "node .skills/export/scripts/agentkit-seo.mjs export",
-    "install:skills": "node .skills/export/scripts/agentkit-seo.mjs install",
-    "list:providers": "node .skills/export/scripts/agentkit-seo.mjs list providers",
-    "list:skills": "node .skills/export/scripts/agentkit-seo.mjs list skills",
+    "export": "node .skills/export/scripts/vitaecontext.mjs export",
+    "install:skills": "node .skills/export/scripts/vitaecontext.mjs install",
+    "list:providers": "node .skills/export/scripts/vitaecontext.mjs list providers",
+    "list:skills": "node .skills/export/scripts/vitaecontext.mjs list skills",
     "test": "node --test",
-    "validate": "node .skills/export/scripts/agentkit-seo.mjs doctor",
-    "version:cli": "node .skills/export/scripts/agentkit-seo.mjs version"
+    "validate": "node .skills/export/scripts/vitaecontext.mjs doctor",
+    "version:cli": "node .skills/export/scripts/vitaecontext.mjs version"
   },
   "keywords": [
     "agent-skills",
@@ -75,6 +77,8 @@
     "twitter",
     "x-twitter",
     "career-context",
+    "local-first",
+    "professional-context",
     "career-knowledge-graph"
   ],
   "license": "MIT"
