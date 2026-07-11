@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.",
   "type": "module",
   "bin": {

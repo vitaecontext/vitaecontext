@@ -2,14 +2,14 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-07-07
+## As of 2026-07-11
 
 ### Public surfaces
 
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.9.1`
+- Current package version: `agentkit-seo@1.9.2`
 
 Published release line:
 
@@ -18,7 +18,7 @@ Published release line:
 - `v1.6.0` through `v1.6.1`
 - `v1.7.0`
 - `v1.8.0` through `v1.8.3`
-- `v1.9.0` through `v1.9.1`
+- `v1.9.0` through `v1.9.2`
 
 ### Current architecture
 
@@ -53,6 +53,10 @@ Each runtime module carries:
 - local `references/`, including an `audit-scoring.md` weighted 0-100 triage scorecard on the GitHub, LinkedIn, CV/ATS, and web-portfolio modules (an internal prioritization heuristic, not a platform ranking)
 - local `wiki/` entries where durable constraints, confidence labels, failure modes, and audit rules belong
 - `license` and a `metadata` block (homepage, repository) in frontmatter so provenance travels with the installed skill
+
+The root orchestrator resolves surface, task mode, mutation authority, evidence scope, and depth before loading module detail. Runtime links stay inside the portable skill bundle or use public URLs for repository-only material.
+
+VitaeGraph routes create, deepen, maintain, validate, index, retrieve, and migrate operations separately. It previews destructive or many-record changes, preserves stable IDs, treats `visibility: public` as eligibility rather than publication consent, and reports degraded manual checks when the graph CLI is unavailable.
 
 The `agentkit-seo-agent-context-optimization` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, growth direction, target locations (or `No restriction`), interests, evidence boundaries, positioning constraints, and claims to avoid as stated intent kept separate from verified facts.
 
@@ -103,7 +107,7 @@ The runtime skill inventories supplied material before writing, processes one su
 - `llms-full.txt` concatenates the root wiki, module wiki indexes, and module knowledge files.
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
-- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters) and `license` field, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
+- `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters), `license`, configured-skill routing, self-review sections, portable runtime links, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
 - `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the eight installed runtime skills.
 
 ### Website and discovery status

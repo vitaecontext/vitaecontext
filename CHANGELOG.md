@@ -6,6 +6,18 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.9.2 - 2026-07-11
+
+### Changed
+
+- Added a shared runtime execution contract that resolves the owning surface, task mode, mutation authority, evidence scope, audit depth, and artifact verification before loading detailed module context.
+- Expanded VitaeGraph runtime behavior into separate create, deepen, maintain, validate, index, retrieve, and migrate modes, with stable-ID maintenance rules, destructive-change previews, CLI degraded-mode reporting, and publication-consent boundaries.
+- Aligned every downstream skill with the canonical VitaeGraph schema and moved graph-level target direction and claims-to-avoid handling back to `VITAEGRAPH.md`.
+- Made installed skill links portable by using public URLs for human playbooks, repository source inventories, maintainer docs, and public LLM maps that provider installs do not ship locally.
+- Anchored audit-score completion rates and fix-first calculations to reduce agent-to-agent scoring drift.
+- Extended `doctor` to validate configured-skill routing, runtime self-review sections, portable relative links, and legacy VitaeGraph vocabulary.
+- Added an internal-contract audit mode to the maintainer-only wiki workflow.
+
 ## 1.9.1 - 2026-07-07
 
 ### Changed

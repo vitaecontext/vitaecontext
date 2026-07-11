@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "Portable discoverability skills for VitaeGraph, career context files, LinkedIn, GitHub, CV/ATS, web portfolios, and X.",
   "contextFileName": "GEMINI.md"
 }
