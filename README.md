@@ -290,6 +290,7 @@ Read [DESIGN.md](./DESIGN.md) for the system design and [the architecture map](.
 - [End-to-end demos](./.assets/docs/end-to-end-workflows.md) provides sample inputs, prompts, and expected deliverables.
 - [Public playbooks](./hub/) document the human-readable methodology for each module.
 - [Maintaining](./MAINTAINING.md) covers source refresh, wiki maintenance, validation, and releases.
+- [Contributing](./CONTRIBUTING.md) explains how to propose ideas, report issues, and open pull requests.
 - [Contributing instructions](./AGENTS.md) define repository rules for coding agents.
 - [Changelog](./CHANGELOG.md) records public release history.
 - [Privacy](./PRIVACY.md) and [security](./SECURITY.md) describe project policies.
