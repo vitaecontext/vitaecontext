@@ -73,6 +73,8 @@ Current supported direct install targets are:
 
 Codex installs mirror skills into both `~/.agents/skills/` and `~/.codex/skills/` (or `CODEX_HOME/skills`) to cover current and legacy discovery paths.
 
+The repository also publishes a native Codex plugin marketplace under `.agents/plugins/`. Its `skills/` tree is a generated distribution mirror of only the eight skills configured in `export-config.json`; refresh it with `npm run sync:codex-plugin` and verify it with `npm run check:codex-plugin`. Do not edit mirrored plugin skills directly.
+
 Gemini CLI installs as an extension at `~/.gemini/extensions/vitaecontext`. The extension includes `gemini-extension.json`, a `GEMINI.md` context file, shared skill folders under `skills/`, and namespaced command wrappers under `commands/vitaecontext/`. Gemini exposes those wrappers as commands such as `/vitaecontext:linkedin`. A `--project-root` install can still preview the same generated extension layout inside a repository, but the active Gemini extension discovery path is the user extension directory.
 
 Antigravity CLI installs as a plugin at `~/.gemini/antigravity-cli/plugins/vitaecontext`. The plugin uses the Gemini-compatible extension structure because Antigravity imports Gemini CLI extensions with `agy plugin import gemini` and stages plugins under `~/.gemini/antigravity-cli/plugins`. The exact imported command syntax in `agy` is still TBD, so keep the command wrappers thin and verify runtime invocation before making stronger claims.
@@ -97,6 +99,8 @@ Current supported export targets are:
 - `opencode`
 
 Keep Gemini extension files generated from `.skills/providers/gemini-cli/`, Antigravity plugin files generated from `.skills/providers/antigravity/`, and all runtime methodology in the canonical `.skills/agent-skill/` source tree. Do not maintain provider-specific copies of the skill methodology.
+
+Direct provider installation is transactional. The CLI preflights every source and destination, stages all copies, backs up replaced targets, commits the manifest last, and restores earlier targets if a later commit fails.
 
 Preview export example:
 

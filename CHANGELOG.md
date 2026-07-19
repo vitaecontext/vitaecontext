@@ -4,6 +4,23 @@ All notable changes to VitaeContext are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
+## 2.1.0 - 2026-07-19
+
+### Added
+
+- Added `context init`, `context validate`, and `context summary` for a private Career Context lifecycle, including JSON diagnostics and bounded task packets for CV, GitHub, LinkedIn, portfolio, X, and general use.
+- Added a minimal private starter, a fully fictional public example, deterministic context tests, and compact groundedness evaluation fixtures.
+- Added a native Codex plugin bundle and repository marketplace metadata alongside the existing direct skill install path.
+- Prepared `agentkit-seo@2.0.1` to accept compatible VitaeContext 2.x releases instead of pinning the former-name entry point to 2.0.0.
+
+### Changed
+
+- Made provider installation transactional: all sources and conflicts are preflighted, copies are staged, replaced files are backed up, and a failed commit rolls earlier changes back.
+- Removed large repository visuals from the npm artifact while preserving them in the source repository through absolute README image URLs.
+- Added packed-link and 5 MB package-size checks, expanded all-provider install smoke coverage, and added a multi-operating-system test matrix.
+- Replaced the real-person Career Context example with a clearly marked fictional record and refreshed privacy documentation for Career Context and VitaeGraph paths.
+- Aligned release documentation and generated website content with the package source of truth.
+
 ## 2.0.0 - 2026-07-11
 
 ### Changed

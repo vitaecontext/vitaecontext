@@ -28,7 +28,7 @@ test("initialization creates only the canonical starter files", () => {
 
 test("path resolution uses the default or the exact explicit directory", () => {
   assert.equal(resolveVitaeGraphRoot(), DEFAULT_VITAEGRAPH_ROOT);
-  assert.equal(resolveVitaeGraphRoot("/tmp/custom-career-graph"), "/tmp/custom-career-graph");
+  assert.equal(resolveVitaeGraphRoot("/tmp/custom-career-graph"), path.resolve("/tmp/custom-career-graph"));
   assert.equal(resolveVitaeGraphRoot("~/custom-career-graph"), path.join(os.homedir(), "custom-career-graph"));
 });
 

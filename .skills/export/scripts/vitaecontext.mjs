@@ -6,6 +6,7 @@ import process from "node:process";
 
 import { parseFlags, usage } from "../lib/args.mjs";
 import { loadConfig, repoRootFromScript } from "../lib/config.mjs";
+import { runContextCommand } from "../lib/context/cli.mjs";
 import { doctor } from "../lib/doctor.mjs";
 import { exportProvider } from "../lib/export.mjs";
 import { installProvider } from "../lib/install.mjs";
@@ -58,6 +59,15 @@ async function run() {
       return;
     }
     throw new Error("Usage: vitaecontext template context [--output <file>] [--force]");
+  }
+
+  if (command === "context") {
+    const subject = rest[0];
+    const hasFile = subject === "validate" || subject === "summary";
+    const filePath = hasFile ? rest[1] : null;
+    const flags = parseFlags(rest.slice(hasFile ? 2 : 1));
+    runContextCommand(repoRoot, subject, filePath, flags);
+    return;
   }
 
   if (command === "graph") {

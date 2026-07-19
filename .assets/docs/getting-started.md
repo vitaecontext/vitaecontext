@@ -60,8 +60,8 @@ npx vitaecontext version
 Expected output:
 
 ```text
-vitaecontext 1.9.1
-Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.
+vitaecontext 2.1.0
+VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.
 ```
 
 Install the skills for one provider:
@@ -113,16 +113,16 @@ Uninstall reads the install manifest and removes only the VitaeContext skill fol
 
 ## 4. First use
 
-Create the Career Context file template outside the repository:
+Initialize a minimal Career Context file outside the repository:
 
 ```bash
-npx vitaecontext template context --output ~/.vitaecontext/my-context.md
+npx vitaecontext context init --output ~/.vitaecontext/my-context.md
 ```
 
 Expected shape:
 
 ```text
-Wrote context template to ~/.vitaecontext/my-context.md
+Initialized Career Context at ~/.vitaecontext/my-context.md
 ```
 
 Give trusted raw material to the agent and invoke the Context Builder skill to create the Career Context file:
@@ -132,6 +132,15 @@ Use vitaecontext-build to create my Career Context file.
 I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
 screenshots, or any other career material you need.
 ```
+
+Validate the finished document, then create a bounded packet for the first task:
+
+```bash
+npx vitaecontext context validate ~/.vitaecontext/my-context.md
+npx vitaecontext context summary ~/.vitaecontext/my-context.md --for github --output /tmp/github-context.md
+```
+
+Use `--json` with validation when an editor or agent needs structured diagnostics. Validation checks format and internal consistency, not external truth.
 
 Then use one platform skill:
 

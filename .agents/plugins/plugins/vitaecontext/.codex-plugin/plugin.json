@@ -1,0 +1,37 @@
+{
+  "name": "vitaecontext",
+  "version": "2.1.0",
+  "description": "Private, reusable career context and focused skills for grounded professional work.",
+  "author": {
+    "name": "VitaeContext",
+    "url": "https://github.com/vitaecontext"
+  },
+  "homepage": "https://vitaecontext.github.io/",
+  "repository": "https://github.com/vitaecontext/vitaecontext",
+  "license": "MIT",
+  "keywords": [
+    "career-context",
+    "agent-skills",
+    "vitaegraph",
+    "cv",
+    "github",
+    "linkedin"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "VitaeContext",
+    "shortDescription": "Keep career context and reuse it across grounded professional tasks.",
+    "longDescription": "Build and maintain private Career Context, then use focused skills for CV, GitHub, LinkedIn, portfolio, X, and detailed VitaeGraph work.",
+    "developerName": "VitaeContext",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://vitaecontext.github.io/",
+    "privacyPolicyURL": "https://github.com/vitaecontext/vitaecontext/blob/main/PRIVACY.md",
+    "defaultPrompt": [
+      "Build my private Career Context from the material I choose to share.",
+      "Audit my CV using my Career Context without inventing claims.",
+      "Help me choose the right VitaeContext skill for this career task."
+    ],
+    "brandColor": "#123C2D"
+  }
+}

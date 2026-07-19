@@ -1,0 +1,4 @@
+interface:
+  display_name: "VitaeContext LinkedIn"
+  short_description: "Optimize LinkedIn profile discoverability"
+  default_prompt: "Use $vitaecontext-linkedin to audit or improve a specific LinkedIn section from pasted text, or run a bounded profile pass from a compact text export."

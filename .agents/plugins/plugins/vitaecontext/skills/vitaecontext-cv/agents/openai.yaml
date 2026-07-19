@@ -1,0 +1,4 @@
+interface:
+  display_name: "VitaeContext CV ATS"
+  short_description: "Optimize resumes for ATS and humans"
+  default_prompt: "Use $vitaecontext-cv to run a bounded parser/readability pass on my resume, or tailor it when I provide a target role, job description, and verified context."

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".assets/image/banners/vitaecontext/vitaecontext-light.png" alt="VitaeContext — Keep your career context. Reuse it across AI." width="90%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/banners/vitaecontext/vitaecontext-light.png" alt="VitaeContext — Keep your career context. Reuse it across AI." width="90%" />
 </p>
 
 <p align="center">
@@ -57,7 +57,7 @@ VitaeContext sits one logical layer before those systems. It helps create and ma
 ## How it works
 
 <p align="center">
-  <img src=".assets/image/public-visuals/vitaecontext/basic-workflow.png" alt="VitaeContext workflow: scattered career material becomes a Career Context file, passes through VitaeContext platform skills, and produces grounded professional outputs" width="100%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/public-visuals/vitaecontext/basic-workflow.png" alt="VitaeContext workflow: scattered career material becomes a Career Context file, passes through VitaeContext platform skills, and produces grounded professional outputs" width="100%" />
 </p>
 
 1. **Gather the raw material.** Start with CVs, profile sections, GitHub and portfolio links, exports, screenshots, and project notes.
@@ -70,7 +70,7 @@ The Career Context file supplies facts and direction. Platform skills supply for
 ### Use it in any AI conversation
 
 <p align="center">
-  <img src=".assets/image/public-visuals/vitaecontext/workflow-use-case.png" alt="A career task is completed by attaching a Career Context file to any AI chat or agent and asking for a grounded draft" width="100%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/public-visuals/vitaecontext/workflow-use-case.png" alt="A career task is completed by attaching a Career Context file to any AI chat or agent and asking for a grounded draft" width="100%" />
 </p>
 
 The Career Context file is not limited to VitaeContext modules. Attach it to any AI chat, agent, or career system that accepts supplied context, then describe the current task. It can ground application answers, professional messages, emails, interview preparation, and other career-related drafts without requiring the same background to be explained again.
@@ -93,7 +93,7 @@ Set up VitaeContext for this agent environment.
 - Read https://vitaecontext.github.io/docs/installation/ and https://vitaecontext.github.io/providers/ first. Identify the matching provider and its invocation format.
 - Run `npx vitaecontext install --provider <matching-provider>`. Do not use `--force` or change install locations unless I approve it.
 - Verify the installation with `npx vitaecontext doctor`, then tell me which skills are available and how to invoke them here.
-- Ask me for a private name and file path, then create a Career Context template with `npx vitaecontext template context --output <private-path>`.
+- Ask me for a private file path, initialize it with `npx vitaecontext context init --output <private-path>`, and explain that validation will fail until its placeholders are replaced.
 - Read https://vitaecontext.github.io/docs/usage/ and propose three practical next steps. Start with building the context from career material I choose to share, then suggest one focused skill for my immediate goal. Do not upload or share my files without asking.
 ```
 
@@ -103,10 +103,10 @@ Install the skills for an agent provider:
 npx vitaecontext install --provider codex
 ```
 
-Create the Career Context file template in a private location:
+Initialize a minimal Career Context file in a private location:
 
 ```bash
-npx vitaecontext template context --output ~/.vitaecontext/name-surname-career-context.md
+npx vitaecontext context init --output ~/.vitaecontext/name-surname-career-context.md
 ```
 
 Ask an agent to build the context from trusted material:
@@ -130,10 +130,19 @@ Keep the Career Context file private. A portable default location is:
 ~/.vitaecontext/<name-surname>-career-context.md
 ```
 
+After filling it, validate the structure and create a bounded task packet:
+
+```bash
+npx vitaecontext context validate ~/.vitaecontext/name-surname-career-context.md
+npx vitaecontext context summary ~/.vitaecontext/name-surname-career-context.md --for github --output /tmp/github-context.md
+```
+
+`context validate --json` emits machine-readable diagnostics. It checks the document contract and internal consistency; it does not authenticate whether a real-world claim is true. The older `template context` command remains available when the longer guided worksheet is preferable.
+
 ---
 
 <p align="center">
-  <img src=".assets/image/banners/vitaegraph/vitaegraph-banner-light.png" alt="VitaeGraph by VitaeContext" width="80%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/banners/vitaegraph/vitaegraph-banner-light.png" alt="VitaeGraph by VitaeContext" width="80%" />
 </p>
 
 ## VitaeGraph
@@ -141,7 +150,7 @@ Keep the Career Context file private. A portable default location is:
 [VitaeGraph](./vitaegraph/README.md) is VitaeContext's deeper structured-memory layer, not a separate product. Use the Career Context file for compact, repeated facts and quick grounded drafts. Use VitaeGraph when an agent needs detailed records for projects, roles, degrees, courses, thesis work, certifications, awards, publications, and the relationships between them.
 
 <p align="center">
-  <img src=".assets/image/public-visuals/vitaegraph/vitaegraph-diff.png" alt="Comparison between the compact Career Context file for fast facts and VitaeGraph for deep hierarchical records" width="100%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/public-visuals/vitaegraph/vitaegraph-diff.png" alt="Comparison between the compact Career Context file for fast facts and VitaeGraph for deep hierarchical records" width="100%" />
 </p>
 
 Its root directory is an independently readable product entrypoint containing the format specification, schema, graph model, and canonical templates. The skill inventories supplied material first, then completes domain-specific workflows. Markdown remains canonical; generated JSON files are rebuildable local indexes.
@@ -218,6 +227,13 @@ For Claude Code, the skills are also available through the plugin marketplace:
 /plugin install vitaecontext@vitaecontext
 ```
 
+The repository also ships a native Codex plugin marketplace under `.agents/plugins/`. After cloning the repository, add that marketplace and install the plugin:
+
+```bash
+codex plugin marketplace add .agents/plugins
+codex plugin add vitaecontext@vitaecontext
+```
+
 Useful package commands:
 
 ```bash
@@ -226,6 +242,9 @@ npx vitaecontext update
 npx vitaecontext doctor
 npx vitaecontext list providers
 npx vitaecontext list skills
+npx vitaecontext context init
+npx vitaecontext context validate ~/.vitaecontext/career-context.md
+npx vitaecontext context summary ~/.vitaecontext/career-context.md --for cv
 ```
 
 `update` checks the npm registry only when invoked. With `--provider <provider>`, it reads the installed provider manifest and compares the installed skill version:
@@ -276,7 +295,7 @@ This repository keeps human guidance, runtime skills, provider adapters, and pac
 - [`hub/`](./hub/) contains public playbooks, templates, examples, and source notes.
 - [`vitaegraph/`](./vitaegraph/) contains the public VitaeGraph specification, schemas, and canonical artifact templates.
 - [`.skills/agent-skill/`](./.skills/agent-skill/) contains the canonical portable skill source.
-- [`.skills/export/`](./.skills/export/) contains the install, export, doctor, and template CLI.
+- [`.skills/export/`](./.skills/export/) contains the install, export, doctor, Career Context, VitaeGraph, and template CLI.
 - [`.skills/providers/`](./.skills/providers/) contains thin provider-specific adapters.
 - [`llms.txt`](./llms.txt) and [`llms-full.txt`](./llms-full.txt) expose the project map and wiki bundle to LLM tools.
 
@@ -287,6 +306,7 @@ Read [DESIGN.md](./DESIGN.md) for the system design and [the architecture map](.
 ## Documentation
 
 - [Getting started](./.assets/docs/getting-started.md) explains installation, first use, and graph navigation.
+- [Fictional five-minute demo](./.assets/docs/fictional-end-to-end-demo.md) shows raw material, validated context, a bounded packet, and a grounded task brief without publishing real career data.
 - [End-to-end demos](./.assets/docs/end-to-end-workflows.md) provides sample inputs, prompts, and expected deliverables.
 - [Public playbooks](./hub/) document the human-readable methodology for each module.
 - [Maintaining](./MAINTAINING.md) covers source refresh, wiki maintenance, validation, and releases.

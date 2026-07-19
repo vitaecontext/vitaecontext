@@ -87,6 +87,8 @@ Before returning, check the draft and fix or flag any failure:
 - Resolved conflicts name the deciding source or user confirmation; unresolved conflicts do not block unrelated, well-supported updates.
 - The output matches the requested scope and storage mode.
 
+When the installed CLI is available, run `vitaecontext context validate <file>` after writing or repairing a Career Context file. Treat a successful command as a structural and internal-consistency check, not independent verification that the supplied career claims are true. For a bounded downstream handoff, `vitaecontext context summary <file> --for <surface>` can produce a focused packet after validation succeeds.
+
 If a check fails and cannot be resolved from the available inputs, say so explicitly instead of smoothing it over.
 
 ## Handoff

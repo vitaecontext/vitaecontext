@@ -1,6 +1,6 @@
 {
   "name": "vitaecontext",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
   "type": "module",
   "bin": {
@@ -19,19 +19,17 @@
     "access": "public"
   },
   "files": [
+    ".agents/plugins",
     ".claude-plugin",
     ".skills/agent-skill",
     ".skills/export",
     ".skills/providers",
     "hub",
+    "evals/groundedness",
     "vitaegraph",
-    ".assets/image/banners",
-    ".assets/image/preview",
-    ".assets/image/public-visuals",
-    ".assets/image/vitaegraph",
-    ".assets/image/logos",
     ".assets/docs/getting-started.md",
     ".assets/docs/end-to-end-workflows.md",
+    ".assets/docs/fictional-end-to-end-demo.md",
     ".assets/docs/current-status.md",
     ".assets/docs/project.md",
     ".assets/docs/architecture-map.md",
@@ -45,18 +43,23 @@
     "skills",
     "AGENTS.md",
     "CHANGELOG.md",
+    "CONTRIBUTING.md",
     "DESIGN.md",
     "MAINTAINING.md",
     "PRIVACY.md",
-    "README.md"
+    "README.md",
+    "SECURITY.md"
   ],
   "scripts": {
     "export": "node .skills/export/scripts/vitaecontext.mjs export",
     "install:skills": "node .skills/export/scripts/vitaecontext.mjs install",
     "list:providers": "node .skills/export/scripts/vitaecontext.mjs list providers",
     "list:skills": "node .skills/export/scripts/vitaecontext.mjs list skills",
+    "sync:codex-plugin": "node .skills/export/scripts/sync-codex-plugin.mjs",
+    "check:codex-plugin": "node .skills/export/scripts/sync-codex-plugin.mjs --check",
     "test": "node --test test/*.test.mjs",
     "validate": "node .skills/export/scripts/vitaecontext.mjs doctor",
+    "validate:package": "node .skills/export/scripts/package-audit.mjs",
     "version:cli": "node .skills/export/scripts/vitaecontext.mjs version"
   },
   "keywords": [

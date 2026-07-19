@@ -2,14 +2,14 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-07-11
+## As of 2026-07-19
 
 ### Public surfaces
 
 - Source repo: `https://github.com/vitaecontext/vitaecontext`
 - Website and human-readable hub: `https://vitaecontext.github.io/`
 - npm package: `https://www.npmjs.com/package/vitaecontext`
-- Current package version: `vitaecontext@1.9.2`
+- Current package version: `vitaecontext@2.1.0`
 
 Published release line:
 
@@ -19,12 +19,17 @@ Published release line:
 - `v1.7.0`
 - `v1.8.0` through `v1.8.3`
 - `v1.9.0` through `v1.9.2`
+- `v2.0.0`
+
+Prepared next release:
+
+- `v2.1.0` is prepared in the source tree and requires the matching release tag before it is available from npm.
 
 ### Current architecture
 
 - `.skills/agent-skill/` is the canonical runtime source.
 - `.skills/providers/` contains thin provider adapters.
-- `.skills/export/` contains the install, export, doctor, list, version, and template CLI.
+- `.skills/export/` contains the install, export, doctor, list, version, Career Context, VitaeGraph, and template CLI.
 - `hub/` contains human-readable playbooks, templates, examples, and source notes.
 - `.assets/docs/` contains maintainer docs, status, architecture, and Markdown rules.
 - `llms.txt` and `llms-full.txt` expose the LLM-facing map and bundled wiki layer.
@@ -86,6 +91,9 @@ Working CLI surfaces:
 - `vitaecontext list skills`
 - `vitaecontext list commands --provider <provider>`
 - `vitaecontext template context`
+- `vitaecontext context init [--output <career-context-file>]`
+- `vitaecontext context validate <career-context-file> [--json]`
+- `vitaecontext context summary <career-context-file> [--for <surface>] [--output <file>] [--json]`
 - `vitaecontext graph init [--root <vitaegraph-directory>]`
 - `vitaecontext graph validate [--root <vitaegraph-directory>]`
 - `vitaecontext graph index [--root <vitaegraph-directory>]`
@@ -135,11 +143,14 @@ Main repo automation:
 
 - `.github/workflows/validate.yml` runs validation on pushes and pull requests targeting `main`.
 - `.github/workflows/npm-publish.yml` publishes to npm on pushed `v*` tags after validation and package dry-run checks.
+- Package validation enforces a 5 MB compressed-size budget and checks relative links against the actual packed file list.
+- Provider install tests cover preflight conflicts and rollback after a later commit failure.
 - The npm publish workflow verifies tag/version alignment and creates the matching GitHub release.
 
 Website automation:
 
 - The website repo deploys to GitHub Pages from `main` through its Pages workflow.
+- The website build checks its generated product contract, package version, and playbook hashes against a checked-out copy of the product repository before deployment.
 
 Validation surfaces currently include:
 
@@ -163,7 +174,7 @@ The project is currently prioritizing:
 
 The project is not currently prioritizing:
 
-- benchmark or eval suites
+- large model benchmark suites beyond the compact fictional groundedness fixtures
 - elaborate showcase assets
 - background latest-version checks inside installed agents
 - broad marketplace-specific rewrites before provider behavior is confirmed
@@ -174,7 +185,7 @@ The project is not currently prioritizing:
 - Antigravity CLI command syntax needs live `agy` confirmation.
 - The VitaeContext GitHub social preview is stored at `.assets/image/preview/vitaecontext-social-preview.png`, and README banner assets live under `.assets/image/banners/`; upload the social preview through the GitHub repository settings when the repository identifier is migrated.
 - Installed skills can prompt an explicit `vitaecontext update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
-- Public demo assets and before/after examples are still sparse.
+- The fictional end-to-end demo is intentionally compact; additional showcase assets should be added only when they demonstrate a distinct workflow.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
 
 ---

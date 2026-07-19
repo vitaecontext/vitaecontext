@@ -29,3 +29,17 @@ test("marketplace.json has a matching plugin entry in sync with package.json", (
 test(".claude-plugin is shipped in the npm files allowlist", () => {
   assert.ok(pkg.files.includes(".claude-plugin"));
 });
+
+test("native Codex plugin and marketplace match package metadata", () => {
+  const codexPlugin = readJson(".agents/plugins/plugins/vitaecontext/.codex-plugin/plugin.json");
+  const codexMarketplace = readJson(".agents/plugins/marketplace.json");
+  const entry = codexMarketplace.plugins.find((candidate) => candidate.name === pkg.name);
+  assert.ok(entry, `expected a native Codex marketplace entry named ${pkg.name}`);
+  assert.equal(codexPlugin.name, pkg.name);
+  assert.equal(codexPlugin.version, pkg.version);
+  assert.equal(codexPlugin.skills, "./skills/");
+  assert.equal(entry.source.path, "./plugins/vitaecontext");
+  assert.equal(entry.policy.installation, "AVAILABLE");
+  assert.equal(entry.policy.authentication, "ON_INSTALL");
+  assert.equal(pkg.files.includes(".agents/plugins"), true);
+});

@@ -10,7 +10,7 @@ const cli = path.join(repoRoot, ".skills", "export", "scripts", "vitaecontext.mj
 
 test("graph CLI defaults to ~/.vitaecontext/vitaegraph", () => {
   const home = fs.mkdtempSync(path.join(os.tmpdir(), "vitaegraph-home-"));
-  const options = { encoding: "utf8", env: { ...process.env, HOME: home } };
+  const options = { encoding: "utf8", env: { ...process.env, HOME: home, USERPROFILE: home } };
   assert.match(execFileSync(process.execPath, [cli, "graph", "init"], options), /Initialized VitaeGraph/);
   assert.match(execFileSync(process.execPath, [cli, "graph", "validate"], options), /VitaeGraph valid/);
   assert.match(execFileSync(process.execPath, [cli, "graph", "index"], options), /Indexed 0 VitaeGraph node/);

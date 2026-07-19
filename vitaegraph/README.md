@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../.assets/image/banners/vitaegraph/vitaegraph-banner-light.png" alt="VitaeGraph by VitaeContext" width="90%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/banners/vitaegraph/vitaegraph-banner-light.png" alt="VitaeGraph by VitaeContext" width="90%" />
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ This directory is the self-contained product entrypoint for the VitaeGraph forma
 VitaeGraph is optional. It complements the compact Career Context file; it does not replace it.
 
 <p align="center">
-  <img src="../.assets/image/public-visuals/vitaegraph/vitaegraph-structure.png" alt="VitaeGraph converts raw career material into hierarchical Markdown records, graph relationships, and rebuildable local indexes for selective agent retrieval" width="100%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/public-visuals/vitaegraph/vitaegraph-structure.png" alt="VitaeGraph converts raw career material into hierarchical Markdown records, graph relationships, and rebuildable local indexes for selective agent retrieval" width="100%" />
 </p>
 
 ## Module at a glance
@@ -107,7 +107,7 @@ Private user graphs do not belong in any of these locations. The default workspa
 The two artifacts are independently usable. Either may contain an optional link to the other when the user wants that connection.
 
 <p align="center">
-  <img src="../.assets/image/public-visuals/vitaegraph/vitaegraph-diff.png" alt="Comparison between the compact Career Context file for fast facts and VitaeGraph for deep hierarchical records" width="100%" />
+  <img src="https://raw.githubusercontent.com/vitaecontext/vitaecontext/main/.assets/image/public-visuals/vitaegraph/vitaegraph-diff.png" alt="Comparison between the compact Career Context file for fast facts and VitaeGraph for deep hierarchical records" width="100%" />
 </p>
 
 ## Install
