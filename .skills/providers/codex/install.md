@@ -12,7 +12,7 @@ In practice, the reusable source of truth is:
 
 ## Source-first workflow
 
-Do not hand-maintain a second Codex skill tree in the repo root. Author in `.skills/agent-skill/`, keep Codex adapter notes in `.skills/providers/codex/`, then install a Codex-facing layout when needed.
+Do not hand-maintain a second Codex skill tree. Author in `.skills/agent-skill/`, keep Codex adapter notes in `.skills/providers/codex/`, then install a Codex-facing layout when needed. The native plugin mirror under `.agents/plugins/plugins/vitaecontext/skills/` is generated with `npm run sync:codex-plugin`.
 
 For the published package, the default command is:
 
@@ -44,6 +44,17 @@ node .skills/export/scripts/vitaecontext.mjs install \
 - `.codex/skills/`
 
 Use `export` only when you want a preview bundle or a packaging artifact.
+
+## Native plugin marketplace
+
+The repository includes a Codex marketplace and plugin bundle in `.agents/plugins/`. From a local clone:
+
+```bash
+codex plugin marketplace add .agents/plugins
+codex plugin add vitaecontext@vitaecontext
+```
+
+This is an additional distribution path, not a separate methodology source. Direct npm skill installation remains supported.
 
 ## Invocation model
 

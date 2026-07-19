@@ -42,11 +42,13 @@ Treat the installable artifact as the shared skill bundle, not as the full repos
 
 ## CLI and provider contract
 
-The published `vitaecontext` npm CLI is the shared implementation for install, update, uninstall, export, diagnostics, templates, and VitaeGraph commands. `npx vitaecontext` is a user-facing execution path for that implementation, not a future wrapper.
+The published `vitaecontext` npm CLI is the shared implementation for transactional install, update, uninstall, export, diagnostics, Career Context lifecycle, templates, and VitaeGraph commands. `npx vitaecontext` is a user-facing execution path for that implementation, not a future wrapper.
 
 Provider-native discovery and invocation remain provider-specific. Some providers load skills directly, while others add commands, extensions, or plugin metadata. Keep these responsibilities separate:
 
-- The npm CLI owns deterministic copying, manifests, target resolution, and package commands.
+- The npm CLI owns deterministic copying, preflight and rollback, manifests, target resolution, and package commands.
 - Shared skill folders own runtime methodology.
 - Provider adapters own only provider-specific layout, metadata, and invocation ergonomics.
 - The installed shared skill name remains the portable runtime contract.
+
+The repository-owned Codex marketplace under `.agents/plugins/` is a generated distribution of the configured shared skills. It does not replace direct Codex skill installation and must not become an alternate methodology source.

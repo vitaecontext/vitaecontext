@@ -44,7 +44,7 @@ After:
 
 1. Read [why-context-files.md](./why-context-files.md) to understand the purpose.
 2. Use [templates/context-file-template.md](./templates/context-file-template.md) to create the first draft.
-3. Review [examples/renato-mignone-context-file-example.md](./examples/renato-mignone-context-file-example.md) to see a filled file based on a real profile with minor redactions for public use.
+3. Review [the fictional Alex Morgan example](./examples/alex-morgan-fictional-career-context.md) to see a complete filled file without publishing a real person's Career Context.
 4. Check the draft against [context-file-spec.md](./context-file-spec.md).
 5. Use [agent-workflow.md](./agent-workflow.md) when loading the file into an agent session.
 6. Return to [file-maintenance.md](./file-maintenance.md) whenever new facts need to be added.
@@ -56,7 +56,8 @@ After:
 - [agent-workflow.md](./agent-workflow.md): The operational guide for loading the file into agent sessions and combining it with other modules.
 - [file-maintenance.md](./file-maintenance.md): The maintenance lifecycle for updates, token growth, goals, verified facts, and version history.
 - [templates/context-file-template.md](./templates/context-file-template.md): A guided template for building a new Career Context file.
-- [examples/renato-mignone-context-file-example.md](./examples/renato-mignone-context-file-example.md): A filled example copied from a real context file and lightly redacted where exact identifiers or verification-only details would be too specific for the public repo.
+- [templates/career-context-starter.md](./templates/career-context-starter.md): The minimal starter written by `vitaecontext context init`.
+- [examples/alex-morgan-fictional-career-context.md](./examples/alex-morgan-fictional-career-context.md): A complete fictional example. No person, organization, credential, result, or identifier in it should be treated as real.
 
 ## 5. Usage for agents
 

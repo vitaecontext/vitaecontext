@@ -9,9 +9,31 @@ on:
       - main
 
 jobs:
+  test:
+    name: Tests (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit and integration tests
+        run: npm test
+
   validate:
     name: Validate package layout
     runs-on: ubuntu-latest
+    needs: test
     permissions:
       contents: read
 
@@ -24,9 +46,6 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Run unit tests
-        run: npm test
-
       - name: Install compatibility package dependencies
         working-directory: packages/agentkit-seo-compat
         run: npm ci --ignore-scripts
@@ -37,6 +56,9 @@ jobs:
 
       - name: Validate CLI package layout
         run: npm run validate
+
+      - name: Check native Codex plugin mirror
+        run: npm run check:codex-plugin
 
       - name: Check CLI version command
         run: node .skills/export/scripts/vitaecontext.mjs version
@@ -53,8 +75,17 @@ jobs:
       - name: Smoke install Antigravity CLI bundle
         run: node .skills/export/scripts/vitaecontext.mjs install --provider antigravity --target-dir /tmp/vitaecontext-antigravity-install-check --force
 
+      - name: Smoke install Claude Code bundle
+        run: node .skills/export/scripts/vitaecontext.mjs install --provider claude-code --target-dir /tmp/vitaecontext-claude-install-check --force
+
+      - name: Smoke install OpenCode bundle and commands
+        run: node .skills/export/scripts/vitaecontext.mjs install --provider opencode --project-root /tmp/vitaecontext-opencode-install-check --force
+
+      - name: Smoke install shared bundle
+        run: node .skills/export/scripts/vitaecontext.mjs install --provider shared --target-dir /tmp/vitaecontext-shared-install-check --force
+
       - name: Verify package contents
-        run: npm pack --dry-run
+        run: npm run validate:package
 
       - name: Verify compatibility package contents
         working-directory: packages/agentkit-seo-compat

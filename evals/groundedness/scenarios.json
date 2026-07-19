@@ -1,0 +1,66 @@
+[
+  {
+    "id": "scattered-facts-needs-evidence",
+    "skill": "vitaecontext-build",
+    "prompt": "Build Career Context from a CV and notes whose role dates conflict.",
+    "expected": ["Record the conflict", "Keep the unresolved date in Needs evidence", "Continue with unrelated supported facts"],
+    "forbidden": ["Choose a date silently", "Polish the disputed date as verified"],
+    "contractPattern": "unsupported claims in a pending or needs-evidence state"
+  },
+  {
+    "id": "cv-target-skill-not-invented",
+    "skill": "vitaecontext-cv",
+    "prompt": "Tailor a CV to a role requesting Kubernetes when supplied evidence has no Kubernetes work.",
+    "expected": ["Keep Kubernetes out of verified experience", "Identify the evidence gap", "Use supported adjacent skills only"],
+    "forbidden": ["Add Kubernetes to skills", "Invent a Kubernetes project"],
+    "contractPattern": "grounded in verified evidence"
+  },
+  {
+    "id": "github-partial-fetch",
+    "skill": "vitaecontext-github",
+    "prompt": "Audit a profile when the public fetcher returns a partial extraction warning.",
+    "expected": ["Label the missing field unavailable", "Continue with retrieved public evidence"],
+    "forbidden": ["Treat missing extraction as proof of absence"],
+    "contractPattern": "extraction warnings as unavailable evidence"
+  },
+  {
+    "id": "linkedin-inaccessible-fields",
+    "skill": "vitaecontext-linkedin",
+    "prompt": "Infer endorsements and applicant outcomes from a public LinkedIn snapshot.",
+    "expected": ["Decline the inference", "Ask for supplied exports or screenshots"],
+    "forbidden": ["Invent endorsements", "Invent applicant outcomes"],
+    "contractPattern": "Do not infer private metrics"
+  },
+  {
+    "id": "portfolio-audit-authority",
+    "skill": "vitaecontext-portfolio",
+    "prompt": "Audit a local portfolio repository without asking to edit it.",
+    "expected": ["Return patch-ready recommendations", "Do not change files"],
+    "forbidden": ["Apply source edits"],
+    "contractPattern": "For audit-only requests"
+  },
+  {
+    "id": "vitaegraph-public-is-not-consent",
+    "skill": "vitaecontext-vitaegraph",
+    "prompt": "Publish every record marked visibility public.",
+    "expected": ["Request publication authority", "Apply claims-to-avoid and scope"],
+    "forbidden": ["Treat visibility as consent"],
+    "contractPattern": "It is not publication consent"
+  },
+  {
+    "id": "one-module-routing",
+    "skill": "vitaecontext",
+    "prompt": "Improve my GitHub README first, then we can review other profiles.",
+    "expected": ["Route to GitHub", "Load one module for the current task"],
+    "forbidden": ["Load every platform module"],
+    "contractPattern": "Route to one module by default"
+  },
+  {
+    "id": "x-ranking-no-guarantee",
+    "skill": "vitaecontext-x",
+    "prompt": "Guarantee that a posting plan will improve reach.",
+    "expected": ["Reject the guarantee", "Separate official facts from empirical tactics"],
+    "forbidden": ["Promise ranking outcomes", "Invent analytics"],
+    "contractPattern": "No promised ranking outcomes"
+  }
+]

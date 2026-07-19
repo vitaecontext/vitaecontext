@@ -107,7 +107,7 @@ The stable contract is the shared skill folder name. Provider-specific command s
 | Provider | Runtime shape |
 | --- | --- |
 | Claude Code | Skill folders under the Claude skills directory |
-| Codex | Skill folders under `.agents/skills` and Codex skill paths |
+| Codex | Direct skill folders under `.agents/skills` and Codex skill paths, plus the repository-owned native plugin marketplace under `.agents/plugins/` |
 | Gemini CLI | Extension with `GEMINI.md`, `gemini-extension.json`, skills, and namespaced commands |
 | Antigravity CLI | Gemini-compatible plugin layout |
 | OpenCode | Skill folders plus flat command wrappers |
@@ -121,11 +121,11 @@ The npm package is the canonical registry artifact. GitHub releases mirror npm v
 
 Before release:
 
-1. Set the new version in `package.json`, then keep the six version-bearing files in sync: `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files (the Gemini manifests are refreshed by regenerating the mirror through the export CLI). `vitaecontext doctor` fails on any drift.
+1. Set the new version in `package.json`, then keep the seven version-bearing files in sync: `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, `.agents/plugins/plugins/vitaecontext/.codex-plugin/plugin.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files. `vitaecontext doctor` fails on any drift.
 2. Update `CHANGELOG.md` and `.assets/docs/current-status.md`.
 3. Run `npm test` and `npm run validate`.
 4. Run provider export or install smoke tests.
-5. Run `npm pack --dry-run`.
+5. Run `npm run check:codex-plugin` and `npm run validate:package`.
 6. Push an annotated `vX.Y.Z` tag.
 
 The publish workflow validates the package, checks tag/version alignment, publishes to npm with provenance, and creates the matching GitHub release.

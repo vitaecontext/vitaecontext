@@ -40,12 +40,13 @@ Do not load every skill module by default. Route to one module unless the task i
 | Maintainer docs | `.assets/docs/` | Internal project notes, status, style rules, and this architecture map | Maintainer-facing process or architecture changes |
 | Runtime skills | `.skills/agent-skill/` | Portable skill source, references, and wiki knowledge shipped to users | Skill behavior, routing, references, wiki entries, or module methodology changes |
 | Provider adapters | `.skills/providers/` | Provider-specific install notes, wrappers, manifests, and command templates | A provider needs different activation, layout, metadata, or wrapper commands |
-| Export CLI | `.skills/export/` | Install, export, doctor, version, and template commands | Package behavior, install targets, generated layouts, or diagnostics change |
+| Export CLI | `.skills/export/` | Install, export, doctor, version, Career Context, VitaeGraph, and template commands | Package behavior, install targets, generated layouts, or diagnostics change |
 | Gemini-compatible root mirror | `skills/`, `commands/`, `GEMINI.md`, `gemini-extension.json` | Generated root distribution layout for Gemini-compatible discovery | Regenerate from canonical source after runtime skill or command changes |
 | Release automation | `.github/workflows/` | Validation and npm publication workflows | CI, release checks, package publication, or tag behavior changes |
 | Public release notes | `CHANGELOG.md` | User-facing release history | Any package-visible behavior changes |
 | Package metadata | `package.json` | npm package metadata, bin command, scripts, and version | CLI, dependencies, package files, scripts, or version changes |
 | Claude Code plugin marketplace | `.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json` | `/plugin` install channel and plugin manifest, validated by `doctor` against `package.json` | Plugin metadata, marketplace listing, or version changes |
+| Codex plugin marketplace | `.agents/plugins/` | Repository marketplace, native plugin manifest, and generated mirror of the eight configured runtime skills | Codex plugin metadata or runtime skill source changes |
 | CLI unit tests | `test/` | Deterministic `node:test` suite for the export CLI library, run by `npm test` in CI | CLI library behavior in semver, arg parsing, package-file matching, install-root, or uninstall paths changes |
 
 ## 4. Source-of-truth rules
@@ -77,8 +78,8 @@ Use this table to decide what to edit for common tasks.
 | Add a new skill module | `.skills/agent-skill/vitaecontext-<module>/` | `.skills/export/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
 | Change VitaeGraph behavior | `vitaegraph/`, `.skills/agent-skill/vitaecontext-vitaegraph/`, `.skills/export/lib/vitaegraph/` | Root routing, provider wrappers, mirrors, public docs, tests | VitaeGraph smoke tests, `npm run validate`, export all providers |
 | Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/vitaecontext.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |
-| Change CLI commands | `.skills/export/scripts/vitaecontext.mjs` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm pack --dry-run` |
-| Change context-file template behavior | `.skills/export/scripts/vitaecontext.mjs`, `.skills/agent-skill/vitaecontext-build/references/` | `README.md`, relevant examples/templates, `CHANGELOG.md` | `vitaecontext template context` smoke test |
+| Change CLI commands | `.skills/export/scripts/vitaecontext.mjs`, `.skills/export/lib/<subsystem>/` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm run validate:package` |
+| Change Career Context lifecycle behavior | `.skills/export/lib/context/`, `.skills/agent-skill/vitaecontext-build/references/` | `README.md`, relevant examples/templates, `CHANGELOG.md` | Context CLI tests, fictional example validation |
 | Change runtime wiki graph or `llms.txt` files | `.skills/agent-skill/*/wiki/`, `llms.txt`, `llms-full.txt` | Generated root `skills/` mirror, `README.md`, `.assets/docs/current-status.md` | `npm run validate`, `npm pack --dry-run` |
 | Change packaging files | `package.json`, `.npmignore` if added later | `.github/workflows/npm-publish.yml`, `README.md`, `CHANGELOG.md` | `npm pack --dry-run` |
 | Prepare a release | `package.json`, provider manifests with explicit versions, `CHANGELOG.md`, `.assets/docs/current-status.md` | Git tag and GitHub release after validation | Full release checklist |
@@ -110,14 +111,14 @@ Provider wrappers must route to the shared skill names:
 
 Before pushing a release tag:
 
-1. Set the new version in `package.json`, then keep the six version-bearing files in sync (`doctor` fails on drift): `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files. See [MAINTAINING.md](../../MAINTAINING.md#version-files-to-bump-on-release).
+1. Set the new version in `package.json`, then keep the seven version-bearing files in sync (`doctor` fails on drift): `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, `.agents/plugins/plugins/vitaecontext/.codex-plugin/plugin.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files. See [MAINTAINING.md](../../MAINTAINING.md#version-files-to-bump-on-release).
 2. Regenerate the Gemini mirror through the export CLI so the Gemini manifests pick up the new version.
 3. Move public changes from `CHANGELOG.md` `Unreleased` into the new version section.
 4. Update `.assets/docs/current-status.md` with the current package version and release list.
 5. Run `npm test` and `npm run validate`.
 6. Run CLI smoke tests for changed commands.
 7. Run provider export or install smoke tests for changed providers.
-8. Run `npm pack --dry-run`.
+8. Run `npm run check:codex-plugin` and `npm run validate:package`.
 9. Commit the release files.
 10. Create and push the matching annotated `vX.Y.Z` tag.
 

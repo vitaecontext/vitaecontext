@@ -1,0 +1,35 @@
+FICTIONAL SOURCE MATERIAL
+
+Identity note
+- Alex Morgan
+- Valencia, Spain
+- Backend developer interested in platform engineering
+
+CV notes
+- BSc Computer Science, Example University, completed 2025
+- Backend Developer Intern, Northstar Labs, March-September 2025
+- TypeScript, Node.js, PostgreSQL, Docker, REST APIs
+- Cloud Fundamentals certificate, Example Institute, 2025
+
+Project notes: QueueWatch
+- Local dashboard for inspecting failed background jobs
+- Searchable failure timeline and manual retry workflow
+- TypeScript, Fastify, PostgreSQL, OpenTelemetry, Docker
+- Repository includes setup and architecture notes
+- No measured production usage or performance improvement is available
+
+Goals supplied by Alex
+- Target Backend Developer and Platform Engineer roles
+- Wants to work on reliability, internal platforms, and CI/CD
+- Has not held a Platform Engineer title
+
+Profile notes
+- GitHub, LinkedIn, and portfolio URL formats are included in the finished example
+- The project does not control or verify those example accounts
+
+Conflict to resolve during intake
+- One informal note says the internship started in April 2025
+- The fictional CV says March 2025
+- Keep the start date in Needs evidence until the user confirms which supplied source supersedes the other
+
+Every person, organization, credential, result, and identifier in this fixture is fictional.

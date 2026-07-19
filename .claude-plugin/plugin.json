@@ -1,6 +1,6 @@
 {
   "name": "vitaecontext",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
   "author": {
     "name": "Renato Mignone and Elia Innocenti"

@@ -87,7 +87,7 @@ jobs:
 
       - name: Validate VitaeContext package
         if: steps.package.outputs.name == 'vitaecontext'
-        run: npm run validate
+        run: npm test && npm run validate && npm run check:codex-plugin && npm run validate:package
 
       - name: Test compatibility package
         if: steps.package.outputs.name == 'agentkit-seo'

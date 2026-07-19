@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Compatibility entry point for VitaeContext, formerly AgentKit SEO.",
   "type": "module",
   "bin": {
@@ -14,7 +14,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "vitaecontext": "2.0.0"
+    "vitaecontext": "^2.0.0"
   },
   "repository": {
     "type": "git",

@@ -546,6 +546,84 @@ function validateMarketplace(repoRoot, packageMetadata, errors) {
   }
 }
 
+function validateCodexPlugin(repoRoot, config, packageMetadata, errors) {
+  const marketplacePath = path.join(repoRoot, ".agents", "plugins", "marketplace.json");
+  const pluginRoot = path.join(repoRoot, ".agents", "plugins", "plugins", packageMetadata.name);
+  const pluginPath = path.join(pluginRoot, ".codex-plugin", "plugin.json");
+  const mirrorRoot = path.join(pluginRoot, "skills");
+  if (!fs.existsSync(marketplacePath)) {
+    errors.push("Codex marketplace manifest is missing: .agents/plugins/marketplace.json");
+    return;
+  }
+  if (!fs.existsSync(pluginPath)) {
+    errors.push("Codex plugin manifest is missing: .agents/plugins/plugins/vitaecontext/.codex-plugin/plugin.json");
+    return;
+  }
+  try {
+    const marketplace = readJsonFile(marketplacePath);
+    const entry = marketplace.plugins?.find((plugin) => plugin?.name === packageMetadata.name);
+    if (!entry) errors.push(`Codex marketplace has no plugin entry named '${packageMetadata.name}'`);
+    else {
+      if (entry.source?.path !== `./plugins/${packageMetadata.name}`) errors.push("Codex marketplace source path is not canonical");
+      if (!entry.policy?.installation || !entry.policy?.authentication || !entry.category) {
+        errors.push("Codex marketplace entry is missing policy or category metadata");
+      }
+    }
+    const plugin = readJsonFile(pluginPath);
+    if (plugin.name !== packageMetadata.name) errors.push("Codex plugin name does not match package.json");
+    if (plugin.version !== packageMetadata.version) errors.push("Codex plugin version does not match package.json");
+    if (plugin.skills !== "./skills/") errors.push("Codex plugin skills path must be ./skills/");
+  } catch {
+    errors.push("Codex plugin or marketplace manifest is not valid JSON");
+  }
+
+  const expectedSkills = new Set((config.skills ?? []).map((skill) => skill.name));
+  const mirroredSkills = fs.existsSync(mirrorRoot)
+    ? fs.readdirSync(mirrorRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => entry.name)
+    : [];
+  for (const skillName of expectedSkills) {
+    if (!mirroredSkills.includes(skillName)) errors.push(`Codex plugin skill mirror is missing: ${skillName}`);
+  }
+  for (const skillName of mirroredSkills) {
+    if (!expectedSkills.has(skillName)) errors.push(`Codex plugin includes an unconfigured skill: ${skillName}`);
+  }
+  for (const skill of config.skills ?? []) {
+    const sourceRoot = path.join(repoRoot, skill.source);
+    const targetRoot = path.join(mirrorRoot, skill.name);
+    for (const sourceFile of listFilesRecursive(sourceRoot)) {
+      const relative = path.relative(sourceRoot, sourceFile);
+      const targetFile = path.join(targetRoot, relative);
+      if (!fs.existsSync(targetFile) || fs.readFileSync(sourceFile, "utf8") !== fs.readFileSync(targetFile, "utf8")) {
+        errors.push(`Codex plugin skill mirror differs from source: ${skill.name}/${normalizeRelativePath(relative)}`);
+      }
+    }
+  }
+}
+
+function validateReleaseDocs(repoRoot, packageMetadata, errors) {
+  const checks = [
+    [".assets/docs/current-status.md", `Current package version: \`vitaecontext@${packageMetadata.version}\``],
+    [".assets/docs/getting-started.md", `vitaecontext ${packageMetadata.version}`],
+    ["CHANGELOG.md", `## ${packageMetadata.version} -`]
+  ];
+  for (const [relative, expected] of checks) {
+    const filePath = path.join(repoRoot, relative);
+    if (!fs.existsSync(filePath) || !fs.readFileSync(filePath, "utf8").includes(expected)) {
+      errors.push(`${relative} does not identify current package version ${packageMetadata.version}`);
+    }
+  }
+}
+
+function validatePublicContextExamples(repoRoot, errors) {
+  const examplesRoot = path.join(repoRoot, "hub", "context-builder", "examples");
+  for (const filePath of listFilesRecursive(examplesRoot).filter((entry) => entry.endsWith("career-context.md"))) {
+    const content = fs.readFileSync(filePath, "utf8");
+    if (!/<!--\s*FICTIONAL EXAMPLE:/i.test(content)) {
+      errors.push(`public Career Context example is not explicitly fictional: ${normalizeRelativePath(path.relative(repoRoot, filePath))}`);
+    }
+  }
+}
+
 export function doctor(repoRoot, config) {
   const errors = [];
   const warnings = [];
@@ -577,15 +655,19 @@ export function doctor(repoRoot, config) {
       ".skills/architecture.md",
       ".skills/export",
       ".skills/providers",
+      ".agents/plugins",
       ".assets/docs/getting-started.md",
       ".assets/docs/end-to-end-workflows.md",
       "hub/context-builder/templates/context-file-template.md",
+      "hub/context-builder/templates/career-context-starter.md",
       "vitaegraph/templates/VITAEGRAPH.md",
       "vitaegraph/schema/record-schema.json",
       "AGENTS.md",
+      "CONTRIBUTING.md",
       "MAINTAINING.md",
       "llms.txt",
-      "llms-full.txt"
+      "llms-full.txt",
+      "SECURITY.md"
     ];
     for (const requiredPath of requiredPackagePaths) {
       if (!packageFileIncludes(packageJson.files, requiredPath)) {
@@ -639,6 +721,9 @@ export function doctor(repoRoot, config) {
   validateLlmsFullWikiBundle(repoRoot, config, errors);
   validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors);
   validateMarketplace(repoRoot, packageMetadata, errors);
+  validateCodexPlugin(repoRoot, config, packageMetadata, errors);
+  validateReleaseDocs(repoRoot, packageMetadata, errors);
+  validatePublicContextExamples(repoRoot, errors);
 
   for (const warning of warnings) {
     console.warn(`warning: ${warning}`);
@@ -656,8 +741,10 @@ export function doctor(repoRoot, config) {
   console.log("ok: skill descriptions state what and when");
   console.log("ok: runtime routing, self-review, and portable links valid");
   console.log("ok: Claude Code marketplace manifests valid");
+  console.log("ok: Codex plugin marketplace and skill mirror valid");
   console.log(`ok: ${Object.keys(config.providers).length} provider adapter(s)`);
   console.log("ok: context template available");
+  console.log("ok: release docs and fictional public examples valid");
   console.log("ok: wiki files valid");
   console.log("ok: provider metadata versions match package.json");
 }

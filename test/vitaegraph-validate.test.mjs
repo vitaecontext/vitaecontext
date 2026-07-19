@@ -139,6 +139,6 @@ test("canonical templates use the new record model", () => {
   ]) {
     const content = fs.readFileSync(path.join(repoRoot, "vitaegraph", "templates", template), "utf8");
     assert.doesNotMatch(content, /evidence_(?:level|refs)/);
-    assert.match(content, /^---\ntype:/);
+    assert.match(content, /^---\r?\ntype:/);
   }
 });
