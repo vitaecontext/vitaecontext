@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import test from "node:test";
 
 import {
@@ -59,6 +60,23 @@ const REPOSITORY_LIST = `
 </ul>
 <a aria-label="Next page" href="/example-owner?page=2&amp;tab=repositories" rel="next">Next</a>
 `;
+
+test("context builder routes public GitHub sources through the bundled fetcher", () => {
+  const buildSkill = fs.readFileSync(
+    new URL("../.skills/agent-skill/vitaecontext-build/SKILL.md", import.meta.url),
+    "utf8"
+  );
+  const fetcherUrl = new URL(
+    "../.skills/agent-skill/vitaecontext-github/scripts/github-fetcher.mjs",
+    import.meta.url
+  );
+
+  assert.match(
+    buildSkill,
+    /\.\.\/vitaecontext-github\/scripts\/github-fetcher\.mjs <github-username-or-url>/
+  );
+  assert.equal(fs.existsSync(fetcherUrl), true);
+});
 
 test("getAttribute handles reordered and single-quoted attributes", () => {
   const tag = "<a class='link value' data-id=42 href=\"/owner/repo\">";

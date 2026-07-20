@@ -4,6 +4,12 @@ All notable changes to VitaeContext are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
+## Unreleased
+
+### Changed
+
+- Updated `vitaecontext-build` to retrieve GitHub usernames and public profile or repository sources through the bundled `vitaecontext-github` fetcher, with explicit temporary-report cleanup and degraded-mode handling.
+
 ## 2.1.0 - 2026-07-19
 
 ### Added

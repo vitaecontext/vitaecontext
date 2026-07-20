@@ -65,6 +65,8 @@ VitaeGraph routes create, deepen, maintain, validate, index, retrieve, and migra
 
 The `vitaecontext-build` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, growth direction, target locations (or `No restriction`), interests, evidence boundaries, positioning constraints, and claims to avoid as stated intent kept separate from verified facts.
 
+For a GitHub username or public profile or repository source, `vitaecontext-build` now routes retrieval through the installed sibling `vitaecontext-github` fetcher. The workflow consumes its bounded Markdown and JSON reports, preserves extraction warnings as evidence limitations, removes temporary output after use, and falls back to supplied material or another public fetch tool when the sibling skill or network is unavailable.
+
 The `vitaecontext-github` module includes a tokenless public-profile fetcher. It combines the unauthenticated GitHub API, public profile HTML, and raw README files without requesting a user token; distinguishes pinned repositories from the popular-repository fallback; defaults to three selected repositories; and emits Markdown plus JSON with repository metadata and extraction warnings. It creates a unique operating-system temporary directory by default instead of writing reports into the current repository.
 
 ### Install and distribution status
