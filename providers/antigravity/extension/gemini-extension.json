@@ -1,6 +1,6 @@
 {
   "name": "vitaecontext",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
   "contextFileName": "GEMINI.md"
 }

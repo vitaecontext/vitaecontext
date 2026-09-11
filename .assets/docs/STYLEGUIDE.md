@@ -225,7 +225,7 @@ Constraints:
 
 - Do not modify files with `status: stable` unless the user explicitly authorizes it.
 - Do not infer platform-specific rules. If a rule is absent from the relevant docs, ask or label the claim.
-- Do not generate unverifiable content for `hub/cv-ats/` or any `hub/<module>/sources.md`.
+- Do not generate unverifiable content for any `hub/<module>/sources.md`.
 - When scope is unclear, output a proposed diff or change summary instead of writing directly.
 
 ## 10. User-asset edits
@@ -270,10 +270,7 @@ All filenames are lowercase and hyphen-separated. Do not use spaces, underscores
 
 | Directory | Pattern | Example |
 | --- | --- | --- |
-| `hub/linkedin/` | `[section-name].md` | `headline-strategy.md` |
-| `hub/github/` | `[asset-or-topic].md` | `profile-readme.md` |
-| `hub/web-portfolio/` | `[concern].md` | `metadata-and-snippets.md` |
-| `hub/cv-ats/` | `[topic].md` | `formatting-rules.md` |
+| `hub/context-builder/` | `[topic].md` | `context-file-spec.md` |
 | `hub/<module>/sources.md` | `sources.md` | `sources.md` |
 
 ## 12. Contribution checklist

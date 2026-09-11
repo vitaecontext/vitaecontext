@@ -1,6 +1,6 @@
 ---
 name: vitaecontext
-description: Route broad or ambiguous VitaeContext work to the right module while keeping context scoped. Use when a request spans multiple surfaces, asks for overall digital-presence strategy, involves provider or install architecture, needs agent-context planning, or the correct platform skill is unclear.
+description: Route broad or ambiguous VitaeContext work to the right module while keeping context scoped. Use when a request spans the Career Context file and VitaeGraph, involves provider or install architecture, needs agent-context planning, or the correct VitaeContext skill is unclear.
 license: MIT
 metadata:
   homepage: https://vitaecontext.github.io/
@@ -38,16 +38,13 @@ Before loading detailed module context, resolve these five items from the reques
 
 Do not load a platform wiki merely because the skill has one. Load the module `SKILL.md` first, then only the references or wiki entry routed by the selected mode. Preserve the distinction between analysis and mutation: an audit does not authorize edits, while an explicit request to build, update, repair, or implement normally does.
 
-After the module finishes, require artifact-appropriate verification. Examples include a build or test for portfolio code, plain-text extraction for a final rendered CV, graph validation before VitaeGraph indexing, and factual comparison for public profile copy. If verification cannot run, report the missing check instead of implying completion.
+After the module finishes, require artifact-appropriate verification. Examples include Career Context validation after editing the context file and graph validation before VitaeGraph indexing. If verification cannot run, report the missing check instead of implying completion.
 
 For broad requests with no clear surface:
 
-- Active applications or job-description tailoring: route to `vitaecontext-cv`.
-- Recruiter discovery or profile search: route to `vitaecontext-linkedin`.
-- Proof-of-work, repositories, or developer credibility: route to `vitaecontext-github` or `vitaecontext-portfolio`, based on the supplied asset.
-- Audience building, posting strategy, or public conversation loops: route to `vitaecontext-x`.
 - Conflicting, scattered, or cross-platform facts: route to `vitaecontext-build` first.
 - Detailed multi-file career records, hierarchical education or project modeling, graph validation, or graph indexing: route to `vitaecontext-vitaegraph`.
+- Platform-specific adaptation, such as CV tailoring or profile rewrites, is outside VitaeContext: supply the Career Context file or a bounded summary packet to the tool doing that work.
 
 ## Token discipline
 
@@ -76,11 +73,6 @@ For broad requests with no clear surface:
 
 ## Module map
 
-- LinkedIn work: `vitaecontext-linkedin`
-- GitHub work: `vitaecontext-github`
-- CV or ATS work: `vitaecontext-cv`
-- Web portfolio work: `vitaecontext-portfolio`
-- X or Twitter work: `vitaecontext-x`
 - Personal source-of-truth context work: `vitaecontext-build`
 - Detailed career knowledge graph work: `vitaecontext-vitaegraph`
 

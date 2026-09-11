@@ -16,7 +16,7 @@ test("installs and uninstalls cursor provider", () => {
   installProvider(repoRoot, "cursor", config, { "target-dir": targetDir, force: true });
 
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext")), true);
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-cv")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-build")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-install.json")), true);
 
   uninstallProvider(repoRoot, "cursor", config, { "target-dir": targetDir, force: true });
@@ -29,7 +29,7 @@ test("installs and uninstalls windsurf provider", () => {
   installProvider(repoRoot, "windsurf", config, { "target-dir": targetDir, force: true });
 
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext")), true);
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-github")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-vitaegraph")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-install.json")), true);
 
   uninstallProvider(repoRoot, "windsurf", config, { "target-dir": targetDir, force: true });
@@ -40,31 +40,31 @@ test("installs and uninstalls roo-code provider", () => {
   const targetDir = fs.mkdtempSync(path.join(os.tmpdir(), "roo-install-"));
   installProvider(repoRoot, "roo-code", config, { "target-dir": targetDir, force: true });
 
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-linkedin")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-build")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-install.json")), true);
 
   uninstallProvider(repoRoot, "roo-code", config, { "target-dir": targetDir, force: true });
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-linkedin")), false);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-build")), false);
 });
 
 test("installs and uninstalls ibm-bob provider", () => {
   const targetDir = fs.mkdtempSync(path.join(os.tmpdir(), "ibm-install-"));
   installProvider(repoRoot, "ibm-bob", config, { "target-dir": targetDir, force: true });
 
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-portfolio")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-vitaegraph")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-install.json")), true);
 
   uninstallProvider(repoRoot, "ibm-bob", config, { "target-dir": targetDir, force: true });
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-portfolio")), false);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-vitaegraph")), false);
 });
 
 test("installs and uninstalls grok provider", () => {
   const targetDir = fs.mkdtempSync(path.join(os.tmpdir(), "grok-install-"));
   installProvider(repoRoot, "grok", config, { "target-dir": targetDir, force: true });
 
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-x")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-build")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-install.json")), true);
 
   uninstallProvider(repoRoot, "grok", config, { "target-dir": targetDir, force: true });
-  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-x")), false);
+  assert.equal(fs.existsSync(path.join(targetDir, "vitaecontext-build")), false);
 });

@@ -27,11 +27,6 @@ Use this module map:
 | Surface | Source file | Human docs | Runtime wiki | Runtime skill |
 |---|---|---|---|---|
 | Context Builder | [hub/context-builder/sources.md](./hub/context-builder/sources.md) | `hub/context-builder/README.md`, module playbooks, templates | [skills/vitaecontext-build/wiki/knowledge.md](./skills/vitaecontext-build/wiki/knowledge.md) | `skills/vitaecontext-build/SKILL.md` |
-| CV and ATS | [hub/cv-ats/sources.md](./hub/cv-ats/sources.md) | `hub/cv-ats/README.md`, module playbooks, templates | [skills/vitaecontext-cv/wiki/knowledge.md](./skills/vitaecontext-cv/wiki/knowledge.md) | `skills/vitaecontext-cv/SKILL.md` |
-| GitHub | [hub/github/sources.md](./hub/github/sources.md) | `hub/github/README.md`, module playbooks | [skills/vitaecontext-github/wiki/knowledge.md](./skills/vitaecontext-github/wiki/knowledge.md) | `skills/vitaecontext-github/SKILL.md` |
-| LinkedIn | [hub/linkedin/sources.md](./hub/linkedin/sources.md) | `hub/linkedin/README.md`, module playbooks | [skills/vitaecontext-linkedin/wiki/knowledge.md](./skills/vitaecontext-linkedin/wiki/knowledge.md) | `skills/vitaecontext-linkedin/SKILL.md` |
-| Web portfolio | [hub/web-portfolio/sources.md](./hub/web-portfolio/sources.md) | `hub/web-portfolio/README.md`, module playbooks | [skills/vitaecontext-portfolio/wiki/knowledge.md](./skills/vitaecontext-portfolio/wiki/knowledge.md) | `skills/vitaecontext-portfolio/SKILL.md` |
-| X/Twitter | [hub/x-twitter/sources.md](./hub/x-twitter/sources.md) | `hub/x-twitter/README.md`, module playbooks | [skills/vitaecontext-x/wiki/knowledge.md](./skills/vitaecontext-x/wiki/knowledge.md) | `skills/vitaecontext-x/SKILL.md` |
 
 ## What to update when a new skill or module is added
 

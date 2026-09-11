@@ -463,31 +463,6 @@ function validateRuntimeContracts(repoRoot, config, errors) {
       }
     }
   }
-
-  const vitaeGraphConsumers = [
-    "vitaecontext-cv",
-    "vitaecontext-github",
-    "vitaecontext-linkedin",
-    "vitaecontext-portfolio",
-    "vitaecontext-x"
-  ];
-  const legacyVocabulary = [
-    /direction and constraint records/i,
-    /target-direction records/i,
-    /private evidence and `avoid` records/i
-  ];
-  for (const skillName of vitaeGraphConsumers) {
-    const skillFile = path.join(bundleRoot, skillName, "SKILL.md");
-    if (!fs.existsSync(skillFile)) {
-      continue;
-    }
-    const content = fs.readFileSync(skillFile, "utf8");
-    for (const pattern of legacyVocabulary) {
-      if (pattern.test(content)) {
-        errors.push(`runtime skill uses legacy VitaeGraph vocabulary: ${skillName}/SKILL.md`);
-      }
-    }
-  }
 }
 
 // Validate the Claude Code marketplace manifests so the /plugin distribution channel

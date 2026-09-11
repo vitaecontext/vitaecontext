@@ -2,14 +2,14 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-08-30
+## As of 2026-09-11
 
 ### Public surfaces
 
 - Source repo: `https://github.com/vitaecontext/vitaecontext`
 - Website and human-readable hub: `https://vitaecontext.github.io/`
 - npm package: `https://www.npmjs.com/package/vitaecontext`
-- Current package version: `vitaecontext@2.2.2`
+- Current package version: `vitaecontext@2.3.0`
 
 Published release line:
 
@@ -24,6 +24,7 @@ Published release line:
 - `v2.2.0`
 - `v2.2.1`
 - `v2.2.2`
+- `v2.3.0`
 
 ### Current architecture
 
@@ -41,21 +42,16 @@ Published release line:
 
 ### Shipped skill coverage
 
-The installable user bundle ships eight portable runtime skill bundles:
+The installable user bundle ships three portable runtime skill bundles:
 
 - `vitaecontext`
 - `vitaecontext-build`
-- `vitaecontext-cv`
-- `vitaecontext-github`
-- `vitaecontext-linkedin`
 - `vitaecontext-vitaegraph`
-- `vitaecontext-portfolio`
-- `vitaecontext-x`
 
 Each runtime module carries:
 
 - `SKILL.md`, with a role-grounded professional persona in its overview and a `## Self-review` step that checks the draft for fabricated facts, evidence-label accuracy, scope and goal alignment, and impact ordering before returning
-- local `references/`, including an `audit-scoring.md` weighted 0-100 triage scorecard on the GitHub, LinkedIn, CV/ATS, and web-portfolio modules (an internal prioritization heuristic, not a platform ranking)
+- local `references/`
 - local `wiki/` entries where durable constraints, confidence labels, failure modes, and audit rules belong
 - `license` and a `metadata` block (homepage, repository) in frontmatter so provenance travels with the installed skill
 
@@ -65,9 +61,9 @@ VitaeGraph routes create, deepen, maintain, validate, index, retrieve, and migra
 
 The `vitaecontext-build` module treats a Career Context file as both a factual source of truth and a private positioning guide. Major creation and reconciliation work includes a personalization interview, a confirmed positioning synthesis, and a user-selected narrative hierarchy. The validator keeps QUICK REFERENCE and semantic tags stable while allowing experience-first, project-first, research-first, or education-first bodies. Purpose, ownership, claim states, means-versus-objective distinctions, restrained metrics, and explicit claims to avoid guide the resulting entries.
 
-For a GitHub username or public profile or repository source, `vitaecontext-build` now routes retrieval through the installed sibling `vitaecontext-github` fetcher. The workflow consumes its bounded Markdown and JSON reports, preserves extraction warnings as evidence limitations, removes temporary output after use, and falls back to supplied material or another public fetch tool when the sibling skill or network is unavailable.
+For a GitHub username or public profile or repository source, `vitaecontext-build` routes retrieval through its bundled GitHub fetcher. The workflow consumes its bounded Markdown and JSON reports, preserves extraction warnings as evidence limitations, removes temporary output after use, and falls back to supplied material or another public fetch tool when the fetcher or network is unavailable.
 
-The `vitaecontext-github` module includes a tokenless public-profile fetcher. It combines the unauthenticated GitHub API, public profile HTML, and raw README files without requesting a user token; distinguishes pinned repositories from the popular-repository fallback; defaults to three selected repositories; and emits Markdown plus JSON with repository metadata and extraction warnings. It creates a unique operating-system temporary directory by default instead of writing reports into the current repository.
+The fetcher is tokenless. It combines the unauthenticated GitHub API, public profile HTML, and raw README files without requesting a user token; distinguishes pinned repositories from the popular-repository fallback; defaults to three selected repositories; and emits Markdown plus JSON with repository metadata and extraction warnings. It creates a unique operating-system temporary directory by default instead of writing reports into the current repository.
 
 ### Install and distribution status
 
@@ -124,7 +120,7 @@ The runtime skill inventories supplied material before writing, processes one su
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
 - `vitaecontext doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters), `license`, configured-skill routing, self-review sections, portable runtime links, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
-- `vitaecontext-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the eight installed runtime skills.
+- `vitaecontext-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the three installed runtime skills.
 
 ### Website and discovery status
 

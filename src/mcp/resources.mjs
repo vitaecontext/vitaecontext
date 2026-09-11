@@ -7,12 +7,7 @@ import { findDefaultCareerContext, resolveDefaultVitaeGraph } from "./locator.mj
 const WIKI_MODULES = new Set([
   "vitaecontext",
   "vitaecontext-build",
-  "vitaecontext-cv",
-  "vitaecontext-github",
-  "vitaecontext-linkedin",
-  "vitaecontext-portfolio",
-  "vitaecontext-vitaegraph",
-  "vitaecontext-x"
+  "vitaecontext-vitaegraph"
 ]);
 
 function pathInside(root, relativePath) {

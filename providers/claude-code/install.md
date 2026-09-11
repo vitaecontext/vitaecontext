@@ -52,17 +52,12 @@ If you want a preview bundle instead of writing directly into the project, use t
 
 ## Important constraint
 
-The exact `/vitaecontext:linkedin` syntax is not the normal project-skill path for Claude Code. Local project commands live in `.claude/commands/`, but subdirectories do not create namespaced command names. The clean `plugin-name:skill-name` namespace exists for plugin skills.
+The exact `/vitaecontext:context` syntax is not the normal project-skill path for Claude Code. Local project commands live in `.claude/commands/`, but subdirectories do not create namespaced command names. The clean `plugin-name:skill-name` namespace exists for plugin skills.
 
 ## Practical recommendation
 
 Use the shared skills directly:
 
-- `vitaecontext-linkedin`
-- `vitaecontext-github`
-- `vitaecontext-cv`
-- `vitaecontext-portfolio`
-- `vitaecontext-x`
 - `vitaecontext-build`
 - `vitaecontext-vitaegraph`
 

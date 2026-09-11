@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/vitaecontext"><img src="https://img.shields.io/npm/v/vitaecontext?style=flat-square&logo=npm&color=CB3837" alt="npm version" /></a>
-  <a href="#modules"><img src="https://img.shields.io/badge/agent_skills-8-2563EB?style=flat-square" alt="8 agent skills" /></a>
+  <a href="#modules"><img src="https://img.shields.io/badge/agent_skills-3-2563EB?style=flat-square" alt="3 agent skills" /></a>
   <a href="#mcp-server"><img src="https://img.shields.io/badge/mcp_server-2024--11--05-0EA5E9?style=flat-square" alt="MCP Server" /></a>
   <a href="https://github.com/vitaecontext/vitaecontext/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/vitaecontext/vitaecontext/validate.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=build" alt="build status" /></a>
   <a href="https://github.com/vitaecontext/vitaecontext/stargazers"><img src="https://img.shields.io/github/stars/vitaecontext/vitaecontext?style=flat-square&logo=github&label=stars" alt="GitHub stars" /></a>
@@ -40,13 +40,13 @@ Every new AI chat starts with the same problem: the agent does not know which ca
 
 The usual result is repeated explanation, inconsistent profiles, generic writing, and occasionally invented claims.
 
-VitaeContext applies the familiar `AGENTS.md` and `CLAUDE.md` pattern to professional identity. Its Context Builder skill turns a user's raw career material into a private Markdown source of truth called a **Career Context file**. Focused skills then adapt that file for LinkedIn, GitHub, CV/ATS, web portfolios, and X/Twitter.
+VitaeContext applies the familiar `AGENTS.md` and `CLAUDE.md` pattern to professional identity. Its Context Builder skill turns a user's raw career material into a private Markdown source of truth called a **Career Context file**. A separate VitaeGraph skill keeps optional deeper career records, and a stateless MCP server makes both reusable across agents and downstream career tools.
 
 The goal is simple:
 
 - Explain professional context once instead of rebuilding it in every chat.
 - Keep facts, goals, constraints, proof links, and claims to avoid in one reusable file.
-- Adapt the same evidence to each platform without turning positioning into invention.
+- Reuse the same evidence in downstream tools without turning positioning into invention.
 - Reuse the workflow across supported AI coding agents via standard Agent Skills or a stateless MCP server.
 
 ### The context layer before career automation
@@ -63,10 +63,10 @@ VitaeContext sits one logical layer before those systems. It helps create and ma
 
 1. **Gather the raw material.** Start with CVs, profile sections, GitHub and portfolio links, exports, screenshots, and project notes.
 2. **Create the Career Context file with VitaeContext.** Give the raw material to an AI agent and invoke `vitaecontext-build`. The skill interviews the user about direction, defining evidence, priorities, and unwanted claims, then organizes the material into a private Markdown file with a stable retrieval interface and personalized narrative hierarchy.
-3. **Load one focused skill or query via MCP.** Use the LinkedIn, GitHub, CV/ATS, web portfolio, or X/Twitter module for the surface being improved.
-4. **Produce grounded work.** Get an audit, rewrite, patch proposal, or action plan based on the supplied context and platform guidance.
+3. **Reuse it via MCP or a bounded summary.** Query the context through the MCP server, or pass a bounded summary packet to the agent or career tool doing the work.
+4. **Produce grounded work.** Get an audit, rewrite, patch proposal, or action plan based on the supplied context.
 
-The Career Context file supplies facts and direction. Platform skills supply formatting, discoverability guidance, and channel-specific constraints. They do not become a second source of truth.
+The Career Context file supplies facts and direction. Downstream skills and tools supply platform formatting and channel-specific constraints. They do not become a second source of truth.
 
 ---
 
@@ -104,13 +104,6 @@ Ask an agent to build the context from trusted material:
 Use vitaecontext-build to create my Career Context file.
 I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
 screenshots, or other career material.
-```
-
-Then use one platform skill:
-
-```text
-Use vitaecontext-github to audit my GitHub profile for hiring visibility.
-Use my Career Context file at ~/.vitaecontext/name-surname-career-context.md.
 ```
 
 Keep the Career Context file private. A portable default location is:
@@ -190,17 +183,12 @@ npx vitaecontext graph index
 
 ## Modules
 
-VitaeContext ships one compact-context module, VitaeGraph, and five platform modules, coordinated by the root routing skill.
+VitaeContext ships one compact-context module and VitaeGraph, coordinated by the root routing skill.
 
 | Goal | Module | Public playbook |
 | --- | --- | --- |
 | Build the reusable Career Context layer | [`vitaecontext-build`](./hub/context-builder/README.md) | [Context Builder](https://vitaecontext.github.io/playbooks/context-builder/) |
 | Build a detailed local career knowledge graph | [`vitaecontext-vitaegraph`](./skills/vitaecontext-vitaegraph/SKILL.md) | [VitaeGraph specification and templates](./vitaegraph/README.md) |
-| Improve GitHub profile and repository discoverability | [`vitaecontext-github`](./hub/github/README.md) | [GitHub optimization](https://vitaecontext.github.io/playbooks/github/) |
-| Improve LinkedIn structure, search visibility, and proof | [`vitaecontext-linkedin`](./hub/linkedin/README.md) | [LinkedIn optimization](https://vitaecontext.github.io/playbooks/linkedin/) |
-| Tailor a CV or resume for ATS parsing and recruiter readability | [`vitaecontext-cv`](./hub/cv-ats/README.md) | [CV and ATS optimization](https://vitaecontext.github.io/playbooks/cv-ats/) |
-| Improve portfolio crawlability, SEO, and AI readability | [`vitaecontext-portfolio`](./hub/web-portfolio/README.md) | [Web portfolio optimization](https://vitaecontext.github.io/playbooks/web-portfolio/) |
-| Improve X/Twitter positioning and posting strategy | [`vitaecontext-x`](./hub/x-twitter/README.md) | [X/Twitter optimization](https://vitaecontext.github.io/playbooks/x-twitter/) |
 
 ---
 
@@ -219,7 +207,7 @@ Supported providers:
 | `shared` | Portable `SKILL.md` folders | Manual reuse or packaging |
 | `claude-code` | `~/.claude/skills/` | Ask for the installed skill by name |
 | `codex` | `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` | Use installed skills by name when available |
-| `gemini-cli` | `~/.gemini/extensions/vitaecontext/` | Namespaced commands such as `/vitaecontext:linkedin` |
+| `gemini-cli` | `~/.gemini/extensions/vitaecontext/` | Namespaced commands such as `/vitaecontext:context` |
 | `antigravity` | `~/.gemini/antigravity-cli/plugins/vitaecontext/` | Gemini-compatible plugin layout |
 | `opencode` | `~/.config/opencode/skills/` plus command wrappers | Native skill loading and flat command wrappers |
 | `cursor` | `.cursor/skills/` | Native Cursor Agent Skills |

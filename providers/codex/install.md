@@ -60,9 +60,7 @@ This is an additional distribution path, not a separate methodology source. Dire
 
 Codex skills are better treated as explicit skills than as slash commands. Design the Codex experience around selecting or explicitly invoking the shared skill, for example:
 
-- `$vitaecontext-linkedin`
-- `$vitaecontext-github`
-- `$vitaecontext-cv`
+- `$vitaecontext-build`
 - `$vitaecontext-vitaegraph`
 
 ## Practical recommendation

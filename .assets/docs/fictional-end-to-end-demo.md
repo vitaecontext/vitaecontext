@@ -32,7 +32,7 @@ Create the smallest GitHub packet:
 npx vitaecontext context summary hub/context-builder/examples/alex-morgan-fictional-career-context.md --for github --output /tmp/alex-github-context.md
 ```
 
-Then ask `vitaecontext-github` for an audit using the packet and an exact public profile or repository URL. The fictional brief demonstrates the expected evidence boundary before any live profile inspection.
+Then hand the packet to the agent or tool doing the GitHub work, together with an exact public profile or repository URL. The fictional brief demonstrates the expected evidence boundary before any live profile inspection.
 
 ## Acceptance criteria
 

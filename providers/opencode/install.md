@@ -66,11 +66,6 @@ The docs clearly describe flat custom command names from filenames, but they do 
 
 - `/vitaecontext-context`
 - `/vitaecontext-vitaegraph`
-- `/vitaecontext-linkedin`
-- `/vitaecontext-github`
-- `/vitaecontext-cv`
-- `/vitaecontext-portfolio`
-- `/vitaecontext-x`
 
 ## Practical recommendation
 

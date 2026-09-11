@@ -1,6 +1,6 @@
 # VitaeContext
 
-VitaeContext is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its Context Builder skill maintains a compact private career context file, while its separate VitaeGraph skill maintains an optional deeper local career knowledge graph. A stateless Model Context Protocol (MCP) server provides seamless cross-repository context access. Platform-specific skills, evidence labels, and provider-aware install layouts support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, Cursor, Windsurf, Roo Code, IBM Bob, Grok, and shared setups.
+VitaeContext is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. Its Context Builder skill maintains a compact private career context file, while its separate VitaeGraph skill maintains an optional deeper local career knowledge graph. A stateless Model Context Protocol (MCP) server provides seamless cross-repository context access. Evidence labels and provider-aware install layouts support Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, Cursor, Windsurf, Roo Code, IBM Bob, Grok, and shared setups.
 
 ## Root
 
@@ -15,12 +15,7 @@ VitaeContext is a portable Markdown-first skill bundle for agent-assisted profes
 ## Module wikis
 
 - [Context Builder](skills/vitaecontext-build/wiki/index.md): Career Context file structure, maintenance, validation, and handoff rules.
-- [CV ATS](skills/vitaecontext-cv/wiki/index.md): ATS-safe CV structure, parser constraints, tailoring, and audit rules.
-- [GitHub](skills/vitaecontext-github/wiki/index.md): GitHub profile, repository, search, Linguist, and agent-readiness rules.
-- [LinkedIn](skills/vitaecontext-linkedin/wiki/index.md): LinkedIn profile architecture, search visibility, activity, and algorithm-confidence rules.
 - [VitaeGraph](skills/vitaecontext-vitaegraph/wiki/index.md): Deep hierarchical career records, progressive retrieval, validation, and generated artifacts.
-- [Web portfolio](skills/vitaecontext-portfolio/wiki/index.md): Portfolio SEO, metadata, structured data, AI retrieval, and `llms.txt` rules.
-- [X/Twitter](skills/vitaecontext-x/wiki/index.md): X/Twitter profile, post, engagement, Premium, and ranking-confidence rules.
 
 ## Public surfaces
 

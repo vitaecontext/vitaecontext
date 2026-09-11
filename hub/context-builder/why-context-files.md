@@ -45,7 +45,7 @@ The outputs this enables are qualitatively different. A cover letter generated f
 
 ## 4. What you can do with the file
 
-The examples below are the kinds of prompts you write once the file exists. Each one assumes the context file is loaded into the session alongside any relevant Skill submodule.
+The examples below are the kinds of prompts you write once the file exists. Each one assumes the context file is loaded into the session alongside any platform-specific rules you use.
 
 ```text
 Using my context file, write a cover letter for this job description.
@@ -55,14 +55,14 @@ Emphasize the eBPF kernel research and the Huawei PQC thesis.
 
 ```text
 Update the About section of my LinkedIn profile based on my current
-positioning in the context file. Apply the rules in the linkedin submodule.
+positioning in the context file.
 Target audience: security research groups and senior engineering recruiters.
 ```
 
 ```text
 Generate a one-page CV tailored for a cryptography research internship.
 Use only the content from my context file that is directly relevant.
-Format it for ATS compatibility following the cv-ats submodule rules.
+Keep the format ATS-compatible.
 ```
 
 ```text
@@ -71,7 +71,7 @@ for a security analyst role. Base the answers strictly on verified facts
 in the file, not on general knowledge.
 ```
 
-These are not special prompts that require new skills to write. They are the natural result of having all your facts organized in one place. The context file is the input. The Skill submodules in this repository are the rules. The agent is the executor.
+These are not special prompts that require new skills to write. They are the natural result of having all your facts organized in one place. The context file is the input. Platform-specific rules come from the tools you choose. The agent is the executor.
 
 ## 5. Why this outperforms the alternatives
 

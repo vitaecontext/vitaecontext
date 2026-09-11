@@ -2,22 +2,22 @@
 metadata:
   title: "Agent workflow for context file users"
   platform: "general"
-  objective: "Explains how to invoke the context file in an agent session, how to combine it with Skill submodules, and what good output looks like for each major task type."
+  objective: "Explains how to invoke the context file in an agent session, how to combine it with platform-specific tools, and what good output looks like for each major task type."
   status: "draft"
-  last_updated: "2026-08-22"
+  last_updated: "2026-09-11"
   tags: ["context-file", "workflow", "prompting", "agent", "skill"]
   agent_priority: "medium"
 -->
 
 # Agent workflow for context file users
 
-> Practical instructions for using a Career Context file in an agent session, covering invocation patterns, Skill submodule routing, prompt templates, and output quality criteria for the four most common career tasks.
+> Practical instructions for using a Career Context file in an agent session, covering invocation patterns, platform-specific tool routing, prompt templates, and output quality criteria for the four most common career tasks.
 
 ---
 
 ## 1. Overview
 
-This file is for users who have already built a Career Context file following the rules in [context-file-spec.md](./context-file-spec.md). It explains how to load the file into an agent session, how to write effective task prompts, and how to combine the context file with platform-specific Skill submodules. The outcome of following this workflow is accurate, platform-ready career outputs that require minimal editing.
+This file is for users who have already built a Career Context file following the rules in [context-file-spec.md](./context-file-spec.md). It explains how to load the file into an agent session, how to write effective task prompts, and how to combine the context file with platform-specific tools. The outcome of following this workflow is accurate, platform-ready career outputs that require minimal editing.
 
 ## 2. Invoking the context file
 
@@ -47,7 +47,7 @@ The safest way to use a context file is to pass the path explicitly in the promp
 
 ### 2.3 What the agent can and cannot do without additional input
 
-The agent can generate, reword, tailor, and format outputs using the facts in the context file. It can select the most relevant subset of your experience for a given role, apply platform-specific formatting rules from a Skill submodule, and produce outputs in the correct tone and length.
+The agent can generate, reword, tailor, and format outputs using the facts in the context file. It can select the most relevant subset of your experience for a given role, apply platform-specific formatting rules you supply, and produce outputs in the correct tone and length.
 
 The agent cannot verify facts that are not in the file. If a skill is listed in the Skills index but has no supporting evidence in a course, project, or role section, the agent cannot justify it in a cover letter. The agent also cannot make positioning decisions that are not stated in the file. If the QUICK REFERENCE block lists two target roles, the agent will generate content appropriate to both unless you specify which one to prioritize in the task prompt. Finally, the agent cannot know about professional developments that occurred after the file was last updated. The context file is the agent's only source of truth for your career record.
 
@@ -77,23 +77,21 @@ Do not add skills, projects, or roles that are not in the file.
 ### 3.2 LinkedIn section rewrite
 
 ```text
-Using my context file and the rules in the linkedin Skill submodule,
+Using my context file,
 rewrite my LinkedIn [About | Headline | Experience entry for ROLE NAME].
 
 Constraints:
 - Target audience: [e.g., security research groups and senior engineering recruiters]
 - Positioning: use the target_roles, growth_direction, evidence_boundaries, positioning_constraints, claims_to_avoid, and top_skills from the QUICK REFERENCE block and Goals and targeting section
-- Length: follow the platform limits defined in the linkedin submodule
+- Length: follow LinkedIn's current section limits
 - Do not use the first person in the headline
 - Include the strongest relevant evidence; use a metric only when the context file explains why it matters
-
-Reference the linkedin submodule formatting rules for section structure and keyword placement.
 ```
 
 ### 3.3 CV variant
 
 ```text
-Using my context file and the rules in the cv-ats Skill submodule,
+Using my context file,
 generate a one-page CV tailored for the following role:
 
 Target role: [e.g., Cryptography Research Intern]
@@ -103,7 +101,7 @@ Selection rules:
 - Include all entries tagged [THESIS], [ROLE], and [CERT] that are directly relevant
 - Include the three most relevant [PROJECT] entries based on keyword overlap with the role
 - Omit coursework that has no direct relevance to the target role
-- Apply ATS formatting rules from the cv-ats submodule
+- Keep the layout parser-safe for applicant tracking systems
 
 Format: single column, no tables, machine-readable fonts only.
 ```
@@ -123,29 +121,13 @@ Requirements:
 Do not invent results or technologies not present in the context file.
 ```
 
-## 4. Combining the context file with Skill submodules
+## 4. Combining the context file with platform-specific tools
 
-The Skill submodules in this repository contain platform-specific rules that the agent applies on top of the facts in your context file. Loading both together gives the agent both the content (from your context file) and the formatting and quality rules (from the submodule).
+VitaeContext supplies the facts. Platform-specific formatting and quality rules come from whichever skill or tool you use for that surface. Loading both together gives the agent both the content (from your context file) and the rules (from the tool).
 
-The table below shows the correct submodule to load for each common task.
+**Rule:** Always load the context file first, then the platform rules. If you load only the rules, the agent has rules but no content. If you load only the context file, the agent has content but no platform-specific rules.
 
-| Task | Submodule to load |
-|---|---|
-| LinkedIn headline, About, or Experience | `linkedin` |
-| GitHub profile README or repository README | `github` |
-| CV or ATS optimization | `cv-ats` |
-| Portfolio page copy | `web-portfolio` |
-| X/Twitter profile, bio, pinned post, or posting plan | `x-twitter` |
-
-**Rule:** Always load the context file first, then the submodule. If you load only the submodule, the agent has rules but no content. If you load only the context file, the agent has content but no platform-specific rules.
-
-### 4.1 Example: ATS-optimized CV
-
-To generate an ATS-optimized CV, load the context file and the `cv-ats` submodule together, then use the CV variant prompt template from section 3.3. The agent applies the keyword extraction rules, formatting constraints, and section ordering from the submodule to the content from your context file.
-
-### 4.2 Example: LinkedIn About section
-
-To rewrite the About section, load the context file and the `linkedin` submodule together, then use the LinkedIn section rewrite template from section 3.2. The agent applies character limits, keyword placement rules, and the platform's first-person conventions to the positioning data from your QUICK REFERENCE block and the body of your context file.
+For a smaller input, pass a bounded packet from `vitaecontext context summary <file> --for <surface>` instead of the full file.
 
 ## 5. What good output looks like
 
@@ -164,7 +146,7 @@ A good cover letter output:
 
 A good LinkedIn section output:
 - Uses the exact positioning language from the QUICK REFERENCE block.
-- Stays within the character limits defined in the `linkedin` submodule.
+- Stays within LinkedIn's current character limits.
 - Includes at least one keyword that appears in the `top_skills` field of the QUICK REFERENCE block.
 - Does not begin with a first-person pronoun in the About section opener.
 

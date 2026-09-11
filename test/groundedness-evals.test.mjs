@@ -11,7 +11,7 @@ const config = loadConfig(repoRoot);
 const skillSources = new Map(config.skills.map((skill) => [skill.name, path.join(repoRoot, skill.source, "SKILL.md")]));
 
 test("groundedness fixtures are unique, fictional, and anchored to shipped runtime contracts", () => {
-  assert.equal(scenarios.length >= 6, true);
+  assert.equal(scenarios.length >= 3, true);
   assert.equal(new Set(scenarios.map((scenario) => scenario.id)).size, scenarios.length);
   for (const scenario of scenarios) {
     assert.equal(skillSources.has(scenario.skill), true, `${scenario.id} uses an unshipped skill`);

@@ -13,7 +13,7 @@ metadata:
 
 # VitaeContext
 
-> VitaeContext is a portable skill bundle for agent-assisted professional discoverability work. It gives agents a context-first workflow, platform-specific methods, and provider-aware install layouts.
+> VitaeContext is a portable skill bundle for building and reusing private career context. It gives agents a context-first workflow, an optional deeper career knowledge graph, and provider-aware install layouts.
 
 ## 1. Load contract
 
@@ -23,15 +23,10 @@ If this file is unavailable in an older install, use `SKILL.md`, `references/ins
 
 ## 2. Canonical definition
 
-VitaeContext is an installable set of Markdown-first agent skills for improving public professional surfaces:
+VitaeContext is an installable set of Markdown-first agent skills for maintaining private career context:
 
 - Career Context files
 - Private VitaeGraph career knowledge graphs
-- LinkedIn profiles
-- GitHub profiles and repositories
-- CV and resume material for ATS-safe parsing
-- Web portfolios
-- X/Twitter profiles and posting surfaces
 
 The package is distributed as `vitaecontext` on npm. Its stable runtime unit is a folder containing `SKILL.md` plus supporting references. Provider adapters copy or wrap those shared skill folders for different agent environments.
 
@@ -39,7 +34,7 @@ The package is distributed as `vitaecontext` on npm. Its stable runtime unit is 
 
 Context Builder, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
 
-The resulting Career Context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Platform skills use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
+The resulting Career Context file stores verified identity, education, experience, projects, achievements, links, target roles, growth direction, evidence boundaries, constraints, claims to avoid, and positioning notes. Downstream skills and tools use that file as factual and directional input. They should not invent missing credentials, metrics, projects, employers, testimonials, responsibilities, or mature expertise for a future direction that is only stated as intent.
 
 The context file is private user material. Do not commit it to this repository or include it in public generated docs.
 
@@ -128,12 +123,7 @@ Human hub files explain playbooks, examples, templates, and source ledgers. Runt
 ## 10. See also
 
 - [Context Builder wiki index](../../vitaecontext-build/wiki/index.md)
-- [CV ATS wiki index](../../vitaecontext-cv/wiki/index.md)
-- [GitHub wiki index](../../vitaecontext-github/wiki/index.md)
-- [LinkedIn wiki index](../../vitaecontext-linkedin/wiki/index.md)
 - [VitaeGraph wiki index](../../vitaecontext-vitaegraph/wiki/index.md)
-- [Web portfolio wiki index](../../vitaecontext-portfolio/wiki/index.md)
-- [X Twitter wiki index](../../vitaecontext-x/wiki/index.md)
 - [Getting started](https://github.com/vitaecontext/vitaecontext/blob/main/.assets/docs/getting-started.md)
 - [End-to-end demos](https://github.com/vitaecontext/vitaecontext/blob/main/.assets/docs/end-to-end-workflows.md)
 - [llms.txt](https://vitaecontext.github.io/llms.txt)

@@ -6,7 +6,7 @@ This document records the architectural decisions, structural contracts, and val
 
 VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.
 
-The project is career-context infrastructure. The platform-specific modules apply and adapt that context to particular professional surfaces.
+The project is career-context infrastructure. Platform-specific adaptation of that context is left to downstream tools.
 
 ## 2. Core principles
 
@@ -27,12 +27,7 @@ hub/
 skills/
   vitaecontext/
   vitaecontext-build/
-  vitaecontext-cv/
-  vitaecontext-github/
-  vitaecontext-linkedin/
   vitaecontext-vitaegraph/
-  vitaecontext-portfolio/
-  vitaecontext-x/
 providers/
   claude-code/
   codex/
@@ -55,11 +50,6 @@ The `hub/` directory is the human-readable layer. It contains playbooks, templat
 Current hub modules:
 
 - `hub/context-builder/`
-- `hub/cv-ats/`
-- `hub/github/`
-- `hub/linkedin/`
-- `hub/web-portfolio/`
-- `hub/x-twitter/`
 
 VitaeGraph is intentionally not under `hub/`. Its root [`vitaegraph/`](../../vitaegraph/) directory is the product entrypoint for the graph artifact contract: schemas, graph model, and canonical Markdown templates.
 
@@ -93,16 +83,11 @@ The package ships these shared skills:
 
 - `vitaecontext`: orchestration, routing, package architecture, provider strategy
 - `vitaecontext-build`: private professional source-of-truth files
-- `vitaecontext-cv`: ATS-safe CV and resume work
-- `vitaecontext-github`: GitHub profile, repository, search, and agent-readiness work
-- `vitaecontext-linkedin`: LinkedIn profile, search, positioning, and activity work
 - `vitaecontext-vitaegraph`: private hierarchical career knowledge graphs, record enrichment, validation, and selective retrieval
-- `vitaecontext-portfolio`: portfolio SEO, metadata, structured data, AI retrieval, and crawlability
-- `vitaecontext-x`: X/Twitter profile, posting, Premium, and engagement guidance
 
-This modular shape solves the context-window problem: a LinkedIn task should load the LinkedIn skill, not the whole system.
+This modular shape solves the context-window problem: a VitaeGraph task should load the VitaeGraph skill, not the whole system.
 
-Each user-facing module opens its `SKILL.md` from a role-grounded professional persona and runs a `## Self-review` step before returning, checking for fabricated facts, evidence-label accuracy, scope and goal alignment, and impact ordering. The GitHub, LinkedIn, CV/ATS, and web-portfolio modules also ship an `audit-scoring.md` weighted 0-100 triage scorecard used strictly as an internal prioritization heuristic, not a platform ranking.
+Each user-facing module opens its `SKILL.md` from a role-grounded professional persona and runs a `## Self-review` step before returning, checking for fabricated facts, evidence-label accuracy, scope and goal alignment, and impact ordering.
 
 The root orchestrator resolves the primary surface, task mode, mutation authority, evidence scope, and bounded depth before loading module detail. VitaeGraph separately routes create, deepen, maintain, validate, index, retrieve, and migrate operations so read-only graph work does not enter the full build workflow.
 

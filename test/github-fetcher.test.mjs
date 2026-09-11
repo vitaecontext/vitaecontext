@@ -13,7 +13,7 @@ import {
   parseRepositoryListHtml,
   renderMarkdownReport,
   renderRepositoryMarkdownReport
-} from "../skills/vitaecontext-github/scripts/github-fetcher.mjs";
+} from "../skills/vitaecontext-build/scripts/github-fetcher.mjs";
 
 const PROFILE_WITH_PINS = `
 <meta property="og:image" content="https://avatars.example/user.png">
@@ -67,13 +67,13 @@ test("context builder routes public GitHub sources through the bundled fetcher",
     "utf8"
   );
   const fetcherUrl = new URL(
-    "../skills/vitaecontext-github/scripts/github-fetcher.mjs",
+    "../skills/vitaecontext-build/scripts/github-fetcher.mjs",
     import.meta.url
   );
 
   assert.match(
     buildSkill,
-    /\.\.\/vitaecontext-github\/scripts\/github-fetcher\.mjs <github-username-or-url>/
+    /<context_skill_dir>\/scripts\/github-fetcher\.mjs <github-username-or-url>/
   );
   assert.equal(fs.existsSync(fetcherUrl), true);
 });
