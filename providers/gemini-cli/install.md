@@ -20,11 +20,6 @@ Gemini CLI exposes the nested command files as namespaced commands:
 
 - `/vitaecontext:context`
 - `/vitaecontext:vitaegraph`
-- `/vitaecontext:linkedin`
-- `/vitaecontext:github`
-- `/vitaecontext:cv`
-- `/vitaecontext:portfolio`
-- `/vitaecontext:x`
 
 After installing or changing the extension, restart Gemini CLI. For loose custom command files, Gemini also supports `/commands reload`, but extension changes are picked up on restart.
 
@@ -64,7 +59,7 @@ instead of duplicating long-lived packaging files at the repo root by hand.
 
 ## Why Gemini CLI is a strong fit for namespaced commands
 
-Gemini CLI documents namespaced custom commands derived from nested command file paths. That makes `/vitaecontext:linkedin` a good fit for Gemini CLI command wrappers.
+Gemini CLI documents namespaced custom commands derived from nested command file paths. That makes `/vitaecontext:context` a good fit for Gemini CLI command wrappers.
 
 ## Practical recommendation
 

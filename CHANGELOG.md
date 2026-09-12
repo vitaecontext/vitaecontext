@@ -4,6 +4,18 @@ All notable changes to VitaeContext are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
+## 2.3.0 - 2026-09-11
+
+### Removed
+
+- Removed the platform adaptation modules `vitaecontext-cv`, `vitaecontext-github`, `vitaecontext-linkedin`, `vitaecontext-portfolio`, and `vitaecontext-x`, together with their `hub/` playbooks, Gemini CLI, Antigravity, and OpenCode command wrappers, groundedness fixtures, and their `vitaecontext://wiki/{module}` MCP resources. VitaeContext now focuses on building, maintaining, and reusing the Career Context file and VitaeGraph; platform-specific adaptation is left to downstream tools.
+- Reinstalling does not delete previously installed module folders. To remove the retired modules from an existing install, run `npx vitaecontext@latest uninstall --provider <provider>`, which removes every skill recorded in the existing install manifest, then install again.
+
+### Changed
+
+- Moved the tokenless GitHub public-profile fetcher to `skills/vitaecontext-build/scripts/github-fetcher.mjs`. `vitaecontext-build` and `vitaecontext-vitaegraph` still use it to import public GitHub profiles and repositories as career material.
+- Narrowed the root `vitaecontext` routing skill and the maintainer-only wiki workflow to the Context Builder and VitaeGraph modules.
+
 ## 2.2.2 - 2026-08-30
 
 ### Fixed

@@ -14,28 +14,8 @@
       "source": "skills/vitaecontext-build"
     },
     {
-      "name": "vitaecontext-cv",
-      "source": "skills/vitaecontext-cv"
-    },
-    {
-      "name": "vitaecontext-github",
-      "source": "skills/vitaecontext-github"
-    },
-    {
-      "name": "vitaecontext-linkedin",
-      "source": "skills/vitaecontext-linkedin"
-    },
-    {
       "name": "vitaecontext-vitaegraph",
       "source": "skills/vitaecontext-vitaegraph"
-    },
-    {
-      "name": "vitaecontext-portfolio",
-      "source": "skills/vitaecontext-portfolio"
-    },
-    {
-      "name": "vitaecontext-x",
-      "source": "skills/vitaecontext-x"
     }
   ],
   "providers": {
@@ -130,28 +110,8 @@
           "source": "providers/gemini-cli/commands/vitaecontext/context.toml"
         },
         {
-          "name": "vitaecontext:cv",
-          "source": "providers/gemini-cli/commands/vitaecontext/cv.toml"
-        },
-        {
-          "name": "vitaecontext:github",
-          "source": "providers/gemini-cli/commands/vitaecontext/github.toml"
-        },
-        {
-          "name": "vitaecontext:linkedin",
-          "source": "providers/gemini-cli/commands/vitaecontext/linkedin.toml"
-        },
-        {
           "name": "vitaecontext:vitaegraph",
           "source": "providers/gemini-cli/commands/vitaecontext/vitaegraph.toml"
-        },
-        {
-          "name": "vitaecontext:portfolio",
-          "source": "providers/gemini-cli/commands/vitaecontext/portfolio.toml"
-        },
-        {
-          "name": "vitaecontext:x",
-          "source": "providers/gemini-cli/commands/vitaecontext/x.toml"
         }
       ]
     },
@@ -182,28 +142,8 @@
           "source": "providers/antigravity/commands/vitaecontext/context.toml"
         },
         {
-          "name": "vitaecontext:cv",
-          "source": "providers/antigravity/commands/vitaecontext/cv.toml"
-        },
-        {
-          "name": "vitaecontext:github",
-          "source": "providers/antigravity/commands/vitaecontext/github.toml"
-        },
-        {
-          "name": "vitaecontext:linkedin",
-          "source": "providers/antigravity/commands/vitaecontext/linkedin.toml"
-        },
-        {
           "name": "vitaecontext:vitaegraph",
           "source": "providers/antigravity/commands/vitaecontext/vitaegraph.toml"
-        },
-        {
-          "name": "vitaecontext:portfolio",
-          "source": "providers/antigravity/commands/vitaecontext/portfolio.toml"
-        },
-        {
-          "name": "vitaecontext:x",
-          "source": "providers/antigravity/commands/vitaecontext/x.toml"
         }
       ]
     },
@@ -222,28 +162,8 @@
           "source": "providers/opencode/commands/vitaecontext-context.md"
         },
         {
-          "name": "vitaecontext-cv",
-          "source": "providers/opencode/commands/vitaecontext-cv.md"
-        },
-        {
-          "name": "vitaecontext-github",
-          "source": "providers/opencode/commands/vitaecontext-github.md"
-        },
-        {
-          "name": "vitaecontext-linkedin",
-          "source": "providers/opencode/commands/vitaecontext-linkedin.md"
-        },
-        {
           "name": "vitaecontext-vitaegraph",
           "source": "providers/opencode/commands/vitaecontext-vitaegraph.md"
-        },
-        {
-          "name": "vitaecontext-portfolio",
-          "source": "providers/opencode/commands/vitaecontext-portfolio.md"
-        },
-        {
-          "name": "vitaecontext-x",
-          "source": "providers/opencode/commands/vitaecontext-x.md"
         }
       ]
     }

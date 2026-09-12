@@ -8,7 +8,7 @@ Follow the repository map in `.assets/docs/architecture-map.md` before suggestin
 - `providers/` contains provider adapters only.
 - `src/` and `bin/` contain the core engine, CLI, and stateless MCP server.
 - `mcp/` contains Model Context Protocol documentation, configs, and schema contracts.
-- Human-readable Knowledge Hub docs live under `hub/`, such as `hub/github/`, `hub/linkedin/`, `hub/cv-ats/`, `hub/web-portfolio/`, and `hub/x-twitter/`.
+- Human-readable Knowledge Hub docs live under `hub/`, such as `hub/context-builder/`.
 - `.assets/docs/STYLEGUIDE.md` defines Markdown conventions for docs, examples, templates, and references.
 
 ## Coding and documentation rules

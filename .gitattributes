@@ -7,6 +7,3 @@ providers/**/*.md linguist-documentation=true
 hub/** linguist-documentation=true
 mcp/**/*.md linguist-documentation=true
 vitaegraph/** linguist-documentation=true
-
-# LaTeX files are CV examples/templates, not the implementation language.
-hub/cv-ats/**/*.tex linguist-documentation=true

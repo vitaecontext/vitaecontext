@@ -5,10 +5,10 @@ This matrix captures adapter assumptions as of August 17, 2026. Verify current p
 | Provider | Shared skill-bundle fit | Custom command fit | Best user-facing module trigger |
 | --- | --- | --- | --- |
 | Claude Code | Strong | Strong for plugins; local command directories do not create colon namespacing | Direct skill use or marketplace plugin |
-| Codex | Strong through direct skills and the generated native plugin bundle | Do not assume slash wrappers are the primary interface | Explicit skill selection such as `$vitaecontext-linkedin` |
-| Gemini CLI | Strong | Strong, with documented namespaced commands from nested paths | `/vitaecontext:linkedin` |
-| Antigravity CLI | Strong | Unknown at launch; imports Gemini extensions as plugins, but command names need live confirmation | Native plugin or skill discovery first; Gemini-style `/vitaecontext:linkedin` remains TBD |
-| OpenCode | Strong | Strong, with documented flat commands from Markdown filenames | Native skill loading or `/vitaecontext-linkedin` |
+| Codex | Strong through direct skills and the generated native plugin bundle | Do not assume slash wrappers are the primary interface | Explicit skill selection such as `$vitaecontext-build` |
+| Gemini CLI | Strong | Strong, with documented namespaced commands from nested paths | `/vitaecontext:context` |
+| Antigravity CLI | Strong | Unknown at launch; imports Gemini extensions as plugins, but command names need live confirmation | Native plugin or skill discovery first; Gemini-style `/vitaecontext:context` remains TBD |
+| OpenCode | Strong | Strong, with documented flat commands from Markdown filenames | Native skill loading or `/vitaecontext-context` |
 | Cursor | Strong | Native Agent Skills in `.cursor/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |
 | Windsurf | Strong | Native Cascade Skills in `.windsurf/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |
 | Roo Code | Strong | Native Skills in `.roo/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |

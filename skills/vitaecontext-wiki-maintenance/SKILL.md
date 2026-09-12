@@ -25,22 +25,12 @@ This skill is for repository maintainers working from a local clone. It is never
 Use only these module ids:
 
 - `context-builder`
-- `cv-ats`
-- `github`
-- `linkedin`
-- `web-portfolio`
-- `x-twitter`
 
 Map each module id to its runtime skill folder:
 
 | Module id | Runtime skill folder |
 |---|---|
 | `context-builder` | `skills/vitaecontext-build/` |
-| `cv-ats` | `skills/vitaecontext-cv/` |
-| `github` | `skills/vitaecontext-github/` |
-| `linkedin` | `skills/vitaecontext-linkedin/` |
-| `web-portfolio` | `skills/vitaecontext-portfolio/` |
-| `x-twitter` | `skills/vitaecontext-x/` |
 
 ## Source handling rules
 
@@ -141,7 +131,7 @@ Use vitaecontext-wiki-maintenance to audit all modules
 
 Workflow:
 
-1. Spawn parallel subagent tasks for the six module ids: `context-builder`, `cv-ats`, `github`, `linkedin`, `web-portfolio`, and `x-twitter`.
+1. Spawn parallel subagent tasks for each allowed module id.
 2. Each subagent runs Mode 1 through step 10 only. It produces a proposed patch and forbidden-file follow-up list, but performs no writes.
 3. Collect the proposed patches into one unified audit report:
    - Per module: sources fetched, claims changed, confidence movements, new claims, and flagged removals.
@@ -152,7 +142,7 @@ Workflow:
 5. Ask which modules to apply, which to skip, and which require further review.
 6. Apply only confirmed module patches. Regenerate `llms-full.txt` once after all confirmed writes. Run `npm run validate` once after all confirmed writes.
 
-If subagent tooling is unavailable, run the six module audits sequentially and state that parallel subagents were unavailable.
+If subagent tooling is unavailable, run the module audits sequentially and state that parallel subagents were unavailable.
 
 ## Mode 4: Internal contract audit
 

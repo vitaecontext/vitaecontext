@@ -34,7 +34,7 @@ Specification for the VitaeContext Model Context Protocol (MCP) server interface
       },
       "serverInfo": {
         "name": "vitaecontext",
-        "version": "2.2.2"
+        "version": "2.3.0"
       }
     }
   }
@@ -58,7 +58,7 @@ Specification for the VitaeContext Model Context Protocol (MCP) server interface
 
 ### `vitaecontext://wiki/{module}`
 * **MIME type**: `text/markdown`
-* **Description**: Reads durable platform rules for a given module (`cv`, `github`, `linkedin`, `portfolio`, `x`, `vitaegraph`, `build`).
+* **Description**: Reads the wiki entry for a given module (`vitaecontext`, `build`, `vitaegraph`).
 
 ---
 

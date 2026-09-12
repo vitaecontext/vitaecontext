@@ -6,11 +6,6 @@ Use the command-specific prompt to select the relevant module, then read the mat
 
 ## Module Map
 
-- `vitaecontext:linkedin`: `skills/vitaecontext-linkedin/SKILL.md`
-- `vitaecontext:github`: `skills/vitaecontext-github/SKILL.md`
-- `vitaecontext:cv`: `skills/vitaecontext-cv/SKILL.md`
-- `vitaecontext:portfolio`: `skills/vitaecontext-portfolio/SKILL.md`
-- `vitaecontext:x`: `skills/vitaecontext-x/SKILL.md`
 - `vitaecontext:context`: `skills/vitaecontext-build/SKILL.md`
 - `vitaecontext:vitaegraph`: `skills/vitaecontext-vitaegraph/SKILL.md`
 

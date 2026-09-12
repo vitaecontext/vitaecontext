@@ -103,12 +103,7 @@ Provider wrappers must route to the shared skill names:
 
 - `vitaecontext`
 - `vitaecontext-build`
-- `vitaecontext-cv`
-- `vitaecontext-github`
-- `vitaecontext-linkedin`
 - `vitaecontext-vitaegraph`
-- `vitaecontext-portfolio`
-- `vitaecontext-x`
 
 ## 7. Release checklist
 

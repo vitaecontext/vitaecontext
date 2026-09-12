@@ -216,7 +216,7 @@ The environment variables `VITAECONTEXT_CAREER_CONTEXT` and `VITAEGRAPH_ROOT` pr
 | `career-context://current` | Returns the user's private Career Context markdown from `~/.vitaecontext/`. | `text/markdown` |
 | `vitaegraph://index` | Returns the indexed graph nodes JSON from `~/.vitaecontext/vitaegraph/.generated/graph.json`. | `application/json` |
 | `vitaegraph://record/{id}` | Reads a specific record markdown by stable ID (e.g. `project:local-search-engine`). | `text/markdown` |
-| `vitaecontext://wiki/{module}` | Reads the platform rules and constraint wiki for a module (e.g. `github`, `linkedin`, `cv`, `portfolio`, `x`). | `text/markdown` |
+| `vitaecontext://wiki/{module}` | Reads the wiki entry for a module (`vitaecontext`, `build`, `vitaegraph`). | `text/markdown` |
 
 ### Tools
 
@@ -279,7 +279,7 @@ npx @modelcontextprotocol/inspector npx -y vitaecontext mcp
 2. Click **Connect** (Transport: `STDIO`).
 3. Explore and test:
    * **Tools Tab**: Execute `get_career_context` with `{ "for": "github" }`.
-   * **Resources Tab**: Read `career-context://current` or `vitaecontext://wiki/github`.
+   * **Resources Tab**: Read `career-context://current` or `vitaecontext://wiki/build`.
    * **Prompts Tab**: Render `cv_tailoring` with `{ "targetRole": "Lead Systems Architect" }`.
 
 ### Method 2: Command-Line `stdio` Piping

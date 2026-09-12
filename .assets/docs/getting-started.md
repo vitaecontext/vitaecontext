@@ -1,6 +1,6 @@
 # VitaeContext getting started
 
-This guide gives new users and new contributors the shortest safe path through the repository (current release line: vitaecontext 2.2.2). It explains which files to read first, which commands to run, and when to switch from human docs to runtime skill files.
+This guide gives new users and new contributors the shortest safe path through the repository (current release line: vitaecontext 2.3.0). It explains which files to read first, which commands to run, and when to switch from human docs to runtime skill files.
 
 ## 1. Choose the right path
 
@@ -13,7 +13,6 @@ Use this table before opening deeper files.
 | See what a skill-ready agent can do | [end-to-end-workflows.md](./end-to-end-workflows.md) | The matching runtime skill |
 | Build a Career Context file | [hub/context-builder/README.md](../../hub/context-builder/README.md) | [Context Builder skill](../../skills/vitaecontext-build/SKILL.md) |
 | Build, maintain, validate, or retrieve a detailed private career graph | [vitaegraph/README.md](../../vitaegraph/README.md) | [VitaeGraph skill](../../skills/vitaecontext-vitaegraph/SKILL.md) |
-| Optimize one public surface | The matching `hub/<module>/README.md` | The matching `skills/vitaecontext-<module>/SKILL.md` |
 | Understand the design thinking and concepts applied | [DESIGN.md](../../DESIGN.md) | [architecture-map.md](./architecture-map.md) |
 | Understand the repo architecture | [architecture-map.md](./architecture-map.md) | [Project overview](../../README.md) |
 | Understand the runtime knowledge graph | [root runtime wiki](../../skills/vitaecontext/wiki/vitaecontext.md) | [llms.txt](../../llms.txt) |
@@ -93,13 +92,6 @@ Ask for the missing required sections one at a time and validate the output.
 ```text
 Load my Career Context and tailor a CV draft for a Senior Distributed Systems Engineer role.
 Ground every claim in verified context. Flag missing evidence rather than inventing it.
-```
-
-### Prompt C: Audit LinkedIn profile
-
-```text
-Audit my LinkedIn profile against the VitaeContext scorecard.
-Review headline, about, experience, and skills discoverability with grounded recommendations.
 ```
 
 ## 5. How agents should navigate

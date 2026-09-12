@@ -6,9 +6,9 @@ It is written for a reader who wants to understand the project quickly, includin
 
 ## At a glance
 
-- **What it is:** a standard Agent Skills bundle and stateless MCP server that integrates into AI coding assistants (Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, Cursor, Windsurf, Roo Code, IBM Bob, Grok) and helps optimize a developer's public career surfaces: GitHub, LinkedIn, CV/ATS, web portfolio, and X/Twitter.
+- **What it is:** a standard Agent Skills bundle and stateless MCP server that integrates into AI coding assistants (Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, Cursor, Windsurf, Roo Code, IBM Bob, Grok) and helps a person build and maintain a private, reusable source of truth about their career.
 - **The problem:** most agents can already rewrite a CV or a bio, but the output drifts between tools, invents facts, and ignores platform constraints. Consistency and grounding are the hard parts.
-- **The core idea:** use a compact Career Context file for fast positioning and an optional, separate VitaeGraph for deep hierarchical records. Platform skills progressively load only the private context needed for a task.
+- **The core idea:** use a compact Career Context file for fast positioning and an optional, separate VitaeGraph for deep hierarchical records. Skills and downstream tools progressively load only the private context needed for a task.
 - **What makes it interesting:** the project is not a prompt collection. It is a small system that applies current ideas from agentic AI, an LLM-readable knowledge layer, progressive context loading, a cross-referenced knowledge graph, explicit evidence labeling, and Model Context Protocol (MCP), shipped as a validated, versioned package.
 
 ## Agentic-AI concepts applied
@@ -27,11 +27,10 @@ The following table maps each concept to its origin and to where it lives in the
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [`references/`](./skills/vitaecontext/references/) link graph, [`llms.txt`](./llms.txt) |
 | Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` confidence metadata |
 | One source, many adapters | Keep one portable source of truth in `skills/`, generate or link per-provider layouts | [`skills/`](./skills/) plus [`providers/`](./providers/) |
-| AI-answer-engine readiness (GEO/AEO) | Structure each surface so AI search and assistants can quote a person accurately | per-module AI-readability guidance ([GitHub](./hub/github/copilot-and-agents.md), [LinkedIn](./hub/linkedin/ai-agent-optimization.md), [portfolio](./hub/web-portfolio/llms-and-aeo.md)) |
 
 ### Career Context file as an `AGENTS.md` for a person
 
-Developers already accept that a repository should carry a context file so an agent understands the codebase before editing it. VitaeContext applies that pattern to a career: a private Markdown file holds verified identity facts, roles, projects, metrics, links, target roles, growth direction, evidence boundaries, claims to avoid, and positioning. Platform skills read that file first, then adapt the same facts and direction to each surface. This keeps output consistent across LinkedIn, GitHub, CV, and portfolio instead of rebuilding a professional history in every chat.
+Developers already accept that a repository should carry a context file so an agent understands the codebase before editing it. VitaeContext applies that pattern to a career: a private Markdown file holds verified identity facts, roles, projects, metrics, links, target roles, growth direction, evidence boundaries, claims to avoid, and positioning. Agents and downstream tools read that file first, then adapt the same facts and direction to each task. This keeps output consistent across surfaces instead of rebuilding a professional history in every chat.
 
 ### VitaeGraph as the deeper career graph
 
@@ -62,10 +61,6 @@ Career advice is only useful if its certainty is visible. Cross-surface output l
 ### One portable source, thin provider adapters
 
 Runtime methodology lives once in [`skills/`](./skills/). Provider folders stay thin: install notes, command wrappers, and metadata. The export CLI generates each provider's required layout from the single source, so the same methodology installs across many environments without separate copies drifting out of sync.
-
-### AI-answer-engine readiness (GEO/AEO)
-
-Career discovery increasingly happens inside AI answer engines: people and recruiters ask an assistant rather than scanning a list of links. Generative engine optimization and answer engine optimization are the current names for being quoted accurately in those answers. VitaeContext does not chase a ranking trick for this; the same properties it already enforces, consistent facts across surfaces, explicit structure, and verifiable proof, are exactly what an answer engine needs to cite a person without inventing or contradicting details. Each platform module already carries surface-specific AI-readability guidance, from GitHub Copilot indexing to LinkedIn AI-readable structure to portfolio AEO. The project treats this as an evolving practice and labels it as such, rather than promising placement in any AI answer.
 
 ## The knowledge graph
 

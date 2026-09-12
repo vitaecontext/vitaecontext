@@ -19,7 +19,7 @@ The generated wrappers include the separate `vitaecontext:vitaegraph` entrypoint
 
 OpenAI/Codex-only metadata from `agents/` is excluded from generated Antigravity installs.
 
-Antigravity CLI migration documentation and real user output indicate that imported Gemini CLI extensions are staged as plugins under `~/.gemini/antigravity-cli/plugins`. The exact in-session command surface for imported TOML commands is still settling. Treat Gemini-style commands such as `/vitaecontext:linkedin` as the expected compatibility target, but verify in `agy` before documenting it as guaranteed.
+Antigravity CLI migration documentation and real user output indicate that imported Gemini CLI extensions are staged as plugins under `~/.gemini/antigravity-cli/plugins`. The exact in-session command surface for imported TOML commands is still settling. Treat Gemini-style commands such as `/vitaecontext:context` as the expected compatibility target, but verify in `agy` before documenting it as guaranteed.
 
 ## Install command
 

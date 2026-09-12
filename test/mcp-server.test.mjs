@@ -69,12 +69,12 @@ test("listMcpResources lists standard URIs and wikis", () => {
   const uris = resources.map((r) => r.uri);
   assert.ok(uris.includes("career-context://current"));
   assert.ok(uris.includes("vitaegraph://index"));
-  assert.ok(uris.includes("vitaecontext://wiki/vitaecontext-cv"));
-  assert.ok(uris.includes("vitaecontext://wiki/vitaecontext-linkedin"));
+  assert.ok(uris.includes("vitaecontext://wiki/vitaecontext-build"));
+  assert.ok(uris.includes("vitaecontext://wiki/vitaecontext-vitaegraph"));
 });
 
 test("readMcpResource reads wiki entries and career context", () => {
-  const wikiResult = readMcpResource("vitaecontext://wiki/cv", repoRoot, config);
+  const wikiResult = readMcpResource("vitaecontext://wiki/build", repoRoot, config);
   assert.equal(wikiResult.contents.length, 1);
   assert.ok(wikiResult.contents[0].text.length > 50);
 
@@ -240,7 +240,7 @@ test("mcp server binary executes live over stdio json-rpc 2.0 stream", async () 
   assert.ok(r2.result.tools.some((t) => t.name === "get_career_context"));
 
   const r3 = responses.find((r) => r.id === 3);
-  assert.ok(r3.result.resources.length >= 10);
+  assert.ok(r3.result.resources.length >= 5);
 
   const r4 = responses.find((r) => r.id === 4);
   assert.equal(r4.error.code, -32602);
