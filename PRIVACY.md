@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: 2026-08-17
+Last updated: 2026-11-03
 
 VitaeContext is a local-first, open-source npm package. It provides Markdown skills, provider adapters, command wrappers, templates, and a small CLI for exporting or installing those files into supported agent environments.
 
@@ -61,7 +61,7 @@ Install and export commands may also write local manifest files such as `vitaeco
 
 VitaeContext encourages users to maintain a private **Career Context file** for verified career facts. That file can contain sensitive information such as work history, education, links, target roles, achievements, constraints, and personal positioning notes.
 
-VitaeContext does not create or upload a Career Context file unless the user explicitly asks an agent or runs `context init`. The CLI can validate an explicitly supplied file and can write an explicitly requested bounded summary. These operations remain local. Users should not commit private context files, bounded summaries, CV exports, screenshots, recruiter notes, or other sensitive career material to public repositories.
+VitaeContext does not create or upload a Career Context file unless the user explicitly asks an agent or runs `context init`. The CLI can validate an explicitly supplied file and can write an explicitly requested bounded summary. The local MCP server can list heading titles and return one selected section with a character cap through `get_context_for_task`. It also retains broad/full-context reads for compatibility. These bounds are not access controls and do not prevent the connected AI client from processing or transmitting returned content. These operations remain local to the package process. Users should not commit private context files, bounded summaries, CV exports, screenshots, recruiter notes, or other sensitive career material to public repositories.
 
 ## Network access
 

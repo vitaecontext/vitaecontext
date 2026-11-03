@@ -4,6 +4,20 @@ All notable changes to VitaeContext are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
+## 2.4.0 - 2026-11-03
+
+### Added
+
+- Added `list_career_context_sections` and `get_context_for_task` MCP tools for exact-heading selection and size-bounded Career Context reads, with source line metadata and explicit errors instead of silent truncation.
+- Added deterministic tests for selected record boundaries, invalid arguments, and MCP tool integration.
+
+### Changed
+
+- Limited `search_vitaegraph` responses to 20 records by default (configurable to 50), with `matchCount`, `returnedCount`, and `truncated` metadata.
+- Reframed legacy `cv_tailoring`, `linkedin_audit`, and `github_showcase` MCP prompts as downstream handoff templates rather than bundled platform-optimization skills.
+- Updated privacy guidance to clarify that bounded reads reduce unnecessary data selection but do not enforce model-side confidentiality or permissions.
+- Kept MCP protocol version `2024-11-05` and existing broad context resources intact; protocol migration is outside this release.
+
 ## 2.3.0 - 2026-09-11
 
 ### Removed

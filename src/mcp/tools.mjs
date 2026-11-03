@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { summarizeContext } from "../context/summary.mjs";
+import { getCareerContextForTask, listCareerContextHeadings } from "../context/task-packet.mjs";
 import { validateContextFile } from "../context/parse.mjs";
 import { invalidParams } from "./errors.mjs";
 import { findDefaultCareerContext, resolveDefaultVitaeGraph } from "./locator.mjs";
@@ -44,6 +45,25 @@ export function listMcpTools() {
   return {
     tools: [
       {
+        name: "list_career_context_sections",
+        description: "List heading titles and source line numbers without returning Career Context section bodies.",
+        inputSchema: { type: "object", properties: {}, additionalProperties: false }
+      },
+      {
+        name: "get_context_for_task",
+        description: "Retrieve one explicitly selected Career Context heading and nested content under a strict character cap. Prefer this over broad context reads.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            heading: { type: "string", description: "Exact heading from list_career_context_sections." },
+            line: { type: "integer", minimum: 1, description: "Source line to disambiguate duplicate headings." },
+            maxChars: { type: "integer", minimum: 100, maximum: 12000, default: 6000 }
+          },
+          required: ["heading"],
+          additionalProperties: false
+        }
+      },
+      {
         name: "get_career_context",
         description: "Retrieve a user-maintained, evidence-bounded Career Context packet for a specific professional surface (cv, github, linkedin, portfolio, x, or general). The server reads only the context selected at startup or through VITAECONTEXT_CAREER_CONTEXT.",
         inputSchema: {
@@ -78,6 +98,13 @@ export function listMcpTools() {
             tag: {
               type: "string",
               description: "Filter by exact tag or skill."
+            },
+            maxResults: {
+              type: "integer",
+              minimum: 1,
+              maximum: 50,
+              default: 20,
+              description: "Maximum matching records included in one response."
             }
           },
           required: [],
@@ -101,6 +128,28 @@ export function listMcpTools() {
 export async function callMcpTool(name, args = {}, repoRoot = null, config = null, options = {}) {
   if (!args || typeof args !== "object" || Array.isArray(args)) {
     throw invalidParams("Tool arguments must be an object.");
+  }
+
+  if (name === "list_career_context_sections" || name === "get_context_for_task") {
+    const allowed = name === "list_career_context_sections" ? [] : ["heading", "line", "maxChars"];
+    if (Object.keys(args).some((key) => !allowed.includes(key))) {
+      throw invalidParams("Unknown argument for " + name + ".");
+    }
+    if (name === "get_context_for_task" && (typeof args.heading !== "string" || !args.heading.trim())) {
+      throw invalidParams("get_context_for_task requires a non-empty heading.");
+    }
+    const context = findDefaultCareerContext(options.contextPath, repoRoot);
+    if (!context.exists) {
+      return { content: [{ type: "text", text: "Error: " + missingContextMessage(context) }], isError: true };
+    }
+    try {
+      const data = name === "list_career_context_sections"
+        ? listCareerContextHeadings(context.path)
+        : getCareerContextForTask(context.path, args);
+      return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+    } catch (error) {
+      return { content: [{ type: "text", text: "Error: " + error.message }], isError: true };
+    }
   }
 
   if (name === "get_career_context") {
@@ -144,11 +193,14 @@ export async function callMcpTool(name, args = {}, repoRoot = null, config = nul
 
   if (name === "search_vitaegraph") {
     for (const key of Object.keys(args)) {
-      if (!["query", "type", "tag"].includes(key)) {
+      if (!["query", "type", "tag", "maxResults"].includes(key)) {
         throw invalidParams(`Unknown search_vitaegraph argument '${key}'. Configure graph access when starting the server.`);
       }
     }
     for (const key of ["query", "type", "tag"]) validateOptionalString(args, key);
+    if (args.maxResults !== undefined && (!Number.isSafeInteger(args.maxResults) || args.maxResults < 1 || args.maxResults > 50)) {
+      throw invalidParams("maxResults must be an integer from 1 to 50.");
+    }
     if (args.type && !RECORD_TYPES.has(args.type.toLowerCase())) {
       throw invalidParams(`Unknown VitaeGraph record type '${args.type}'.`);
     }
@@ -191,7 +243,7 @@ export async function callMcpTool(name, args = {}, repoRoot = null, config = nul
         );
       }
 
-      const results = documents.map((document) => ({
+      const results = documents.slice(0, args.maxResults ?? 20).map((document) => ({
         id: document.id,
         type: document.type,
         title: document.title,
@@ -204,7 +256,7 @@ export async function callMcpTool(name, args = {}, repoRoot = null, config = nul
         content: [
           {
             type: "text",
-            text: JSON.stringify({ matchCount: results.length, records: results }, null, 2)
+            text: JSON.stringify({ matchCount: documents.length, returnedCount: results.length, truncated: results.length < documents.length, records: results }, null, 2)
           }
         ]
       };

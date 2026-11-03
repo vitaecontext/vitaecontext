@@ -2,14 +2,15 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-09-11
+## As of 2026-11-03 (2.4.0 source prepared, not yet published)
 
 ### Public surfaces
 
 - Source repo: `https://github.com/vitaecontext/vitaecontext`
 - Website and human-readable hub: `https://vitaecontext.github.io/`
 - npm package: `https://www.npmjs.com/package/vitaecontext`
-- Current package version: `vitaecontext@2.3.0`
+- Current package version: `vitaecontext@2.4.0` (source; pending tag and npm publication)
+- Last confirmed published release in this snapshot: `vitaecontext@2.3.0`
 
 Published release line:
 
@@ -88,7 +89,7 @@ The npm CLI install path is complemented by a Claude Code plugin-marketplace cha
 Working CLI surfaces:
 
 - `vitaecontext version`
-- `vitaecontext mcp` (also standalone `vitaecontext-mcp` executable over stdio)
+- `vitaecontext mcp` (also standalone `vitaecontext-mcp` executable over stdio). The MCP server offers `list_career_context_sections` and `get_context_for_task` for heading-based, size-bounded context handoff; full-context interfaces remain for compatibility. VitaeGraph searches return at most 20 records by default and expose the total match count.
 - `vitaecontext update` (compares either the running package or an installed provider manifest against the npm registry latest; explicit, network-only, never automatic; supports `--provider`, `--json`, and `--timeout`)
 - `vitaecontext doctor`
 - `vitaecontext list providers`

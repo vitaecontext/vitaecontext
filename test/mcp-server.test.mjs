@@ -89,6 +89,8 @@ test("listMcpTools and callMcpTool execute get_career_context", async () => {
   const { tools } = listMcpTools();
   const names = tools.map((t) => t.name);
   assert.ok(names.includes("get_career_context"));
+  assert.ok(names.includes("list_career_context_sections"));
+  assert.ok(names.includes("get_context_for_task"));
   assert.ok(names.includes("search_vitaegraph"));
   assert.ok(names.includes("validate_career_context"));
 
@@ -102,6 +104,29 @@ test("listMcpTools and callMcpTool execute get_career_context", async () => {
   assert.equal(toolResult.isError, undefined);
   assert.ok(toolResult.content[0].text.includes("Career Context packet - cv"));
   assert.ok(toolResult.content[0].text.includes("Alex Morgan"));
+});
+
+test("scoped MCP tools discover and retrieve one bounded record", async () => {
+  const options = { contextPath: fictionalContextPath };
+  const list = await callMcpTool("list_career_context_sections", {}, repoRoot, config, options);
+  const headings = JSON.parse(list.content[0].text);
+  assert.ok(headings.headings.some((entry) => entry.heading === "[PROJECT] QueueWatch"));
+  assert.equal(list.content[0].text.includes("TL;DR:"), false);
+
+  const packet = await callMcpTool(
+    "get_context_for_task", { heading: "[PROJECT] QueueWatch", maxChars: 12000 }, repoRoot, config, options
+  );
+  assert.equal(packet.isError, undefined);
+  const result = JSON.parse(packet.content[0].text);
+  assert.match(result.content, /QueueWatch/);
+  assert.doesNotMatch(result.content, /## Education/);
+
+  const tooSmall = await callMcpTool("get_context_for_task", { heading: "Experience", maxChars: 100 }, repoRoot, config, options);
+  assert.equal(tooSmall.isError, true);
+  await assert.rejects(
+    () => callMcpTool("get_context_for_task", { heading: "[PROJECT] QueueWatch", secret: "x" }, repoRoot, config, options),
+    (error) => error.code === -32602
+  );
 });
 
 test("callMcpTool validates career context", async () => {

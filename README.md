@@ -129,7 +129,7 @@ npx vitaecontext context summary ~/.vitaecontext/name-surname-career-context.md 
   <img src=".assets/image/public-visuals/mcp/mcp-workflow.png" alt="VitaeContext MCP: Stateless Model Context Protocol bridge between coding workspaces and private career facts" width="100%" />
 </p>
 
-By registering the MCP server from the published `vitaecontext` package with your AI coding tool, agents across repositories can read your selected Career Context and VitaeGraph without copying career files into each codebase.
+By registering the MCP server from the published `vitaecontext` package with your AI coding tool, agents across repositories can read your selected Career Context and VitaeGraph without copying career files into each codebase. For a task-specific read, use `list_career_context_sections` followed by `get_context_for_task`: it returns one selected heading under a strict size cap. Legacy broad context resources remain available, so this does not enforce access permissions.
 
 ```bash
 # Direct MCP stdio execution
