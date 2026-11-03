@@ -9,7 +9,7 @@ This file is the maintainer snapshot for what is live, what is packaged, and wha
 - Source repo: `https://github.com/vitaecontext/vitaecontext`
 - Website and human-readable hub: `https://vitaecontext.github.io/`
 - npm package: `https://www.npmjs.com/package/vitaecontext`
-- Repository source version: `vitaecontext@2.4.0` (pending tag and npm publication)
+- Current package version: `vitaecontext@2.4.0` (source; pending tag and npm publication)
 - Last confirmed published release in this snapshot: `vitaecontext@2.3.0`
 
 Published release line:

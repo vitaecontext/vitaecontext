@@ -1,6 +1,6 @@
 # VitaeContext getting started
 
-This guide gives new users and new contributors the shortest safe path through the repository (current release line: vitaecontext 2.3.0). It explains which files to read first, which commands to run, and when to switch from human docs to runtime skill files.
+This guide gives new users and new contributors the shortest safe path through the repository (current release line: vitaecontext 2.4.0, pending the release tag). It explains which files to read first, which commands to run, and when to switch from human docs to runtime skill files.
 
 ## 1. Choose the right path
 
