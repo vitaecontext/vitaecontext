@@ -220,7 +220,30 @@ The environment variables `VITAECONTEXT_CAREER_CONTEXT` and `VITAEGRAPH_ROOT` pr
 
 ### Tools
 
-#### 1. `get_career_context`
+Prefer the scoped tools for a specific task. A tool response is still processed under the connected MCP client's data-handling policy; local storage alone does not prevent model-side disclosure.
+
+#### 1. `list_career_context_sections`
+
+List H2–H6 heading titles and their source lines without returning section bodies:
+
+```json
+{}
+```
+
+#### 2. `get_context_for_task`
+
+Read one explicitly selected heading, including nested subsections, with a default limit of 6,000 characters and a maximum of 12,000:
+
+```json
+{
+  "heading": "[PROJECT] QueueWatch",
+  "maxChars": 6000
+}
+```
+
+Use the optional `line` from the heading index when titles repeat. If a selection is too large, the tool returns an error instead of silently truncating evidence. Select a narrower heading or intentionally increase `maxChars`. Selection and size limits are **not** a sensitivity classifier or access-control system. A connected client can still request the legacy broad context tool or full resource.
+
+#### 3. `get_career_context`
 Retrieve a user-maintained, evidence-bounded Career Context packet for a specific professional surface.
 
 ```json
@@ -231,7 +254,7 @@ Retrieve a user-maintained, evidence-bounded Career Context packet for a specifi
 * **Parameters**:
   * `for` (*string*, optional): `cv`, `github`, `linkedin`, `portfolio`, `x`, `general` (default: `general`).
 
-#### 2. `search_vitaegraph`
+#### 4. `search_vitaegraph`
 Query and filter structured career records in the user's private VitaeGraph.
 
 ```json
@@ -245,8 +268,9 @@ Query and filter structured career records in the user's private VitaeGraph.
   * `query` (*string*, optional): Case-insensitive text search across record ID, title, tags, and indexed record text.
   * `type` (*string*, optional): Filter by record type (`experience`, `project`, `education`, `course`, `thesis`, `certification`, `award`, `publication`).
   * `tag` (*string*, optional): Filter by exact skill/topic tag.
+  * `maxResults` (*integer*, optional): Returns at most 20 matching records by default (maximum 50). Responses expose total `matchCount`, `returnedCount`, and `truncated`.
 
-#### 3. `validate_career_context`
+#### 5. `validate_career_context`
 Validate a Career Context file for structural integrity, frontmatter, and unfinished placeholders.
 
 ```json
@@ -255,11 +279,13 @@ Validate a Career Context file for structural integrity, frontmatter, and unfini
 
 ### Prompts
 
+The `cv_tailoring`, `linkedin_audit`, and `github_showcase` names remain for compatibility with existing MCP clients. They are downstream drafting prompts, not separate bundled optimization skills. Treat personal claims as user-maintained evidence, not independently verified facts.
+
 | Prompt | Arguments | Description |
 | --- | --- | --- |
 | `cv_tailoring` | `targetRole` (required), `jobDescription` (optional) | Tailors a CV to a target role while preserving the evidence limits in Career Context. |
-| `linkedin_audit` | `profileSnapshot` (optional) | Audits a LinkedIn profile against discoverability rules and internal scorecards. |
-| `github_showcase` | `focus` (optional) | Audits profile README and repository showcase strategy. |
+| `linkedin_audit` | `profileSnapshot` (optional) | Compatibility-only downstream profile review, without a built-in platform scorecard. |
+| `github_showcase` | `focus` (optional) | Compatibility-only downstream profile and showcase drafting. |
 | `career_context_intake` | `rawNotes` (optional) | Guides synthesizing raw career notes into a structured, user-maintained Career Context file. |
 
 ---

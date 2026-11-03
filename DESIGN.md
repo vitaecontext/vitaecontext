@@ -110,6 +110,8 @@ The project is also a record of continuous study: each release line adopted a ne
 - **2.0.0, VitaeContext rebranding.** Repositioned the umbrella identity from AgentKit SEO to VitaeContext (career-context infrastructure for grounded AI work), retaining backwards-compatible forwarding aliases and the `agentkit-seo` compatibility package.
 - **2.1.0, Career Context lifecycle & transactional installation.** Shipped `context init/validate/summary` CLI lifecycle with JSON diagnostics and bounded task packets, added transactional multi-provider installation with automatic preflight conflict detection and rollback, and packaged the native Codex plugin marketplace.
 - **2.2.0, standard architecture & MCP.** Migrated to open Agent Skills root standard (`skills/`), unified binaries under `bin/`, native ESM engine in `src/`, added 5 new provider adapters (Cursor, Windsurf, Roo Code, IBM Bob, Grok), and delivered a native Model Context Protocol (MCP) server for stateless cross-project career context access.
+- **2.3.0, narrow scope.** Retired downstream platform-optimization skills and focused the runtime on Career Context and VitaeGraph as reusable inputs for external tools.
+- **2.4.0, scoped MCP handoff.** Added heading discovery and explicitly bounded record reads while retaining existing MCP interfaces; these bounds reduce unnecessary context selection but do not enforce permissions.
 
 ## Sources and influences
 
