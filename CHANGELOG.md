@@ -4,6 +4,13 @@ All notable changes to VitaeContext are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
+## Unreleased
+
+### Changed
+
+- Replaced outdated workflow and MCP illustrations with context-layer diagrams showing optional VitaeGraph and downstream tool handoffs.
+- Aligned onboarding, runtime references, architecture guidance, and MCP contracts with the three shipped skills and current evidence boundaries.
+
 ## 2.4.0 - 2026-11-03
 
 ### Added

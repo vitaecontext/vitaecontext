@@ -58,7 +58,7 @@ VitaeContext sits one logical layer before those systems. It helps create and ma
 ## How it works
 
 <p align="center">
-  <img src=".assets/image/public-visuals/vitaecontext/basic-workflow.png" alt="VitaeContext workflow: scattered career material becomes a Career Context file, passes through VitaeContext platform skills, and produces grounded professional outputs" width="100%" />
+  <img src=".assets/image/public-visuals/vitaecontext/basic-workflow.png" alt="VitaeContext workflow: supplied career material becomes private Career Context, is reused through MCP or a bounded summary, and grounds downstream agents and tools" width="100%" />
 </p>
 
 1. **Gather the raw material.** Start with CVs, profile sections, GitHub and portfolio links, exports, screenshots, and project notes.
@@ -83,7 +83,7 @@ Set up VitaeContext for this agent environment.
 - Run `npx vitaecontext install --provider <matching-provider>`. Do not use `--force` or change install locations unless I approve it.
 - Verify the installation with `npx vitaecontext doctor`, then tell me which skills are available and how to invoke them here.
 - Ask me for a private file path, initialize it with `npx vitaecontext context init --output <private-path>`, and explain that validation will fail until its placeholders are replaced.
-- Read https://vitaecontext.github.io/docs/usage/ and propose three practical next steps. Start with building the context from career material I choose to share, then suggest one focused skill for my immediate goal. Do not upload or share my files without asking.
+- Read https://vitaecontext.github.io/docs/usage/ and propose three practical next steps. Start with building the context from career material I choose to share, then suggest a context handoff for my immediate goal. Do not upload or share my files without asking.
 ```
 
 Install the skills for an agent provider:
