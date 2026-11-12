@@ -207,7 +207,7 @@ Before editing:
 
 1. Read this file.
 2. Read `.assets/docs/architecture-map.md`.
-3. Read only relevant platform files.
+3. Read only the relevant runtime skill and references.
 4. Use `agent_priority: high` files as mandatory context for the relevant module.
 
 When generating or editing Markdown:

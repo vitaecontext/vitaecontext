@@ -87,11 +87,12 @@ Help me initialize my private Career Context using VitaeContext.
 Ask for the missing required sections one at a time and validate the output.
 ```
 
-### Prompt B: Tailor CV for a specific role
+### Prompt B: Prepare context for a downstream CV tool
 
 ```text
-Load my Career Context and tailor a CV draft for a Senior Distributed Systems Engineer role.
-Ground every claim in verified context. Flag missing evidence rather than inventing it.
+Load my Career Context and prepare a bounded summary packet for a downstream CV tool
+targeting a Senior Distributed Systems Engineer role.
+Ground every claim in supplied evidence and flag gaps.
 ```
 
 ## 5. How agents should navigate
@@ -106,7 +107,7 @@ For broad or unclear tasks, agents should read in this order:
 6. That module's `wiki/knowledge.md` only when detailed constraints are needed.
 7. The matching `hub/<module>/README.md` and `sources.md` when human playbook or source provenance is needed.
 
-Do not load every module by default. Choose one branch unless the task is explicitly cross-platform.
+Do not load every module by default. Choose one branch unless the task explicitly requires both Career Context and VitaeGraph.
 
 ## 6. Contributor path
 

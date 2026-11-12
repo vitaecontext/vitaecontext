@@ -4,7 +4,7 @@
 
 1. load the Career Context file first
 2. state the task, current priority, and hard constraints
-3. load the matching platform skill only if needed
+3. hand a bounded context packet to the downstream tool only if needed
 4. review the output against factual grounding
 5. revise the Career Context file if the task exposed missing or conflicting facts
 
@@ -46,9 +46,9 @@ The Career Context file supplies facts.
 
 The interpretive layer supplies direction, priorities, paths to keep open, supporting foundations, and constraints.
 
-The platform skill supplies formatting, discoverability, and channel-specific constraints.
+Downstream tools supply formatting and channel-specific constraints. VitaeContext does not bundle platform adaptation skills.
 
-Do not let the platform skill become the factual source of truth.
+Do not let a downstream tool become the factual source of truth.
 
 When tailoring output, use verified evidence as the foundation, future direction as the positioning target, and constraints or claims-to-avoid as guardrails. Do not turn a growth direction into a claimed credential, completed project, employer responsibility, or mature expertise unless the context file supplies evidence.
 

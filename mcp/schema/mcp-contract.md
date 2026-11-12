@@ -108,17 +108,19 @@ Specification for the VitaeContext Model Context Protocol (MCP) server interface
 
 ## 4. Prompts
 
+`cv_tailoring`, `linkedin_audit`, and `github_showcase` are legacy downstream handoff prompts retained for compatibility. They supply Career Context evidence to the calling agent; they do not load shipped platform-specific skills or optimization scorecards.
+
 ### `cv_tailoring`
 * **Arguments**: `targetRole` (required), `jobDescription` (optional).
-* **Returns**: ATS formatting instructions + grounded career context packet.
+* **Returns**: CV drafting instructions with evidence boundaries and a grounded Career Context packet.
 
 ### `linkedin_audit`
 * **Arguments**: `profileSnapshot` (optional).
-* **Returns**: LinkedIn discoverability scoring + section-by-section audit instructions.
+* **Returns**: Positioning and recruiter-scannability review instructions with evidence-grounded section drafts.
 
 ### `github_showcase`
 * **Arguments**: `focus` (optional).
-* **Returns**: Profile README and pinned repository showcase review.
+* **Returns**: Profile README and pinned repository review instructions; repository recommendations require supplied repository evidence.
 
 ### `career_context_intake`
 * **Arguments**: `rawNotes` (optional).

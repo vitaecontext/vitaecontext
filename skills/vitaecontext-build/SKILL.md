@@ -20,7 +20,7 @@ Work through the lens of a meticulous biographer, fact-checker, and positioning 
 - Drafting, validating, or restructuring the file: [references/spec-and-structure.md](references/spec-and-structure.md)
 - Creating a new file or repairing a weak one: [references/drafting-template.md](references/drafting-template.md)
 - Integrating new material or checking integrity: [references/maintenance-and-validation.md](references/maintenance-and-validation.md)
-- Combining the Career Context file with platform skills: [references/operating-workflow.md](references/operating-workflow.md)
+- Handing the Career Context file to downstream tools: [references/operating-workflow.md](references/operating-workflow.md)
 
 Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfolio, or X/Twitter output.
 
@@ -87,7 +87,7 @@ Default to `Default pass` for broad context-file work. Major creation, restructu
 - Keep chronology, role titles, metrics, and project ownership consistent across downstream outputs.
 - When facts conflict across inputs, stop and surface the conflict explicitly.
 - Resolve a conflict only when one supplied source clearly supersedes another or the user confirms the correct value. Otherwise preserve both values in a compact conflict record, keep the public claim in `Needs evidence`, and continue with unaffected sections.
-- Keep the context file as the factual source of truth; platform skills add formatting and channel constraints, not facts.
+- Keep the context file as the factual source of truth; downstream tools add formatting and channel constraints, not facts.
 - When drafting from scratch, produce the stable semantic core first, then arrange evidence modules in the user-confirmed order.
 - When updating an existing file, prefer targeted entry-level edits over rewriting the whole document.
 - Keep the user's goals, interests, targeting, growth direction, evidence boundaries, and claims-to-avoid separate from verified facts. Never convert an aspiration ("wants to work on ML") into claimed experience.
@@ -115,13 +115,13 @@ If a check fails and cannot be resolved from the available inputs, say so explic
 
 ## Handoff
 
-Once the context file is clean, suggest a target platform skill only when it serves the user's requested next step. Do not force a platform handoff into a context-only task.
+Once the context file is clean, suggest a downstream tool or workflow only when it serves the user's requested next step. Do not force a platform handoff into a context-only task.
 
 Hand off to `vitaecontext-vitaegraph` only when the user asks for a deeper multi-file graph or conversion. Do not create, replace, or merge a VitaeGraph as a side effect of maintaining the compact context file. Optional reciprocal links do not change either artifact's ownership.
 
 ## Response shape
 
-Match the response to the requested scope. For a creation or maintenance task, report the file state and path, material changes, unresolved conflicts or evidence gaps, and any user decisions still needed. Include a compact source ledger only when provenance, reconciliation, or auditability matters. Suggest a next platform skill only when relevant.
+Match the response to the requested scope. For a creation or maintenance task, report the file state and path, material changes, unresolved conflicts or evidence gaps, and any user decisions still needed. Include a compact source ledger only when provenance, reconciliation, or auditability matters. Suggest a downstream handoff only when relevant.
 
 For audits or validation passes, use concise labels such as `Verified`, `From context`, `From source`, `Inference`, and `Needs evidence` when a claim could otherwise be ambiguous. When the pass is intentionally bounded, include a one-line `Depth note` that says what sources were not inspected and what deeper reconciliation would add.
 

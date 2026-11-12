@@ -44,7 +44,7 @@ When working across multiple repositories, developer agents frequently need care
 
 1. **Zero Workspace Pollution**: No career files or personal context documents need to be copied into individual git repositories.
 2. **Instant Cross-Project Grounding**: Any tool supporting MCP can query your career records on demand.
-3. **Always Current**: Edits made to `~/.vitaecontext/career-context.md` or `~/.vitaecontext/vitaegraph/` are immediately reflected across all agent chats.
+3. **Read Current Sources**: New context reads use the selected local file. Rebuild VitaeGraph indexes after Markdown edits so indexed search reflects the changes. Previously returned chat content does not update automatically.
 4. **Evidence-Bounded**: Exposes structured tools that preserve supplied facts and evidence limits for the requested platform without claiming independent verification.
 5. **Zero Runtime Dependencies**: Built with native Node.js ESM and available through the published `vitaecontext` package via `npx -y vitaecontext mcp`.
 
@@ -339,7 +339,7 @@ The VitaeContext MCP server is designed around local-first privacy:
 
 1. **Local Operations Only**: The running server reads only the selected local Career Context, VitaeGraph, and packaged wiki files. It makes no network or telemetry requests; `npx` may contact npm to obtain the package before launch.
 2. **Zero Repository Pollution**: Private career files are never copied or written into individual project workspaces.
-3. **Evidence-Bounded**: Platforms receive bounded task packets with explicit evidence labels, reducing the risk of unsupported claims.
+3. **Scoped Retrieval**: Heading tools support bounded reads; broad context resources remain available. Evidence labels depend on the maintained source material, and the connected client controls subsequent processing.
 4. **Stateless Runtime**: No background daemon, tokens, or persistent database state.
 
 ---

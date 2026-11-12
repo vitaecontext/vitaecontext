@@ -8,7 +8,7 @@ These instructions apply to the whole repository.
 
 1. Read `.assets/docs/architecture-map.md` to identify the correct layer before editing.
 2. Read `.assets/docs/STYLEGUIDE.md` before changing Markdown, examples, templates, or skill references.
-3. Load only the relevant platform skill and references for the task.
+3. Load only the relevant runtime skill and references for the task.
 
 ## Source of truth
 

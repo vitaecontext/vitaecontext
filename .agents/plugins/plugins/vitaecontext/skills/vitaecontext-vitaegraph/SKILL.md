@@ -93,7 +93,7 @@ Do not spend user-facing tokens narrating the blueprint unless the user asks. Us
 - Never invent facts, metrics, ownership, outcomes, grades, credentials, or technical depth.
 - Never commit, publish, export, or overwrite private graph data by default.
 
-`visibility: public` means a record is eligible for consideration in public work. It is not publication consent. Before handing facts to a public platform skill, also apply the root `Claims to avoid`, record limitations, open questions, and the user's requested output scope.
+`visibility: public` means a record is eligible for consideration in public work. It is not publication consent. Before handing facts to a downstream tool for public work, also apply the root `Claims to avoid`, record limitations, open questions, and the user's requested output scope.
 
 ## Command resolution and degraded mode
 

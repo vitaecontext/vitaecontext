@@ -38,13 +38,13 @@ VitaeGraph avoids forcing every detail into the compact context file. Stable `ty
 
 ### Model Context Protocol (MCP) Integration
 
-With the native MCP server implementation, agents operating across multiple client tools (Claude Desktop, Claude Code, Cursor, Windsurf, Roo Code, IBM Bob, Grok) can instantly read resources like `career-context://current` and `vitaegraph://index`, execute tools like `get_career_context` and `search_vitaegraph`, and invoke prompts like `cv_tailoring` directly without needing repository-level duplication.
+With the native MCP server implementation, agents operating across multiple client tools (Claude Desktop, Claude Code, Cursor, Windsurf, Roo Code, IBM Bob, Grok) can instantly read resources like `career-context://current` and `vitaegraph://index`, execute tools like `get_career_context` and `search_vitaegraph`, and invoke `career_context_intake` without needing repository-level duplication. Legacy prompts such as `cv_tailoring` remain available for downstream handoff; the shipped skills cover routing, Career Context, and VitaeGraph.
 
 ### LLM Wiki: knowledge the model reads, not writes
 
-The wiki layer follows the LLM Wiki framing associated with Andrej Karpathy: a maintainer agent compiles knowledge from official sources and keeps it current, and runtime agents read that compiled knowledge rather than re-deriving it from training data on every query. Without it, an agent guesses platform constraints, ATS parser behavior, field limits, and ranking signals, and produces confident but wrong advice. Each module ships `wiki/` entries with canonical definitions, platform constraints, known failure modes, and review dates, bundled for tools as [`llms-full.txt`](./llms-full.txt).
+The wiki layer follows the LLM Wiki framing associated with Andrej Karpathy: a maintainer agent compiles knowledge from official sources and keeps it current, and runtime agents read that compiled knowledge rather than re-deriving it from training data on every query. The shipped wiki covers Career Context structure, VitaeGraph records, evidence boundaries, and routing rather than downstream platform optimization. Each module ships `wiki/` entries with canonical definitions, artifact constraints, known failure modes, and review dates, bundled for tools as [`llms-full.txt`](./llms-full.txt).
 
-This adapts Karpathy's design to a shipped package. His LLM Wiki is a personal, ever-growing second brain an agent accumulates from a user's own ingested sources; VitaeContext instead ships a curated, versioned knowledge pack about external platform behavior, refreshed by the maintainer-only `vitaecontext-wiki-maintenance` skill (ingest and lint) rather than mutated during end-user sessions. It keeps the faithful core, compile-once and keep-current instead of per-query retrieval, while deliberately dropping per-user accumulation that does not fit a distributed package.
+This adapts Karpathy's design to a shipped package. His LLM Wiki is a personal, ever-growing second brain an agent accumulates from a user's own ingested sources; VitaeContext instead ships a curated, versioned knowledge pack about Career Context and VitaeGraph, refreshed by the maintainer-only `vitaecontext-wiki-maintenance` skill (ingest and lint) rather than mutated during end-user sessions. It keeps the faithful core, compile-once and keep-current instead of per-query retrieval, while deliberately dropping per-user accumulation that does not fit a distributed package.
 
 ### Progressive disclosure and token discipline
 
@@ -56,7 +56,7 @@ The repository is organized as a navigable graph of Markdown files rather than a
 
 ### Evidence and confidence labeling
 
-Career advice is only useful if its certainty is visible. Cross-surface output labels major claims as verified, from context, from a supplied source, official or current source, inference, needs evidence, or inaccessible. Wiki entries carry confidence values and `last_reviewed` dates, and the `doctor` command validates that metadata. The goal is to separate documented platform behavior from inference instead of presenting everything as fact.
+Career advice is only useful if its certainty is visible. Cross-surface output labels major claims as verified, from context, from a supplied source, official or current source, inference, needs evidence, or inaccessible. Wiki entries carry confidence values and `last_reviewed` dates, and the `doctor` command validates that metadata. The goal is to separate supplied evidence, repository contracts, and inference instead of presenting everything as fact.
 
 ### One portable source, thin provider adapters
 
@@ -121,7 +121,7 @@ These are influences rather than guarantees. VitaeContext does not claim ranking
 - The context-file pattern follows the repository `AGENTS.md` and `CLAUDE.md` convention for giving agents project context before they act.
 - Progressive disclosure follows the agent-skill design idea that an agent should load instructions and reference material only when a task needs them.
 - Model Context Protocol (MCP) specification by Anthropic provides a standardized open transport for connecting AI models to private data sources and tools.
-- The audit scoring pattern (weighted categories rolled into a 0-100 band with a fix-first ranking) is adapted from open generative-engine-optimization tooling such as the geo-optimizer skill, and used here strictly as an internal prioritization heuristic, not a platform metric.
+- The retired platform modules used an audit scoring pattern adapted from open generative-engine-optimization tooling such as the geo-optimizer skill. That historical heuristic is not part of the current three-skill runtime.
 - `llms.txt` and `llms-full.txt` follow an emerging community convention for exposing an AI-readable map of a site or package.
 
 ---

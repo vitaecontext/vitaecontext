@@ -23,11 +23,11 @@ For a cold-start agent, use this read order:
 4. Read `.assets/docs/current-status.md` to understand what is already live.
 5. Read `.assets/docs/STYLEGUIDE.md` before editing Markdown, docs, examples, or templates.
 6. Read `skills/vitaecontext/wiki/vitaecontext.md` when the task is broad, architectural, package-related, or about graph navigation.
-7. Read only the relevant module `SKILL.md`, `wiki/index.md`, `wiki/knowledge.md`, and `references/` files for the target platform.
+7. Read only the relevant module `SKILL.md`, `wiki/index.md`, `wiki/knowledge.md`, and `references/` files for the selected module.
 8. Make the smallest scoped edit that satisfies the task.
 9. Run the validation listed in the change map before proposing a commit or release.
 
-Do not load every skill module by default. Route to one module unless the task is explicitly cross-platform.
+Do not load every skill module by default. Route to one module unless the task explicitly requires both Career Context and VitaeGraph.
 
 ## 3. Repository layers
 
@@ -70,7 +70,7 @@ Use this table to decide what to edit for common tasks.
 
 | Task | Primary files | Usually also update | Validation |
 | --- | --- | --- | --- |
-| Change a platform skill workflow | `skills/vitaecontext-<module>/SKILL.md`, `skills/vitaecontext-<module>/references/`, `skills/vitaecontext-<module>/wiki/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
+| Change a runtime skill workflow | `skills/vitaecontext-<module>/SKILL.md`, `skills/vitaecontext-<module>/references/`, `skills/vitaecontext-<module>/wiki/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
 | Change a human-readable playbook | `hub/<module>/` | Related runtime skill reference if behavior changes, `README.md`, `.assets/docs/current-status.md` | Link/path smoke check, `npm run validate` if runtime behavior changes |
 | Add a new skill module | `skills/vitaecontext-<module>/` | `src/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
 | Change VitaeGraph behavior | `vitaegraph/`, `skills/vitaecontext-vitaegraph/`, `src/vitaegraph/` | Root routing, provider wrappers, mirrors, public docs, tests | VitaeGraph smoke tests, `npm run validate`, export all providers |
