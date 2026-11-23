@@ -14,6 +14,7 @@ This matrix captures adapter assumptions as of August 17, 2026. Verify current p
 | Roo Code | Strong | Native Skills in `.roo/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |
 | IBM Bob | Strong | Native Skills in `.ibm/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |
 | Grok | Strong | Native Skills in `.grok/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |
+| Pi | Strong | Native Skills in `.pi/skills/` or stateless MCP server | Direct skill invocation or MCP tool/resource |
 | Shared | Strong | Portable manual reuse | Direct file or prompt loading |
 
 ## Policy
@@ -38,4 +39,5 @@ The provider-facing artifact should be the self-contained shared skill bundle. P
 | Roo Code | No | Uses native `.roo/skills/` or the stateless MCP command (`vitaecontext mcp`). |
 | IBM Bob | No | Uses native `.ibm/skills/` or the stateless MCP command (`vitaecontext mcp`). |
 | Grok | No | Uses native `.grok/skills/` or the stateless MCP command (`vitaecontext mcp`). |
+| Pi | No | Uses native `.pi/skills/` or the stateless MCP command (`vitaecontext mcp`). |
 | Shared | No | Portable skill folders with `SKILL.md` for manual packaging or custom integration. |

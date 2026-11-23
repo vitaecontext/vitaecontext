@@ -215,6 +215,7 @@ Supported providers:
 | `roo-code` | `.roo/skills/` | Native Roo Code / Cline Skills |
 | `ibm-bob` | `.ibm/skills/` | IBM Bob / watsonx Code Assistant Skills |
 | `grok` | `.grok/skills/` | xAI Grok Agent Skills |
+| `pi` | `.pi/skills/` or `~/.pi/agent/skills/` | Native Pi skills or stateless MCP server |
 
 For Claude Code, the skills are also available through the plugin marketplace:
 

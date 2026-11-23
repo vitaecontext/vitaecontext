@@ -166,6 +166,18 @@
           "source": "providers/opencode/commands/vitaecontext-vitaegraph.md"
         }
       ]
+    },
+    "pi": {
+      "layout": "skill-folders",
+      "target": ".pi/skills",
+      "homeEnv": "PI_CODING_AGENT_DIR",
+      "globalTarget": "~/.pi/agent/skills",
+      "additionalGlobalTargets": [
+        "~/.agents/skills"
+      ],
+      "skillExcludes": [
+        "agents"
+      ]
     }
   }
 }
