@@ -111,8 +111,8 @@ function findHeadings(visible) {
 
 function sectionContent(lines, headings, heading) {
   const next = headings.find((candidate) => candidate.index > heading.index && candidate.level <= heading.level);
-  const end = next?.index ?? lines.length;
-  return lines.slice(heading.index, end).join("\n").trim();
+  const end = next?.line ?? lines.length;
+  return lines.slice(heading.line, end).join("\n").trim();
 }
 
 function findQuickReference(lines, headings) {
@@ -245,7 +245,7 @@ export function parseContextDocument(content, options = {}) {
 
   if (quick.end !== null) {
     const nextH2 = headings.find((entry) => entry.level === 2 && entry.index > quick.heading.index);
-    const scope = lines.slice((quick.end ?? quick.heading.index) + 1, nextH2?.index ?? lines.length).join("\n")
+    const scope = lines.slice((quick.end ?? quick.heading.line) + 1, nextH2?.line ?? lines.length).join("\n")
       .replace(/<!--[\s\S]*?-->/g, "")
       .trim();
     if (!scope) diagnostics.push(diagnostic("missing_scope_declaration", quick.heading.line, "Add a short scope declaration after QUICK REFERENCE"));
