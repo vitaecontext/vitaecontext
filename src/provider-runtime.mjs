@@ -117,11 +117,10 @@ function getProviderRuntimeHints(provider, providerSpec) {
     },
     pi: {
       displayName: "Pi",
-      commands: [],
-      configRoots: (() => {
-        const d = process.env.PI_CODING_AGENT_DIR;
-        return d ? [d + "/config", d + "/skills"] : [path.join(os.homedir(), ".pi/agent")];
-      })(),
+      commands: ["pi"],
+      configRoots: [
+        process.env.PI_CODING_AGENT_DIR ? path.resolve(process.env.PI_CODING_AGENT_DIR) : path.join(os.homedir(), ".pi", "agent")
+      ],
       installHint:
         "Install Pi first or set PI_CODING_AGENT_DIR to point to your Pi configuration root."
     }

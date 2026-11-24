@@ -1,59 +1,39 @@
 # Pi adapter
 
-## Preferred install target
+## Install targets
 
-Install the shared skills into:
-
-- `.pi/skills/` for project-local use
-- `~/.pi/agent/skills/` for personal global use
-- Or configure the stateless MCP server (`npx -y vitaecontext mcp` or the installed `vitaecontext.mjs mcp`) in your Pi configuration.
-
-Copy the self-contained shared skill runtime files, including `SKILL.md`, `references/`, and `wiki/`.
-
-## Source-first workflow
-
-The canonical source of truth lives in `skills/`, while Pi adapter definitions live in `providers/pi/`.
-
-If you want a Pi-ready layout installed globally from the published package, use:
+Install the canonical shared skills with:
 
 ```bash
 npx vitaecontext install --provider pi
 ```
 
-From a local checkout, use:
+The default user destination is `~/.pi/agent/skills/`. If `PI_CODING_AGENT_DIR` is set, the installer uses its `skills/` subdirectory instead. No additional shared directory is written.
+
+To install into a project, use:
 
 ```bash
-node bin/vitaecontext.mjs install --provider pi
+npx vitaecontext install --provider pi --project-root .
 ```
 
-This installs the shared skills into:
+This writes to `.pi/skills/`. Use `--target-dir` for an explicit alternative. From a local checkout, replace `npx vitaecontext` with `node bin/vitaecontext.mjs`. The installer copies the three shared skill folders and their support files.
 
-- `~/.pi/agent/skills/`
+## Skill invocation
 
-If `PI_CODING_AGENT_DIR` is set, the skills directory resolves relative to that environment variable instead of `~/.pi/agent/`.
+Pi discovers standard Agent Skills. Start Pi in the intended environment, trust the project if appropriate, and invoke `/skill:vitaecontext`, `/skill:vitaecontext-build`, or `/skill:vitaecontext-vitaegraph`. Use `/reload` after installation in an active session.
 
-If you want a layout installed directly into a project workspace, pass `--project-root`:
+## Optional MCP integration
+
+Recent Pi releases with built-in MCP support can register the stateless server separately:
 
 ```bash
-node bin/vitaecontext.mjs install \
-  --provider pi \
-  --project-root .
+pi mcp add vitaecontext -- npx -y vitaecontext mcp
+pi mcp list
 ```
 
-This installs the skills into `.pi/skills/`.
+Pi stores user-level MCP configuration in `~/.pi/agent/mcp.json` by default. For older releases or an MCP adapter extension, consult that version's documentation. Skill installation does not configure or start MCP. Verify the connection and exposed tools before supplying private career context. Subagent access depends on the client's configuration.
 
-For cross-compatibility with tools that scan `~/.agents/skills/`, the installer also mirrors the bundle there by default. Use `--target-dir` to override either destination.
+## Sources
 
-## Skill invocation model
-
-Pi discovers installed skills automatically via recursive walk of `SKILL.md` files. After installation, restart the agent so the new skills appear in the prompt context.
-
-## MCP integration
-
-To enable seamless, workspace-agnostic access to your Career Context and VitaeGraph in Pi:
-
-1. Configure the stateless MCP server in Pi settings (typically `settings.json -> mcpServers`).
-2. Name: `vitaecontext`
-3. Command: `npx -y vitaecontext mcp` (or the installed `vitaecontext mcp` if globally available).
-
-This gives every subagent and chain step access to `vitaegraph://record/<id>` resources and the `career_context` tool without re-installing skills.
+- [Pi skills documentation](https://docs.pi.dev/latest/skills) describes discovery and invocation.
+- [Pi MCP documentation](https://docs.pi.dev/latest/mcp) describes server registration and connection checks.
