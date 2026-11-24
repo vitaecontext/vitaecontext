@@ -30,7 +30,7 @@ Published release line:
 ### Current architecture
 
 - `skills/` is the canonical runtime source (standard Agent Skills).
-- `providers/` contains thin provider adapters (Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, Cursor, Windsurf, Roo Code, IBM Bob, Grok, Shared).
+- `providers/` contains thin provider adapters (Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, Cursor, Windsurf, Roo Code, IBM Bob, Grok, Pi (unreleased), Shared).
 - `src/` and `bin/` contain the core engine, CLI, and stateless MCP server.
 - `mcp/` contains Model Context Protocol documentation, client configs, and protocol contracts.
 - `hub/` contains human-readable playbooks, templates, examples, and source notes.

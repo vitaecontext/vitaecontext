@@ -114,6 +114,15 @@ function getProviderRuntimeHints(provider, providerSpec) {
       configRoots: [path.join(os.homedir(), ".config", "opencode"), path.join(os.homedir(), ".opencode")],
       installHint:
         "Install OpenCode first or rerun with --project-root/--target-dir if this machine uses a different skills directory."
+    },
+    pi: {
+      displayName: "Pi",
+      commands: ["pi"],
+      configRoots: [
+        process.env.PI_CODING_AGENT_DIR ? path.resolve(process.env.PI_CODING_AGENT_DIR) : path.join(os.homedir(), ".pi", "agent")
+      ],
+      installHint:
+        "Install Pi first or set PI_CODING_AGENT_DIR to point to your Pi configuration root."
     }
   };
 

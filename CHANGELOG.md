@@ -6,6 +6,10 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+### Added
+
+- Added a Pi Agent Skills install provider with user, project, and custom targets, contributed by @yyxa (PR #14).
+
 ### Changed
 
 - Replaced outdated workflow and MCP illustrations with context-layer diagrams showing optional VitaeGraph and downstream tool handoffs.
